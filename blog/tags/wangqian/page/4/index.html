@@ -86,7 +86,7 @@
 <div class="widget-wrap" id="markdown"><div class="widget-header cap dis-select"><span class="name">欢迎，旅行者：</span></div><div class="widget-body fs14"><p>这是一个世界边缘的佛系小站，建于21世纪初，长期维护并保持低频更新。</p>
 </div></div>
 
-<div class="widget-wrap" id="recent"><div class="widget-header cap dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><div class="more-item"><a class="title" href="/b25bebfb6d78/">奢侈</a></div><div class="more-item"><a class="title" href="/d69ca68ba714/">姿态</a></div><div class="more-item"><a class="title" href="/fa991d77438d/">家</a></div><div class="more-item"><a class="title" href="/fd0ea56c3bc9/">尊重</a></div><div class="more-item"><a class="title" href="/2a6e532cc6fe/">小幸运</a></div></div></div>
+<div class="widget-wrap" id="recent"><div class="widget-header cap dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><div class="more-item"><a class="title" href="/a81e04117a40/">Azure Linux 磁盘扩容</a></div><div class="more-item"><a class="title" href="/cfea251a3f8f/">CRC码计算及校验原理的最通俗诠释</a></div><div class="more-item"><a class="title" href="/c9da4974b1d0/">CleanMyMac_X_4.8.2_安装教程</a></div><div class="more-item"><a class="title" href="/8bea8845151c/">GitHub Actions 实现 Hexo 自动部署</a></div><div class="more-item"><a class="title" href="/c185ab0f381d/">Microsoft 365 E5 开发者</a></div></div></div>
 </div>
 
 
@@ -290,6 +290,34 @@
 
 
 <!-- optional -->
+
+  <script>
+  function loadBeaudar() {
+    const els = document.querySelectorAll("#comments #beaudar");
+    if (els.length === 0) return;
+    els.forEach((el, i) => {
+      try {
+        el.innerHTML = '';
+      } catch (error) {
+        console.log(error);
+      }
+      var script = document.createElement('script');
+      script.src = 'https://beaudar.lipk.org/client.js';
+      script.async = true;
+      for (let key of Object.keys(el.attributes)) {
+        let attr = el.attributes[key];
+        if (['class', 'id'].includes(attr.name) === false) {
+          script.setAttribute(attr.name, attr.value);
+        }
+      }
+      el.appendChild(script);
+    });
+  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+      loadBeaudar();
+  });
+</script>
+
 
 
 

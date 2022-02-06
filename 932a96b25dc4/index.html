@@ -28,7 +28,7 @@
 <meta property="og:description" content="木子，我唯一的信仰。 我对你说的不多，只一句喜欢。 写的这些，不是要你怎么样，只要记住我，足矣。 你，名竹。我喜欢叫你，个个。你说，这是只有你闺蜜才知道的小名，我心中窃喜，又多了一份缘。个个，只是我随心而说。看到了，便想了。就像我遇见你一样，见了，便喜欢了。 本并不迷信星座的我，也痴痴地查了你我的星座，结果，我们竟是??（你为金牛，我是摩羯）。我又想，你，便是我的那个期待已久的对的人了。梦里有时也">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-11-25T16:07:45.000Z">
-<meta property="article:modified_time" content="2022-02-06T10:33:18.727Z">
+<meta property="article:modified_time" content="2022-02-06T10:34:50.800Z">
 <meta property="article:author" content="weijiajin">
 <meta property="article:tag" content="lizhu">
 <meta name="twitter:card" content="summary">
@@ -90,7 +90,7 @@
 <div class="widgets">
 
 
-<div class="widget-wrap" id="recent"><div class="widget-header cap dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><div class="more-item"><a class="title" href="/b25bebfb6d78/">奢侈</a></div><div class="more-item"><a class="title" href="/d69ca68ba714/">姿态</a></div><div class="more-item"><a class="title" href="/fa991d77438d/">家</a></div><div class="more-item"><a class="title" href="/fd0ea56c3bc9/">尊重</a></div><div class="more-item"><a class="title" href="/2a6e532cc6fe/">小幸运</a></div></div></div>
+<div class="widget-wrap" id="recent"><div class="widget-header cap dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><div class="more-item"><a class="title" href="/a81e04117a40/">Azure Linux 磁盘扩容</a></div><div class="more-item"><a class="title" href="/cfea251a3f8f/">CRC码计算及校验原理的最通俗诠释</a></div><div class="more-item"><a class="title" href="/c9da4974b1d0/">CleanMyMac_X_4.8.2_安装教程</a></div><div class="more-item"><a class="title" href="/8bea8845151c/">GitHub Actions 实现 Hexo 自动部署</a></div><div class="more-item"><a class="title" href="/c185ab0f381d/">Microsoft 365 E5 开发者</a></div></div></div>
 
 
 
@@ -132,6 +132,20 @@
 
 
 
+
+  <div class='related-wrap md reveal' id="comments">
+    <div class='cmt-title cap theme'>
+      快来参与讨论吧
+    </div>
+    <div class='cmt-body beaudar'>
+      
+
+<svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="beaudar" repo="wejudging/blog-comments" issue-term="pathname" theme="preferred-color-scheme" input-position="top" comment-order="desc" loading="false" branch="main"></div>
+
+    </div>
+  </div>
 
 
 
@@ -285,6 +299,34 @@
 
 
 <!-- optional -->
+
+  <script>
+  function loadBeaudar() {
+    const els = document.querySelectorAll("#comments #beaudar");
+    if (els.length === 0) return;
+    els.forEach((el, i) => {
+      try {
+        el.innerHTML = '';
+      } catch (error) {
+        console.log(error);
+      }
+      var script = document.createElement('script');
+      script.src = 'https://beaudar.lipk.org/client.js';
+      script.async = true;
+      for (let key of Object.keys(el.attributes)) {
+        let attr = el.attributes[key];
+        if (['class', 'id'].includes(attr.name) === false) {
+          script.setAttribute(attr.name, attr.value);
+        }
+      }
+      el.appendChild(script);
+    });
+  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+      loadBeaudar();
+  });
+</script>
+
 
 
 
