@@ -294,8 +294,8 @@ article.md .highlight >table th {
   line-height: 1.5;
 }
 article.md .highlight >table::-webkit-scrollbar {
-  height: 4px;
-  width: 4px;
+  height: 0px;
+  width: 0px;
 }
 article.md .highlight >table::-webkit-scrollbar-track-piece {
   background: transparent;
