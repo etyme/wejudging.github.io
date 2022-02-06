@@ -1,0 +1,7 @@
+sidebar:
+  menu:
+    post: '[博客](/)'
+    wiki: '[项目](/wiki/)'
+    more: '[更多](/about/)'
+  # widgets:
+  #   default_layout: [welcome, recent]
