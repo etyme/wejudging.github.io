@@ -5,3 +5,8 @@ sidebar:
     more: '[更多](/about/)'
   # widgets:
   #   default_layout: [welcome, recent]
+
+comments:
+  service: beaudar
+  beaudar:
+    repo: wejudging/blog-comments
