@@ -294,8 +294,8 @@ article.md .highlight >table th {
   line-height: 1.5;
 }
 article.md .highlight >table::-webkit-scrollbar {
-  height: 0px;
-  width: 0px;
+  height: 4px;
+  width: 4px;
 }
 article.md .highlight >table::-webkit-scrollbar-track-piece {
   background: transparent;
@@ -3995,8 +3995,4 @@ img[fancybox='true'] {
 }
 .swiper-slide {
   cursor: zoom-in;
-}
-.cmt-body.beaudar {
-  margin: 0 -4px;
-  width: calc(100% + 8px);
 }
