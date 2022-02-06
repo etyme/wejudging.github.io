@@ -59,6 +59,3 @@ article:
     '折腾': '#DA0F47'
     '诗文': '#03a9f4'
 
-  share: [wechat, weibo, email, link]
-  related_posts:
-    enable: true
