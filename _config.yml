@@ -142,6 +142,7 @@ nofollow:
   exclude:
     - weijiajin.com
 
+
 # https://github.com/ludoviclefevre/hexo-generator-seo-friendly-sitemap
 sitemap:
   path: sitemap.xml
