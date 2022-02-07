@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang='zh-CN'>
+<html lang="zh-CN">
 
 <head>
   <meta name="generator" content="Hexo 6.0.0">
   <meta charset="utf-8">
   <meta name="robots" content="noindex,nofollow">
 
-  <meta http-equiv='x-dns-prefetch-control' content='on' />
-  <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
   <meta name="renderer" content="webkit">
   <meta name="force-rendering" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-  <meta name="HandheldFriendly" content="True" >
+  <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" content="#f8f8f8">
@@ -27,8 +27,8 @@
 <meta property="og:site_name" content="weijiajin">
 <meta property="og:description" content="最新版 CocoaPods 的安装流程 （首次安装）移除现有Ruby默认源   （首次安装）使用新的源   （首次安装）验证新源是否替换成功   （可选）更新 gem   安装 CocoaPods   Podfile 文件中的一些写法CocoaPods&amp;nbsp;Guides&amp;nbsp;-&amp;nbsp;The&amp;nbsp;Podfilehttps:&#x2F;&#x2F;guides.cocoapods.org&#x2F;usin">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-02-07T05:22:54.929Z">
-<meta property="article:modified_time" content="2022-02-07T05:22:54.929Z">
+<meta property="article:published_time" content="2022-02-07T09:03:45.234Z">
+<meta property="article:modified_time" content="2022-02-07T09:03:45.234Z">
 <meta property="article:author" content="weijiajin">
 <meta name="twitter:card" content="summary">
   
@@ -76,8 +76,8 @@
 
 
 
-  <div class='l_body' id='start'>
-    <aside class='l_left' layout='wiki'>
+  <div class="l_body" id="start">
+    <aside class="l_left" layout="wiki">
     
 
 
@@ -93,32 +93,32 @@
 
 
     </aside>
-    <div class='l_main'>
+    <div class="l_main">
       
 
       
 
   
   
-<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" id="home" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" id="menu" href="/notes/">便笺</a></div><div id="post-meta">更新于&nbsp;<time datetime="2022-02-07T05:22:54.929Z">2022-02-07</time></div></div>
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" id="home" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" id="menu" href="/notes/">便笺</a></div><div id="post-meta">更新于&nbsp;<time datetime="2022-02-07T09:03:45.234Z">2022-02-07</time></div></div>
 
-  <article class='content md wiki'>
+  <article class="content md wiki">
   
   <h2 id="最新版-CocoaPods-的安装流程"><a href="#最新版-CocoaPods-的安装流程" class="headerlink" title="最新版 CocoaPods 的安装流程"></a>最新版 CocoaPods 的安装流程</h2><ol>
 <li><p>（首次安装）移除现有Ruby默认源</p>
-<div class="tag-plugin copy"><input class="copy-area" readonly id="copy_1" value="gem sources --remove https://rubygems.org/"><button class="copy-btn" onclick="util.copy(&quot;copy_1&quot;,&quot;Copied!&quot;)"><svg class="icon copy-btn" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"></path></svg></button></div>
+<div class="tag-plugin copy"><input class="copy-area" readonly id="copy_1" value="gem sources --remove https://rubygems.org/"><button class="copy-btn" onclick="util.copy(&quot;copy_1&quot;,&quot;Copied!&quot;)"><svg class="icon copy-btn" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"/></svg></button></div>
 </li>
 <li><p>（首次安装）使用新的源</p>
-<div class="tag-plugin copy"><input class="copy-area" readonly id="copy_2" value="gem sources -a https://gems.ruby-china.com"><button class="copy-btn" onclick="util.copy(&quot;copy_2&quot;,&quot;Copied!&quot;)"><svg class="icon copy-btn" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"></path></svg></button></div>
+<div class="tag-plugin copy"><input class="copy-area" readonly id="copy_2" value="gem sources -a https://gems.ruby-china.com"><button class="copy-btn" onclick="util.copy(&quot;copy_2&quot;,&quot;Copied!&quot;)"><svg class="icon copy-btn" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"/></svg></button></div>
 </li>
 <li><p>（首次安装）验证新源是否替换成功</p>
-<div class="tag-plugin copy"><input class="copy-area" readonly id="copy_3" value="gem sources -l"><button class="copy-btn" onclick="util.copy(&quot;copy_3&quot;,&quot;Copied!&quot;)"><svg class="icon copy-btn" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"></path></svg></button></div>
+<div class="tag-plugin copy"><input class="copy-area" readonly id="copy_3" value="gem sources -l"><button class="copy-btn" onclick="util.copy(&quot;copy_3&quot;,&quot;Copied!&quot;)"><svg class="icon copy-btn" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"/></svg></button></div>
 </li>
 <li><p>（可选）更新 gem</p>
-<div class="tag-plugin copy"><input class="copy-area" readonly id="copy_4" value="sudo gem update --system"><button class="copy-btn" onclick="util.copy(&quot;copy_4&quot;,&quot;Copied!&quot;)"><svg class="icon copy-btn" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"></path></svg></button></div>
+<div class="tag-plugin copy"><input class="copy-area" readonly id="copy_4" value="sudo gem update --system"><button class="copy-btn" onclick="util.copy(&quot;copy_4&quot;,&quot;Copied!&quot;)"><svg class="icon copy-btn" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"/></svg></button></div>
 </li>
 <li><p>安装 CocoaPods</p>
-<div class="tag-plugin copy"><input class="copy-area" readonly id="copy_5" value="sudo gem install -n /usr/local/bin cocoapods && pod setup"><button class="copy-btn" onclick="util.copy(&quot;copy_5&quot;,&quot;Copied!&quot;)"><svg class="icon copy-btn" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"></path></svg></button></div></li>
+<div class="tag-plugin copy"><input class="copy-area" readonly id="copy_5" value="sudo gem install -n /usr/local/bin cocoapods && pod setup"><button class="copy-btn" onclick="util.copy(&quot;copy_5&quot;,&quot;Copied!&quot;)"><svg class="icon copy-btn" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"/></svg></button></div></li>
 </ol>
 <h2 id="Podfile-文件中的一些写法"><a href="#Podfile-文件中的一些写法" class="headerlink" title="Podfile 文件中的一些写法"></a>Podfile 文件中的一些写法</h2><div class="tag-plugin link dis-select"><a class="link-card plain" title="CocoaPods&nbsp;Guides&nbsp;-&nbsp;The&nbsp;Podfile" href="https://guides.cocoapods.org/using/the-podfile.html" target="_blank" rel="external nofollow noopener noreferrer"><div class="left"><span class="title">CocoaPods&nbsp;Guides&nbsp;-&nbsp;The&nbsp;Podfile</span><span class="desc fs12">https://guides.cocoapods.org/using/the-podfile.html</span></div><div class="right"><div class="lazy img" data-bg="https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/link/8f277b4ee0ecd.svg"></div></div></a></div>
 
@@ -139,7 +139,7 @@
 
 <h4 id="2-修改-podspec-并验证"><a href="#2-修改-podspec-并验证" class="headerlink" title="2. 修改 .podspec 并验证"></a>2. 修改 <code>.podspec</code> 并验证</h4><p>有很多类似的教程，可以参考。</p>
 <blockquote>
-<p>一个小技巧：你可以去GItHub搜索一些热门的第三方库，然后点击查看这些大牛的 <code>.podspec</code> 是怎么写的。<br>传送门：<a target="_blank" rel="noopener" href="https://github.com/ibireme/YYKit/blob/master/YYKit.podspec">YYKit的podspec</a>、<a target="_blank" rel="noopener" href="https://github.com/ReactiveCocoa/ReactiveObjC/blob/master/ReactiveObjC.podspec">ReactiveObjC的podspec</a>、<a target="_blank" rel="noopener" href="https://github.com/BlocksKit/BlocksKit/blob/master/BlocksKit.podspec">BlocksKit的podspec</a></p>
+<p>一个小技巧：你可以去GItHub搜索一些热门的第三方库，然后点击查看这些大牛的 <code>.podspec</code> 是怎么写的。<br>传送门：<a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/ibireme/YYKit/blob/master/YYKit.podspec">YYKit的podspec</a>、<a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/ReactiveCocoa/ReactiveObjC/blob/master/ReactiveObjC.podspec">ReactiveObjC的podspec</a>、<a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/BlocksKit/BlocksKit/blob/master/BlocksKit.podspec">BlocksKit的podspec</a></p>
 </blockquote>
 <p>最容易出错的地方就是资源路径</p>
 <figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">s.source_files = <span class="string">&quot;AXKit/**/*.&#123;h,m&#125;&quot;</span></span><br></pre></td></tr></table></figure>
@@ -151,7 +151,7 @@
 <figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 推荐写法：与版本号绑定</span></span><br><span class="line">s.source = &#123; <span class="symbol">:git</span> =&gt; <span class="string">&quot;https://github.com/TeaseTian/HTQRCode.git&quot;</span>, <span class="symbol">:tag</span> =&gt; <span class="string">&quot;<span class="subst">#&#123;s.version&#125;</span>&quot;</span> &#125;</span><br><span class="line"><span class="comment"># 与commit id 绑定</span></span><br><span class="line">s.source = &#123; <span class="symbol">:git</span> =&gt; <span class="string">&quot;https://github.com/TeaseTian/HTQRCode.git&quot;</span>, <span class="symbol">:commit</span> =&gt; <span class="string">&quot;68defea&quot;</span> &#125;</span><br></pre></td></tr></table></figure>
 
 <p>tag &#x3D;&gt; s.version 表示将这个 Pod 版本与 Git 仓库中相同版本的 comit 绑定</p>
-<div class="tag-plugin note" ><div class="body"><p><strong>注意</strong></p><p>如果仓库中对应的tag是 <code>“v1.0.0”</code> 这样以字母开头的，可以在 <code>#{s.version}</code> 前面加上对应的字母。commit &#x3D;&gt; “68defea” 表示将这个 Pod 版本与 Git 仓库中某个 commit 绑定</p></div></div>
+<div class="tag-plugin note"><div class="body"><p><strong>注意</strong></p><p>如果仓库中对应的tag是 <code>“v1.0.0”</code> 这样以字母开头的，可以在 <code>#{s.version}</code> 前面加上对应的字母。commit &#x3D;&gt; “68defea” 表示将这个 Pod 版本与 Git 仓库中某个 commit 绑定</p></div></div>
 
 
 <p><strong>验证</strong></p>
@@ -190,9 +190,9 @@
 
 
 <h2 id="应用上传失败"><a href="#应用上传失败" class="headerlink" title="应用上传失败"></a>应用上传失败</h2><p>原因可能有很多，有关于 Transporter 的问题可以尝试删除缓存：</p>
-<h3 id="删除缓存"><a href="#删除缓存" class="headerlink" title="删除缓存"></a>删除缓存</h3><div class="tag-plugin copy"><input class="copy-area" readonly id="copy_6" value="open ~/Library/Caches/com.apple.amp.itmstransporter/"><button class="copy-btn" onclick="util.copy(&quot;copy_6&quot;,&quot;Copied!&quot;)"><svg class="icon copy-btn" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"></path></svg></button></div>
+<h3 id="删除缓存"><a href="#删除缓存" class="headerlink" title="删除缓存"></a>删除缓存</h3><div class="tag-plugin copy"><input class="copy-area" readonly id="copy_6" value="open ~/Library/Caches/com.apple.amp.itmstransporter/"><button class="copy-btn" onclick="util.copy(&quot;copy_6&quot;,&quot;Copied!&quot;)"><svg class="icon copy-btn" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"/></svg></button></div>
 
-<h3 id="重新下载缓存"><a href="#重新下载缓存" class="headerlink" title="重新下载缓存"></a>重新下载缓存</h3><div class="tag-plugin copy"><input class="copy-area" readonly id="copy_7" value="/Applications/Xcode.app/Contents/SharedFrameworks/ContentDeliveryServices.framework/itms/bin/iTMSTransporter"><button class="copy-btn" onclick="util.copy(&quot;copy_7&quot;,&quot;Copied!&quot;)"><svg class="icon copy-btn" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"></path></svg></button></div>
+<h3 id="重新下载缓存"><a href="#重新下载缓存" class="headerlink" title="重新下载缓存"></a>重新下载缓存</h3><div class="tag-plugin copy"><input class="copy-area" readonly id="copy_7" value="/Applications/Xcode.app/Contents/SharedFrameworks/ContentDeliveryServices.framework/itms/bin/iTMSTransporter"><button class="copy-btn" onclick="util.copy(&quot;copy_7&quot;,&quot;Copied!&quot;)"><svg class="icon copy-btn" viewbox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"/></svg></button></div>
 
 <blockquote>
 <p>这个缓存有 60MB （2020年7月份下载实测）</p>
@@ -389,7 +389,7 @@
 <td align="left">264</td>
 </tr>
 </tbody></table>
-<h3 id="Logo-amp-启动图"><a href="#Logo-amp-启动图" class="headerlink" title="Logo &amp; 启动图"></a>Logo &amp; 启动图</h3><p>UI 只需要提供一张 <code>1024*1024</code> 尺寸的图即可，开发使用 <a target="_blank" rel="noopener" href="https://img.vim-cn.com/24/a42106ba9e592869dc2293da2c04b11bf7657d.zip">IconKit</a> 工具可以直接生成开发需要的各种尺寸的图片及其 json 配置文件，直接拖进 Xcode 工程中就可以使用了。使用传统方式不同尺寸一张一张的切图不仅浪费 UI 的时间，开发也需要一张图一张图往对应位置拖，双方都很麻烦。</p>
+<h3 id="Logo-amp-启动图"><a href="#Logo-amp-启动图" class="headerlink" title="Logo &amp; 启动图"></a>Logo &amp; 启动图</h3><p>UI 只需要提供一张 <code>1024*1024</code> 尺寸的图即可，开发使用 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://img.vim-cn.com/24/a42106ba9e592869dc2293da2c04b11bf7657d.zip">IconKit</a> 工具可以直接生成开发需要的各种尺寸的图片及其 json 配置文件，直接拖进 Xcode 工程中就可以使用了。使用传统方式不同尺寸一张一张的切图不仅浪费 UI 的时间，开发也需要一张图一张图往对应位置拖，双方都很麻烦。</p>
 <p>如果使用 LaunchImage 方式，需要切各个尺寸的图片，参考 <a href="#iPhone-%E5%90%84%E4%BB%A3%E5%B1%8F%E5%B9%95%E5%B0%BA%E5%AF%B8%E4%B8%8E%E5%88%86%E8%BE%A8%E7%8E%87">iPhone 各代屏幕尺寸与分辨率</a> 表，如果需要兼容 iPhone 4、4s 机型，则需要提供一共7种尺寸的图片，如果最低兼容 iPhone5 的话，就只需要提供6种尺寸的图片。</p>
 <blockquote>
 <p>注意：iOS 并不需要 <code>1920*1080</code> 这种尺寸的图片。</p>
@@ -408,14 +408,14 @@
 
   
 
-  <div class='related-wrap md reveal' id="comments">
-    <div class='cmt-title cap theme'>
+  <div class="related-wrap md reveal" id="comments">
+    <div class="cmt-title cap theme">
       快来参与讨论吧
     </div>
-    <div class='cmt-body beaudar'>
+    <div class="cmt-body beaudar">
       
 
-<svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+<svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewbox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"/></svg>
 
 <div id="beaudar" repo="wejudging/blog-comments" issue-term="pathname" theme="preferred-color-scheme" input-position="top" comment-order="desc" loading="false" branch="main"></div>
 
@@ -426,17 +426,17 @@
 
 
       
-<footer class="page-footer reveal fs12"><hr><div class="sitemap"><div class="sitemap-group"><span class="fs14">博客</span><a href="/">近期</a><a href="/blog/categories/">分类</a><a href="/blog/tags/">标签</a><a href="/blog/archives/">归档</a></div><div class="sitemap-group"><span class="fs14">项目</span><a href="/wiki/tags/%E8%84%9A%E6%9C%AC/">脚本</a><a href="/wiki/tags/%E7%AC%94%E8%AE%B0/">笔记</a></div><div class="sitemap-group"><span class="fs14">便笺</span><a href="/friends/">友链</a><a href="/about/#comments">留言板</a></div><div class="sitemap-group"><span class="fs14">更多</span><a href="/about/">关于本站</a><a target="_blank" rel="noopener" href="https://github.com/wejudging">GitHub</a></div></div><div class="text"><hr><p align="center"><a target="_blank" rel="noopener" href="https://github.com/wejudging"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io@main/source/images/网站部署-GitHub-5DADE2.svg" width="119" height="20"/></a> &nbsp&nbsp<a target="_blank" rel="noopener" href="https://www.jsdelivr.com"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io@main/source/images/图片分发-jsDelivr-red.svg" width="123" height="20"/></a> &nbsp&nbsp<a target="_blank" rel="noopener" href="https://hexo.io"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io@main/source/images/强力驱动-Hexo-blue.svg" width="111" height="20"/></a>&nbsp&nbsp<a target="_blank" rel="noopener" href="https://cloudflare.com"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.shields.io/badge/域名解析-CloudFlare-f38020?logo=cloudflare&logoColor=f38020&labelColor=282d33"></a></p></div></footer>
+<footer class="page-footer reveal fs12"><hr><div class="sitemap"><div class="sitemap-group"><span class="fs14">博客</span><a href="/">近期</a><a href="/blog/categories/">分类</a><a href="/blog/tags/">标签</a><a href="/blog/archives/">归档</a></div><div class="sitemap-group"><span class="fs14">项目</span><a href="/wiki/tags/%E8%84%9A%E6%9C%AC/">脚本</a><a href="/wiki/tags/%E7%AC%94%E8%AE%B0/">笔记</a></div><div class="sitemap-group"><span class="fs14">便笺</span><a href="/friends/">友链</a><a href="/about/#comments">留言板</a></div><div class="sitemap-group"><span class="fs14">更多</span><a href="/about/">关于本站</a><a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/wejudging">GitHub</a></div></div><div class="text"><hr><p align="center"><a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/wejudging"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io@main/source/images/网站部署-GitHub-5DADE2.svg" width="119" height="20"></a> &nbsp&nbsp<a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.jsdelivr.com"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io@main/source/images/图片分发-jsDelivr-red.svg" width="123" height="20"></a> &nbsp&nbsp<a target="_blank" rel="external nofollow noopener noreferrer" href="https://hexo.io"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io@main/source/images/强力驱动-Hexo-blue.svg" width="111" height="20"></a>&nbsp&nbsp<a target="_blank" rel="external nofollow noopener noreferrer" href="https://cloudflare.com"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.shields.io/badge/域名解析-CloudFlare-f38020?logo=cloudflare&logoColor=f38020&labelColor=282d33"></a></p></div></footer>
 
-      <div class='float-panel mobile-only blur' style='display:none'>
-  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
-    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+      <div class="float-panel mobile-only blur" style="display:none">
+  <button type="button" class="sidebar-toggle mobile" onclick="sidebar.toggle()">
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewbox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"/><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"/></svg>
   </button>
 </div>
 
     </div>
   </div>
-  <div class='scripts'>
+  <div class="scripts">
     <script type="text/javascript">
   stellar = {
     // 懒加载 css https://github.com/filamentgroup/loadCSS
