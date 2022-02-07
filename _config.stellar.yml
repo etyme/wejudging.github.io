@@ -39,16 +39,13 @@ footer:
     '项目':
       - '[开源库](/wiki/tags/开源库/)'
       - '[实用脚本](/wiki/tags/实用脚本/)'
-      - '[博客主题](/wiki/tags/博客主题/)'
-      - '[应用程序](/wiki/tags/应用程序/)'
-    '社交':
+    '便笺':
       - '[友链](/friends/)'
       - '[留言板](/about/#comments)'
     '更多':
       - '[关于本站](/about/)'
-      - '[GitHub](https://github.com/xaoxuu)'
-      - '[GitLab](http://42.192.89.158:8099/explore)'
-  source: '[GitHub](https://github.com/xaoxuu/xaoxuu.github.io/)'
+      - '[GitHub](https://github.com/wejudging)'
+ 
 
 
 style:
