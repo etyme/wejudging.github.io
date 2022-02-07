@@ -36,13 +36,13 @@ header: false
 
 王小波说“生为冰山，，就该淡淡地爱海流、爱风，并且在偶然接触时，全心全意地爱另一块冰山。”我想我遇见了自己的另一块冰山，她带来欢笑，我有幸得到。我悄悄的写下所有情话，想读给未来的你来听，那是我细腻想你的心思。
 
-<!-- endtab -->
+
 
 <!-- tab 音乐 -->
 
 非常热爱音乐，喜欢的品类很多，尤其喜爱许嵩和民谣音乐，夜深人静的时候喜欢听 民谣，能量不足的时候会听一些电音或摇滚来充电，心灰意冷的时候会听一些十年前常听许嵩的音乐怀旧。
 
-<!-- endtab -->
+
 
 <!-- tab 影视 -->
 
@@ -51,7 +51,6 @@ header: false
 - 魔幻类，例如：[Game of Thrones](https://movie.douban.com/subject/3016187/)
 - 诺兰大导演的作品，例如：[Inception](https://movie.douban.com/subject/3541415/)、[Dunkirk](https://movie.douban.com/subject/26607693/)
 
-<!-- endtab -->
 
 <!-- tab 游戏 -->
 
