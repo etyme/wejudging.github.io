@@ -1,16 +1,7 @@
 ---
 layout: wiki
-wiki: shell
+wiki: Shell
 title: shell
-tags: 脚本
-cover: true
-logo:
-  src: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/shell.png
-  small: 120px
-  large: 240px
-description: 实用脚本集合
-Notes:
-  sidebar: [toc]
 ---
 
 #### tcp脚本

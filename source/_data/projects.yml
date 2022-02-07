@@ -1,0 +1,26 @@
+Shell:
+  title: Shell
+  subtitle: 实用脚本
+  tags: 脚本
+  cover: true
+  logo:
+    src: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/shell.png
+    small: 120px
+    large: 240px
+  description: 实用脚本集合。
+
+
+Notes:
+  title: 便笺
+  logo:
+    src: https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/stellar/icon.svg
+    small: 112px
+    large: 240px
+  description:
+  index: false
+  sidebar: [toc]
+  tags: 笔记
+  sections:
+    '日常问题解决方案': [101, 200]
+    '移动端开发笔记': [201, 300]
+    '前端学习笔记': [301, 400]
