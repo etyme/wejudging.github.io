@@ -30,7 +30,7 @@ header: false
 
 ## 兴趣爱好
 
-{% tabs hobbies active:1 %}
+{% tabs align:center %}
 
 <!-- tab 爱情 -->
 
@@ -60,11 +60,11 @@ header: false
 | LOL       | ★★★★★       | 2015-2021     |
 
 
-<!-- endtab -->
-
-
-
 {% endtabs %}
+
+
+
+
 
 ##  专业技术
 - 😄**后端** C,C++,Java,Python,go
@@ -76,3 +76,7 @@ header: false
 
 {% ghcard wejudging %}
 
+
+## 关于本站
+
+本站是个人博客，不放置任何推广链接。内容以技术积累为主，也不排除会写一些生活方面或者其它主题的内容。季更博主，精力有限，为了保证文章质量，篇数不会很多，已经发布过的文章也会不定期审查和更新（以免过时的内容误导读者）。
