@@ -9,6 +9,7 @@
   <meta http-equiv="x-dns-prefetch-control" content="on">
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="dns-prefetch" href="//unpkg.com">
 
   <meta name="renderer" content="webkit">
   <meta name="force-rendering" content="webkit">
@@ -18,6 +19,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" content="#f8f8f8">
   <title>CRC码计算及校验原理的最通俗诠释 - weijiajin</title>
+
+  
 
   
     <meta name="description" content="CRC校验原理CRC校验原理看起来比较复杂，好难懂，因为大多数书上基本上是以二进制的多项式形式来说明的。其实很简单的问题，其根本思想就是先在要发送的帧后面附加一个数（这个就是用来校验的校验码，但要注意，这里的数也是二进制序列的，下同），生成一个新帧发送给接收端。当然，这个附加的数不是随意的，它要使所生成的新帧能与发送端和接收端共同选定的某个特定数整除（注意，这里不是直接采用二进制除法，而是采用一种">
@@ -30,7 +33,7 @@
 <meta property="og:image" content="https://pic4.zhimg.com/80/v2-5b45e4b97f0eff80ff0d0c0a58385d97_1440w.jpg">
 <meta property="og:image" content="https://pic1.zhimg.com/v2-15db3e5f6ebd50ba931955b53b3c6dbc_r.jpg">
 <meta property="article:published_time" content="2021-04-09T21:18:30.000Z">
-<meta property="article:modified_time" content="2022-03-06T04:44:59.125Z">
+<meta property="article:modified_time" content="2022-03-06T09:34:26.047Z">
 <meta property="article:author" content="weijiajin">
 <meta property="article:tag" content="魏家劲">
 <meta name="twitter:card" content="summary">
@@ -93,7 +96,7 @@
 <div class="widgets">
 
 
-<div class="widget-wrap" id="recent"><div class="widget-header cap dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><div class="more-item"><a class="title" href="/f759e8a7a8f7/">一首小情诗</a></div><div class="more-item"><a class="title" href="/78613abef607/">不完美的爱情</a></div><div class="more-item"><a class="title" href="/b067881ed6e1/">不该</a></div><div class="more-item"><a class="title" href="/08d0e13c3591/">不配</a></div><div class="more-item"><a class="title" href="/8f15539a30fd/">予远方</a></div></div></div>
+<div class="widget-wrap" id="recent"><div class="widget-header cap dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><div class="more-item"><a class="title" href="/932a96b25dc4/">木子情书</a></div><div class="more-item"><a class="title" href="/13fa96fe05d6/">来日并不方长</a></div><div class="more-item"><a class="title" href="/1cbb7e0a3fc8/">校园青春</a></div><div class="more-item"><a class="title" href="/12f8a6917cb9/">梦溺</a></div><div class="more-item"><a class="title" href="/456ad0be4ff5/">此刻的美好</a></div></div></div>
 
 
 
@@ -105,7 +108,6 @@
       
 
       
-
 
 <div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/blog/categories/%E6%8A%98%E8%85%BE/">折腾</a></div><div id="post-meta">发布于&nbsp;<time datetime="2021-04-09T21:18:30.000Z">2021-04-09</time></div></div>
 
@@ -293,6 +295,9 @@
   }
   if ('true' == 'true') {
     stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti/umd/heti.min.css","js":"https://unpkg.com/heti/umd/heti-addon.min.js"});
   }
 </script>
 

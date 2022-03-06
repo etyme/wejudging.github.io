@@ -9,6 +9,7 @@
   <meta http-equiv="x-dns-prefetch-control" content="on">
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="dns-prefetch" href="//unpkg.com">
 
   <meta name="renderer" content="webkit">
   <meta name="force-rendering" content="webkit">
@@ -20,6 +21,8 @@
   <title>海明校验码是怎么实现的？ - weijiajin</title>
 
   
+
+  
     <meta name="description" content="如何一步步推导出海明码。 先提一个基本中的基本，异或。异或是两个数字相异则为1，相同则为0。举例1异或0&#x3D;1，0异或0&#x3D;0，1异或1&#x3D;0。 为什么要提异或呢，因为异或是校验中最为根本的一个东西。假设我有原码1111和错误传输1110以及正确传输1111，那么我怎么能隐藏数据内容直接更快更好的知道数据是否传输错误了呢？ 按位异或，如果无错，则异或值必全为0。1111与1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="海明校验码是怎么实现的？">
@@ -28,7 +31,7 @@
 <meta property="og:description" content="如何一步步推导出海明码。 先提一个基本中的基本，异或。异或是两个数字相异则为1，相同则为0。举例1异或0&#x3D;1，0异或0&#x3D;0，1异或1&#x3D;0。 为什么要提异或呢，因为异或是校验中最为根本的一个东西。假设我有原码1111和错误传输1110以及正确传输1111，那么我怎么能隐藏数据内容直接更快更好的知道数据是否传输错误了呢？ 按位异或，如果无错，则异或值必全为0。1111与1">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-04-09T10:09:39.000Z">
-<meta property="article:modified_time" content="2022-03-06T04:44:59.129Z">
+<meta property="article:modified_time" content="2022-03-06T09:34:26.051Z">
 <meta property="article:author" content="weijiajin">
 <meta property="article:tag" content="魏家劲">
 <meta name="twitter:card" content="summary">
@@ -90,7 +93,7 @@
 <div class="widgets">
 
 
-<div class="widget-wrap" id="recent"><div class="widget-header cap dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><div class="more-item"><a class="title" href="/f759e8a7a8f7/">一首小情诗</a></div><div class="more-item"><a class="title" href="/78613abef607/">不完美的爱情</a></div><div class="more-item"><a class="title" href="/b067881ed6e1/">不该</a></div><div class="more-item"><a class="title" href="/08d0e13c3591/">不配</a></div><div class="more-item"><a class="title" href="/8f15539a30fd/">予远方</a></div></div></div>
+<div class="widget-wrap" id="recent"><div class="widget-header cap dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><div class="more-item"><a class="title" href="/932a96b25dc4/">木子情书</a></div><div class="more-item"><a class="title" href="/13fa96fe05d6/">来日并不方长</a></div><div class="more-item"><a class="title" href="/1cbb7e0a3fc8/">校园青春</a></div><div class="more-item"><a class="title" href="/12f8a6917cb9/">梦溺</a></div><div class="more-item"><a class="title" href="/456ad0be4ff5/">此刻的美好</a></div></div></div>
 
 
 
@@ -102,7 +105,6 @@
       
 
       
-
 
 <div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/blog/categories/%E6%8A%98%E8%85%BE/">折腾</a></div><div id="post-meta">发布于&nbsp;<time datetime="2021-04-09T10:09:39.000Z">2021-04-09</time></div></div>
 
@@ -308,6 +310,9 @@
   }
   if ('true' == 'true') {
     stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti/umd/heti.min.css","js":"https://unpkg.com/heti/umd/heti-addon.min.js"});
   }
 </script>
 
