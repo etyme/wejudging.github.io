@@ -4,6 +4,7 @@ date: 2022-03-06 13:01:25
 tags: C++
 categories: C++
 cover: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/文章图片/C++程序设计简答题/c++logo.jpeg
+excerpt: C++既可以进行C语言的过程化程序设计，又可以进行以抽象数据类型为特点的基于对象的程序设计，还可以进行以继承和多态为特点的面向对象的程序设计。
 ---
 
 #### 1、简述你对C++中的数据类型和抽象数据类型（ADTs）的理解
