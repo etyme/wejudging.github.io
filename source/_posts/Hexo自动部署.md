@@ -4,6 +4,7 @@ cover: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/a
 date: 2021-04-21
 tags: [Hexo, GitHub]
 categories: 折腾
+excerpt: GitHub Actions 自动部署 Hexo 到 GitHub Pages 的方法
 ---
 
 ### Hexo

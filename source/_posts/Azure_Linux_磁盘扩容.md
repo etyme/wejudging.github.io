@@ -4,6 +4,7 @@ date: 2021-05-10
 tags: [Azure,Microsoft]
 categories: 折腾
 cover: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/azure.png
+excerpt: Azure Linux 磁盘扩容
 ---
 
 进入 azure 改磁盘大小,重启后进入系统会发现磁盘大小没变，因为没扩容。
