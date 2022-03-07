@@ -11,7 +11,7 @@ email: wejudging@gmail.com
 
 # URL
 url: https://weijiajin.com
-permalink: :name-:hash/
+permalink: :hash/
 permalink_defaults:
 pretty_urls:
   trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
