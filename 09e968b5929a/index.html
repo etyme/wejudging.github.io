@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/文章图片/C++程序设计简答题/c++logo.jpeg">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/文章图片/C++程序设计简答题/c08.png">
 <meta property="article:published_time" content="2022-03-06T13:01:25.000Z">
-<meta property="article:modified_time" content="2022-03-07T09:06:48.091Z">
+<meta property="article:modified_time" content="2022-03-07T12:09:22.622Z">
 <meta property="article:author" content="weijiajin">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary_large_image">
@@ -119,7 +119,7 @@
 <p>只有当⼆元运算符最左边的操作数是该类的⼀个对象，或者当⼀元运算符的操作数是该类的⼀个对象时，才有必要进⾏运算符重载</p>
 </blockquote>
 <h4 id="3、为什么说继承是C-⾯向对象的⼀个主要特征之⼀"><a href="#3、为什么说继承是C-⾯向对象的⼀个主要特征之⼀" class="headerlink" title="3、为什么说继承是C++⾯向对象的⼀个主要特征之⼀"></a>3、为什么说继承是C++⾯向对象的⼀个主要特征之⼀</h4><blockquote>
-<p>继承是一种联结类的层次模型，层次结构的上层是最具有通用性的，而下层的部分，即后代具有特殊性。类可以从他的祖先那里继承方法和成员变量，也可以增加新的方法是适用于特殊的需要。如果没有继承，类就缺失了一块层次结构，代码重用和数据共享就贯彻不到<br>底，有了继承，就会有抽象编程中的多态问题，只有从机制内部真正解决了多态表现问题，对象的数据封装，信息隐藏，代码重用等招式才能淋漓尽致的发挥出来。才称得上真正的面向对象编程。</p>
+<p>继承是一种联结类的层次模型，层次结构的上层是最具有通用性的，而下层的部分，即后代具有特殊性。类可以从他的祖先那里继承方法和成员变量，也可以增加新的方法是适用于特殊的需要。如果没有继承，类就缺失了一块层次结构，代码重用和数据共享就贯彻不到底，有了继承，就会有抽象编程中的多态问题，只有从机制内部真正解决了多态表现问题，对象的数据封装，信息隐藏，代码重用等招式才能淋漓尽致的发挥出来。才称得上真正的面向对象编程。</p>
 </blockquote>
 <h4 id="4、如何声明和使⽤虚函数，说明它在多态性中的作⽤和意义"><a href="#4、如何声明和使⽤虚函数，说明它在多态性中的作⽤和意义" class="headerlink" title="4、如何声明和使⽤虚函数，说明它在多态性中的作⽤和意义"></a>4、如何声明和使⽤虚函数，说明它在多态性中的作⽤和意义</h4><blockquote>
 <p>声明虚函数时，在基类的函数原型前加关键字virtual，在派⽣类中重写函数；⽤名称和圆点成员选择运算符引⽤⼀个特定的对象以调⽤虚函数，被调⽤的虚函数是在编译时确定的；也可以通过基类指针调⽤函数，让程序在任何给定的时刻基于基类指针所指对象的对象类型，动态确定执⾏相应的派⽣类的函数。虚函数是多态性的主要实现⽅式，利⽤虚拟函数和多态性，程序员可以处理普遍性⽽让执⾏环境处理特殊性，即使在不知道⼀些对象的类型的情况下（只要这些对象属于同⼀继承层次并且通过⼀个共同的基类指针访问），程序员也可以命令各种对象表现出适合这些对象的⾏为</p>
