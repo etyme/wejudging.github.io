@@ -143,3 +143,6 @@ virtual void fun() = 0; //纯虚函数
 > + cstring是C++对C语⾔中的strcpy之类的函数申明，包含cstring之后，就可以在程序中使⽤C语⾔⻛格的strcpy之类的函数。
 string是C++中string类模板的声明
 > + CString是MFC中定义的字符串类，MFC中很多类及函数都是以CString为参数的
+
+
+
