@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/文章图片/C++程序设计简答题/c++logo.jpeg">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/文章图片/C++程序设计简答题/c08.png">
 <meta property="article:published_time" content="2022-03-06T13:01:25.000Z">
-<meta property="article:modified_time" content="2022-03-07T12:29:45.955Z">
+<meta property="article:modified_time" content="2022-03-07T12:32:37.869Z">
 <meta property="article:author" content="weijiajin">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary_large_image">
@@ -287,7 +287,7 @@
 </blockquote>
 <h4 id="33、什么叫虚基类？有何作用？"><a href="#33、什么叫虚基类？有何作用？" class="headerlink" title="33、什么叫虚基类？有何作用？"></a>33、什么叫虚基类？有何作用？</h4><blockquote>
 <ul>
-<li>当某类的部分或全部直接基类是从另一个基类派生而来，这些直接基类中，从上一级基类继承来的成员就拥有相同的名称，派生类的对象的这些同名成员在内存中同时拥有多个拷贝，我们可以使用作用域分辨符来唯一标识并分别访问它们。我们也可以将直接基类<br>的共同基类设置为虚基类，这时从不同的路径继承过来的该类成员在内存中只拥有一个拷贝，这样就解决了同名成员的唯一标识问题。</li>
+<li>当某类的部分或全部直接基类是从另一个基类派生而来，这些直接基类中，从上一级基类继承来的成员就拥有相同的名称，派生类的对象的这些同名成员在内存中同时拥有多个拷贝，我们可以使用作用域分辨符来唯一标识并分别访问它们。我们也可以将直接基类的共同基类设置为虚基类，这时从不同的路径继承过来的该类成员在内存中只拥有一个拷贝，这样就解决了同名成员的唯一标识问题。</li>
 <li>虚基类的声明是在派生类的定义过程，其语法格式为：</li>
 <li>class 派生类名：virtual 继承方式 基类名</li>
 <li>上述语句声明基类为派生类的虚基类，在多继承情况下，虚基类关键字的作用范围和继承方式关键字相同，只对紧跟其后的基类起作用。声明了虚基类之后，虚基类的成员在进一步派生过程中，和派生类一起维护一个内存数据拷贝。</li>
