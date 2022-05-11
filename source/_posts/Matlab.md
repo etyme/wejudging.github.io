@@ -10,8 +10,10 @@ excerpt: MATLAB是美国MathWorks公司出品的商业数学软件，用于数�
 {% image https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/文章图片/Matlab/Matlab-Logo.png %}
 
 ### MATLAB 简介
+
     MATLAB是美国MathWorks公司出品的商业数学软件，用于数据分析、无线通信、深度学习、图像处理与计算机视觉、信号处理、量化金融与风险管理、机器人，控制系统等领域。
-### MATLAB 下载与安装
+
+### MATLAB 下载
 
 > 浏览器打开官网 https://ww2.mathworks.cn/products/matlab.html
 
@@ -37,7 +39,31 @@ excerpt: MATLAB是美国MathWorks公司出品的商业数学软件，用于数�
 {% image https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/文章图片/Matlab/matlab-05.png %}
 
 
-6.安装说明
+6.MACOS安装说明
 
 {% image https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/文章图片/Matlab/matlab-06.png %}
 
+### MATLAB 安装
+
+1.打开安装包后，登录账号
+
+{% image https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/文章图片/Matlab/matlab-07.png %}
+
+2.同意协议，下一步
+
+{% image https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/文章图片/Matlab/matlab-08.png %}
+
+3.选择许可证，点击下一步
+
+{% image https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/文章图片/Matlab/matlab-09.png %}
+
+4.默认2次 下一步
+{% image https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/文章图片/Matlab/matlab-10.png %}
+
+5.选择自己需要安装的库与工具包
+
+{% image https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/文章图片/Matlab/matlab-11.png %}
+
+6.默认下一步，开始安装，等待安装成功！
+
+{% image https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/文章图片/Matlab/matlab-12.png %}
