@@ -43,7 +43,7 @@ excerpt: MATLAB是美国MathWorks公司出品的商业数学软件，用于数�
 
 {% image https://s1.ax1x.com/2022/05/11/OaKK4x.png %}
 
-### MATLAB MacOS安装
+### MATLAB 安装
 
 1.打开安装包后，登录账号
 
