@@ -15,15 +15,24 @@ excerpt: MATLAB是美国MathWorks公司出品的商业数学软件，用于数�
 
 ### MATLAB 下载与安装
 
-浏览器打开官网 https://ww2.mathworks.cn/products/matlab.html
+> 浏览器打开官网 https://ww2.mathworks.cn/products/matlab.html
 
-点击右上角 登录
+1.点击右上角 登录
 
 {% image https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/文章图片/Matlab/matlab-01.jpg %}
 
-输入购买的正版教育账号与密码 进行登录
+2.输入购买的正版教育账号与密码 进行登录
 
 {% image https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/文章图片/Matlab/matlab-02.png %}
+
+3.登录成功后 点击右上角 我的账户
+
+{% image https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/文章图片/Matlab/matlab-03.png %}
+
+
+4.点击我的账户页面的 下载按钮
+
+{% image https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/文章图片/Matlab/matlab-04.png %}
 
 
 
