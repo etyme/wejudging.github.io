@@ -70,7 +70,7 @@ excerpt: MATLAB是美国MathWorks公司出品的商业数学软件，用于数�
 
 7.安装成功！
 
-{% image https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/文章图片/Matlab/matlab-13.png %}
+{% image ./images/文章图片/Matlab/matlab-13.png %}
 
 
 
