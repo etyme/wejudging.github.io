@@ -11,7 +11,11 @@ excerpt: MATLAB是美国MathWorks公司出品的商业数学软件，用于数�
 
 ### MATLAB 简介
 
+{% image https://s1.ax1x.com/2022/05/15/O2tt9s.png %}
+
 > MATLAB是美国MathWorks公司出品的商业数学软件，用于数据分析、无线通信、深度学习、图像处理与计算机视觉、信号处理、量化金融与风险管理、机器人，控制系统等领域。
+
+
 
 ### MATLAB 下载
 
