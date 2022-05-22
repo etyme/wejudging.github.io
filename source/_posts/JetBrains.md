@@ -4,7 +4,7 @@ date: 2022-05-22 19:14:25
 tags: 教育优惠
 categories: 教育优惠
 cover: https://s1.ax1x.com/2022/05/22/OzkFXQ.png
-excerpt: JetBrains是一家捷克的软件开发公司，该公司位于捷克的布拉格，并在俄罗斯的圣彼得堡及美国麻州波士顿都设有办公室，该公司最为人所熟知的产品是Java编程语言开发撰写时所用的集成开发环境：IntelliJ IDEA。
+excerpt: JetBrains是一家捷克的软件开发公司，该公司最为人所熟知的产品是Java编程语言开发撰写时所用的集成开发环境：IntelliJ IDEA。
 
 ---
 {% image https://s1.ax1x.com/2022/05/22/OzkFXQ.png %}
