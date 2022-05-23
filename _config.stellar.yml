@@ -73,3 +73,11 @@ plugins:
     js: /js_css/lazyload.js
     transition: blur # blur, fade
 
+  # preload
+  preload:
+    enable: true
+    service: flying_pages # instant_page, flying_pages
+    instant_page: /js_css/preload/instant_page.js
+    flying_pages: /js_css/preload/flying_pages.js
+
+
