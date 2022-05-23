@@ -4,7 +4,7 @@ Shell:
   tags: 脚本
   cover: true
   logo:
-    src: /images/shell.png
+    src: https://shop.weijiajin.com/images/shell.png
     small: 120px
     large: 240px
   description: 实用脚本集合。
@@ -13,7 +13,7 @@ Shell:
 Notes:
   title: 便笺
   logo:
-    src: https://cdn.jsdelivr.net/gh/cdn-x/wiki@1.0.2/stellar/icon.svg
+    src: https://shop.weijiajin.com/images/8f277b4ee0ecd.svg
     small: 112px
     large: 240px
   description:
