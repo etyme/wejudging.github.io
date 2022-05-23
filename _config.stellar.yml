@@ -70,6 +70,6 @@ plugins:
   # https://www.npmjs.com/package/vanilla-lazyload
   lazyload:
     enable: true # [hexo clean && hexo s] is required after changing this value.
-    js: /js/lazyload.js
+    js: /js_css/lazyload.js
     transition: blur # blur, fade
 
