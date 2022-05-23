@@ -3,7 +3,7 @@ title: Microsoft 365 E5 开发者
 date: 2021-04-26 14:12:39
 tags: [onedrive,microsoft]
 categories: 折腾
-cover: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/文章图片/Microsoft365.png
+cover: https://weijiajin.com/images/文章图片/365/Microsoft365.png
 excerpt: 立即加入 Microsoft 365 开发人员计划，获取免费、可续订的 90 天 Microsoft 365 E5 开发人员订阅。
 ---
 
