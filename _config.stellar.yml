@@ -15,19 +15,19 @@ comments:
 
 footer:
   social:
-     - icon: '<img src="/images/rss.svg"/>'
+     - icon: '<img src="https://shop.weijiajin.com/images/rss.svg"/>'
        url: https://weijiajin.com/atom.xml
-     - icon: '<img src="/images/gmail.svg"/>'
+     - icon: '<img src="https://shop.weijiajin.com/images/gmail.svg"/>'
        url: mailto:wejudging@gmail.com
-     - icon: '<img src="/images/github.svg"/>'
+     - icon: '<img src="https://shop.weijiajin.com/images/github.svg"/>'
        url: https://github.com/wejudging
-     - icon: '<img src="/images/volantis.svg"/>'
+     - icon: '<img src="https://shop.weijiajin.com/images/volantis.svg"/>'
        url: https://volantis.weijiajin.com
-     - icon: '<img src="/images/resume.svg"/>'
+     - icon: '<img src="https://shop.weijiajin.com/images/resume.svg"/>'
        url: https://resume.weijiajin.com
-     - icon: '<img src="/images/youqinglianjie.svg"/>'
+     - icon: '<img src="https://shop.weijiajin.com/images/youqinglianjie.svg"/>'
        url: https://weijiajin.com/friends/
-     - icon: '<img src="/images/OneDrive.svg"/>'
+     - icon: '<img src="https://shop.weijiajin.com/images/OneDrive.svg"/>'
        url: https://onedrive.weijiajin.com
 
   sitemap:
@@ -98,12 +98,12 @@ style:
     dark: '#313438'
   animated_avatar:
     animate: auto # auto, always
-    background: /images/rainbow64.webp
+    background: https://shop.weijiajin.com/images/rainbow64.webp
   codeblock:
     scrollbar: 4px
 
 default:
-  avatar: /images/3442075.svg
-  link: /images/8f277b4ee0ecd.svg
-  cover: /images/76b86c0226ffd.svg
-  image: /images/2659360.svg
+  avatar: https://shop.weijiajin.com/images/3442075.svg
+  link: https://shop.weijiajin.com/images/8f277b4ee0ecd.svg
+  cover: https://shop.weijiajin.com/images/76b86c0226ffd.svg
+  image: https://shop.weijiajin.com/images/2659360.svg
