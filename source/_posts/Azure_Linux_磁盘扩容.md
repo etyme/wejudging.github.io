@@ -3,7 +3,7 @@ title: Azure Linux 磁盘扩容
 date: 2021-05-10
 tags: [Azure,Microsoft]
 categories: 折腾
-cover: /images/azure.png
+cover: https://shop.weijiajin.com/images/azure.png
 excerpt: Azure Linux 磁盘扩容
 ---
 
