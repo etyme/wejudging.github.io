@@ -1,6 +1,6 @@
 # Site
 title: weijiajin
-avatar: /images/logo.svg
+avatar: https://shop.weijiajin.com/images/logo.svg
 subtitle: '「Stay Hungry.Stay Foolish.」 | 求知若饥，虚心若愚'
 description: 'all of weijiajin'
 keywords: 魏家劲
@@ -108,12 +108,12 @@ deploy:
 
 inject:
   head:
-    - <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
-    - <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
-    - <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
-    - <link rel="manifest" href="/images/favicon/site.webmanifest">
-    - <link rel="mask-icon" href="/images/logo.svg" color="#5bbad5">
-    - <link rel="shortcut icon" href="/images/favicon/favicon.ico">
+    - <link rel="apple-touch-icon" sizes="180x180" href="https://shop.weijiajin.com/images/favicon/apple-touch-icon.png">
+    - <link rel="icon" type="image/png" sizes="32x32" href="https://shop.weijiajin.com/images/favicon/favicon-32x32.png">
+    - <link rel="icon" type="image/png" sizes="16x16" href="https://shop.weijiajin.com/images/favicon/favicon-16x16.png">
+    - <link rel="manifest" href="https://shop.weijiajin.com/images/favicon/site.webmanifest">
+    - <link rel="mask-icon" href="https://shop.weijiajin.com/images/logo.svg" color="#5bbad5">
+    - <link rel="shortcut icon" href="https://shop.weijiajin.com/images/favicon/favicon.ico">
     - <meta name="msapplication-TileColor" content="#2d89ef">
     - <meta name="msapplication-config" content="#2d89ef">
     - <meta name="theme-color" content="#ffffff">
@@ -125,7 +125,7 @@ feed:
   path: atom.xml
   limit: false
   content: true
-  icon: /images/logo.png
+  icon: https://shop.weijiajin.com/images/logo.png
   autodiscovery: true
 
 # npm i hexo-related-popular-posts
