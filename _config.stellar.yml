@@ -62,9 +62,9 @@ plugins:
   # image lazyload
   # https://www.npmjs.com/package/vanilla-lazyload
   lazyload:
-    enable: false # [hexo clean && hexo s] is required after changing this value.
+    enable: true # [hexo clean && hexo s] is required after changing this value.
     js: /js_css/lazyload.js
-    transition: blur # blur, fade
+    transition: fade # blur, fade
 
   # preload
   preload:
