@@ -48,7 +48,7 @@ breadcrumb: false
 title: weijiajin
 avatar: https://weijiajin.com/images/logo.svg
 url: https://weijiajin.com
-screenshot: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/weijiajin-com-screenshot.png
+screenshot: https://weijiajin.com/images/weijiajin-com-screenshot.png
 {% endcodeblock %}
 
 

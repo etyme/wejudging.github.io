@@ -11,14 +11,14 @@ breadcrumb: false
 header: false
 ---
 
-{% about avatar:https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/logo.svg height:80px %}
+{% about avatar:https://weijiajin.com/images/logo.svg height:80px %}
 
 <img height="64px" alt="weijiajin" src="/images/weijiajin.png">
 
 **遇到温柔可爱的人，觉得世界也可爱温柔。**
 
 {% navbar
-[订阅](https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io@public/atom.xml) 
+[订阅](https://weijiajin.com/atom.xml) 
 [邮箱](mailto:wejudging@gmail.com)
 [源码](https://github.com/wejudging)
 [音乐](https://music.apple.com/cn/playlist/%E6%88%91%E5%96%9C%E6%AC%A2/pl.u-r2yBDbkFdN6J62)  

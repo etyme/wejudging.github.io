@@ -15,19 +15,19 @@ comments:
 
 footer:
   social:
-     - icon: '<img src="https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/social/25678f144c438.svg"/>'
-       url: https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io@public/atom.xml
-     - icon: '<img src="https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/gmail.svg"/>'
+     - icon: '<img src="https://weijiajin.com/images/rss.svg"/>'
+       url: https://weijiajin.com/atom.xml
+     - icon: '<img src="https://weijiajin.com/images/gmail.svg"/>'
        url: mailto:wejudging@gmail.com
-     - icon: '<img src="https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/social/08a41b181ce68.svg"/>'
+     - icon: '<img src="https://weijiajin.com/images/github.svg"/>'
        url: https://github.com/wejudging
-     - icon: '<img src="https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/volantis.svg"/>'
+     - icon: '<img src="https://weijiajin.com/images/volantis.svg"/>'
        url: https://volantis.weijiajin.com
-     - icon: '<img src="https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/resume.svg"/>'
+     - icon: '<img src="https://weijiajin.com/images/resume.svg"/>'
        url: https://resume.weijiajin.com
-     - icon: '<img src="https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/youqinglianjie.svg"/>'
+     - icon: '<img src="https://weijiajin.com/images/youqinglianjie.svg"/>'
        url: https://weijiajin.com/friends/
-     - icon: '<img src="https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io/source/images/OneDrive.svg"/>'
+     - icon: '<img src="https://weijiajin.com/images/OneDrive.svg"/>'
        url: https://onedrive.weijiajin.com
 
   sitemap:
