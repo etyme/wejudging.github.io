@@ -4,7 +4,7 @@ Shell:
   tags: 脚本
   cover: true
   logo:
-    src: https://weijiajin.com/images/shell.png
+    src: /images/shell.png
     small: 120px
     large: 240px
   description: 实用脚本集合。

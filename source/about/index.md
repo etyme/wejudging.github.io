@@ -11,7 +11,7 @@ breadcrumb: false
 header: false
 ---
 
-{% about avatar:https://weijiajin.com/images/logo.svg height:80px %}
+{% about avatar:/images/logo.svg height:80px %}
 
 <img height="64px" alt="weijiajin" src="/images/weijiajin.png">
 
