@@ -60,3 +60,9 @@ article:
     '折腾': '#DA0F47'
     '诗文': '#03a9f4'
 
+
+plugins:
+  ## required plugins ##
+  # jquery
+  jquery: https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js
+
