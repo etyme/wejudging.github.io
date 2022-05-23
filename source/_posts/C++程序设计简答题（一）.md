@@ -3,10 +3,10 @@ title: C++程序设计简答题（一）
 date: 2022-03-06 13:01:25
 tags: C++
 categories: C++
-cover: https://weijiajin.com/images/文章图片/C++程序设计简答题/c++logo.jpg
+cover: https://weijiajin.com/images/文章图片/C++程序设计简答题/c++logo.png
 excerpt: C++既可以进行C语言的过程化程序设计，又可以进行以抽象数据类型为特点的基于对象的程序设计，还可以进行以继承和多态为特点的面向对象的程序设计。
 ---
-{% image https://weijiajin.com/images/文章图片/C++程序设计简答题/c++logo.jpg %}
+{% image https://weijiajin.com/images/文章图片/C++程序设计简答题/c++logo.png %}
 #### 1、简述你对C++中的数据类型和抽象数据类型（ADTs）的理解
 
 > 数据类型是⼀组性质相同的具有⼀定范围的值集以及定义于这个值集上的⼀组操作。数据类型既有内部数据类型，如int，char，float，bool等，⼜有⾃定义外部数据类型，如枚举类型，结构类型，联合类型，数组类型、类类型。ADT即抽象数据类型，是基于已有类型⽽组合⽣成的复合数据类型，类正是抽象数据类型的描述形式
