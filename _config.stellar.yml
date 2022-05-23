@@ -99,3 +99,8 @@ style:
   codeblock:
     scrollbar: 4px
 
+default:
+  avatar: /images/3442075.svg
+  link: /images/8f277b4ee0ecd.svg
+  cover: /images/76b86c0226ffd.svg
+  image: /images/2659360.svg
