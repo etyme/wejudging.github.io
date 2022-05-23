@@ -87,6 +87,16 @@ plugins:
     css: https://unpkg.com/heti/umd/heti.min.css
     js: https://unpkg.com/heti/umd/heti-addon.min.js
 
+  # https://fancyapps.com/docs/ui/fancybox/
+  # available for {% image xxx %}
+  fancybox:
+    enable: true
+    js: /js_css/fancybox/umd.js
+    css: /js_css/fancybox/fancybox.css
+    # 可以处理评论区的图片（不支持 iframe 类评论系统）例如：
+    # 使用valine评论可以写: .vcontent img:not(.vemoji)
+    # 使用twikoo评论可以写: .tk-content img:not([class*="emo"])
+    selector: .swiper-slide img # 多个选择器用英文逗号隔开
 
 style:
   darkmode: auto # auto / always / false
