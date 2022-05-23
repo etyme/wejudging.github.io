@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://pic4.zhimg.com/80/v2-5b45e4b97f0eff80ff0d0c0a58385d97_1440w.jpg">
 <meta property="og:image" content="https://pic1.zhimg.com/v2-15db3e5f6ebd50ba931955b53b3c6dbc_r.jpg">
 <meta property="article:published_time" content="2021-04-09T21:18:30.000Z">
-<meta property="article:modified_time" content="2022-05-23T08:26:51.915Z">
+<meta property="article:modified_time" content="2022-05-23T09:26:33.272Z">
 <meta property="article:author" content="weijiajin">
 <meta property="article:tag" content="魏家劲">
 <meta name="twitter:card" content="summary">
@@ -90,13 +90,13 @@
 
 <header class="header">
 
-<div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.2/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/images/logo.svg" onerror="javascript:this.classList.add('error');this.src='https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/image/2659360.svg';"></a><a class="title" href="/"><div class="main">weijiajin</div><div class="sub normal cap">「Stay Hungry.Stay Foolish.」</div><div class="sub hover cap" style="opacity:0">求知若饥，虚心若愚</div></a></div>
+<div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(/images/rainbow64.webp);"></div><img no-lazy class="avatar" src="/images/logo.svg" onerror="javascript:this.classList.add('error');this.src='/images/2659360.svg';"></a><a class="title" href="/"><div class="main">weijiajin</div><div class="sub normal cap">「Stay Hungry.Stay Foolish.」</div><div class="sub hover cap" style="opacity:0">求知若饥，虚心若愚</div></a></div>
 <nav class="menu dis-select"><a class="nav-item active" href="/">博客</a><a class="nav-item" href="/wiki/">项目</a><a class="nav-item" href="/notes/">便笺</a><a class="nav-item" href="/about/">更多</a></nav></header>
 
 <div class="widgets">
 
 
-<div class="widget-wrap" id="recent"><div class="widget-header cap dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><div class="more-item"><a class="title" href="/db027475da0e/">我在等你啊</a></div><div class="more-item"><a class="title" href="/79dddbec45d0/">放下</a></div><div class="more-item"><a class="title" href="/32fd205d2b9e/">时候</a></div><div class="more-item"><a class="title" href="/b56dc577080a/">暗恋的美好</a></div><div class="more-item"><a class="title" href="/2b9b1d44a455/">暮然回首</a></div></div></div>
+<div class="widget-wrap" id="recent"><div class="widget-header cap dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><div class="more-item"><a class="title" href="/0f5e1cac0a21/">MATLAB</a></div><div class="more-item"><a class="title" href="/c185ab0f381d/">Microsoft 365 E5 开发者</a></div><div class="more-item"><a class="title" href="/60aa4714ad3e/">Hello World</a></div><div class="more-item"><a class="title" href="/f16a9bd49a7e/">w7</a></div><div class="more-item"><a class="title" href="/f759e8a7a8f7/">一首小情诗</a></div></div></div>
 
 
 
@@ -111,7 +111,7 @@
 
 <div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/blog/categories/%E6%8A%98%E8%85%BE/">折腾</a></div><div id="post-meta">发布于&nbsp;<time datetime="2021-04-09T21:18:30.000Z">2021-04-09</time></div></div>
 
-<article class="content md post">
+<article class="content heti md post">
 <h1 class="article-title"><span>CRC码计算及校验原理的最通俗诠释</span></h1>
 <p><strong>CRC校验原理</strong><br>CRC校验原理看起来比较复杂，好难懂，因为大多数书上基本上是以二进制的多项式形式来说明的。其实很简单的问题，其根本思想就是先在要发送的帧后面附加一个数（这个就是用来校验的校验码，但要注意，这里的数也是二进制序列的，下同），生成一个新帧发送给接收端。当然，这个附加的数不是随意的，它要使所生成的新帧能与发送端和接收端共同选定的某个特定数整除（注意，这里不是直接采用二进制除法，而是采用一种称之为“模2除法”）。到达接收端后，再把接收到的新帧除以（同样采用“模2除法”）这个选定的除数。因为在发送端发送数据帧之前就已通过附加一个数，做了“去余”处理（也就已经能整除了），所以结果应该是没有余数。如果有余数，则表明该帧在传输过程中出现了差错。</p>
 <p>【说明】“模2除法”与“算术除法”类似，但它既不向上位借位，也不比较除数和被除数的相同位数值的大小，只要以相同位数进行相除即可。模2加法运算为：1+1&#x3D;0，0+1&#x3D;1，0+0&#x3D;0，无进位，也无借位；模2减法运算为：1-1&#x3D;0，0-1&#x3D;1，1-0&#x3D;1，0-0&#x3D;0，也无进位，无借位。相当于二进制中的逻辑异或运算。也就是比较后，两者对应位相同则结果为“0”，不同则结果为“1”。如100101除以1110，结果得到商为11，余数为1，如图所示。如11×11&#x3D;101，如图所示。</p>
@@ -159,7 +159,7 @@
 
 
       
-<footer class="page-footer reveal fs12"><hr><div class="sitemap"><div class="sitemap-group"><span class="fs14">博客</span><a href="/">近期</a><a href="/blog/categories/">分类</a><a href="/blog/tags/">标签</a><a href="/blog/archives/">归档</a></div><div class="sitemap-group"><span class="fs14">项目</span><a href="/wiki/tags/%E8%84%9A%E6%9C%AC/">脚本</a><a href="/wiki/tags/%E7%AC%94%E8%AE%B0/">笔记</a></div><div class="sitemap-group"><span class="fs14">便笺</span><a href="/friends/">友链</a><a href="/about/#comments">留言板</a></div><div class="sitemap-group"><span class="fs14">更多</span><a href="/about/">关于本站</a><a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/wejudging">GitHub</a></div></div><div class="text"><hr><p align="center"><a target="_blank" rel="external nofollow noopener noreferrer" href="https://vercel.com"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io@main/source/images/内容分发-Vercel-black.svg" width="117" height="20"></a> &nbsp&nbsp <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/wejudging"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io@main/source/images/网站部署-GitHub-5DADE2.svg" width="119" height="20"></a> &nbsp&nbsp<a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.jsdelivr.com"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io@main/source/images/图片分发-jsDelivr-red.svg" width="123" height="20"></a> &nbsp&nbsp<a target="_blank" rel="external nofollow noopener noreferrer" href="https://hexo.io"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://cdn.jsdelivr.net/gh/wejudging/wejudging.github.io@main/source/images/强力驱动-Hexo-blue.svg" width="111" height="20"></a>&nbsp&nbsp<a target="_blank" rel="external nofollow noopener noreferrer" href="https://cloudflare.com"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.shields.io/badge/域名解析-CloudFlare-f38020?logo=cloudflare&logoColor=f38020&labelColor=282d33"></a></p></div></footer>
+<footer class="page-footer reveal fs12"><hr><div class="sitemap"><div class="sitemap-group"><span class="fs14">博客</span><a href="/">近期</a><a href="/blog/categories/">分类</a><a href="/blog/tags/">标签</a><a href="/blog/archives/">归档</a></div><div class="sitemap-group"><span class="fs14">项目</span><a href="/wiki/tags/%E8%84%9A%E6%9C%AC/">脚本</a><a href="/wiki/tags/%E7%AC%94%E8%AE%B0/">笔记</a></div><div class="sitemap-group"><span class="fs14">便笺</span><a href="/friends/">友链</a><a href="/about/#comments">留言板</a></div><div class="sitemap-group"><span class="fs14">更多</span><a href="/about/">关于本站</a><a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/wejudging">GitHub</a></div></div><div class="text"><hr><p align="center"><a target="_blank" rel="external nofollow noopener noreferrer" href="https://vercel.com"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/images/内容分发-Vercel-black.svg" width="117" height="20"></a> &nbsp&nbsp <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/wejudging"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/images/网站部署-GitHub-5DADE2.svg" width="119" height="20"></a> &nbsp&nbsp<a target="_blank" rel="external nofollow noopener noreferrer" href="https://hexo.io"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/images/强力驱动-Hexo-blue.svg" width="111" height="20"></a>&nbsp&nbsp<a target="_blank" rel="external nofollow noopener noreferrer" href="https://cloudflare.com"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.shields.io/badge/域名解析-CloudFlare-f38020?logo=cloudflare&logoColor=f38020&labelColor=282d33"></a></p></div></footer>
 
       <div class="float-panel mobile-only blur" style="display:none">
   <button type="button" class="sidebar-toggle mobile" onclick="sidebar.toggle()">
@@ -294,10 +294,10 @@
     stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"/js_css/preload/instant_page.js","flying_pages":"/js_css/preload/flying_pages.js"});
   }
   if ('true' == 'true') {
-    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"/js_css/fancybox/umd.js","css":"/js_css/fancybox/fancybox.css","selector":".swiper-slide img"});
   }
-  if ('false' == 'true') {
-    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti/umd/heti.min.css","js":"https://unpkg.com/heti/umd/heti-addon.min.js"});
+  if ('true' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":true,"css":"https://unpkg.com/heti/umd/heti.min.css","js":"https://unpkg.com/heti/umd/heti-addon.min.js"});
   }
 </script>
 
