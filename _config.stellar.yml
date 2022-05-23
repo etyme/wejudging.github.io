@@ -68,7 +68,7 @@ plugins:
 
   # preload
   preload:
-    enable: false
+    enable: true
     service: flying_pages # instant_page, flying_pages
     instant_page: https://shop.weijiajin.com/js_css/preload/instant_page.js
     flying_pages: https://shop.weijiajin.com/js_css/preload/flying_pages.js
