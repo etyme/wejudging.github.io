@@ -62,13 +62,13 @@ plugins:
   # image lazyload
   # https://www.npmjs.com/package/vanilla-lazyload
   lazyload:
-    enable: true # [hexo clean && hexo s] is required after changing this value.
+    enable: false # [hexo clean && hexo s] is required after changing this value.
     js: https://shop.weijiajin.com/js_css/lazyload.js
     transition: fade # blur, fade
 
   # preload
   preload:
-    enable: true
+    enable: false
     service: flying_pages # instant_page, flying_pages
     instant_page: https://shop.weijiajin.com/js_css/preload/instant_page.js
     flying_pages: https://shop.weijiajin.com/js_css/preload/flying_pages.js
@@ -76,14 +76,14 @@ plugins:
   # 赫蹏 (Heti) - 专为中文网页内容设计的排版样式增强
   # https://github.com/sivan/heti
   heti:
-    enable: true
+    enable: false
     css: https://unpkg.com/heti/umd/heti.min.css
     js: https://unpkg.com/heti/umd/heti-addon.min.js
 
   # https://fancyapps.com/docs/ui/fancybox/
   # available for {% image xxx %}
   fancybox:
-    enable: true
+    enable: false
     js: https://shop.weijiajin.com/js_css/fancybox/umd.js
     css: https://shop.weijiajin.com/js_css/fancybox/fancybox.css
     # 可以处理评论区的图片（不支持 iframe 类评论系统）例如：
