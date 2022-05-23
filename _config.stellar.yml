@@ -66,3 +66,10 @@ plugins:
   # jquery
   jquery: https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js
 
+  # image lazyload
+  # https://www.npmjs.com/package/vanilla-lazyload
+  lazyload:
+    enable: true # [hexo clean && hexo s] is required after changing this value.
+    js: /js/lazyload.js
+    transition: blur # blur, fade
+
