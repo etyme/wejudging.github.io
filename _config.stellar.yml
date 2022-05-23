@@ -47,13 +47,6 @@ footer:
       - '[GitHub](https://github.com/wejudging)'
  
 
-
-style:
-  codeblock:
-    scrollbar: 0px
-
-
-
 article:
   # 分类颜色
   category_color:
