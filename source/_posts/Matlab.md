@@ -79,6 +79,16 @@ excerpt: MATLAB是美国MathWorks公司出品的商业数学软件，用于数�
 {% image https://shop.weijiajin.com/images/文章图片/Matlab/matlab-13.png %}
 
 
+### MATLAB 附加工具下载
+
+1.本地打开软件点击右上角登录我们的正版账号，点击主页，点击附加功能，点击获取附加功能
+
+{% image https://shop.weijiajin.com/images/文章图片/Matlab/matlab-14.png %}
+
+2.在右上角的搜索框中搜索自己想要下载的库或者工具箱
+
+{% image https://shop.weijiajin.com/images/文章图片/Matlab/matlab-15.png %}
+
 
 
 ### 常见问题
