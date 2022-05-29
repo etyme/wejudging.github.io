@@ -61,12 +61,12 @@ excerpt: MATLAB是美国MathWorks公司出品的商业数学软件，用于数�
 
 {% image https://shop.weijiajin.com/images/文章图片/Matlab/matlab-09.png %}
 
-4.这里的登录名windows系统用户要特别注意！！！如果你的系统非原装正版系统，这里用户名一般要填写*Adminstrator*
+4.这里的登录名windows系统用户要特别注意！！！如果你的系统非原装正版系统，这里用户名一般要填写*Administrator*
   总之要和你的电脑系统的登录用户名一致，不然会安装失败。
   正版系统会自动填写相应用户名默认下一步，破解版或盗版未激活的系统需要手动填写。
 {% image https://shop.weijiajin.com/images/文章图片/Matlab/matlab-10.png %}
 
-5.选择自己需要安装的库与工具包
+5.选择自己需要安装的库与工具包，一般建议全选，虽然下载文件大点，但是后续省事。
 
 {% image https://shop.weijiajin.com/images/文章图片/Matlab/matlab-11.png %}
 
