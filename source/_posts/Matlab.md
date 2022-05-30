@@ -88,12 +88,3 @@ excerpt: MATLAB是美国MathWorks公司出品的商业数学软件，用于数�
 {% image https://shop.weijiajin.com/images/文章图片/Matlab/matlab-15.png %}
 
 
-### MATLAB 反激活
-
-
-### MATLAB 激活
-
-
-
-### 常见问题
-
