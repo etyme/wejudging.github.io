@@ -1,11 +1,13 @@
 ---
-title: Azure Linux 磁盘扩容
+title: Linux 磁盘扩容
 date: 2021-05-10
 tags: [Azure,Microsoft]
 categories: 折腾
 cover: https://shop.weijiajin.com/images/azure.png
-excerpt: Azure Linux 磁盘扩容
+excerpt: Linux 磁盘扩容
 ---
+
+## Azure Linux 磁盘扩容
 
 进入 azure 改磁盘大小,重启后进入系统会发现磁盘大小没变，因为没扩容。
 
@@ -45,6 +47,32 @@ resize2fs /dev/sda2
 #### 查看是否 ok
 ```bash
 df -TH
+```
+
+## 阿里云 重装系统与磁盘扩容
+
+#### 重装系统一键脚本
+```
+LANG=en_US.UTF-8
+wget --no-check-certificate -O AutoReinstall.sh https://git.io/AutoReinstall.sh && bash AutoReinstall.sh
+```
+
+#### 设置系统语言
+
+```
+LANG=en_US.UTF-8
+```
+
+#### 设置1
+
+```
+growpart /dev/vda 1
+```
+
+#### 设置2
+
+```
+resize2fs /dev/vda1
 ```
 
 
