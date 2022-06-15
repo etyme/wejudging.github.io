@@ -9,7 +9,7 @@ excerpt: MATLAB是美国MathWorks公司出品的商业数学软件，用于数�
 ---
 {% image https://shop.weijiajin.com/images/文章图片/Matlab/Matlab-Logo.png %}
 
-### MATLAB 官网账号
+### 常见问题
 
 ##### 官网登陆
 https://ww2.mathworks.cn/mwaccount
