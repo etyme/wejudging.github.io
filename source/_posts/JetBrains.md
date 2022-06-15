@@ -46,4 +46,11 @@ excerpt: JetBrains是一家捷克的软件开发公司，该公司最为人所�
 
 
 ### 常见问题
+##### 1.成品账号更改密码
+https://account.jetbrains.com/change-password
+
+##### 2.成品账号更改邮箱
+https://account.jetbrains.com/profile-details
+
+
 
