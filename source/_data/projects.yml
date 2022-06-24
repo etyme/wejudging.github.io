@@ -12,11 +12,11 @@ Shell:
 
 Matlab:
   title: Matlab
-  subtitle: 安装教程 与常见问题
+  subtitle: 安装教程 与 常见问题
   tags: 教育优惠
   cover: true
   logo:
-    src: https://shop.weijiajin.com/images/matlablogo.png
+    src: https://shop.weijiajin.com/images/文章图片/Matlab/matlablogo.png
     small: 120px
     large: 240px
   description: MATLAB是美国MathWorks公司出品的商业数学软件，用于数据分析、无线通信、深度学习、图像处理与计算机视觉、信号处理、量化金融与风险管理、机器人，控制系统等领域。
