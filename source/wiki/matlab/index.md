@@ -1,7 +1,7 @@
 ---
 layout: wiki
 wiki: Matlab
-title: Matlab
+title: Matlab教程
 ---
 
 {% image https://shop.weijiajin.com/images/文章图片/Matlab/Matlab-Logo.png %}
