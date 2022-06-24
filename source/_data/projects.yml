@@ -45,7 +45,7 @@ Notes:
   description:
   index: false
   sidebar: [toc]
-  tags: 笔记
+  tags:
   sections:
     '日常问题解决方案': [100, 199]
     '移动端开发笔记': [200, 299]
