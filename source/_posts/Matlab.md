@@ -66,7 +66,28 @@ https://matlab.mathworks.com/
 
 ### MATLAB 安装
 
-1.打开安装包后，登录账号
+
+
+
+1.1 打开安装包后，会解压一个临时文件夹 _temp_matlab_R2022a_win64
+
+{% image https://shop.weijiajin.com/images/文章图片/Matlab/mz1.png %}
+
+
+1.2 第一次解压会自动打开 _temp_matlab_R2022a_win64 里面的 setup.exe
+
+{% image https://shop.weijiajin.com/images/文章图片/Matlab/mz5.png %}
+
+1.3 如果第一次安装失败，需要重新安装的时候，只需关闭 matlab 安装程序
+
+{% image https://shop.weijiajin.com/images/文章图片/Matlab/mz2.png %}
+
+1.4 重新打开 临时文件夹 _temp_matlab_R2022a_win64 里面的 setup.exe 重新安装
+
+{% image https://shop.weijiajin.com/images/文章图片/Matlab/mz4.png %}
+
+
+
 
 {% image https://shop.weijiajin.com/images/文章图片/Matlab/matlab-07.png %}
 
