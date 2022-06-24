@@ -10,6 +10,22 @@ Shell:
   description: 实用脚本集合。
 
 
+Matlab:
+  title: Matlab
+  subtitle: matlab安装教程
+  tags: 教育优惠
+  cover: true
+  logo:
+    src: https://shop.weijiajin.com/images/matlablogo.png
+    small: 120px
+    large: 240px
+  description: matlab安装教程
+
+
+
+
+
+
 Notes:
   title: 便笺
   logo:
