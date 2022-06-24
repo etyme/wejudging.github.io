@@ -131,5 +131,24 @@ https://matlab.mathworks.com/
 
 ### MATLAB 激活与反激活
 
+1.1 在使用我们正版账号激活之前，是要把之前电脑的所有许可证反激活的
+
+1.2 打开开始菜单，打开 
+
+2.反激活之后，打开开始菜单，打开 
+
+
+### Matlab网络下载加速
+
+clash下载
+
+https://feelheart-win.lanzoul.com/iF90R06vak1e
+
+clash配置
+```
+proxies:
+  - {name: xxx, server: xxx.xxx.xxx, port: xxx, type: trojan, password: xxx, sni: xxx.xxx.xxx}
+```
+
 
 
