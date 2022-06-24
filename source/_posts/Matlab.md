@@ -86,9 +86,12 @@ https://matlab.mathworks.com/
 
 {% image https://shop.weijiajin.com/images/文章图片/Matlab/mz4.png %}
 
+1.5 如果仍然打开 matlab_R2022a_win64.exe 可能或出现 重复解压的 报错，建议删除临时文件夹 _temp_matlab_R2022a_win64，重新打开matlab_R2022a_win64.exe
+
+{% image https://shop.weijiajin.com/images/文章图片/Matlab/mz8.png %}
 
 
-
+1.6 正常安装登录界面，输入正版 账号密码
 {% image https://shop.weijiajin.com/images/文章图片/Matlab/matlab-07.png %}
 
 2.同意协议，下一步
@@ -124,5 +127,9 @@ https://matlab.mathworks.com/
 2.在右上角的搜索框中搜索自己想要下载的库或者工具箱
 
 {% image https://shop.weijiajin.com/images/文章图片/Matlab/matlab-15.png %}
+
+
+### MATLAB 激活与反激活
+
 
 
