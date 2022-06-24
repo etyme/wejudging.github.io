@@ -3,6 +3,7 @@ robots: noindex,nofollow
 sitemap: false
 menu_id: notes
 layout: wiki
+wiki: Notes
 header: true
 breadcrumb: false
 title: 便笺
