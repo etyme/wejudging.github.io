@@ -13,16 +13,17 @@ excerpt: MATLAB是美国MathWorks公司出品的商业数学软件，用于数�
 
 ##### 官网登陆
 https://ww2.mathworks.cn/mwaccount
+{% image https://shop.weijiajin.com/images/文章图片/Matlab/1.png %}
 
 ##### 密码更改
 https://ww2.mathworks.cn/mwaccount/profiles/password/change
-
+{% image https://shop.weijiajin.com/images/文章图片/Matlab/2.png %}
 ##### 各个版本软件下载
 https://ww2.mathworks.cn/downloads/web_downloads/
-
+{% image https://shop.weijiajin.com/images/文章图片/Matlab/3.png %}
 ##### Matlab Online
 https://matlab.mathworks.com/
-
+{% image https://shop.weijiajin.com/images/文章图片/Matlab/4.png %}
 
 
 ### MATLAB 简介
