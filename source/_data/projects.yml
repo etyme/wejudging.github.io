@@ -1,3 +1,20 @@
+Notes:
+  title: 便笺
+  logo:
+    src: https://fastly.jsdelivr.net/gh/cdn-x/wiki@1.0.2/stellar/icon.svg
+    small: 112px
+    large: 240px
+  description:
+  index: false
+  sidebar: [toc]
+  tags:
+  sections:
+    '日常问题解决方案': [100, 199]
+    '移动端开发笔记': [200, 299]
+    '前端学习笔记': [300, 399]
+    '在线工具': [400, 499]
+
+
 Shell:
   title: Shell
   subtitle: 实用脚本
@@ -35,21 +52,32 @@ Apple:
   description: 苹果为教育人群推出的购机优惠活动，不同产品的优惠幅度不一样，大概 9 - 9.5 折左右。
 
 
-
-Notes:
-  title: 便笺
+Sharp3D:
+  title: Sharp3D
+  subtitle: 使用教程
+  tags: 教育优惠
+  cover: true
   logo:
-    src: https://fastly.jsdelivr.net/gh/cdn-x/wiki@1.0.2/stellar/icon.svg
-    small: 112px
+    src: https://shop.weijiajin.com/images/文章图片/Sharp3D/logo.png
+    small: 120px
     large: 240px
-  description:
-  index: false
-  sidebar: [toc]
-  tags:
-  sections:
-    '日常问题解决方案': [100, 199]
-    '移动端开发笔记': [200, 299]
-    '前端学习笔记': [300, 399]
-    '在线工具': [400, 499]
+  description: Shapr3D于2016年3月在App Store上线，是一款直接3D建模工具。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
