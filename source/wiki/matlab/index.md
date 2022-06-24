@@ -123,6 +123,8 @@ https://matlab.mathworks.com/
 
 ### MATLAB 激活与反激活（可选）
 
+> 如果之前使用过其他账号授权激活，请参考以下步骤进行反激活与激活
+
 1. 在使用我们正版账号激活之前，是要把之前电脑的所有许可证反激活的
 
 {% image https://shop.weijiajin.com/images/文章图片/Matlab/mz0.png %}
