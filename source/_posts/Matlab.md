@@ -133,9 +133,15 @@ https://matlab.mathworks.com/
 
 1.1 在使用我们正版账号激活之前，是要把之前电脑的所有许可证反激活的
 
-1.2 打开开始菜单，打开 
+{% image https://shop.weijiajin.com/images/文章图片/Matlab/mz0.png %}
 
-2.反激活之后，打开开始菜单，打开 
+1.2 打开开始菜单，打开  Deactivate MATLAB R2022a
+
+{% image https://shop.weijiajin.com/images/文章图片/Matlab/mz21.png %}
+
+1.3 反激活之后，打开开始菜单，打开 Activate MATLAB R2022a
+
+{% image https://shop.weijiajin.com/images/文章图片/Matlab/mz22.png %}
 
 
 ### Matlab网络下载加速
