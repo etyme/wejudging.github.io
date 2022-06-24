@@ -3,10 +3,7 @@ layout: wiki
 wiki: Matlab
 title: Matlab教程
 ---
-
-{% image https://shop.weijiajin.com/images/文章图片/Matlab/Matlab-Logo.png %}
-
-### 常见问题
+### 常用界面
 
 1.官网登陆
 
@@ -32,14 +29,6 @@ https://matlab.mathworks.com/
 
 {% image https://shop.weijiajin.com/images/文章图片/Matlab/4.png %}
 
-
-### MATLAB 简介
-
-
-
-> MATLAB是美国MathWorks公司出品的商业数学软件，用于数据分析、无线通信、深度学习、图像处理与计算机视觉、信号处理、量化金融与风险管理、机器人，控制系统等领域。
-
-{% image https://shop.weijiajin.com/images/文章图片/Matlab/matlab-00.png %}
 
 ### MATLAB 下载
 
@@ -73,9 +62,6 @@ https://matlab.mathworks.com/
 
 ### MATLAB 安装
 
-
-
-
 1.1 打开安装包后，会解压一个临时文件夹 _temp_matlab_R2022a_win64
 
 {% image https://shop.weijiajin.com/images/文章图片/Matlab/mz1.png %}
@@ -96,7 +82,6 @@ https://matlab.mathworks.com/
 1.5 如果仍然打开 matlab_R2022a_win64.exe 可能或出现 重复解压的 报错，建议删除临时文件夹 _temp_matlab_R2022a_win64，重新打开matlab_R2022a_win64.exe
 
 {% image https://shop.weijiajin.com/images/文章图片/Matlab/mz8.png %}
-
 
 1.6 正常安装登录界面，输入正版 账号密码
 {% image https://shop.weijiajin.com/images/文章图片/Matlab/matlab-07.png %}
@@ -125,7 +110,7 @@ https://matlab.mathworks.com/
 {% image https://shop.weijiajin.com/images/文章图片/Matlab/matlab-13.png %}
 
 
-### MATLAB 工具库下载
+### MATLAB 工具库下载（可选）
 
 1.本地打开软件点击右上角登录我们的正版账号，点击主页，点击附加功能，点击获取附加功能
 
@@ -136,28 +121,29 @@ https://matlab.mathworks.com/
 {% image https://shop.weijiajin.com/images/文章图片/Matlab/matlab-15.png %}
 
 
-### MATLAB 激活与反激活
+### MATLAB 激活与反激活（可选）
 
-1.1 在使用我们正版账号激活之前，是要把之前电脑的所有许可证反激活的
+1. 在使用我们正版账号激活之前，是要把之前电脑的所有许可证反激活的
 
 {% image https://shop.weijiajin.com/images/文章图片/Matlab/mz0.png %}
 
-1.2 打开开始菜单，打开  Deactivate MATLAB R2022a
+2. 打开开始菜单，打开  Deactivate MATLAB R2022a
 
 {% image https://shop.weijiajin.com/images/文章图片/Matlab/mz21.png %}
 
-1.3 反激活之后，打开开始菜单，打开 Activate MATLAB R2022a
+3. 反激活之后，打开开始菜单，打开 Activate MATLAB R2022a
 
 {% image https://shop.weijiajin.com/images/文章图片/Matlab/mz22.png %}
 
 
-### Matlab网络下载加速
+### Matlab下载 网络加速（可选）
 
-clash下载
+
+下载
 
 https://feelheart-win.lanzoul.com/iF90R06vak1e
 
-clash配置
+配置
 ```
 proxies:
   - {name: xxx, server: xxx.xxx.xxx, port: xxx, type: trojan, password: xxx, sni: xxx.xxx.xxx}
