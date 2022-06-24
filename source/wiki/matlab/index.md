@@ -1,7 +1,7 @@
 ---
 layout: wiki
-wiki: Matlab
-title: Matlab下载与安装
+wiki: MATLAB
+title: MATLAB 下载与安装
 ---
 ### 常用界面
 
@@ -136,7 +136,7 @@ https://matlab.mathworks.com/
 {% image https://shop.weijiajin.com/images/文章图片/Matlab/mz22.png %}
 
 
-### Matlab 下载网络加速（可选）
+### MATLAB 下载网络加速（可选）
 
 
 下载
