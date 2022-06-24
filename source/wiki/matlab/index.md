@@ -1,7 +1,7 @@
 ---
 layout: wiki
 wiki: Matlab
-title: Matlab教程
+title: Matlab下载与安装
 ---
 ### 常用界面
 
