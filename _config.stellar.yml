@@ -15,19 +15,19 @@ comments:
 
 footer:
   social:
-     - icon: '<img src="https://shop.weijiajin.com/images/rss.svg"/>'
+     - icon: '<img src="/images/rss.svg"/>'
        url: https://weijiajin.com/atom.xml
-     - icon: '<img src="https://shop.weijiajin.com/images/gmail.svg"/>'
+     - icon: '<img src="/images/gmail.svg"/>'
        url: mailto:wejudging@gmail.com
-     - icon: '<img src="https://shop.weijiajin.com/images/github.svg"/>'
+     - icon: '<img src="/images/github.svg"/>'
        url: https://github.com/wejudging
-     - icon: '<img src="https://shop.weijiajin.com/images/volantis.svg"/>'
+     - icon: '<img src="/images/volantis.svg"/>'
        url: https://volantis.weijiajin.com
-     - icon: '<img src="https://shop.weijiajin.com/images/resume.svg"/>'
+     - icon: '<img src="/images/resume.svg"/>'
        url: https://resume.weijiajin.com
-     - icon: '<img src="https://shop.weijiajin.com/images/youqinglianjie.svg"/>'
+     - icon: '<img src="/images/youqinglianjie.svg"/>'
        url: https://weijiajin.com/friends/
-     - icon: '<img src="https://shop.weijiajin.com/images/OneDrive.svg"/>'
+     - icon: '<img src="/images/OneDrive.svg"/>'
        url: https://onedrive.weijiajin.com
 
   sitemap:
@@ -63,15 +63,15 @@ plugins:
   # https://www.npmjs.com/package/vanilla-lazyload
   lazyload:
     enable: false # [hexo clean && hexo s] is required after changing this value.
-    js: https://shop.weijiajin.com/js_css/lazyload.js
+    js: /js_css/lazyload.js
     transition: fade # blur, fade
 
   # preload
   preload:
     enable: false
     service: flying_pages # instant_page, flying_pages
-    instant_page: https://shop.weijiajin.com/js_css/preload/instant_page.js
-    flying_pages: https://shop.weijiajin.com/js_css/preload/flying_pages.js
+    instant_page: https://weijiajin.com/js_css/preload/instant_page.js
+    flying_pages: https://weijiajin.com/js_css/preload/flying_pages.js
 
   # 赫蹏 (Heti) - 专为中文网页内容设计的排版样式增强
   # https://github.com/sivan/heti
@@ -84,8 +84,8 @@ plugins:
   # available for {% image xxx %}
   fancybox:
     enable: false
-    js: https://shop.weijiajin.com/js_css/fancybox/umd.js
-    css: https://shop.weijiajin.com/js_css/fancybox/fancybox.css
+    js: /js_css/fancybox/umd.js
+    css: /js_css/fancybox/fancybox.css
     # 可以处理评论区的图片（不支持 iframe 类评论系统）例如：
     # 使用valine评论可以写: .vcontent img:not(.vemoji)
     # 使用twikoo评论可以写: .tk-content img:not([class*="emo"])
@@ -98,12 +98,12 @@ style:
     dark: '#313438'
   animated_avatar:
     animate: auto # auto, always
-    background: https://shop.weijiajin.com/images/rainbow64.webp
+    background: https://weijiajin.com/images/rainbow64.webp
   codeblock:
     scrollbar: 4px
 
 default:
-  avatar: https://shop.weijiajin.com/images/3442075.svg
-  link: https://shop.weijiajin.com/images/8f277b4ee0ecd.svg
-  cover: https://shop.weijiajin.com/images/76b86c0226ffd.svg
-  image: https://shop.weijiajin.com/images/2659360.svg
+  avatar: /images/3442075.svg
+  link: /images/8f277b4ee0ecd.svg
+  cover: /images/76b86c0226ffd.svg
+  image: /images/2659360.svg
