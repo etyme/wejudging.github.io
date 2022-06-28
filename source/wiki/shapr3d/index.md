@@ -5,14 +5,14 @@ title: Sharp3D
 ---
 
 
-{% image https://shop.weijiajin.com/images/文章图片/Sharp3D/sharp3d.jpg %}
+{% image /images/文章图片/Sharp3D/sharp3d.jpg %}
 
 
 #### 1.官网登录地址
 
 https://account.shapr3d.com/login?source=signin
 
-{% image https://shop.weijiajin.com/images/文章图片/Sharp3D/1.png %}
+{% image /images/文章图片/Sharp3D/1.png %}
 
 
 
@@ -23,11 +23,11 @@ https://account.shapr3d.com/change-email?source=signin
 
 点击右上角账号
 
-{% image https://shop.weijiajin.com/images/文章图片/Sharp3D/2.png %}
+{% image /images/文章图片/Sharp3D/2.png %}
 
-{% image https://shop.weijiajin.com/images/文章图片/Sharp3D/3.png %}
+{% image /images/文章图片/Sharp3D/3.png %}
 
-{% image https://shop.weijiajin.com/images/文章图片/Sharp3D/4.png %}
+{% image /images/文章图片/Sharp3D/4.png %}
 
 
 
@@ -36,4 +36,4 @@ https://account.shapr3d.com/change-email?source=signin
 
 https://account.shapr3d.com/password-reset?source=signin
 
-{% image https://shop.weijiajin.com/images/文章图片/Sharp3D/5.png %}
+{% image /images/文章图片/Sharp3D/5.png %}

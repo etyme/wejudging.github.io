@@ -13,7 +13,7 @@ header: false
 
 {% about avatar:https://shop.weijiajin.com/images/logo.svg height:80px %}
 
-<img height="64px" alt="weijiajin" src="https://shop.weijiajin.com/images/weijiajin.png">
+<img height="64px" alt="weijiajin" src="/images/weijiajin.png">
 
 **遇到温柔可爱的人，觉得世界也可爱温柔。**
 

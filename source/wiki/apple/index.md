@@ -4,7 +4,7 @@ wiki: Apple
 title: 苹果教育优惠
 ---
 
-{% image https://shop.weijiajin.com/images/文章图片/苹果教育优惠/apple-01.png %}
+{% image /images/文章图片/苹果教育优惠/apple-01.png %}
 
 
 ## 常见问题
@@ -29,7 +29,7 @@ https://www.myunidays.uk/CN/zh-CN/account/change-password
 
 苹果官网教育商店上面列出的 iPad、Mac 和部分配件，享受教育优惠价。
 
-{% image https://shop.weijiajin.com/images/文章图片/苹果教育优惠/apple-02.png %}
+{% image /images/文章图片/苹果教育优惠/apple-02.png %}
 
 ##### 6.什么是苹果返校季促销
 
@@ -56,30 +56,30 @@ https://www.myunidays.uk/CN/zh-CN/account/change-password
 
 https://www.apple.com.cn/cn-edu/shop
 
-{% image https://shop.weijiajin.com/images/文章图片/苹果教育优惠/apple-03.png %}
+{% image /images/文章图片/苹果教育优惠/apple-03.png %}
 
 
 2.点击已经通过UNiDAYS验证
 
-{% image https://shop.weijiajin.com/images/文章图片/苹果教育优惠/apple-040.png %}
+{% image /images/文章图片/苹果教育优惠/apple-040.png %}
 
 3.输入购买的账号密码，点击登录
 
-{% image https://shop.weijiajin.com/images/文章图片/苹果教育优惠/apple-080.png %}
+{% image /images/文章图片/苹果教育优惠/apple-080.png %}
 
 
 4.登录成功，点击进入商店
 
-{% image https://shop.weijiajin.com/images/文章图片/苹果教育优惠/apple-09.png %}
+{% image /images/文章图片/苹果教育优惠/apple-09.png %}
 
 5.跳转回到苹果官网，可以正常购买苹果的优惠产品
 
-{% image https://shop.weijiajin.com/images/文章图片/苹果教育优惠/apple-10.png %}
+{% image /images/文章图片/苹果教育优惠/apple-10.png %}
 
 6.正常购买苹果的优惠产品，进入购物袋，点击结账
 
-{% image https://shop.weijiajin.com/images/文章图片/苹果教育优惠/apple-11.png %}
+{% image /images/文章图片/苹果教育优惠/apple-11.png %}
 
 7.可通过游客身份或者登录自己的Apple ID进行购买
 
-{% image https://shop.weijiajin.com/images/文章图片/苹果教育优惠/apple-12.png %}
+{% image /images/文章图片/苹果教育优惠/apple-12.png %}
