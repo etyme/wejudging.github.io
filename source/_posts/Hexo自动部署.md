@@ -1,6 +1,6 @@
 ---
 title: GitHub Actions 实现 Hexo 自动部署
-cover: https://shop.weijiajin.com/images/actions.png
+cover: /images/actions.png
 date: 2021-04-21
 tags: [Hexo, GitHub]
 categories: 折腾
