@@ -94,9 +94,9 @@ https://matlab.mathworks.com/
 
 {% image /images/文章图片/Matlab/matlab-09.png %}
 
-4. 这里的登录名{% kbd **windows** %}系统用户要{% emp 特别注意 %}！{% mark **正版系统** color:red %}会自动填写相应用户名默认下一步！
-   {% mark **破解版或盗版未激活的系统** color:dark %}，登录名会显示空白需要手动填写，一般要填写{% kbd **Administrator** %}。
-   总之如果自动填写了，就默认下一步；{% u **只有登录名显示空白时需要手动填写** %}。
+4. 这里的登录名 `Windows` 系统用户要{% emp 特别注意 %}！{% mark 正版系统 color:red %}会自动填写相应用户名默认下一步！
+   {% mark 破解版或盗版未激活的系统 color:dark %}，登录名会显示空白需要手动填写，一般要填写`Administrator`。
+   总之如果自动填写了，就默认下一步；{% u 只有登录名显示空白时需要手动填写 %}。
 {% image /images/文章图片/Matlab/matlab-10.png %}
 
 5.选择自己需要安装的库与工具包，一般建议全选，虽然下载文件大点，但是后续省事。
