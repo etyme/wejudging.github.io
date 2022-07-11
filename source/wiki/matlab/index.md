@@ -3,33 +3,6 @@ layout: wiki
 wiki: Matlab
 title: MATLAB 下载与安装
 ---
-### 常用界面
-
-1.官网登陆
-
-https://ww2.mathworks.cn/mwaccount
-
-{% image /images/文章图片/Matlab/1.png %}
-
-2. 密码更改
-
-https://ww2.mathworks.cn/mwaccount/profiles/password/change
-
-{% image /images/文章图片/Matlab/2.png %}
-
-3.  各个版本软件下载
-
-https://ww2.mathworks.cn/downloads/web_downloads/
-
-{% image /images/文章图片/Matlab/3.png %}
-
- 4. Matlab Online
-
-https://matlab.mathworks.com/
-
-{% image /images/文章图片/Matlab/4.png %}
-
-
 ### MATLAB 下载
 
 > 浏览器打开官网 https://ww2.mathworks.cn/products/matlab.html
@@ -71,20 +44,23 @@ https://matlab.mathworks.com/
 
 {% image /images/文章图片/Matlab/mz5.png %}
 
-1.3 如果第一次安装失败，需要重新安装的时候，只需关闭 matlab 安装程序
+1.3 正常安装登录界面，输入正版 账号密码
+{% image /images/文章图片/Matlab/matlab-07.png %}
+
+
+1.4.1 如果第一次安装失败，需要重新安装的时候，只需关闭 matlab 安装程序
 
 {% image /images/文章图片/Matlab/mz2.png %}
 
-1.4 重新打开 临时文件夹 _temp_matlab_R2022a_win64 里面的 setup.exe 重新安装
+1.4.2 重新打开 临时文件夹 _temp_matlab_R2022a_win64 里面的 setup.exe 重新安装
 
 {% image /images/文章图片/Matlab/mz4.png %}
 
-1.5 如果仍然打开 matlab_R2022a_win64.exe 可能或出现 重复解压的 报错，建议删除临时文件夹 _temp_matlab_R2022a_win64，重新打开matlab_R2022a_win64.exe
+1.4.2 如果仍然打开 matlab_R2022a_win64.exe 可能或出现 重复解压的 报错，建议删除临时文件夹 _temp_matlab_R2022a_win64，重新打开matlab_R2022a_win64.exe
 
 {% image /images/文章图片/Matlab/mz8.png %}
 
-1.6 正常安装登录界面，输入正版 账号密码
-{% image /images/文章图片/Matlab/matlab-07.png %}
+
 
 2.同意协议，下一步
 
@@ -110,6 +86,34 @@ https://matlab.mathworks.com/
 7.安装成功！
 
 {% image /images/文章图片/Matlab/matlab-13.png %}
+
+### 常用界面 （可选）
+ 
+1.官网登陆
+
+https://ww2.mathworks.cn/mwaccount
+
+{% image /images/文章图片/Matlab/1.png %}
+
+2. 密码更改
+
+https://ww2.mathworks.cn/mwaccount/profiles/password/change
+
+{% image /images/文章图片/Matlab/2.png %}
+
+3.  各个版本软件下载
+
+https://ww2.mathworks.cn/downloads/web_downloads/
+
+{% image /images/文章图片/Matlab/3.png %}
+
+ 4. Matlab Online
+
+https://matlab.mathworks.com/
+
+{% image /images/文章图片/Matlab/4.png %}
+
+
 
 
 ### MATLAB 工具库下载（可选）
