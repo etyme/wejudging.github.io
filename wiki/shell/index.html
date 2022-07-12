@@ -29,8 +29,8 @@
 <meta property="og:site_name" content="weijiajin">
 <meta property="og:description" content="tcp脚本wget &quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;wejudging&#x2F;shell&#x2F;main&#x2F;tcp.sh&quot; &amp;&amp; chmod +x tcp.sh &amp;&amp; .&#x2F;tcp.sh   trojanyum install -y socatyum -y install epel-releasesource &lt;(cu">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-12T08:02:46.989Z">
-<meta property="article:modified_time" content="2022-07-12T08:02:46.989Z">
+<meta property="article:published_time" content="2022-07-12T13:43:04.271Z">
+<meta property="article:modified_time" content="2022-07-12T13:43:04.271Z">
 <meta property="article:author" content="weijiajin">
 <meta property="article:tag" content="魏家劲">
 <meta name="twitter:card" content="summary">
@@ -107,7 +107,7 @@
 
   
   
-<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" id="home" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">项目</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/wiki/shell/">Shell</a></div><div id="post-meta">更新于&nbsp;<time datetime="2022-07-12T08:02:46.989Z">2022-07-12</time></div></div>
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" id="home" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">项目</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/wiki/shell/">Shell</a></div><div id="post-meta">更新于&nbsp;<time datetime="2022-07-12T13:43:04.271Z">2022-07-12</time></div></div>
 
   <article class="content md wiki">
   <h1 class="article-title"><span>shell</span></h1>
@@ -115,6 +115,11 @@
 
 
 <h4 id="trojan"><a href="#trojan" class="headerlink" title="trojan"></a>trojan</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum install -y socat</span><br><span class="line">yum -y install epel-release</span><br><span class="line"><span class="built_in">source</span> &lt;(curl -sL https://git.io/trojan-install)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start trojan  </span><br><span class="line">systemctl restart trojan</span><br><span class="line">systemctl stop trojan</span><br><span class="line">systemctl status trojan</span><br><span class="line">systemctl <span class="built_in">enable</span> trojan</span><br></pre></td></tr></table></figure>
+
+
+
+
 <h4 id="firewalld"><a href="#firewalld" class="headerlink" title="firewalld"></a>firewalld</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br></pre></td></tr></table></figure>
 <h4 id="swap"><a href="#swap" class="headerlink" title="swap"></a>swap</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget https://www.moerats.com/usr/shell/swap.sh &amp;&amp; bash swap.sh</span><br></pre></td></tr></table></figure>
 <h4 id="azure-swap"><a href="#azure-swap" class="headerlink" title="azure swap"></a>azure swap</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">dd</span> <span class="keyword">if</span>=/dev/zero of=/swapfile count=4096 bs=1M</span><br><span class="line"><span class="built_in">chmod</span> 600 /swapfile</span><br><span class="line">mkswap /swapfile</span><br><span class="line">swapon /swapfile</span><br><span class="line">vi /etc/fstab</span><br><span class="line">/swapfile   none    swap    sw    0   0</span><br></pre></td></tr></table></figure>
