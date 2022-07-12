@@ -13,6 +13,96 @@ title: shell
 wget "https://raw.githubusercontent.com/wejudging/shell/main/tcp.sh" && chmod +x tcp.sh && ./tcp.sh
 ```
 
+
+#### trojan
+
+```bash
+yum install -y socat
+yum -y install epel-release
+source <(curl -sL https://git.io/trojan-install)
+```
+#### firewalld
+
+```bash
+systemctl stop firewalld
+systemctl disable firewalld
+```
+#### swap
+
+```bash
+wget https://www.moerats.com/usr/shell/swap.sh && bash swap.sh
+```
+#### azure swap
+
+```bash
+dd if=/dev/zero of=/swapfile count=4096 bs=1M
+chmod 600 /swapfile
+mkswap /swapfile
+swapon /swapfile
+vi /etc/fstab
+/swapfile   none    swap    sw    0   0
+```
+#### myip
+
+```bash
+ip=$(curl -s http://myip.ipip.net)
+echo "My public IP address is: $ip"
+```
+
+##### gost
+
+```bash
+wget --no-check-certificate -O gost.sh https://raw.githubusercontent.com/KANIKIG/Multi-EasyGost/master/gost.sh && chmod +x gost.sh && ./gost.sh
+```
+
+#### danate
+
+```bash
+wget --no-check-certificate https://raw.github.com/Lozy/danted/master/install.sh -O install.sh
+bash install.sh  --port=18888 --user=weijiajin --passwd=weijiajin
+bash install.sh --uninstall
+```
+#### 增加网卡
+
+```bash
+ifconfig eth0:1 10.0.0.5 up
+ifconfig eth0:2 10.0.0.6 up
+ifconfig eth0:3 10.0.0.7 up
+ifconfig eth0:4 10.0.0.8 up
+ifconfig eth0:5 10.0.0.9 up
+ifconfig eth0:6 10.0.0.10 up
+ifconfig eth0:7 10.0.0.11 up
+ifconfig eth0:8 10.0.0.12 up
+ifconfig eth0:9 10.0.0.13 up
+```
+
+#### 一键安装多IP s5
+
+```bash
+wget https://github.com/zyhut200/az/archive/refs/heads/main.zip -O /etc/network/main.zip
+unzip -oj /etc/network/main.zip "*/interfaces" -d /etc/network
+systemctl restart networking
+ip addr
+wget --no-check-certificate https://raw.github.com/Lozy/danted/master/install.sh -O install.sh
+bash install.sh  --port=18888 --user=weijiajin --passwd=weijiajin
+service sockd state
+```
+
+#### DD系统
+
+```bash
+LANG=en_US.UTF-8
+wget --no-check-certificate -O AutoReinstall.sh https://git.io/AutoReinstall.sh && bash AutoReinstall.sh
+```
+
+
+
+#### 一键回程三网路由
+
+```bash
+curl https://raw.githubusercontent.com/zhucaidan/mtr_trace/main/mtr_trace.sh|bash
+```
+
 #### speedtest测速脚本
 
 ```bash
