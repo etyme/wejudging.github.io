@@ -51,7 +51,10 @@ bash <(curl -Ls https://raw.githubusercontent.com/sprov065/x-ui/master/install.s
 
 ### 博客更新子模块
 ```bash
-
+cd /Users/weijiajin/Documents/wejudging.github.io/themes/stellar
+git add .
+git commit -m "12345"
+git push
 ```
 
 
