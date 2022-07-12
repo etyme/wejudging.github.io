@@ -29,8 +29,8 @@
 <meta property="og:site_name" content="weijiajin">
 <meta property="og:description" content="tcp脚本wget &quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;wejudging&#x2F;shell&#x2F;main&#x2F;tcp.sh&quot; &amp;&amp; chmod +x tcp.sh &amp;&amp; .&#x2F;tcp.sh  speedtest测速脚本wget -O speedtest-cli https:&#x2F;&#x2F;raw.githubusercontent.com">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-11T05:58:59.698Z">
-<meta property="article:modified_time" content="2022-07-11T05:58:59.698Z">
+<meta property="article:published_time" content="2022-07-12T07:51:42.339Z">
+<meta property="article:modified_time" content="2022-07-12T07:51:42.339Z">
 <meta property="article:author" content="weijiajin">
 <meta property="article:tag" content="魏家劲">
 <meta name="twitter:card" content="summary">
@@ -91,7 +91,7 @@
 
 <div class="widgets">
 
-<div class="widget-wrap single" id="toc"><div class="widget-header cap dis-select"><span class="name">本文目录</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#tcp%E8%84%9A%E6%9C%AC"><span class="toc-text">tcp脚本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#speedtest%E6%B5%8B%E9%80%9F%E8%84%9A%E6%9C%AC"><span class="toc-text">speedtest测速脚本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E7%A7%98%E9%92%A5"><span class="toc-text">生成秘钥</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E6%A0%87%E7%94%9F%E6%88%90"><span class="toc-text">图标生成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mac%E4%B8%80%E9%94%AE%E5%BC%80%E5%90%AFhdpi"><span class="toc-text">mac一键开启hdpi</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#x-ui"><span class="toc-text">x-ui</span></a></li></ol></div></div></div>
+<div class="widget-wrap single" id="toc"><div class="widget-header cap dis-select"><span class="name">本文目录</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#tcp%E8%84%9A%E6%9C%AC"><span class="toc-text">tcp脚本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#speedtest%E6%B5%8B%E9%80%9F%E8%84%9A%E6%9C%AC"><span class="toc-text">speedtest测速脚本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%9F%E6%88%90%E7%A7%98%E9%92%A5"><span class="toc-text">生成秘钥</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E6%A0%87%E7%94%9F%E6%88%90"><span class="toc-text">图标生成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mac%E4%B8%80%E9%94%AE%E5%BC%80%E5%90%AFhdpi"><span class="toc-text">mac一键开启hdpi</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#x-ui"><span class="toc-text">x-ui</span></a></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%96%B0%E5%AD%90%E6%A8%A1%E5%9D%97"><span class="toc-text">博客更新子模块</span></a></li></div></div></div>
 
 
 
@@ -107,7 +107,7 @@
 
   
   
-<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" id="home" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">项目</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/wiki/shell/">Shell</a></div><div id="post-meta">更新于&nbsp;<time datetime="2022-07-11T05:58:59.698Z">2022-07-11</time></div></div>
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" id="home" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">项目</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/wiki/shell/">Shell</a></div><div id="post-meta">更新于&nbsp;<time datetime="2022-07-12T07:51:42.339Z">2022-07-12</time></div></div>
 
   <article class="content md wiki">
   <h1 class="article-title"><span>shell</span></h1>
@@ -126,6 +126,13 @@
 
 <h4 id="mac一键开启hdpi"><a href="#mac一键开启hdpi" class="headerlink" title="mac一键开启hdpi"></a>mac一键开启hdpi</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/xzhih/one-key-hidpi/master/hidpi.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
 <h4 id="x-ui"><a href="#x-ui" class="headerlink" title="x-ui"></a>x-ui</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">bash &lt;(curl -Ls https://raw.githubusercontent.com/sprov065/x-ui/master/install.sh) 0.2.0</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="博客更新子模块"><a href="#博客更新子模块" class="headerlink" title="博客更新子模块"></a>博客更新子模块</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
 
   
 
