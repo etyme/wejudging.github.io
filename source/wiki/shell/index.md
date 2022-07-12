@@ -4,6 +4,9 @@ wiki: Shell
 title: shell
 ---
 
+
+
+
 #### tcp脚本
 
 ```bash
@@ -43,3 +46,13 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/xzhih/one-key-hidpi/mast
 ```bash
 bash <(curl -Ls https://raw.githubusercontent.com/sprov065/x-ui/master/install.sh) 0.2.0
 ```
+
+
+
+### 博客更新子模块
+```bash
+
+```
+
+
+
