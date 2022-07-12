@@ -21,6 +21,17 @@ yum install -y socat
 yum -y install epel-release
 source <(curl -sL https://git.io/trojan-install)
 ```
+```bash
+systemctl start trojan  
+systemctl restart trojan
+systemctl stop trojan
+systemctl status trojan
+systemctl enable trojan
+```
+
+
+
+
 #### firewalld
 
 ```bash
