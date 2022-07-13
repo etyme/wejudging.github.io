@@ -31,8 +31,11 @@ systemctl stop trojan-web
 systemctl disable trojan-web
 ```
 
-
-
+#### 青龙必须要安装的依赖
+```bash
+docker exec -it qinglong bash
+curl -fsSL https://ghproxy.com/https://raw.githubusercontent.com/FlechazoPh/QLDependency/main/Shell/QLOneKeyDependency.sh | sh
+```
 
 #### firewalld
 
