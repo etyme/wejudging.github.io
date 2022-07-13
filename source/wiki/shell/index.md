@@ -27,6 +27,8 @@ systemctl restart trojan
 systemctl stop trojan
 systemctl status trojan
 systemctl enable trojan
+systemctl stop trojan-web
+systemctl disable trojan-web
 ```
 
 
