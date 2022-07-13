@@ -29,8 +29,8 @@
 <meta property="og:site_name" content="weijiajin">
 <meta property="og:description" content="tcp脚本wget &quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;wejudging&#x2F;shell&#x2F;main&#x2F;tcp.sh&quot; &amp;&amp; chmod +x tcp.sh &amp;&amp; .&#x2F;tcp.sh   trojanyum install -y socatyum -y install epel-releasesource &lt;(cu">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-07-12T13:43:04.271Z">
-<meta property="article:modified_time" content="2022-07-12T13:43:04.271Z">
+<meta property="article:published_time" content="2022-07-13T03:19:40.924Z">
+<meta property="article:modified_time" content="2022-07-13T03:19:40.924Z">
 <meta property="article:author" content="weijiajin">
 <meta property="article:tag" content="魏家劲">
 <meta name="twitter:card" content="summary">
@@ -107,7 +107,7 @@
 
   
   
-<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" id="home" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">项目</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/wiki/shell/">Shell</a></div><div id="post-meta">更新于&nbsp;<time datetime="2022-07-12T13:43:04.271Z">2022-07-12</time></div></div>
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" id="home" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">项目</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/wiki/shell/">Shell</a></div><div id="post-meta">更新于&nbsp;<time datetime="2022-07-13T03:19:40.924Z">2022-07-13</time></div></div>
 
   <article class="content md wiki">
   <h1 class="article-title"><span>shell</span></h1>
@@ -115,7 +115,7 @@
 
 
 <h4 id="trojan"><a href="#trojan" class="headerlink" title="trojan"></a>trojan</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">yum install -y socat</span><br><span class="line">yum -y install epel-release</span><br><span class="line"><span class="built_in">source</span> &lt;(curl -sL https://git.io/trojan-install)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start trojan  </span><br><span class="line">systemctl restart trojan</span><br><span class="line">systemctl stop trojan</span><br><span class="line">systemctl status trojan</span><br><span class="line">systemctl <span class="built_in">enable</span> trojan</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start trojan  </span><br><span class="line">systemctl restart trojan</span><br><span class="line">systemctl stop trojan</span><br><span class="line">systemctl status trojan</span><br><span class="line">systemctl <span class="built_in">enable</span> trojan</span><br><span class="line">systemctl stop trojan-web</span><br><span class="line">systemctl <span class="built_in">disable</span> trojan-web</span><br></pre></td></tr></table></figure>
 
 
 
