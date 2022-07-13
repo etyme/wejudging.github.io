@@ -106,6 +106,7 @@ service sockd state
 ```bash
 LANG=en_US.UTF-8
 wget --no-check-certificate -O AutoReinstall.sh https://git.io/AutoReinstall.sh && bash AutoReinstall.sh
+Pwd@CentOS
 ```
 
 
