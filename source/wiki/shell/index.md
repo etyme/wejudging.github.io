@@ -29,6 +29,8 @@ systemctl status trojan
 systemctl enable trojan
 systemctl stop trojan-web
 systemctl disable trojan-web
+trojan export ./trojan.sql
+trojan import ./trojan.sql
 ```
 
 #### 青龙必须要安装的依赖
