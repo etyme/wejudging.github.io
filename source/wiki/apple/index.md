@@ -4,7 +4,7 @@ wiki: Apple
 title: 苹果教育优惠
 ---
 
-{% image /images/文章图片/苹果教育优惠/apple-001.png %}
+{% image /images/文章图片/苹果教育优惠/apple-0001.png %}
 
 
 ## 常见问题
@@ -56,7 +56,7 @@ https://www.myunidays.uk/CN/zh-CN/account/change-password
 
 https://www.apple.com.cn/cn-edu/shop
 
-{% image /images/文章图片/苹果教育优惠/apple-001.png %}
+{% image /images/文章图片/苹果教育优惠/apple-0001.png %}
 
 
 2.点击已经通过UNiDAYS验证
