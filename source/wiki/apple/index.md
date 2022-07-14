@@ -19,6 +19,10 @@ Mac mini、Mac Studio、Mac Pro 不参与活动。
 
 
 
+
+
+
+
 ## 购买流程
 
 1.打开苹果官网购买地址，点击中间的 通过UNiDAYS进行验证**
@@ -91,8 +95,10 @@ https://www.myunidays.uk/CN/zh-CN/account/change-password
 
 ##### 8.苹果返校季促销活动购买哪些产品送 AirPods
 
-购买 MacBook Air、MacBook Pro、iMac、Mac Pro、Mac mini 及新款 iPad Pro 和 iPad Air，不包括标准版的 iPad（即 iPad 2020）、iPad mini、翻新产品。
-
+参与机型和配件
+iPad 系列：iPad Pro、iPad Air、iPad标准版、iPad mini
+Mac 系列：MacBook Air、MacBook Pro、iMac、Mac mini、Mac Studio、Studio Display、Pro Display XDR、Mac Pro
+其他：Apple Pencil、官配键盘（妙控键盘/键盘式智能双面夹/智能键盘）、AppleCare+
 
 
 
@@ -109,7 +115,9 @@ iPad：每年可购买两 (2) 部
 
 
 
+##### 10.部分产品有 9 折 AppleCare+
 
+AppleCare+ 不同产品定价不一样，一般 iPad 是没有优惠，MacBook 9 折左右。
 
 
 
