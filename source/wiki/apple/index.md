@@ -6,6 +6,39 @@ title: 苹果教育优惠
 
 {% image /images/文章图片/苹果教育优惠/apple-0001.png %}
 
+## 购买流程
+
+1.打开苹果官网购买地址，点击中间的 通过UNiDAYS进行验证**
+
+https://www.apple.com.cn/cn-edu/shop
+
+{% image /images/文章图片/苹果教育优惠/apple-0001.png %}
+
+
+2.点击已经通过UNiDAYS验证
+
+{% image /images/文章图片/苹果教育优惠/apple-040.png %}
+
+3.输入购买的账号密码，点击登录
+
+{% image /images/文章图片/苹果教育优惠/apple-080.png %}
+
+
+4.登录成功，点击进入商店
+
+{% image /images/文章图片/苹果教育优惠/apple-09.png %}
+
+5.跳转回到苹果官网，可以正常购买苹果的优惠产品
+
+{% image /images/文章图片/苹果教育优惠/apple-10.png %}
+
+6.正常购买苹果的优惠产品，进入购物袋，点击结账
+
+{% image /images/文章图片/苹果教育优惠/apple-11.png %}
+
+7.可通过游客身份或者登录自己的Apple ID进行购买
+
+{% image /images/文章图片/苹果教育优惠/apple-12.png %}
 
 ## 常见问题
 ##### UniDays中文官网
@@ -50,36 +83,4 @@ https://www.myunidays.uk/CN/zh-CN/account/change-password
 
 
 
-## 购买流程
 
-1.打开苹果官网购买地址，点击中间的 通过UNiDAYS进行验证**
-
-https://www.apple.com.cn/cn-edu/shop
-
-{% image /images/文章图片/苹果教育优惠/apple-0001.png %}
-
-
-2.点击已经通过UNiDAYS验证
-
-{% image /images/文章图片/苹果教育优惠/apple-040.png %}
-
-3.输入购买的账号密码，点击登录
-
-{% image /images/文章图片/苹果教育优惠/apple-080.png %}
-
-
-4.登录成功，点击进入商店
-
-{% image /images/文章图片/苹果教育优惠/apple-09.png %}
-
-5.跳转回到苹果官网，可以正常购买苹果的优惠产品
-
-{% image /images/文章图片/苹果教育优惠/apple-10.png %}
-
-6.正常购买苹果的优惠产品，进入购物袋，点击结账
-
-{% image /images/文章图片/苹果教育优惠/apple-11.png %}
-
-7.可通过游客身份或者登录自己的Apple ID进行购买
-
-{% image /images/文章图片/苹果教育优惠/apple-12.png %}
