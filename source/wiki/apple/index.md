@@ -3,8 +3,21 @@ layout: wiki
 wiki: Apple
 title: 苹果教育优惠
 ---
-
 {% image /images/文章图片/苹果教育优惠/apple-0001.png %}
+7月14日最新更新：2022国内苹果“返校季”已开启！
+
+活动时间：7月14日 - 9月26日
+
+活动内容：购买 MacBook Air、MacBook Pro、iMac 及新款 iPad Pro 和 iPad Air，有资格的学生和教育者可以免费获得 AirPods（二代）耳机，加 400元可升级送 AirPods（三代），加 1000元升级送 AirPods Pro。
+
+同时，返校促销期间，AppleCare+ 享受限时 8 折优惠，另外支持最高 3 期免息分期（限额12000）、支持以旧换新活动。
+
+今年特别注意：
+
+iPad2021、iPad mini 6 不参与活动。
+Mac mini、Mac Studio、Mac Pro 不参与活动。
+
+
 
 ## 购买流程
 
@@ -79,6 +92,22 @@ https://www.myunidays.uk/CN/zh-CN/account/change-password
 ##### 8.苹果返校季促销活动购买哪些产品送 AirPods
 
 购买 MacBook Air、MacBook Pro、iMac、Mac Pro、Mac mini 及新款 iPad Pro 和 iPad Air，不包括标准版的 iPad（即 iPad 2020）、iPad mini、翻新产品。
+
+
+
+
+##### 9.苹果教育优惠 和 返校季促销 每年的购买限制
+有资格从 Apple Store 教育商店购物的顾客每年准许购买以下数量的产品：
+
+台式电脑：每年可购买一 (1) 台
+笔记本电脑：每年可购买一 (1) 台
+Mac mini：每年可购买一 (1) 台
+iPad：每年可购买两 (2) 部
+配件：每年可购买两 (2) 件享受教育优惠价格的配件
+以上产品可于在线商店或 Apple Store 零售店内购买，无论从何处购买，产品限购总数不变，详见官网「销售政策」。
+
+
+
 
 
 
