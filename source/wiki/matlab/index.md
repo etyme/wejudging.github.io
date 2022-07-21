@@ -11,7 +11,7 @@ title: MATLAB 下载与安装
 
 {% image /images/文章图片/Matlab/matlab-01.jpg %}
 
-2.输入购买的正版教育账号与密码 进行登录
+2.输入正版账号与密码 进行登录
 
 {% image /images/文章图片/Matlab/matlab-02.png %}
 
@@ -101,13 +101,21 @@ https://ww2.mathworks.cn/mwaccount/profiles/password/change
 
 {% image /images/文章图片/Matlab/2.png %}
 
-3.  各个版本软件下载
+
+3.双重验证
+
+https://ww2.mathworks.cn/mwaccount/profiles/security/two_step_verification
+
+{% image /images/文章图片/Matlab/mz23.png %}
+
+
+4.  各个版本软件下载
 
 https://ww2.mathworks.cn/downloads/web_downloads/
 
 {% image /images/文章图片/Matlab/3.png %}
 
- 4. Matlab Online
+ 5. Matlab Online
 
 https://matlab.mathworks.com/
 
