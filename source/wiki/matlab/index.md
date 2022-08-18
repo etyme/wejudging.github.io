@@ -25,26 +25,26 @@ title: MATLAB 下载与安装
 {% image /images/文章图片/Matlab/matlab-04.png %}
 
 
-5.1完整版安装下载，右上角切换为ISO和DMG下载模式哦！
-
-{% image /images/文章图片/Matlab/mz24.png %}
 
 
-5.2.完整版安装下载说明
-{% image /images/文章图片/Matlab/mz25.png %}
-
-
-6.1在线版安装下载（可选）
+5.1在线版安装下载
 
 {% image /images/文章图片/Matlab/matlab-05.png %}
 
 
-6.2.在线版安装说明（可选）
+5.2.在线版安装说明
 
 {% image /images/文章图片/Matlab/matlab-06.png %}
 
 
 
+6.1完整版安装下载，右上角切换为ISO和DMG下载模式哦！（可选）
+
+{% image /images/文章图片/Matlab/mz24.png %}
+
+
+6.2.完整版安装下载说明（可选）
+{% image /images/文章图片/Matlab/mz25.png %}
 
 
 ### MATLAB 安装
