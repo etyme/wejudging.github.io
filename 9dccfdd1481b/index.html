@@ -34,8 +34,19 @@
 <meta property="og:image" content="https://weijiajin.com/images/文章图片/YOLO/006.png">
 <meta property="og:image" content="https://weijiajin.com/images/文章图片/YOLO/007.png">
 <meta property="og:image" content="https://weijiajin.com/images/文章图片/YOLO/008.png">
+<meta property="og:image" content="https://weijiajin.com/images/文章图片/YOLO/009.png">
+<meta property="og:image" content="https://weijiajin.com/images/文章图片/YOLO/010.png">
+<meta property="og:image" content="https://weijiajin.com/images/文章图片/YOLO/011.png">
+<meta property="og:image" content="https://weijiajin.com/images/文章图片/YOLO/012.png">
+<meta property="og:image" content="https://weijiajin.com/images/文章图片/YOLO/013.png">
+<meta property="og:image" content="https://weijiajin.com/images/文章图片/YOLO/014.png">
+<meta property="og:image" content="https://weijiajin.com/images/文章图片/YOLO/015.png">
+<meta property="og:image" content="https://weijiajin.com/images/文章图片/YOLO/016.png">
+<meta property="og:image" content="https://weijiajin.com/images/文章图片/YOLO/017.png">
+<meta property="og:image" content="https://weijiajin.com/images/文章图片/YOLO/018.png">
+<meta property="og:image" content="https://weijiajin.com/images/文章图片/YOLO/019.png">
 <meta property="article:published_time" content="2022-08-19T13:01:25.000Z">
-<meta property="article:modified_time" content="2022-08-19T04:56:25.237Z">
+<meta property="article:modified_time" content="2022-08-19T05:03:38.839Z">
 <meta property="article:author" content="weijiajin">
 <meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary_large_image">
@@ -97,7 +108,7 @@
 
 <div class="widgets">
 
-<div class="widget-wrap single" id="toc"><div class="widget-header cap dis-select"><span class="name">本文目录</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#YOLO%E6%A1%86%E6%9E%B6%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C"><span class="toc-text">YOLO框架如何运作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#YOLO%E7%94%A8%E4%BA%8E%E6%A3%80%E6%B5%8B%E7%BB%99%E5%AE%9A%E5%9B%BE%E5%83%8F%E4%B8%AD%E7%9A%84%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%A4%84%E7%90%86%E6%AD%A5%E9%AA%A4"><span class="toc-text">YOLO用于检测给定图像中的对象的处理步骤</span></a></li></ol></li></ol></div></div></div>
+<div class="widget-wrap single" id="toc"><div class="widget-header cap dis-select"><span class="name">本文目录</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#YOLO%E6%A1%86%E6%9E%B6%E5%A6%82%E4%BD%95%E8%BF%90%E4%BD%9C"><span class="toc-text">YOLO框架如何运作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#YOLO%E7%94%A8%E4%BA%8E%E6%A3%80%E6%B5%8B%E7%BB%99%E5%AE%9A%E5%9B%BE%E5%83%8F%E4%B8%AD%E7%9A%84%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%A4%84%E7%90%86%E6%AD%A5%E9%AA%A4"><span class="toc-text">YOLO用于检测给定图像中的对象的处理步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E7%BC%96%E7%A0%81%E8%BE%B9%E7%95%8C%E6%A1%86"><span class="toc-text">如何编码边界框</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E%E6%9E%81%E5%A4%A7%E5%80%BC%E6%8A%91%E5%88%B6-Non-Max-Suppression"><span class="toc-text">非极大值抑制|Non-Max Suppression</span></a></li></ol></li></ol></div></div></div>
 
 
 </div>
@@ -141,11 +152,47 @@
 <p>假设从上面的例子中选择第一个网格：</p>
 <div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/YOLO/008.png"></div></div>
 
+<p>由于此网格中没有对象，因此pc将为零，此网格的y标签将为：</p>
+<div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/YOLO/009.png"></div></div>
 
+<p>？意味着其它值是什么并不重要，因为网格中没有对象。下面举例另一个有车的网格（c2&#x3D;1）：</p>
+<div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/YOLO/010.png"></div></div>
 
+<p>在为此网格编写y标签之前，首先要了解YOLO如何确定网格中是否存在实际对象。大图中有两个物体（两辆车），因此YOLO将取这两个物体的中心点，物体将被分配到包含这些物体中心的网格中。中心点左侧网格的y标签会是这样的：</p>
+<div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/YOLO/011.png"></div></div>
 
+<p>由于此网格中存在对象，因此pc将等于1，bx、by、bh、bw将相对于正在处理的特定网格单元计算。由于检测出的对象是汽车，所以c2&#x3D;1，c1和c3均为0。对于9个网格中的每一个单元格，都具有八维输出向量。最终的输出形状为3X3X8。</p>
+<p>使用上面的例子（输入图像：100X100X3，输出：3X3X8），模型将按如下方式进行训练：</p>
+<div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/YOLO/012.png"></div></div>
 
+<p>使用经典的CNN网络构建模型，并进行模型训练。在测试阶段，将图像传递给模型，经过一次前向传播就得到输出y。为了简单起见，使用3X3网格解释这一点，但通常在实际场景中会采用更大的网格（比如19X19）。</p>
+<p>即使一个对象跨越多个网格，它也只会被分配到其中点所在的单个网格。可以通过增加更多网格来减少多个对象出现在同一网格单元中的几率。</p>
+<h4 id="如何编码边界框"><a href="#如何编码边界框" class="headerlink" title="如何编码边界框"></a>如何编码边界框</h4><p>如前所述，bx、by、bh和bw是相对于正在处理的网格单元计算而言的。下面通过一个例子来说明这一点。以包含汽车的右边网格为例：</p>
+<div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/YOLO/013.png"></div></div>
 
+<p>由于bx、by、bh和bw将仅相对于该网格计算。此网格的y标签将为：</p>
+<div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/YOLO/014.png"></div></div>
+
+<p>由于这个网格中有一个对象汽车，所以pc&#x3D;1、c2&#x3D;1。现在，看看如何决定bx、by、bh和bw的取值。在YOLO中，分配给所有网格的坐标都如下图所示：</p>
+<div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/YOLO/015.png"></div></div>
+
+<p>bx、by是对象相对于该网格的中心点的x和y坐标。在例子中，近似bx&#x3D;0.4和by&#x3D;0.3：</p>
+<div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/YOLO/016.png"></div></div>
+
+<p>bh是边界框的高度与相应单元网格的高度之比，在例子中约为0.9：bh&#x3D;0.9，bw是边界框的宽度与网格单元的宽度之比，bw&#x3D;0.5。此网格的y标签将为：</p>
+<div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/YOLO/017.png"></div></div>
+
+<p>请注意，bx和by将始终介于0和1之间，因为中心点始终位于网格内，而在边界框的尺寸大于网格尺寸的情况下，bh和bw可以大于1。</p>
+<h4 id="非极大值抑制-Non-Max-Suppression"><a href="#非极大值抑制-Non-Max-Suppression" class="headerlink" title="非极大值抑制|Non-Max Suppression"></a>非极大值抑制|Non-Max Suppression</h4><p>这里有一些思考的问题——如何判断预测的边界框是否是一个好结果（或一个坏结果）？单元格之间的交叉点，计算实际边界框和预测的边界框的并集交集。假设汽车的实际和预测边界框如下所示：</p>
+<div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/YOLO/018.png"></div></div>
+
+<p>其中，红色框是实际的边界框，蓝色框是预测的边界框。如何判断它是否是一个好的预测呢？IoU将计算这两个框的并集交叉区域：</p>
+<div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/YOLO/019.png"></div></div>
+
+<ul>
+<li>IoU &#x3D;交叉面积&#x2F;联合的面积；</li>
+<li>在本例中：IoU &#x3D;黄色面积&#x2F;绿色面积；</li>
+</ul>
 
 
 <div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
