@@ -17,23 +17,23 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" content="#f8f8f8">
-  <title>校园青春 - weijiajin</title>
+  <title>YOLO算法 - weijiajin</title>
 
   
 
   
-    <meta name="description" content="那一年，我与你同班，我们懵懂地度过了难忘美好的300天，似乎所有关于你的回忆都是带着淡淡的雨滴味，还有泥土的清香，似乎你就如同雨滴一般美好你带给我的是一直以来的清凉。">
+    <meta name="description" content="计算机视觉：YOLO算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="校园青春">
-<meta property="og:url" content="https://weijiajin.com/1cbb7e0a3fc8/">
+<meta property="og:title" content="YOLO算法">
+<meta property="og:url" content="https://weijiajin.com/0ee5d8aad9dd/">
 <meta property="og:site_name" content="weijiajin">
-<meta property="og:description" content="那一年，我与你同班，我们懵懂地度过了难忘美好的300天，似乎所有关于你的回忆都是带着淡淡的雨滴味，还有泥土的清香，似乎你就如同雨滴一般美好你带给我的是一直以来的清凉。">
+<meta property="og:description" content="计算机视觉：YOLO算法">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-11-25T16:27:15.000Z">
+<meta property="article:published_time" content="2022-08-19T13:01:25.000Z">
 <meta property="article:modified_time" content="2022-08-19T03:50:08.527Z">
 <meta property="article:author" content="weijiajin">
-<meta property="article:tag" content="魏家劲">
-<meta name="twitter:card" content="summary">
+<meta property="article:tag" content="深度学习">
+<meta name="twitter:card" content="summary_large_image">
   
   
 
@@ -91,9 +91,7 @@
 
 <div class="widgets">
 
-
-<div class="widget-wrap" id="recent"><div class="widget-header cap dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><div class="more-item"><a class="title" href="/61a2f525d784/">祝福伏留与你</a></div><div class="more-item"><a class="title" href="/06f83907f73c/">等的远方人</a></div><div class="more-item"><a class="title" href="/19283533d179/">结束</a></div><div class="more-item"><a class="title" href="/516b28067fef/">诗文</a></div><div class="more-item"><a class="title" href="/194be5da681c/">过客</a></div></div></div>
-
+<div class="widget-wrap single" id="toc"><div class="widget-header cap dis-select"><span class="name">本文目录</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1%E5%9F%BA%E4%BA%8E%E5%8C%BA%E5%9F%9F%E6%8F%90%E5%90%8D%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">1.1基于区域提名的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-1-R-CNN"><span class="toc-text">1.1.1 R-CNN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-2-SPP-Net"><span class="toc-text">1.1.2 SPP-Net</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-3-Fast-R-CNN"><span class="toc-text">1.1.3 Fast R-CNN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-4-Faster-R-CNN"><span class="toc-text">1.1.4 Faster R-CNN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-5-R-FCN"><span class="toc-text">1.1.5 R-FCN</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E7%AB%AF%E5%88%B0%E7%AB%AF%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">1.2 端到端的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-1-YOLO"><span class="toc-text">1.2.1 YOLO</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-2-SSD"><span class="toc-text">1.2.2 SSD</span></a></li></ol></li></ol></div></div></div>
 
 
 </div>
@@ -105,28 +103,38 @@
 
       
 
-<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/blog/categories/%E8%AF%97%E6%96%87/">诗文</a></div><div id="post-meta">发布于&nbsp;<time datetime="2020-11-25T16:27:15.000Z">2020-11-25</time></div></div>
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/blog/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></div><div id="post-meta">发布于&nbsp;<time datetime="2022-08-19T13:01:25.000Z">2022-08-19</time></div></div>
 
 <article class="content md post">
-<h1 class="article-title"><span>校园青春</span></h1>
-<p>青春爱在校园<br>不得不说青春是本太过仓促的书<br>每页都有着自己铭心刻骨的回忆<br>有自己轻狂年少<br>你们像那夹在书里的银杏叶<br>记录着每段让人难以忘怀的感动<br>每片泛黄的银杏叶代表不同的回忆<br>那是一份信仰，一份依靠<br>我一辈子的骄傲</p>
-<p>我们留恋校园的每一个角落，只因为我们曾是她的主人，当然她也是我们青春的见证，因为那一年，我们十七八岁。我们想尽快长大，想脱浮华的天真，想爱情，又思人生。等我们蓦然回首，才懂得那年的美好，才开始去怀念那时的青春，祭奠那年的十七八岁。可是回不去了，毕竟，此时此刻，她已不属于我们，只永存于那段称之为青春的岁月。特别是段很旧很旧的时光，有着轻轻浅浅的爱，藏着懵懵懂懂的情。</p>
-<p>那一年，我与你同班，我们懵懂地度过了难忘美好的300天，似乎所有关于你的回忆都是带着淡淡的雨滴味，还有泥土的清香，似乎你就如同雨滴一般美好你带给我的是一直以来的清凉。</p>
-<p>我懂得，那年我们的相遇，并不是缘分，不然为何和你碰撞在那过早的华年。人们说，花开固然美丽，过早盛开，也必将过早的凋零且无果实。所以，你只留给我美好回忆，在我回忆里最美的存在，也是那段旧时光的引以为傲。</p>
-<p>没有你的日子，我把情字读了千万遍，后来发现，终究还是少了你的温婉秀气，于是我想渐渐忘记，假装不再想起。可是爱情依旧这般，来时如霜，去时如电，挽不住那芳华。我想提笔写下我们的故事，却迟迟下不了笔，我觉得，任凭我怎么去写，都刻制不出另一个你。曾经该怎么写？怎么写，都是错妄。</p>
-<p>你是否还记得我写的第一封情书，现在想来，也许那是我最为青涩的情感；你是否还记得我写给你的第一首情诗，那是我，一位懵懂少年，从心里最为纯情的呼唤。也许，于你，那些字字句句，言言语语，早已忘记。可是，我记得。我记得，曾经有一位少年，离你不远不近，却一直守护；我记得，你明媚的笑颜，便是他心中倾城的暖；</p>
-<p>我记得，他最喜，你那柔情的眼睛，那么美，浸着诗意；我记得，于他的记忆中，你就是唯美的丁香，静静地开在成长的路畔未曾凋谢。他最喜看你在楼梯角落，那洁嫩的脸庞，只是余光略过，心里却盈满了欢喜。</p>
-<p>如果那儿不见了你，他会着急，担心，会感伤，带着忧虑想着，你在哪里。放学路上跟在你身后，为多看一眼，虽然只是背影。</p>
-<p>他还喜，下课，假装路过你们班，为了你微笑的侧脸，明媚，温暖。这一切的一切，少年记忆依然。</p>
-<p>你们说，多么美好的年月，喜欢一个人，在这最开始的青春，他在自己梦中慢慢睡着。也许就是遇见你的那一刻开始，他爱上了美好，爱上情歌与诗。</p>
-<p>现在，每每回忆校园，回忆初中高中六年，温暖都会打心底溢出感动，涌出心头，润湿眼角。我想，日后若能和你回忆当初多好，一起想我们的爱恋，想你我青春的蠢，将我们曾经的点点滴滴，用文字镌刻，该有多好。我又想，你我终究无缘，我也只能一个人，一个人去写下这青春不完整的篇章，写下我残缺的回忆，给自己一个交代，不让多年对你的思念和你我的曾经消尽。是为了你，更为了弥补我逝去的青春。</p>
-<p>岁月是一个道场，枯荣便是轮回，蹉跎是承诺的姿态，我只与真诚低眉。我也曾在你的世界里飞，最后默默离开，感谢你让我知晓爱情与诗意。曾经的爱，只开在蕊里，错过了一个季节，已无法完美，凋谢就是淡然如水。突如其来的雨，经过我的屋檐，涤净所有尘埃，抚平连日来的躁动与不安。我依着这种清新的脉络，写几行干净的小字，使得疲累的心情获取暂时的舒缓，安静且喜欢。</p>
-<p>愿人生无可辜负，多么奢侈的愿望，空洞的梦想。世界原本就是蹉跎的，没有什么如愿的希望可以长久，欢喜有时，落寞有时，待到窗明几净，依然能含着泪，噙着微笑，向后人诉说我们逝去的青春，讲述我们那年的美好。</p>
-<p>有些故事，经历过了，也就了无遗憾，有些人，爱过一次，也就无需再来。没有落了单的承诺，只是在别的地方，以另一种方式兑现。海誓山盟，地老天荒，天涯海角，便是爱情趋于永恒的地方。懵懂，是我们初见的情怀，时过境迁，结局也只剩怀念，隐着美含着泪。人生若只如初见，也就没了那么多的遗憾与嗟叹，这山长水远的人世本来就不是完美的，只感动了自己的故事，也没有理由继续读下去，一声再见便再也不见。</p>
-<p>而后，独尝着浮世清欢，一个人的细水长流。</p>
-<p>这就是我的青春印象，关乎爱情，关乎地老天荒。</p>
-<p>也许你会记得我<br>一位痴情于你的少年<br>他对爱情有过深深的思考<br>如他的人生一般重要<br>在你尚未了解一切前<br>他便知道，你就是爱情<br>他看到烟，便断定是火<br>回想你我相逢<br>挥手之间，存下好感<br>相互对视的刹那<br>我认定今生有缘</p>
-<p>2016年10月31日</p>
+<h1 class="article-title"><span>YOLO算法</span></h1>
+<p> </p>
+<p>深度学习相关的目标检测方法大致可以分为两派：<br>1.基于区域提名的：如R-CNN，SPP-Net，Fast R-CNN，Faster R-CNN，R-FCN；<br>2.端到端（End-to-End）：无需区域提名的，如YOLO，SSD</p>
+<p>目前来说，基于区域提名的方法依然占据上风，但端到端的方法速度上优势明显，后续的发展拭目以待。</p>
+<h3 id="1-1基于区域提名的方法"><a href="#1-1基于区域提名的方法" class="headerlink" title="1.1基于区域提名的方法"></a>1.1基于区域提名的方法</h3><p>本小节主要介绍区域提名的方法，包括R-CNN，SPP-Net，Fast R-CNN，Faster R-CNN，R-FCN</p>
+<h4 id="1-1-1-R-CNN"><a href="#1-1-1-R-CNN" class="headerlink" title="1.1.1 R-CNN"></a>1.1.1 R-CNN</h4><p>如前面所述，早期的目标检测，大都使用滑动窗口的方式进行窗口提名，这种方式本质是穷举法，R-CNN采用的是Selective Search<br>以下是R-CNN的主要步骤：</p>
+<p>1.区域提名：通过Selective Search从原始图片提取2000个左右区域候选框；<br>2.区域大小归一化：把所有候选框缩放成固定大小（原文采用227×227）；<br>3.特征提取：通过CNN网络，提取特征；<br>4.分类与回归：在特征层的基础上添加两个全连接层，再用SVM分类来做识别，用线性回归来微调边框位置和大小，其中每个类别单独训练一个边框回归器。</p>
+<p>事实上，R-CNN有许多缺点：<br>1.重复计算：R-CNN虽然不再是穷举，但依然有两千个左右的候选框，这些候选框都需要进行CNN操作，计算量依然很大，其中有不少其实是重复计算；<br>2.SVM模型：而且是线性模型，在标注数据不缺的时候显然不是最好的选择；<br>3.训练测试分为多步：区域提名，特征提取，分类，回归都是断开的训练过程，中间数据还需要单独保存；<br>4.训练的空间和时间代价很高：卷积出来的特征需要先存在硬盘上，这些特征需要几百G的存储空间；<br>5.慢：前面的缺点导致R-CNN出奇的慢，GPU处理一张图片需要13秒，CPU上则需要53秒。</p>
+<h4 id="1-1-2-SPP-Net"><a href="#1-1-2-SPP-Net" class="headerlink" title="1.1.2 SPP-Net"></a>1.1.2 SPP-Net</h4><p>SPP-Net,其主要思想是去掉原始图像上的crop&#x2F;warp等操作，换成了在卷积特征上的空间金字塔池化层（Spatial Pyramid Pooling，SPP），为何要引入SPP层，主要原因是CNN的全连接要求输入图片是大小一致的，而实际的输入图片往往大小不一，如果直接缩放到统一尺寸，很有可能有的物体会充满整个图片，而有的物体可能只能再到图片的一角。传统的解决方案是进行不同位置的裁剪，但这些裁剪技术都可能会导致一些问题的出现，比如crop会导致物体不全，warp导致物体被拉伸后变形严重，SPP就是为了解决这个问题的。SPP对整图提取固定维度的特征，再把图片均分成4份，每份提取相同的维度特征，再把图片均匀分成16份，以此类推，可以看出，无论图片大小如何，提取出来的维度数据都是一致的，这样就可以统一送至全连接层了。SPP的思想在后来的R-CNN模型中也被广泛用到。</p>
+<p>SPP-Net网络，其实实质是在最后一层卷积层后加了一个SPP层，将维度不一的卷积特征转换为维度一致的全连接输入。</p>
+<p>SPP-Net做目标检测的主要步骤为：<br>1.区域提名：用Selective Search从原图中生成2000个左右的候选窗口；<br>2.区域大小缩放：SPP-Net不再做区域大小归一化，而是缩放到min(w,h)&#x3D;s,即统一长宽的最短边长度，s选自{480,576,688,864,1200}中的一个，选择的标准是使得缩放后的候选框大小与224×224最接近；<br>3.特征提取：利用SPP-Net网络结构提取特征<br>4.分类与回归：类似R-CNN，利用SVM基于上面的特征训练分类器模型，用边框回归来微调候选框的位置。</p>
+<p>SPP-Net解决了R-CNN区域提名时crop&#x2F;warp带来的偏差问题，提出了SPP层，使得输入的候选框可大可小，但其他方面依然和R-CNN一样，因而依然存在不少问题，这就有了后面的Fast R-CNN</p>
+<h4 id="1-1-3-Fast-R-CNN"><a href="#1-1-3-Fast-R-CNN" class="headerlink" title="1.1.3 Fast R-CNN"></a>1.1.3 Fast R-CNN</h4><p>Fast R-CNN是要解决R-CNN和SPP-Net两千个左右候选框带来的重复计算问题，其主要思想为：<br>1.使用一个简化的SPP层——RoI（Region of Interesting）Pooling层，操作与SPP类似<br>2.训练和测试是不再分多步：不在需要额外的硬盘来存储中间层的特征，梯度能够通过RoI Pooling层直接传播；此外，分类和回归用Multi-task的方式一起进行；<br>3.SVD：使用SVD分解全连接层的参数矩阵，压缩为两个规模小很多的全连接层</p>
+<p>Fast R-CNN的主要步骤如下：<br>1.特征提取：以整张图片为输入利用CNN得到图片的特征层；<br>2.区域提名：通过Selective Search等方法从原始图片提取区域候选框，并把这些候选框一一投影到最后的特征层；<br>3.区域归一化：针对特征曾上的每个区域候选框进行RoI Pooling操作，得到固定大小的特征表示；<br>4.分类和回归：然后通过两个全连接层，分别用softmax多分类做目标识别，用回归模型进行边框位置与大小的精确定位和微调。</p>
+<p>Fast R-CNN比R-CNN的训练速度（大模型）快8,8倍，测试时间快213倍，比SPP-Net训练速度快2.6倍，测试速度快10倍左右。</p>
+<h4 id="1-1-4-Faster-R-CNN"><a href="#1-1-4-Faster-R-CNN" class="headerlink" title="1.1.4 Faster R-CNN"></a>1.1.4 Faster R-CNN</h4><p>Fast R-CNN使用Selective Serach来进行区域提名，速度依然不够快。Faster R-CNN则直接利用RPN（Region Proposal Networks）网络来计算候选框。RPN以一张任意大小的图片为输入，输出一批矩形区域提名，每个区域对应一个目标分数和位置信息。</p>
+<p>Faster R-CNN的主要步骤如下：<br>1.特征提取：同Fast R-CNN，以整张图片为输入，利用CNN得到图片的特征层；<br>2.区域提名：在最终的卷积特征层上利用k个不同的矩形框（Anchor Box）进行提名，k一般取9；<br>3.分类和回归：对每个Anchor Box对应的区域进行object&#x2F;non-object二分类，并用k个回归模型（各自对应不同的Anchor Box）微调候选框位置与大小，最后进行目标分类。</p>
+<p>总之，Faster R-CNN抛弃了Selective Search，引入了RPN网络，使得区域提名，分类，回归一起共用卷积特征，从而得到了进一步的加速。但是Faster R-CNN需要对两万个Anchor Box先判断是否是目标（目标判定），然后再进行目标识别，分成两步。</p>
+<h4 id="1-1-5-R-FCN"><a href="#1-1-5-R-FCN" class="headerlink" title="1.1.5 R-FCN"></a>1.1.5 R-FCN</h4><p>前面的目标检测方法都可以细分为两个子网络：</p>
+<p>1.共享的全卷积网络；<br>2.不共享计算的RoI相关的子网络（比如全连接网络）</p>
+<p>R-FCN则是将最后的全连接层之类换为了一个位置敏感的卷积网络，从而让所有的计算都可以共享。具体来说，先把每个区域提名划分为K×K个网格，比如R-FCN原文中k的取值为3，则对应的九个网格分别表示：左上top-left，上中top-center，右上top-right，………..，右下bottom-right，对应的九宫格，每个Grid都有对应的编码，但预测时候会有C+1个输出，C表示类别数目，+1是因为有背景类别，全部的输出通道数量为K^2 * (C+1).需要注意的是九宫格，但是Pooling时候只有一个起作用，比如bottom-right层只有右下角的小块起作用，那么问题来了，这一层的其他8个框有什么作用呢？答案是她们可以作为其他RoI（偏左或者偏上的RoI）的右下角。</p>
+<p>R-FCN的步骤：</p>
+<p>1.区域提名：使用RPN（Region Proposal Network，区域提名网络），RPN本身是全卷积网络结构；<br>2.分类和回归：利用和RPN共享的特征进行分类。当做bbox回归时，则将c设置为4</p>
+<h3 id="1-2-端到端的方法"><a href="#1-2-端到端的方法" class="headerlink" title="1.2 端到端的方法"></a>1.2 端到端的方法</h3><p>本节介绍端到端（End-to-End）的目标检测方法，这些方法无需区域提名，包括YOLO和SSD</p>
+<h4 id="1-2-1-YOLO"><a href="#1-2-1-YOLO" class="headerlink" title="1.2.1 YOLO"></a>1.2.1 YOLO</h4><p>YOLO的全拼是You Only Look Once，顾名思义就是只看一次，进一步把目标判定和目标识别合二为一，所以识别的性能有了很大的提升，达到每秒45帧，而在快速版的YOLO（Fast YOLO，卷积层更少）中，可以达到每秒155帧。</p>
+<p>针对一张图片，YOLO的处理步骤为：<br>1.把输入图片缩放到448*448大小<br>2.运行卷积网络；<br>3.对模型置信度卡阈值，得到目标位置和类别</p>
+<p>YOLO将448<em>448大小的图切成S</em>S的网格，目标中心点所在的搁置负责该目标的相关检测，每个网络预测B个边框及其置信度，以及C种类别的概率。YOLO中S &#x3D; 7 ，B &#x3D; 2，C取决于数据集中物体类别数量，比如VOC数据集就是C &#x3D; 20，对于VOC数据集来说，YOLO就是把图片统一缩放到448<em>448，然后每张图片平均划分为7</em>7&#x3D;49个小格子，每个格子预测2个矩形框及其置信度，以及20中类别的概率。</p>
+<p>YOLO简化了真个目标检测的流程，速度提升也很大，但是YOLO还是有不少可以改进的地方，比如S*S的网格就是一个比较启发式的策略，如果两个小目标同时落入一个格子中，模型也只能预测一个；另一个问题是Loss函数对不同大小的bbox未做区分。</p>
+<h4 id="1-2-2-SSD"><a href="#1-2-2-SSD" class="headerlink" title="1.2.2 SSD"></a>1.2.2 SSD</h4><p>SSD的全拼是Single Shot MultiBox Detector，冲着YOLO的缺点来的。SSD的网络分为两部分，前面是用于图像分类的标准网络，后面的网络是用于检测的多尺度特征映射层，从而达到检测不同大小的目标，SSD在保持YOLO高速的同时效果也提升了很多，主要是借鉴了Faster R-CNN中的Anchor机制，同时使用了多尺度。但是从原理依然可以看出，Default Box的新装以及网格大小是事先固定的，那么对特定图片小目标的提取会不够好。</p>
 
 
 <div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
@@ -134,7 +142,7 @@
 
 </article>
 
-<div class="related-wrap reveal" id="read-next"><section class="header cap theme"><span>接下来阅读</span></section><section class="body fs14"><a id="next" href="/42cf3aea9a72/">清欢<span class="note">较早</span></a><div class="line"></div><a id="prev" href="/2a6e532cc6fe/">小幸运<span class="note">较新</span></a></section></div>
+<div class="related-wrap reveal" id="read-next"><section class="header cap theme"><span>接下来阅读</span></section><section class="body fs14"><a id="next" href="/5e0c1033dfe2/">基于深度学习的目标检测<span class="note">较早</span></a><div class="line"></div></section></div>
 
 
 
