@@ -1,9 +1,9 @@
 ---
-title: 基于深度学习的目标检测
-date: 2022-08-12 13:01:25
+title: YOLO算法
+date: 2022-08-19 13:01:25
 tags: 深度学习
 categories: 深度学习
-cover: /images/文章图片/深度学习/001.jpg
+cover: /images/文章图片/YOLO/001.jpg
 excerpt: 基于深度学习的目标检测
 --- 
 ### 基于深度学习的目标检测
