@@ -1,5 +1,5 @@
 ---
-title: YOLO算法简介
+title: YOLO算法python实现
 date: 2022-08-19 13:01:25
 tags: 深度学习
 categories: 深度学习
