@@ -29,11 +29,13 @@
 <meta property="og:site_name" content="weijiajin">
 <meta property="og:description" content="计算机视觉：YOLO算法">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://weijiajin.com/images/文章图片/YOLO/002.jpg">
 <meta property="article:published_time" content="2022-08-19T13:01:25.000Z">
-<meta property="article:modified_time" content="2022-08-19T04:10:48.372Z">
+<meta property="article:modified_time" content="2022-08-19T04:14:15.315Z">
 <meta property="article:author" content="weijiajin">
 <meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://weijiajin.com/images/文章图片/YOLO/002.jpg">
   
   
 
@@ -114,6 +116,46 @@
 <h3 id="实时的重要性"><a href="#实时的重要性" class="headerlink" title="实时的重要性"></a>实时的重要性</h3><p>人们看到图像以后，可以立即识别其中的对象、它们的位置和相对位置。这使得我们能够在几乎无意识的情况下完成复杂的任务，比如开车。因此，对汽车进行自动驾驶训练需要类似水平的反应能力和准确性。在其最基本的形式中，这样的系统必须能够分析实时视频中的道路，并能够在继续确定路径之前检测各种类型的对象及其在现实世界中的位置，所有这些都必须是实时的。</p>
 <p>先前的检测系统使用分类器对测试图像的不同切片进行评估。例如，Deformable Parts Model (DPM)涉及到在图像中均匀间隔的位置上滑动窗口并在这些部件上运行分类器。R-CNN(Region-based Convolutional Neural Networks)是另一种模型，它运行一种分割算法将一幅图像分割成一个个小块，然后在这些小块上运行一个分类器。但是，速度慢、优化困难一直困扰着这种YOLO之前的系统。</p>
 <h3 id="YOLO算法"><a href="#YOLO算法" class="headerlink" title="YOLO算法"></a>YOLO算法</h3><p>YOLO将对象检测重新定义为一个回归问题。它将单个卷积神经网络(CNN)应用于整个图像，将图像分成网格，并预测每个网格的类概率和边界框。例如，以一个100x100的图像为例。我们把它分成网格，比如7x7。</p>
+<div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/YOLO/002.jpg"></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <h4 id="1-2-1-YOLO"><a href="#1-2-1-YOLO" class="headerlink" title="1.2.1 YOLO"></a>1.2.1 YOLO</h4><p>YOLO的全拼是You Only Look Once，顾名思义就是只看一次，进一步把目标判定和目标识别合二为一，所以识别的性能有了很大的提升，达到每秒45帧，而在快速版的YOLO（Fast YOLO，卷积层更少）中，可以达到每秒155帧。</p>
 <p>针对一张图片，YOLO的处理步骤为：<br>1.把输入图片缩放到448*448大小<br>2.运行卷积网络；<br>3.对模型置信度卡阈值，得到目标位置和类别</p>
 <p>YOLO将448<em>448大小的图切成S</em>S的网格，目标中心点所在的搁置负责该目标的相关检测，每个网络预测B个边框及其置信度，以及C种类别的概率。YOLO中S &#x3D; 7 ，B &#x3D; 2，C取决于数据集中物体类别数量，比如VOC数据集就是C &#x3D; 20，对于VOC数据集来说，YOLO就是把图片统一缩放到448<em>448，然后每张图片平均划分为7</em>7&#x3D;49个小格子，每个格子预测2个矩形框及其置信度，以及20中类别的概率。</p>
