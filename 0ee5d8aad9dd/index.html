@@ -32,8 +32,9 @@
 <meta property="og:image" content="https://weijiajin.com/images/文章图片/YOLO/001.jpg">
 <meta property="og:image" content="https://weijiajin.com/images/文章图片/YOLO/002.jpeg">
 <meta property="og:image" content="https://weijiajin.com/images/文章图片/YOLO/003.jpeg">
+<meta property="og:image" content="https://weijiajin.com/images/文章图片/YOLO/004.jpeg">
 <meta property="article:published_time" content="2022-08-19T13:01:25.000Z">
-<meta property="article:modified_time" content="2022-08-19T04:29:26.525Z">
+<meta property="article:modified_time" content="2022-08-19T04:31:08.418Z">
 <meta property="article:author" content="weijiajin">
 <meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary_large_image">
@@ -95,7 +96,7 @@
 
 <div class="widgets">
 
-<div class="widget-wrap single" id="toc"><div class="widget-header cap dis-select"><span class="name">本文目录</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8YOLO%E7%AE%97%E6%B3%95"><span class="toc-text">为什么使用YOLO算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#YOLO%E7%AE%97%E6%B3%95%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">YOLO算法是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E6%97%B6%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7"><span class="toc-text">实时的重要性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#YOLO%E7%AE%97%E6%B3%95%E7%AE%80%E4%BB%8B"><span class="toc-text">YOLO算法简介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-1-YOLO"><span class="toc-text">1.2.1 YOLO</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-2-SSD"><span class="toc-text">1.2.2 SSD</span></a></li></ol></li></ol></div></div></div>
+<div class="widget-wrap single" id="toc"><div class="widget-header cap dis-select"><span class="name">本文目录</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8YOLO%E7%AE%97%E6%B3%95"><span class="toc-text">为什么使用YOLO算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#YOLO%E7%AE%97%E6%B3%95%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text">YOLO算法是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E6%97%B6%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7"><span class="toc-text">实时的重要性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#YOLO%E7%AE%97%E6%B3%95%E7%AE%80%E4%BB%8B"><span class="toc-text">YOLO算法简介</span></a></li></ol></div></div></div>
 
 
 </div>
@@ -119,6 +120,7 @@
 <h3 id="YOLO算法是什么"><a href="#YOLO算法是什么" class="headerlink" title="YOLO算法是什么"></a>YOLO算法是什么</h3><p>YOLO算法（You Only Look Once）与RCNN系列算法不一样，是以不同的方式处理对象检测。它将整个图像放在一个实例中，并预测这些框的边界框坐标和及所属类别概率。使用YOLO算法最大优的点是速度极快，每秒可处理45帧，也能够理解一般的对象表示。所以YOLO算法在自动驾驶汽车等前沿技术中使用的实时对象检测中很受欢迎。</p>
 <h3 id="实时的重要性"><a href="#实时的重要性" class="headerlink" title="实时的重要性"></a>实时的重要性</h3><p>人们看到图像以后，可以立即识别其中的对象、它们的位置和相对位置。这使得我们能够在几乎无意识的情况下完成复杂的任务，比如开车。因此，对汽车进行自动驾驶训练需要类似水平的反应能力和准确性。在其最基本的形式中，这样的系统必须能够分析实时视频中的道路，并能够在继续确定路径之前检测各种类型的对象及其在现实世界中的位置，所有这些都必须是实时的。</p>
 <p>先前的检测系统使用分类器对测试图像的不同切片进行评估。例如，Deformable Parts Model (DPM)涉及到在图像中均匀间隔的位置上滑动窗口并在这些部件上运行分类器。R-CNN(Region-based Convolutional Neural Networks)是另一种模型，它运行一种分割算法将一幅图像分割成一个个小块，然后在这些小块上运行一个分类器。但是，速度慢、优化困难一直困扰着这种YOLO之前的系统。</p>
+<p>YOLO非常快。由于检测问题是一个回归问题，所以不需要复杂的管道。它比“R-CNN”快1000倍，比“Fast R-CNN”快100倍。它能够处理实时视频流，延迟小于25毫秒。它的精度是以前实时系统的两倍多。同样重要的是，YOLO遵循的是“端到端深度学习”的实践。</p>
 <h3 id="YOLO算法简介"><a href="#YOLO算法简介" class="headerlink" title="YOLO算法简介"></a>YOLO算法简介</h3><p>YOLO将对象检测重新定义为一个回归问题。它将单个卷积神经网络(CNN)应用于整个图像，将图像分成网格，并预测每个网格的类概率和边界框。例如，以一个100x100的图像为例。我们把它分成网格，比如7x7。</p>
 <div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/YOLO/002.jpeg"></div></div>
 
@@ -133,11 +135,11 @@
 <li>宽度</li>
 <li>值映射到对象所属的类</li>
 </ol>
-<h4 id="1-2-1-YOLO"><a href="#1-2-1-YOLO" class="headerlink" title="1.2.1 YOLO"></a>1.2.1 YOLO</h4><p>YOLO的全拼是You Only Look Once，顾名思义就是只看一次，进一步把目标判定和目标识别合二为一，所以识别的性能有了很大的提升，达到每秒45帧，而在快速版的YOLO（Fast YOLO，卷积层更少）中，可以达到每秒155帧。</p>
-<p>针对一张图片，YOLO的处理步骤为：<br>1.把输入图片缩放到448*448大小<br>2.运行卷积网络；<br>3.对模型置信度卡阈值，得到目标位置和类别</p>
-<p>YOLO将448<em>448大小的图切成S</em>S的网格，目标中心点所在的搁置负责该目标的相关检测，每个网络预测B个边框及其置信度，以及C种类别的概率。YOLO中S &#x3D; 7 ，B &#x3D; 2，C取决于数据集中物体类别数量，比如VOC数据集就是C &#x3D; 20，对于VOC数据集来说，YOLO就是把图片统一缩放到448<em>448，然后每张图片平均划分为7</em>7&#x3D;49个小格子，每个格子预测2个矩形框及其置信度，以及20中类别的概率。</p>
-<p>YOLO简化了真个目标检测的流程，速度提升也很大，但是YOLO还是有不少可以改进的地方，比如S*S的网格就是一个比较启发式的策略，如果两个小目标同时落入一个格子中，模型也只能预测一个；另一个问题是Loss函数对不同大小的bbox未做区分。</p>
-<h4 id="1-2-2-SSD"><a href="#1-2-2-SSD" class="headerlink" title="1.2.2 SSD"></a>1.2.2 SSD</h4><p>SSD的全拼是Single Shot MultiBox Detector，冲着YOLO的缺点来的。SSD的网络分为两部分，前面是用于图像分类的标准网络，后面的网络是用于检测的多尺度特征映射层，从而达到检测不同大小的目标，SSD在保持YOLO高速的同时效果也提升了很多，主要是借鉴了Faster R-CNN中的Anchor机制，同时使用了多尺度。但是从原理依然可以看出，Default Box的新装以及网格大小是事先固定的，那么对特定图片小目标的提取会不够好。</p>
+<p>此外，该算法还可以预测边界框中存在对象的概率。如果一个对象的中心落在一个网格单元中，则该网格单元负责检测该对象。每个网格中将有多个边界框。在训练时，我们希望每个对象只有一个边界框。因此，我们根据哪个Box与ground truth box的重叠度最高，从而分配一个Box来负责预测对象。</p>
+<p>最后，我们对每个类的对象应用一个称为“非最大抑制（Non Max Suppression）”的方法来过滤出“置信度”小于阈值的边界框。这为我们提供了图像预测。</p>
+<div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/YOLO/004.jpeg"></div></div>
+
+
 
 
 <div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
