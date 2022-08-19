@@ -96,8 +96,266 @@ bh是边界框的高度与相应单元网格的高度之比，在例子中约为
 - IoU =交叉面积/联合的面积；
 - 在本例中：IoU =黄色面积/绿色面积；
 
+如果IoU大于0.5，就可以说预测足够好。0.5是在这里采取的任意阈值，也可以根据具体问题进行更改。阈值越大，预测就越准确。
+
+还有一种技术可以显着提高YOLO的效果——非极大值抑制。
+
+对象检测算法最常见的问题之一是，它不是一次仅检测出一次对象，而可能获得多次检测结果。假设：
+
+{% image /images/文章图片/YOLO/020.png %}
+
+上图中，汽车不止一次被识别，那么如何判定边界框呢。非极大值抑可以解决这个问题，使得每个对象只能进行一次检测。下面了解该方法的工作原理。
 
 
+1. 它首先查看与每次检测相关的概率并取最大的概率。在上图中，0.9是最高概率，因此首先选择概率为0.9的方框：
+
+{% image /images/文章图片/YOLO/021.png %}
+
+2. 现在，它会查看图像中的所有其他框。与当前边界框较高的IoU的边界框将被抑制。因此，在示例中，0.6和0.7概率的边界框将被抑制：
+
+{% image /images/文章图片/YOLO/022.png %}
+
+3. 在部分边界框被抑制后，它会从概率最高的所有边界框中选择下一个，在例子中为0.8的边界框：
+
+{% image /images/文章图片/YOLO/023.png %}
+
+4. 再次计算与该边界框相连边界框的IoU，去掉较高IoU值的边界框：
+
+{% image /images/文章图片/YOLO/024.png %}
+
+5. 重复这些步骤，得到最后的边界框：
+
+{% image /images/文章图片/YOLO/025.png %}
+
+以上就是非极大值抑制的全部内容，总结一下关于非极大值抑制算法的要点：
+
+- 丢弃概率小于或等于预定阈值（例如0.5）的所有方框；
+- 对于剩余的边界框：
+- 选择具有最高概率的边界框并将其作为输出预测；
+- 计算相关联的边界框的IoU值，舍去IoU大于阈值的边界框；
+- 重复步骤2，直到所有边界框都被视为输出预测或被舍弃；
+
+#### Anchor Boxes
+
+在上述内容中，每个网格只能识别一个对象。但是如果单个网格中有多个对象呢？这就行需要了解 Anchor Boxes的概念。假设将下图按照3X3网格划分：
+
+{% image /images/文章图片/YOLO/026.png %}
+
+获取对象的中心点，并根据其位置将对象分配给相应的网格。在上面的示例中，两个对象的中心点位于同一网格中：
+
+{% image /images/文章图片/YOLO/027.png %}
+
+上述方法只会获得两个边界框其中的一个，但是如果使用Anchor Boxes，可能会输出两个边界框！我们该怎么做呢？首先，预先定义两种不同的形状，称为Anchor Boxes。对于每个网格将有两个输出。这里为了易于理解，这里选取两个Anchor Boxes，也可以根据实际情况增加Anchor Boxes的数量：
+
+{% image /images/文章图片/YOLO/028.png %}
+
+- 没有Anchor Boxes的YOLO输出标签如下所示：
+
+{% image /images/文章图片/YOLO/029.png %}
+
+- 有Anchor Boxes的YOLO输出标签如下所示：
+
+{% image /images/文章图片/YOLO/030.png %}
+
+前8行属于Anchor Boxes1，其余8行属于Anchor Boxes2。基于边界框和框形状的相似性将对象分配给Anchor Boxes。由于Anchor Boxes1的形状类似于人的边界框，后者将被分配给Anchor Boxes1，并且车将被分配给Anchor Boxes2.在这种情况下的输出，将是3X3X16大小。
+
+ 因此，对于每个网格，可以根据Anchor Boxes的数量检测两个或更多个对象。
+
+
+### 结合思想
+
+首先介绍如何训练YOLO模型，然后是新的图像进行预测。
+
+#### 训练
+
+训练模型时，输入数据是由图像及其相应的y标签构成。样例如下：
+
+{% image /images/文章图片/YOLO/031.png %}
+
+假设每个网格有两个Anchor Boxes，并划分为3X3网格，并且有3个不同的类别。因此，相应的y标签具有3X3X16的形状。训练过程的完成方式就是将特定形状的图像映射到对应3X3X16大小的目标。
+
+#### 测试
+
+对于每个网格，模型将预测·3X3X16·大小的输出。该预测中的16个值将与训练标签的格式相同。前8个值将对应于Anchor Boxes1，其中第一个值将是该网络中对象的概率，2-5的值将是该对象的边界框坐标，最后三个值表明对象属于哪个类。以此类推。
+
+最后，非极大值抑制方法将应用于预测框以获得每个对象的单个预测结果。
+
+以下是YOLO算法遵循的确切维度和步骤：
+
+- 准备对应的图像（608,608,3）;
+- 将图像传递给卷积神经网络（CNN），该网络返回（19,19,5,85）维输出;
+- 输出的最后两个维度被展平以获得（19,19,425）的输出量：
+	- 19×19网格的每个单元返回425个数字;
+	- 425=5 * 85，其中5是每个网格的Anchor Boxes数量；
+	- 85= 5+80，其中5表示（pc、bx、by、bh、bw），80是检测的类别数；
+- 最后，使用IoU和非极大值抑制去除重叠框；
+
+
+### YOLO算法实现
+
+首先定义一些函数，这些函数将用来选择高于某个阈值的边界框，并对其应用非极大值抑制。首先，导入所需的库：
+
+```
+import os
+import matplotlib.pyplot as plt
+from matplotlib.pyplot import imshow
+import scipy.io
+import scipy.misc
+import numpy as np
+import pandas as pd
+import PIL
+import tensorflow as tf
+from skimage.transform import resize
+from keras import backend as K
+from keras.layers import Input, Lambda, Conv2D
+from keras.models import load_model, Model
+from yolo_utils import read_classes, read_anchors, generate_colors, preprocess_image, draw_boxes, scale_boxes
+from yad2k.models.keras_yolo import yolo_head, yolo_boxes_to_corners, preprocess_true_boxes, yolo_loss, yolo_body
+
+%matplotlib inline
+```
+
+然后，实现基于概率和阈值过滤边界框的函数：
+
+```
+def yolo_filter_boxes(box_confidence, boxes, box_class_probs, threshold = .6):
+    box_scores = box_confidence*box_class_probs
+    box_classes = K.argmax(box_scores,-1)
+    box_class_scores = K.max(box_scores,-1)
+    filtering_mask = box_class_scores>threshold
+    scores = tf.boolean_mask(box_class_scores,filtering_mask)
+    boxes = tf.boolean_mask(boxes,filtering_mask)
+    classes = tf.boolean_mask(box_classes,filtering_mask)
+
+    return scores, boxes, classes
+```
+
+之后，实现计算IoU的函数：
+
+```
+def iou(box1, box2):
+    xi1 = max(box1[0],box2[0])
+    yi1 = max(box1[1],box2[1])
+    xi2 = min(box1[2],box2[2])
+    yi2 = min(box1[3],box2[3])
+    inter_area = (yi2-yi1)*(xi2-xi1)
+    box1_area = (box1[3]-box1[1])*(box1[2]-box1[0])
+    box2_area = (box2[3]-box2[1])*(box2[2]-box2[0])
+    union_area = box1_area+box2_area-inter_area
+    iou = inter_area/union_area
+
+    return iou
+```
+
+然后，实现非极大值抑制的函数：
+
+```
+def yolo_non_max_suppression(scores, boxes, classes, max_boxes = 10, iou_threshold = 0.5):
+    max_boxes_tensor = K.variable(max_boxes, dtype='int32')
+    K.get_session().run(tf.variables_initializer([max_boxes_tensor]))
+    nms_indices = tf.image.non_max_suppression(boxes,scores,max_boxes,iou_threshold)
+    scores = K.gather(scores,nms_indices)
+    boxes = K.gather(boxes,nms_indices)
+    classes = K.gather(classes,nms_indices)
+
+    return scores, boxes, classes
+```
+
+随机初始化下大小为（19,19,5,85）的输出向量：
+
+```
+yolo_outputs = (tf.random_normal([19, 19, 5, 1], mean=1, stddev=4, seed = 1),
+                   tf.random_normal([19, 19, 5, 2], mean=1, stddev=4, seed = 1),
+                   tf.random_normal([19, 19, 5, 2], mean=1, stddev=4, seed = 1),
+                   tf.random_normal([19, 19, 5, 80], mean=1, stddev=4, seed = 1))
+```
+
+最后，实现一个将CNN的输出作为输入并返回被抑制的边界框的函数：
+```
+def yolo_eval(yolo_outputs, image_shape = (720., 1280.), max_boxes=10, score_threshold=.6, iou_threshold=.5):
+    box_confidence, box_xy, box_wh, box_class_probs = yolo_outputs
+    boxes = yolo_boxes_to_corners(box_xy, box_wh)
+    scores, boxes, classes = yolo_filter_boxes(box_confidence, boxes, box_class_probs, threshold = score_threshold)
+    boxes = scale_boxes(boxes, image_shape)
+    scores, boxes, classes = yolo_non_max_suppression(scores, boxes, classes, max_boxes, iou_threshold)
+
+    return scores, boxes, classes
+```
+
+使用yolo_eval函数对之前创建的随机输出向量进行预测：
+```
+scores, boxes, classes = yolo_eval(yolo_outputs)
+with tf.Session() as test_b:
+    print("scores[2] = " + str(scores[2].eval()))
+    print("boxes[2] = " + str(boxes[2].eval()))
+    print("classes[2] = " + str(classes[2].eval()))
+```
+
+{% image /images/文章图片/YOLO/032.png %}
+
+score表示对象在图像中的可能性，boxes返回检测到的对象的（x1，y1，x2，y2）坐标，classes表示识别对象所属的类。
+现在，在新的图像上使用预训练的YOLO算法，看看其工作效果：
+
+```
+sess = K.get_session()
+class_names = read_classes("model_data/coco_classes.txt")
+anchors = read_anchors("model_data/yolo_anchors.txt")
+
+yolo_model = load_model("model_data/yolo.h5")
+```
+
+在加载类别信息和预训练模型之后，使用上面定义的函数来获取 yolo_outputs
+```
+yolo_outputs = yolo_head(yolo_model.output, anchors, len(class_names))
+```
+
+之后，定义一个函数来预测边界框并在图像上标记边界框：
+
+```
+def predict(sess, image_file):
+    image, image_data = preprocess_image("images/" + image_file, model_image_size = (608, 608))
+    out_scores, out_boxes, out_classes = sess.run([scores, boxes, classes], feed_dict={yolo_model.input: image_data, K.learning_phase(): 0})
+
+    print('Found {} boxes for {}'.format(len(out_boxes), image_file))
+
+    # Generate colors for drawing bounding boxes.
+    colors = generate_colors(class_names)
+
+    # Draw bounding boxes on the image file
+    draw_boxes(image, out_scores, out_boxes, out_classes, class_names, colors)
+
+    # Save the predicted bounding box on the image
+    image.save(os.path.join("out", image_file), quality=90)
+
+    # Display the results in the notebook
+    output_image = scipy.misc.imread(os.path.join("out", image_file))
+
+    plt.figure(figsize=(12,12))
+    imshow(output_image)
+
+    return out_scores, out_boxes, out_classes
+```
+
+接下来，将使用预测函数读取图像并进行预测：
+
+```
+img = plt.imread('images/img.jpg')
+image_shape = float(img.shape[0]), float(img.shape[1])
+scores, boxes, classes = yolo_eval(yolo_outputs, image_shape)
+```
+
+最后，输出预测结果：
+
+```
+out_scores, out_boxes, out_classes = predict(sess, "img.jpg")
+```
+
+{% image /images/文章图片/YOLO/033.png %}
+
+
+#### YOLO算法darknet的官网
+
+https://pjreddie.com/darknet/yolo/
 
 
 
