@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://weijiajin.com/images/文章图片/YOLO/002.jpeg">
 <meta property="og:image" content="https://weijiajin.com/images/文章图片/YOLO/003.jpeg">
 <meta property="article:published_time" content="2022-08-19T13:01:25.000Z">
-<meta property="article:modified_time" content="2022-08-19T04:27:00.970Z">
+<meta property="article:modified_time" content="2022-08-19T04:29:26.525Z">
 <meta property="article:author" content="weijiajin">
 <meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary_large_image">
@@ -127,7 +127,12 @@
 <div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/YOLO/003.jpeg"></div></div>
 
 <p>每个边界框可以使用四个描述符进行描述：</p>
-<p>* </p>
+<ol>
+<li>边界框的中心</li>
+<li>高度</li>
+<li>宽度</li>
+<li>值映射到对象所属的类</li>
+</ol>
 <h4 id="1-2-1-YOLO"><a href="#1-2-1-YOLO" class="headerlink" title="1.2.1 YOLO"></a>1.2.1 YOLO</h4><p>YOLO的全拼是You Only Look Once，顾名思义就是只看一次，进一步把目标判定和目标识别合二为一，所以识别的性能有了很大的提升，达到每秒45帧，而在快速版的YOLO（Fast YOLO，卷积层更少）中，可以达到每秒155帧。</p>
 <p>针对一张图片，YOLO的处理步骤为：<br>1.把输入图片缩放到448*448大小<br>2.运行卷积网络；<br>3.对模型置信度卡阈值，得到目标位置和类别</p>
 <p>YOLO将448<em>448大小的图切成S</em>S的网格，目标中心点所在的搁置负责该目标的相关检测，每个网络预测B个边框及其置信度，以及C种类别的概率。YOLO中S &#x3D; 7 ，B &#x3D; 2，C取决于数据集中物体类别数量，比如VOC数据集就是C &#x3D; 20，对于VOC数据集来说，YOLO就是把图片统一缩放到448<em>448，然后每张图片平均划分为7</em>7&#x3D;49个小格子，每个格子预测2个矩形框及其置信度，以及20中类别的概率。</p>
