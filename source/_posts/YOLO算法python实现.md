@@ -7,8 +7,6 @@ cover: /images/文章图片/YOLO/yolo2.jpg
 excerpt: YOLO算法，介绍其基本原理及实现细节，并用python实现。
 --- 
 
-{% image /images/文章图片/YOLO/yolo2.jpg %}
-
 ###  YOLO框架如何运作
 
 #### YOLO用于检测给定图像中的对象的处理步骤
