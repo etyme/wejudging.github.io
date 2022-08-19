@@ -7,6 +7,8 @@ cover: /images/文章图片/YOLO/001.jpg
 excerpt: 计算机视觉：YOLO算法
 --- 
 
+{% image /images/文章图片/YOLO/001.jpg %}
+
 ### 为什么使用YOLO算法
 
 深度学习相关的目标检测方法大致可以分为两派：
