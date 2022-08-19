@@ -5,7 +5,7 @@ title: MATLAB 下载与安装
 ---
 ### MATLAB 下载
 
-> 浏览器打开官网 https://ww2.mathworks.cn/downloads/
+> 浏览器打开官网 https://ww2.mathworks.cn
 
 1.点击右上角 登录
 
