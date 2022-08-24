@@ -136,6 +136,9 @@ https://matlab.mathworks.com/
 {% image /images/文章图片/Matlab/4.png %}
 
 
+### 如何在无法连接 Internet 的电脑上进行产品的安装和激活
+
+https://ww2.mathworks.cn/matlabcentral/answers/130613-internet
 
 
 ### MATLAB 工具库下载（可选）
