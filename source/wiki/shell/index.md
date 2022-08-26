@@ -78,7 +78,13 @@ wget --no-check-certificate -O gost.sh https://raw.githubusercontent.com/KANIKIG
 ```bash
 wget --no-check-certificate https://raw.github.com/Lozy/danted/master/install.sh -O install.sh
 bash install.sh  --port=18888 --user=weijiajin --passwd=weijiajin
+
 bash install.sh --uninstall
+
+systemctl enable sockd.service
+
+service sockd state
+
 ```
 #### 增加网卡
 
@@ -103,8 +109,7 @@ systemctl restart networking
 ip addr
 wget --no-check-certificate https://raw.github.com/Lozy/danted/master/install.sh -O install.sh
 bash install.sh  --port=18888 --user=weijiajin --passwd=weijiajin
-service sockd state
-systemctl enable sockd
+
 ```
 
 #### DD系统
