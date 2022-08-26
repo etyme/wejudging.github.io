@@ -29,8 +29,8 @@
 <meta property="og:site_name" content="weijiajin">
 <meta property="og:description" content="tcp脚本wget &quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;wejudging&#x2F;shell&#x2F;main&#x2F;tcp.sh&quot; &amp;&amp; chmod +x tcp.sh &amp;&amp; .&#x2F;tcp.sh   trojanyum install -y socatyum -y install epel-releasesource &lt;(cu">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-08-26T06:23:58.209Z">
-<meta property="article:modified_time" content="2022-08-26T06:23:58.209Z">
+<meta property="article:published_time" content="2022-08-26T14:35:13.878Z">
+<meta property="article:modified_time" content="2022-08-26T14:35:13.878Z">
 <meta property="article:author" content="weijiajin">
 <meta property="article:tag" content="魏家劲">
 <meta name="twitter:card" content="summary">
@@ -107,7 +107,7 @@
 
   
   
-<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" id="home" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">项目</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/wiki/shell/">Shell</a></div><div id="post-meta">更新于&nbsp;<time datetime="2022-08-26T06:23:58.209Z">2022-08-26</time></div></div>
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" id="home" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">项目</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/wiki/shell/">Shell</a></div><div id="post-meta">更新于&nbsp;<time datetime="2022-08-26T14:35:13.878Z">2022-08-26</time></div></div>
 
   <article class="content md wiki">
   <h1 class="article-title"><span>shell</span></h1>
@@ -129,7 +129,7 @@
 <h4 id="danate"><a href="#danate" class="headerlink" title="danate"></a>danate</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget --no-check-certificate https://raw.github.com/Lozy/danted/master/install.sh -O install.sh</span><br><span class="line">bash install.sh  --port=18888 --user=weijiajin --passwd=weijiajin</span><br><span class="line">bash install.sh --uninstall</span><br></pre></td></tr></table></figure>
 <h4 id="增加网卡"><a href="#增加网卡" class="headerlink" title="增加网卡"></a>增加网卡</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ifconfig eth0:1 10.0.0.5 up</span><br><span class="line">ifconfig eth0:2 10.0.0.6 up</span><br><span class="line">ifconfig eth0:3 10.0.0.7 up</span><br><span class="line">ifconfig eth0:4 10.0.0.8 up</span><br><span class="line">ifconfig eth0:5 10.0.0.9 up</span><br><span class="line">ifconfig eth0:6 10.0.0.10 up</span><br><span class="line">ifconfig eth0:7 10.0.0.11 up</span><br><span class="line">ifconfig eth0:8 10.0.0.12 up</span><br><span class="line">ifconfig eth0:9 10.0.0.13 up</span><br></pre></td></tr></table></figure>
 
-<h4 id="一键安装多IP-s5"><a href="#一键安装多IP-s5" class="headerlink" title="一键安装多IP s5"></a>一键安装多IP s5</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget https://github.com/zyhut200/az/archive/refs/heads/main.zip -O /etc/network/main.zip</span><br><span class="line">unzip -oj /etc/network/main.zip <span class="string">&quot;*/interfaces&quot;</span> -d /etc/network</span><br><span class="line">systemctl restart networking</span><br><span class="line">ip addr</span><br><span class="line">wget --no-check-certificate https://raw.github.com/Lozy/danted/master/install.sh -O install.sh</span><br><span class="line">bash install.sh  --port=18888 --user=weijiajin --passwd=weijiajin</span><br><span class="line">service sockd state</span><br></pre></td></tr></table></figure>
+<h4 id="一键安装多IP-s5"><a href="#一键安装多IP-s5" class="headerlink" title="一键安装多IP s5"></a>一键安装多IP s5</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget https://github.com/zyhut200/az/archive/refs/heads/main.zip -O /etc/network/main.zip</span><br><span class="line">unzip -oj /etc/network/main.zip <span class="string">&quot;*/interfaces&quot;</span> -d /etc/network</span><br><span class="line">systemctl restart networking</span><br><span class="line">ip addr</span><br><span class="line">wget --no-check-certificate https://raw.github.com/Lozy/danted/master/install.sh -O install.sh</span><br><span class="line">bash install.sh  --port=18888 --user=weijiajin --passwd=weijiajin</span><br><span class="line">service sockd state</span><br><span class="line">systemctl <span class="built_in">enable</span> sockd</span><br></pre></td></tr></table></figure>
 
 <h4 id="DD系统"><a href="#DD系统" class="headerlink" title="DD系统"></a>DD系统</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">LANG=en_US.UTF-8</span><br><span class="line">wget --no-check-certificate -O AutoReinstall.sh https://git.io/AutoReinstall.sh &amp;&amp; bash AutoReinstall.sh</span><br><span class="line">Pwd@CentOS</span><br><span class="line">LANG=en_US.UTF-8</span><br><span class="line">fdisk -l</span><br><span class="line"> <span class="built_in">df</span> -h</span><br><span class="line">sfdisk -l</span><br><span class="line">LANG=en_US.UTF-8</span><br><span class="line">growpart /dev/vda 1</span><br><span class="line">resize2fs /dev/vda1</span><br></pre></td></tr></table></figure>
 
