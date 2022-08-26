@@ -173,5 +173,22 @@ git commit -m "12345"
 git push
 ```
 
+### ServerStatus-Hotaru
 
+服务端安装方法
 
+```bash
+wget https://raw.githubusercontent.com/cokemine/ServerStatus-Hotaru/master/status.sh
+# wget https://cokemine.coding.net/p/hotarunet/d/ServerStatus-Hotaru/git/raw/master/status.sh 若服务器位于中国大陆建议选择 Coding.net 仓库
+bash status.sh s
+
+```
+
+客户端安装方法
+
+```bash
+wget https://raw.githubusercontent.com/cokemine/ServerStatus-Hotaru/master/status.sh
+# wget https://cokemine.coding.net/p/hotarunet/d/ServerStatus-Hotaru/git/raw/master/status.sh 若服务器位于中国大陆建议选择 Coding.net 仓库
+bash status.sh c
+
+```
