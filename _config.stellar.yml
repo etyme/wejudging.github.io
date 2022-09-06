@@ -28,7 +28,7 @@ footer:
      - icon: '<img src="/images/youqinglianjie.svg"/>'
        url: https://weijiajin.com/friends/
      - icon: '<img src="/images/OneDrive.svg"/>'
-       url: https://onedrive.weijiajin.com
+       url: https://cloud.weijiajin.com
 
   sitemap:
     '博客':
