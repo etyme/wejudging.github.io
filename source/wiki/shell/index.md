@@ -199,7 +199,7 @@ bash status.sh c
 
 ```
 
-终端开启代理
+### 终端开启代理
 
 ```
 export https_proxy=http://127.0.0.1:8090;export http_proxy=http://127.0.0.1:8090;export all_proxy=socks5://127.0.0.1:8090
