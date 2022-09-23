@@ -43,7 +43,7 @@ footer:
     '更多':
       - '[关于本站](/about/)'
       - '[GitHub](https://github.com/wejudging)'
-  content: 
+  content: |
      <hr><p align="center"><a href="https://vercel.com"><img src="/images/内容分发-Vercel-black.svg" width="117" height="20" /></a>&nbsp&nbsp<a href="https://github.com/wejudging"><img src="/images/网站部署-GitHub-5DADE2.svg" width="119" height="20"/></a>&nbsp&nbsp<a href="https://hexo.io"><img src="/images/强力驱动-Hexo-blue.svg" width="111" height="20"/></a>&nbsp&nbsp<a href="https://cloudflare.com"><img src="/images/域名解析-CloudFlare-f38020.svg"></a></p>
 
 article:
