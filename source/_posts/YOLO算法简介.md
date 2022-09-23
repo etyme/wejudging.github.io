@@ -10,7 +10,7 @@ excerpt: 计算机视觉：YOLO算法
 {% image /images/文章图片/YOLO/001.jpg %}
 
 ### 为什么使用YOLO算法
-
+1111
 深度学习相关的目标检测方法大致可以分为两派：
 1.基于区域提名的：如R-CNN，SPP-Net，Fast R-CNN，Faster R-CNN，R-FCN；
 2.端到端（End-to-End）：无需区域提名的，如YOLO，SSD
