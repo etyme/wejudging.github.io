@@ -43,7 +43,8 @@ footer:
     '更多':
       - '[关于本站](/about/)'
       - '[GitHub](https://github.com/wejudging)'
- 
+  content: 
+    
 
 article:
   # 分类颜色
