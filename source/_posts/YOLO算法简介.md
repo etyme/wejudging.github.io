@@ -7,7 +7,7 @@ cover: /images/文章图片/YOLO/yolo1.png
 excerpt: 计算机视觉：YOLO算法
 --- 
 
-{% image /images/文章图片/YOLO/001.jpg %}
+{% image /images/文章图片/YOLO/yolo1.png %}
 
 ### 为什么使用YOLO算法
 22222
