@@ -21,7 +21,7 @@ header: false
 [订阅](/atom.xml) 
 [邮箱](mailto:wejudging@gmail.com)
 [GitHub](https://github.com/wejudging)
-[友链](/friends)  
+[友链](/friends/)  
 [云盘](https://cloud.weijiajin.com) %}
 
 {% endabout %}
