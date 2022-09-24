@@ -30,18 +30,18 @@ footer:
 
   sitemap:
     '博客':
-      - '[近期](/)'
-      - '[分类](/blog/categories/)'
-      - '[标签](/blog/tags/)'
-      - '[归档](/blog/archives/)'
+      - '[近期](https://weijiajin.com)'
+      - '[分类](https://weijiajin.com/blog/categories/)'
+      - '[标签](https://weijiajin.com/blog/tags/)'
+      - '[归档](https://weijiajin.com/blog/archives/)'
     '项目':
-      - '[脚本](/wiki/tags/脚本/)'
-      - '[教育优惠](/wiki/tags/教育优惠/)'
+      - '[脚本](https://weijiajin.com/wiki/tags/脚本/)'
+      - '[教育优惠](https://weijiajin.com/wiki/tags/教育优惠/)'
     '便笺':
-      - '[友链](/friends/)'
-      - '[留言板](/about/#comments)'
+      - '[友链](https://weijiajin.com/friends/)'
+      - '[留言板](https://weijiajin.com/about/#comments)'
     '更多':
-      - '[关于本站](/about/)'
+      - '[关于本站](https://weijiajin.com/about/)'
       - '[GitHub](https://github.com/wejudging)'
   content: |
      <hr><p align="center"><a href="https://aws.amazon.com/cn/campaigns/cloudfront"><img src="/images/内容分发-CloudFront-orange.svg" width="143" height="20" /></a>&nbsp&nbsp<a href="https://github.com/wejudging"><img src="/images/网站部署-GitHub-5DADE2.svg" width="119" height="20"/></a>&nbsp&nbsp<a href="https://hexo.io"><img src="/images/强力驱动-Hexo-blue.svg" width="111" height="20"/></a>&nbsp&nbsp<a href="https://cloudflare.com"><img src="/images/域名解析-CloudFlare-f38020.svg"></a></p>
