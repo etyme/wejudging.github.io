@@ -31,9 +31,9 @@ footer:
   sitemap:
     '博客':
       - '[近期](/)'
-      - '[分类](/blog/categories/)'
-      - '[标签](/blog/tags/)'
-      - '[归档](/blog/archives/)'
+      - '[分类](/categories/)'
+      - '[标签](/tags/)'
+      - '[归档](/archives/)'
     '项目':
       - '[脚本](/wiki/tags/脚本/)'
       - '[教育优惠](/tags/教育优惠/)'
