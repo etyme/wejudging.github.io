@@ -30,8 +30,8 @@ footer:
 
   sitemap:
     '博客':
-      - '[近期](https://weijiajin.com)'
-      - '[分类](https://weijiajin.com/blog/categories/)'
+      - '[近期](/)'
+      - '[分类](/blog/categories/)'
       - '[标签](https://weijiajin.com/blog/tags/)'
       - '[归档](https://weijiajin.com/blog/archives/)'
     '项目':
