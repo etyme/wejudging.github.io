@@ -18,6 +18,7 @@ jobs:
         node-version: "16.15.x"
     - name: Generate Public Files
       run: |
+        npm install hexo-cli -g
         hexo clean
         hexo generate
     - name: Deploy
