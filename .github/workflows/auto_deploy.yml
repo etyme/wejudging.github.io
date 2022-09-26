@@ -18,10 +18,6 @@ jobs:
         node-version: "16.15.x"
     - name: Generate Public Files
       run: |
-        npm i
-        npm install hexo-cli -g
-        npm uninstall hexo-renderer-marked --save
-        npm install hexo-renderer-markdown-it-plus --save
         hexo clean
         hexo generate
     - name: Deploy
