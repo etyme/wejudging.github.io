@@ -3,7 +3,7 @@ title: C++程序设计简答题（一）
 date: 2022-03-06 13:01:25
 tags: C++
 categories: C++
-cover: /images/文章图片/程序设计简答题/logo.png
+cover: c,c++,study
 excerpt: C++既可以进行C语言的过程化程序设计，又可以进行以抽象数据类型为特点的基于对象的程序设计，还可以进行以继承和多态为特点的面向对象的程序设计。
 ---
 {% image /images/文章图片/程序设计简答题/logo.png %}
