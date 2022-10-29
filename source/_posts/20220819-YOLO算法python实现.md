@@ -289,7 +289,7 @@ with tf.Session() as test_b:
     print("classes[2] = " + str(classes[2].eval()))
 ```
 
-{% image /images/文章图片/YOLO/032.png %}
+{% image /images/文章图片/20220819-YOLO算法python实现/032.png %}
 
 score表示对象在图像中的可能性，boxes返回检测到的对象的（x1，y1，x2，y2）坐标，classes表示识别对象所属的类。
 现在，在新的图像上使用预训练的YOLO算法，看看其工作效果：
