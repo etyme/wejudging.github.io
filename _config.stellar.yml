@@ -3,7 +3,11 @@ open_graph:
   enable: true
   twitter_id: # for open_graph meta
 
-
+# 默认打开
+lazyload:
+  enable: true # [hexo clean && hexo s] is required after changing this value.
+  js: https://fastly.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js
+  transition: blur # blur, fade
 
 
 
@@ -71,13 +75,6 @@ plugins:
   ## required plugins ##
   # jquery
   jquery: https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js
-
-  # image lazyload
-  # https://www.npmjs.com/package/vanilla-lazyload
-  lazyload:
-    enable: false # [hexo clean && hexo s] is required after changing this value.
-    js: /js_css/lazyload.js
-    transition: fade # blur, fade
 
   # preload
   preload:
