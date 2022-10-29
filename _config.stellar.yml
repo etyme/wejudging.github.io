@@ -18,9 +18,6 @@ ghuser:
   menu: true # show menu or not
 
 
-
-
-
 sidebar:
   menu:
     post: '[博客](/)'
