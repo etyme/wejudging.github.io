@@ -9,9 +9,10 @@ lazyload:
   js: https://fastly.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js
   transition: fade # blur, fade
 
-
-article:
-  auto_cover: true
+# 默认打开
+loading:
+  loading: 正在加载
+  error: 加载失败，请稍后重试。
 
 
 sidebar:
