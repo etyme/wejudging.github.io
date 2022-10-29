@@ -1,3 +1,17 @@
+######## head tags ########
+open_graph:
+  enable: true
+  twitter_id: # for open_graph meta
+
+
+
+
+
+
+
+
+
+
 sidebar:
   menu:
     post: '[博客](/)'
