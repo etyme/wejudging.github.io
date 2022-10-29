@@ -10,7 +10,7 @@ breadcrumb: false
 
 
 
-{% friends repo:wejudging/friends %}
+{% friends repo:wejudging/issues-json-generator %}
 
 由于近期对友链系统进行了重做，原链接失效的小伙伴请按照下方交换友链的步骤进行填写。在新的友链系统中，您随时可以对自己的信息进行修改而无需等待博主更新。
 
