@@ -1,6 +1,4 @@
 ---
-robots: noindex,nofollow
-sitemap: false
 menu_id: more
 seo_title: 友链
 toc_title: 友链索引
