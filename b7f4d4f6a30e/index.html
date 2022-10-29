@@ -20,26 +20,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" content="#f8f8f8">
   
-  <title>YOLO算法简介 - weijiajin</title>
+  <title>weijiajin</title>
 
   
-    <meta name="description" content="计算机视觉：YOLO算法">
+    <meta name="description" content="为什么使用YOLO算法 深度学习相关的目标检测方法大致可以分为两派： 1.基于区域提名的：如R-CNN，SPP-Net，Fast R-CNN，Faster R-CNN，R-FCN； 2.端到端（End-to-End）：无需区域提名的，如YOLO，SSD 目前来说，RCNN系列基于区域提名的算法面临一个问题，不是端到端的模型，几个构件拼凑在一起组成整个检测系统，操作起来比较复杂耗时较长，但端到端">
 <meta property="og:type" content="article">
-<meta property="og:title" content="YOLO算法简介">
-<meta property="og:url" content="https://weijiajin.com/0ee5d8aad9dd/">
+<meta property="og:title" content="weijiajin">
+<meta property="og:url" content="https://weijiajin.com/b7f4d4f6a30e/">
 <meta property="og:site_name" content="weijiajin">
-<meta property="og:description" content="计算机视觉：YOLO算法">
+<meta property="og:description" content="为什么使用YOLO算法 深度学习相关的目标检测方法大致可以分为两派： 1.基于区域提名的：如R-CNN，SPP-Net，Fast R-CNN，Faster R-CNN，R-FCN； 2.端到端（End-to-End）：无需区域提名的，如YOLO，SSD 目前来说，RCNN系列基于区域提名的算法面临一个问题，不是端到端的模型，几个构件拼凑在一起组成整个检测系统，操作起来比较复杂耗时较长，但端到端">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://weijiajin.com/images/文章图片/YOLO/yolo1.png">
-<meta property="og:image" content="https://weijiajin.com/images/文章图片/YOLO/002.jpeg">
-<meta property="og:image" content="https://weijiajin.com/images/文章图片/YOLO/003.jpeg">
-<meta property="og:image" content="https://weijiajin.com/images/文章图片/YOLO/004.jpeg">
-<meta property="article:published_time" content="2022-08-19T13:01:25.000Z">
-<meta property="article:modified_time" content="2022-10-29T14:32:50.392Z">
+<meta property="og:image" content="https://weijiajin.com/images/文章图片/20220818-YOLO算法简介/002.jpeg">
+<meta property="og:image" content="https://weijiajin.com/images/文章图片/20220818-YOLO算法简介/003.jpeg">
+<meta property="og:image" content="https://weijiajin.com/images/文章图片/20220818-YOLO算法简介/004.jpeg">
+<meta property="article:published_time" content="2022-08-18T00:00:00.000Z">
+<meta property="article:modified_time" content="2022-10-29T14:44:48.717Z">
 <meta property="article:author" content="weijiajin">
 <meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://weijiajin.com/images/文章图片/YOLO/yolo1.png">
+<meta name="twitter:image" content="https://weijiajin.com/images/文章图片/20220818-YOLO算法简介/002.jpeg">
   
   
 
@@ -111,7 +110,7 @@
 
 <div class="widgets">
 
-<div class="widget-wrap single" id="toc"><div class="widget-header cap dis-select"><span class="name">YOLO算法简介</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8yolo%E7%AE%97%E6%B3%95"><span class="toc-text"> 为什么使用YOLO算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#yolo%E7%AE%97%E6%B3%95%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text"> YOLO算法是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E6%97%B6%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7"><span class="toc-text"> 实时的重要性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#yolo%E7%AE%97%E6%B3%95%E7%AE%80%E4%BB%8B"><span class="toc-text"> YOLO算法简介</span></a></li></ol></div></div></div>
+<div class="widget-wrap single" id="toc"><div class="widget-header cap dis-select"><span class="name">本文目录</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8yolo%E7%AE%97%E6%B3%95"><span class="toc-text"> 为什么使用YOLO算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#yolo%E7%AE%97%E6%B3%95%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-text"> YOLO算法是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E6%97%B6%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7"><span class="toc-text"> 实时的重要性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#yolo%E7%AE%97%E6%B3%95%E7%AE%80%E4%BB%8B"><span class="toc-text"> YOLO算法简介</span></a></li></ol></div></div></div>
 
 
 
@@ -126,12 +125,11 @@
       
 
 
-<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></div><div id="post-meta">发布于&nbsp;<time datetime="2022-08-19T13:01:25.000Z">2022-08-19</time></div></div>
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></div><div id="post-meta">发布于&nbsp;<time datetime="2022-08-18T00:00:00.000Z">2022-08-18</time></div></div>
 
 <article class="content md post">
-<h1 class="article-title"><span>YOLO算法简介</span></h1>
+
 <p></p>
-<div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/YOLO/yolo1.png"></div></div>
 <h3 id="为什么使用yolo算法"><a class="markdownIt-Anchor" href="#为什么使用yolo算法"></a> 为什么使用YOLO算法</h3>
 <p>深度学习相关的目标检测方法大致可以分为两派：<br>
 1.基于区域提名的：如R-CNN，SPP-Net，Fast R-CNN，Faster R-CNN，R-FCN；<br>
@@ -145,9 +143,9 @@
 <p>先前的检测系统使用分类器对测试图像的不同切片进行评估。例如，Deformable Parts Model (DPM)涉及到在图像中均匀间隔的位置上滑动窗口并在这些部件上运行分类器。R-CNN(Region-based Convolutional Neural Networks)是另一种模型，它运行一种分割算法将一幅图像分割成一个个小块，然后在这些小块上运行一个分类器。但是，速度慢、优化困难一直困扰着这种YOLO之前的系统。</p>
 <h3 id="yolo算法简介"><a class="markdownIt-Anchor" href="#yolo算法简介"></a> YOLO算法简介</h3>
 <p>YOLO将对象检测重新定义为一个回归问题。它将单个卷积神经网络(CNN)应用于整个图像，将图像分成网格，并预测每个网格的类概率和边界框。例如，以一个100x100的图像为例。我们把它分成网格，比如7x7。</p>
-<div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/YOLO/002.jpeg"></div></div>
+<div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/20220818-YOLO算法简介/002.jpeg"></div></div>
 <p>然后，对于每个网格，网络都会预测一个边界框和与每个类别（汽车，行人，交通信号灯等）相对应的概率。</p>
-<div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/YOLO/003.jpeg"></div></div>
+<div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/20220818-YOLO算法简介/003.jpeg"></div></div>
 <p>每个边界框可以使用四个描述符进行描述：</p>
 <ol>
 <li>边界框的中心</li>
@@ -157,7 +155,7 @@
 </ol>
 <p>此外，该算法还可以预测边界框中存在对象的概率。如果一个对象的中心落在一个网格单元中，则该网格单元负责检测该对象。每个网格中将有多个边界框。在训练时，我们希望每个对象只有一个边界框。因此，我们根据哪个Box与ground truth box的重叠度最高，从而分配一个Box来负责预测对象。</p>
 <p>最后，我们对每个类的对象应用一个称为“非最大抑制（Non Max Suppression）”的方法来过滤出“置信度”小于阈值的边界框。这为我们提供了图像预测。</p>
-<div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/YOLO/004.jpeg"></div></div>
+<div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/20220818-YOLO算法简介/004.jpeg"></div></div>
 
 
 <div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用<a target="_blank" rel="external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a>许可协议，转载请注明出处。</p>
@@ -165,7 +163,7 @@
 
 </article>
 
-<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/59690eecd1cf/">undefined</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/d60cc43f8619/">undefined</a></div></section></div>
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/d60cc43f8619/">undefined</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/5e0c1033dfe2/">基于深度学习的目标检测</a></div></section></div>
 
 
 
