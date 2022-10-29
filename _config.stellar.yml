@@ -10,12 +10,13 @@ lazyload:
   transition: fade # blur, fade
 
 
-ghuser:
-  layout: ghuser
-  api: https://api.github.com
-  username: wejudging # your github login username
-  avatar: true # show avatar or not
-  menu: true # show menu or not
+# 默认打开
+loading:
+  loading: 正在加载
+  error: 加载失败，请稍后重试。
+
+article:
+  auto_cover: true
 
 
 sidebar:
@@ -23,7 +24,7 @@ sidebar:
     post: '[博客](/)'
     wiki: '[项目](/wiki/)'
     # notes: '[便笺](/notes/)'
-    more: '[关于](/about/)'
+    more: '[我哇](/about/)'
   # widgets:
   #   default_layout: [welcome, recent]
 
@@ -61,7 +62,7 @@ footer:
       - '[友链](/friends/)'
       - '[留言板](/about/#comments)'
     '更多':
-      - '[关于](/about/)'
+      - '[关于本站](/about/)'
       - '[GitHub](https://github.com/wejudging)'
   content: |
      <hr><p align="center"><a href="https://aws.amazon.com/cn/campaigns/cloudfront"><img src="/images/内容分发-CloudFront-orange.svg" width="143" height="20" /></a>&nbsp&nbsp<a href="https://github.com/wejudging"><img src="/images/网站部署-GitHub-5DADE2.svg" width="119" height="20"/></a>&nbsp&nbsp<a href="https://hexo.io"><img src="/images/强力驱动-Hexo-blue.svg" width="111" height="20"/></a>&nbsp&nbsp<a href="https://cloudflare.com"><img src="/images/域名解析-CloudFlare-f38020.svg"></a></p>
