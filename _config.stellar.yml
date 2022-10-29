@@ -10,7 +10,12 @@ lazyload:
   transition: fade # blur, fade
 
 
-
+ghuser:
+  layout: ghuser
+  api: https://api.github.com
+  username: wejudging # your github login username
+  avatar: true # show avatar or not
+  menu: true # show menu or not
 
 
 
