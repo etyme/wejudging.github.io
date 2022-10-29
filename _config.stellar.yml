@@ -10,6 +10,9 @@ lazyload:
   transition: fade # blur, fade
 
 
+article:
+  auto_cover: true
+
 
 sidebar:
   menu:
