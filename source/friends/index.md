@@ -5,6 +5,23 @@ comment_title: 快来交换友链吧～
 comment_id: '友链留言板'
 ---
 
+
+{% about avatar:/images/logo.svg height:80px %}
+
+<img height="64px" alt="weijiajin" src="/images/weijiajin.png">
+
+**遇到温柔可爱的人，觉得世界也可爱温柔。**
+
+{% navbar
+[订阅](/atom.xml) 
+[邮箱](mailto:wejudging@gmail.com)
+[GitHub](https://github.com/wejudging)
+[友链](/friends/)  
+[云盘](https://cloud.weijiajin.com) %}
+
+{% endabout %}
+
+
 {% quot 我的好朋友 icon:hashtag %}
 
 以下友链通过[GitHub Issue](https://github.com/wejudging/friends/issues/)提交：
