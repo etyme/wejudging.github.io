@@ -13,7 +13,7 @@ comment_id: '友链留言板'
 
 我的友链系统中，您随时可以对自己的信息进行修改而无需等待博主更新
 
-## 添加友链
+{% quot 如何自助添加友链 icon:hashtag %}
 
 {% timeline child:codeblock %}
 
