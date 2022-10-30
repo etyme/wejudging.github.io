@@ -6,7 +6,7 @@ comment_id: '留言板'
 comments: true
 ---
 
-{% about avatar:/images/logo.svg height:80px %}
+{% about %}
 
 <img height="64px" alt="weijiajin" src="/images/weijiajin.png">
 
