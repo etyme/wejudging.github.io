@@ -4,7 +4,7 @@ menu_id: friends
 toc_title: friends
 comment_title: 快来交换友链吧～
 comment_id: '友链留言板'
-sidebar: [ghuser,welcome, toc]
+sidebar: [ghuser, timeline]
 ---
 {% about %}
 <img height="64px" alt="weijiajin" src="/images/weijiajin.png">

@@ -1,7 +1,7 @@
 ---
 header: false
 menu_id: about
-sidebar: [ghuser,welcome, toc]
+sidebar: [ghuser, timeline]
 comment_title: 来过，就留下您的脚印吧～
 comment_id: '留言板'
 comments: true
