@@ -1,5 +1,5 @@
 ---
-header:false
+header: false
 menu_id: about
 sidebar: [ghuser,welcome, toc]
 comment_title: 来过，就留下您的脚印吧～
