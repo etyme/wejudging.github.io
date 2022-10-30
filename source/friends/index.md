@@ -5,7 +5,9 @@ comment_title: 快来交换友链吧～
 comment_id: '友链留言板'
 ---
 
-## 我的好朋友
+{% quot 我的好朋友 icon:hashtag %}
+
+以下友链通过[GitHub Issue](https://github.com/wejudging/friends/issues/)提交：
 
 {% friends repo:wejudging/friends %}
 
