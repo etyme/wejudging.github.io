@@ -3,7 +3,13 @@ open_graph:
   enable: true
   twitter_id: # for open_graph meta
 
-
+scrollreveal:
+  enable: true
+  js: https://fastly.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js
+  distance: 4px # 执行距离
+  duration: 400 # ms # 执行时长
+  interval: 100 # ms # 执行间隔（时间）
+  scale: 0.1 # 0.1~1 # 执行方式（缩放）
 
 sidebar:
   menu:
