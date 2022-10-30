@@ -134,9 +134,14 @@ default:
   cover: /images/76b86c0226ffd.svg
   image: /images/2659360.svg
 
+article:
+  # 分类颜色
+  category_color:
+    '折腾': '#DA0F47'
+    '诗文': '#03a9f4'
 
 ######## Article ########
-article:
+
   # 如果没有指定封面，是否根据 tags 作为关键词搜索封面图片？
   auto_cover: false # search from https://source.unsplash.com/
   # 如果没有指定横幅，是否根据 tags 作为关键词搜索横幅图片？
@@ -151,7 +156,3 @@ article:
   # 分享
   share: #[wechat, weibo, email, link]
 
-  # 分类颜色
-  category_color:
-    '折腾': '#DA0F47'
-    '诗文': '#03a9f4'
