@@ -65,9 +65,10 @@ plugins:
   # image lazyload
   # https://www.npmjs.com/package/vanilla-lazyload
   lazyload:
-    enable: true # [hexo clean && hexo s] is required after changing this value.
+    enable: false # [hexo clean && hexo s] is required after changing this value.
     js: /js_css/lazyload.js
     transition: blur # blur, fade
+
   scrollreveal:
     enable: true
     js: https://fastly.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js
