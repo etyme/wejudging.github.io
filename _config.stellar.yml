@@ -73,7 +73,7 @@ plugins:
   lazyload:
     enable: true # [hexo clean && hexo s] is required after changing this value.
     js: /js_css/lazyload.js
-    transition: fade # blur, fade
+    transition: blur # blur, fade
 
   # preload
   preload:
