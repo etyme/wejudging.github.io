@@ -1,5 +1,5 @@
 ---
-layout: post
+header:false
 menu_id: friends
 toc_title: friends
 comment_title: 快来交换友链吧～
