@@ -1,13 +1,10 @@
 ---
-menu_id: more
+menu_id: friends
 toc_title: friends
 comment_title: 快来交换友链吧～
 comment_id: '友链留言板'
-
+sidebar: [ghuser,welcome, toc]
 ---
-
-
-{% about avatar:/images/logo.svg height:80px %}
 
 <img height="64px" alt="weijiajin" src="/images/weijiajin.png">
 
