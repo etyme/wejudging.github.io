@@ -39,3 +39,11 @@ ghuser:
   username: wejudging # your github login username
   avatar: true # show avatar or not
   menu: true # show menu or not
+
+
+ghrepo:
+  layout: ghrepo
+
+
+related:
+  layout: related
