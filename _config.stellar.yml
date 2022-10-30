@@ -65,11 +65,6 @@ footer:
   content: |
      <hr><p align="center"><a href="https://aws.amazon.com/cn/campaigns/cloudfront"><img src="/images/内容分发-CloudFront-orange.svg" width="143" height="20" /></a>&nbsp&nbsp<a href="https://github.com/wejudging"><img src="/images/网站部署-GitHub-5DADE2.svg" width="119" height="20"/></a>&nbsp&nbsp<a href="https://hexo.io"><img src="/images/强力驱动-Hexo-blue.svg" width="111" height="20"/></a>&nbsp&nbsp<a href="https://cloudflare.com"><img src="/images/域名解析-CloudFlare-f38020.svg"></a></p>
 
-article:
-  # 分类颜色
-  category_color:
-    '折腾': '#DA0F47'
-    '诗文': '#03a9f4'
 
 
 plugins:
@@ -156,3 +151,7 @@ article:
   # 分享
   share: [wechat, weibo, email, link]
 
+  # 分类颜色
+  category_color:
+    '折腾': '#DA0F47'
+    '诗文': '#03a9f4'
