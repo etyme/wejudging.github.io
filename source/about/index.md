@@ -14,6 +14,7 @@ comments: true
 
 {% navbar
 [友链](/friends/)  
+[关于](/about/) 
  %}
 
 {% endabout %}
