@@ -25,14 +25,18 @@ comment_id: '友链留言板'
 
 
 {% codeblock lang:yaml %}
+
 title: weijiajin
 avatar: https://weijiajin.com/images/logo.svg
 url: https://weijiajin.com
 screenshot: https://weijiajin.com/images/weijiajin-com-screenshot.png
+
 {% endcodeblock %}
 
-
 待管理员审核通过，添加了 `active` 标签后，回来刷新即可生效。
-{% endtimeline %}
+
+<!-- node 更新自己友链 -->
 
 如果您需要更新自己的友链，请直接修改 issue 内容，大约 3 分钟内生效，无需等待博客更新。如果无法修改，可以重新创建一个。
+
+{% endtimeline %}
