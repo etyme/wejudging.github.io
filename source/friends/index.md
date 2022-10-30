@@ -8,16 +8,7 @@ sidebar: [ghuser,welcome, toc]
 ---
 {% about %}
 <img height="64px" alt="weijiajin" src="/images/weijiajin.png">
-
 <center>{% quot 遇到温柔可爱的人，觉得世界也可爱温柔 %}</center>
-
-{% navbar
-[订阅](/atom.xml) 
-[邮箱](mailto:wejudging@gmail.com)
-[GitHub](https://github.com/wejudging)
-[友链](/friends/)  
-[云盘](https://cloud.weijiajin.com) %}
-
 {% endabout %}
 
 

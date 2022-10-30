@@ -13,10 +13,6 @@ comments: true
 
 <center>{% quot 遇到温柔可爱的人，觉得世界也可爱温柔 %}</center>
 
-{% navbar
-[友链](/friends/)  
-[关于](/about/) 
- %}
 
 {% endabout %}
 

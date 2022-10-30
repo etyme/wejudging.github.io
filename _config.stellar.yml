@@ -31,8 +31,6 @@ footer:
        url: https://github.com/wejudging
      - icon: '<img src="/images/volantis.svg"/>'
        url: https://volantis.weijiajin.com
-     - icon: '<img src="/images/youqinglianjie.svg"/>'
-       url: /friends/
      - icon: '<img src="/images/OneDrive.svg"/>'
        url: https://cloud.weijiajin.com
 
@@ -45,10 +43,10 @@ footer:
     '项目':
       - '[脚本](/wiki/tags/脚本/)'
       - '[教育优惠](/wiki/tags/教育优惠/)'
-    '便笺':
+    '友链':
       - '[友链](/friends/)'
       - '[留言板](/about/#comments)'
-    '更多':
+    '关于':
       - '[关于本站](/about/)'
       - '[GitHub](https://github.com/wejudging)'
   content: |
