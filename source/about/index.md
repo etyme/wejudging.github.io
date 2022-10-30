@@ -1,6 +1,5 @@
 ---
-menu_id: 
-title: 关于
+menu_id: more
 sidebar: [ghuser,welcome, toc]
 comment_title: 来过，就留下您的脚印吧～
 comment_id: '留言板'
