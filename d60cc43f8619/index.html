@@ -60,7 +60,7 @@
 <meta property="og:image" content="https://weijiajin.com/images/文章图片/20220819-YOLO算法python实现/032.png">
 <meta property="og:image" content="https://weijiajin.com/images/文章图片/20220819-YOLO算法python实现/033.png">
 <meta property="article:published_time" content="2022-08-19T00:00:00.000Z">
-<meta property="article:modified_time" content="2022-10-30T03:38:42.906Z">
+<meta property="article:modified_time" content="2022-10-30T03:43:10.203Z">
 <meta property="article:author" content="weijiajin">
 <meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary_large_image">
@@ -80,6 +80,10 @@
   
 
   
+
+  
+    
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/styles/atom-one-dark.min.css">
 
   
 
@@ -285,116 +289,116 @@
 </ul>
 <h3 id="yolo算法实现"><a class="markdownIt-Anchor" href="#yolo算法实现"></a> YOLO算法实现</h3>
 <p>首先定义一些函数，这些函数将用来选择高于某个阈值的边界框，并对其应用非极大值抑制。首先，导入所需的库：</p>
-<pre><code class="highlight elm"><span class="keyword">import</span> os
-<span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt
-<span class="title">from</span> matplotlib.pyplot <span class="keyword">import</span> imshow
-<span class="keyword">import</span> scipy.io
-<span class="keyword">import</span> scipy.misc
-<span class="keyword">import</span> numpy <span class="keyword">as</span> np
-<span class="keyword">import</span> pandas <span class="keyword">as</span> pd
-<span class="keyword">import</span> PIL
-<span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf
-<span class="title">from</span> skimage.transform <span class="keyword">import</span> resize
-<span class="title">from</span> keras <span class="keyword">import</span> backend <span class="keyword">as</span> K
-<span class="title">from</span> keras.layers <span class="keyword">import</span> Input, Lambda, Conv2D
-<span class="title">from</span> keras.models <span class="keyword">import</span> load_model, Model
-<span class="title">from</span> yolo_utils <span class="keyword">import</span> read_classes, read_anchors, generate_colors, preprocess_image, draw_boxes, scale_boxes
-<span class="title">from</span> yad2k.models.keras_yolo <span class="keyword">import</span> yolo_head, yolo_boxes_to_corners, preprocess_true_boxes, yolo_loss, yolo_body
+<pre><code class="hljs elm"><span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+<span class="hljs-title">from</span> matplotlib.pyplot <span class="hljs-keyword">import</span> imshow
+<span class="hljs-keyword">import</span> scipy.io
+<span class="hljs-keyword">import</span> scipy.misc
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+<span class="hljs-keyword">import</span> PIL
+<span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf
+<span class="hljs-title">from</span> skimage.transform <span class="hljs-keyword">import</span> resize
+<span class="hljs-title">from</span> keras <span class="hljs-keyword">import</span> backend <span class="hljs-keyword">as</span> K
+<span class="hljs-title">from</span> keras.layers <span class="hljs-keyword">import</span> Input, Lambda, Conv2D
+<span class="hljs-title">from</span> keras.models <span class="hljs-keyword">import</span> load_model, Model
+<span class="hljs-title">from</span> yolo_utils <span class="hljs-keyword">import</span> read_classes, read_anchors, generate_colors, preprocess_image, draw_boxes, scale_boxes
+<span class="hljs-title">from</span> yad2k.models.keras_yolo <span class="hljs-keyword">import</span> yolo_head, yolo_boxes_to_corners, preprocess_true_boxes, yolo_loss, yolo_body
 
 %matplotlib inline</code></pre>
 <p>然后，实现基于概率和阈值过滤边界框的函数：</p>
-<pre><code class="highlight mipsasm">def yolo_filter_boxes(<span class="keyword">box_confidence, </span><span class="keyword">boxes, </span><span class="keyword">box_class_probs, </span>threshold = .<span class="number">6</span>):
-    <span class="keyword">box_scores </span>= <span class="keyword">box_confidence*box_class_probs</span>
-<span class="keyword"></span>    <span class="keyword">box_classes </span>= K.argmax(<span class="keyword">box_scores,-1)</span>
-<span class="keyword"></span>    <span class="keyword">box_class_scores </span>= K.max(<span class="keyword">box_scores,-1)</span>
-<span class="keyword"></span>    filtering_mask = <span class="keyword">box_class_scores&gt;threshold</span>
-<span class="keyword"></span>    <span class="keyword">scores </span>= tf.<span class="keyword">boolean_mask(box_class_scores,filtering_mask)</span>
-<span class="keyword"></span>    <span class="keyword">boxes </span>= tf.<span class="keyword">boolean_mask(boxes,filtering_mask)</span>
-<span class="keyword"></span>    classes = tf.<span class="keyword">boolean_mask(box_classes,filtering_mask)</span>
-<span class="keyword"></span>
-    return <span class="keyword">scores, </span><span class="keyword">boxes, </span>classes</code></pre>
+<pre><code class="hljs mipsasm">def yolo_filter_boxes(<span class="hljs-keyword">box_confidence, </span><span class="hljs-keyword">boxes, </span><span class="hljs-keyword">box_class_probs, </span>threshold = .<span class="hljs-number">6</span>):
+    <span class="hljs-keyword">box_scores </span>= <span class="hljs-keyword">box_confidence*box_class_probs</span>
+<span class="hljs-keyword"></span>    <span class="hljs-keyword">box_classes </span>= K.argmax(<span class="hljs-keyword">box_scores,-1)</span>
+<span class="hljs-keyword"></span>    <span class="hljs-keyword">box_class_scores </span>= K.max(<span class="hljs-keyword">box_scores,-1)</span>
+<span class="hljs-keyword"></span>    filtering_mask = <span class="hljs-keyword">box_class_scores&gt;threshold</span>
+<span class="hljs-keyword"></span>    <span class="hljs-keyword">scores </span>= tf.<span class="hljs-keyword">boolean_mask(box_class_scores,filtering_mask)</span>
+<span class="hljs-keyword"></span>    <span class="hljs-keyword">boxes </span>= tf.<span class="hljs-keyword">boolean_mask(boxes,filtering_mask)</span>
+<span class="hljs-keyword"></span>    classes = tf.<span class="hljs-keyword">boolean_mask(box_classes,filtering_mask)</span>
+<span class="hljs-keyword"></span>
+    return <span class="hljs-keyword">scores, </span><span class="hljs-keyword">boxes, </span>classes</code></pre>
 <p>之后，实现计算IoU的函数：</p>
-<pre><code class="highlight apache"><span class="attribute">def</span> iou(box1, box2):
-    <span class="attribute">xi1</span> = max(box1[<span class="number">0</span>],box2[<span class="number">0</span>])
-    <span class="attribute">yi1</span> = max(box1[<span class="number">1</span>],box2[<span class="number">1</span>])
-    <span class="attribute">xi2</span> = min(box1[<span class="number">2</span>],box2[<span class="number">2</span>])
-    <span class="attribute">yi2</span> = min(box1[<span class="number">3</span>],box2[<span class="number">3</span>])
-    <span class="attribute">inter_area</span> = (yi2-yi1)*(xi2-xi1)
-    <span class="attribute">box1_area</span> = (box1[<span class="number">3</span>]-box1[<span class="number">1</span>])*(box1[<span class="number">2</span>]-box1[<span class="number">0</span>])
-    <span class="attribute">box2_area</span> = (box2[<span class="number">3</span>]-box2[<span class="number">1</span>])*(box2[<span class="number">2</span>]-box2[<span class="number">0</span>])
-    <span class="attribute">union_area</span> = box1_area+box2_area-inter_area
-    <span class="attribute">iou</span> = inter_area/union_area
+<pre><code class="hljs apache"><span class="hljs-attribute">def</span> iou(box1, box2):
+    <span class="hljs-attribute">xi1</span> = max(box1[<span class="hljs-number">0</span>],box2[<span class="hljs-number">0</span>])
+    <span class="hljs-attribute">yi1</span> = max(box1[<span class="hljs-number">1</span>],box2[<span class="hljs-number">1</span>])
+    <span class="hljs-attribute">xi2</span> = min(box1[<span class="hljs-number">2</span>],box2[<span class="hljs-number">2</span>])
+    <span class="hljs-attribute">yi2</span> = min(box1[<span class="hljs-number">3</span>],box2[<span class="hljs-number">3</span>])
+    <span class="hljs-attribute">inter_area</span> = (yi2-yi1)*(xi2-xi1)
+    <span class="hljs-attribute">box1_area</span> = (box1[<span class="hljs-number">3</span>]-box1[<span class="hljs-number">1</span>])*(box1[<span class="hljs-number">2</span>]-box1[<span class="hljs-number">0</span>])
+    <span class="hljs-attribute">box2_area</span> = (box2[<span class="hljs-number">3</span>]-box2[<span class="hljs-number">1</span>])*(box2[<span class="hljs-number">2</span>]-box2[<span class="hljs-number">0</span>])
+    <span class="hljs-attribute">union_area</span> = box1_area+box2_area-inter_area
+    <span class="hljs-attribute">iou</span> = inter_area/union_area
 
-    <span class="attribute">return</span> iou</code></pre>
+    <span class="hljs-attribute">return</span> iou</code></pre>
 <p>然后，实现非极大值抑制的函数：</p>
-<pre><code class="highlight reasonml">def yolo<span class="constructor">_non_max_suppression(<span class="params">scores</span>, <span class="params">boxes</span>, <span class="params">classes</span>, <span class="params">max_boxes</span> = 10, <span class="params">iou_threshold</span> = 0.5)</span>:
-    max_boxes_tensor = <span class="module-access"><span class="module"><span class="identifier">K</span>.</span></span>variable(max_boxes, dtype=&#x27;<span class="built_in">int32</span>&#x27;)
-    <span class="module-access"><span class="module"><span class="identifier">K</span>.</span></span>get<span class="constructor">_session()</span>.run(tf.variables<span class="constructor">_initializer([<span class="params">max_boxes_tensor</span>])</span>)
-    nms_indices = tf.image.non<span class="constructor">_max_suppression(<span class="params">boxes</span>,<span class="params">scores</span>,<span class="params">max_boxes</span>,<span class="params">iou_threshold</span>)</span>
-    scores = <span class="module-access"><span class="module"><span class="identifier">K</span>.</span></span>gather(scores,nms_indices)
-    boxes = <span class="module-access"><span class="module"><span class="identifier">K</span>.</span></span>gather(boxes,nms_indices)
-    classes = <span class="module-access"><span class="module"><span class="identifier">K</span>.</span></span>gather(classes,nms_indices)
+<pre><code class="hljs reasonml">def yolo<span class="hljs-constructor">_non_max_suppression(<span class="hljs-params">scores</span>, <span class="hljs-params">boxes</span>, <span class="hljs-params">classes</span>, <span class="hljs-params">max_boxes</span> = 10, <span class="hljs-params">iou_threshold</span> = 0.5)</span>:
+    max_boxes_tensor = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">K</span>.</span></span>variable(max_boxes, dtype=&#x27;<span class="hljs-built_in">int32</span>&#x27;)
+    <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">K</span>.</span></span>get<span class="hljs-constructor">_session()</span>.run(tf.variables<span class="hljs-constructor">_initializer([<span class="hljs-params">max_boxes_tensor</span>])</span>)
+    nms_indices = tf.image.non<span class="hljs-constructor">_max_suppression(<span class="hljs-params">boxes</span>,<span class="hljs-params">scores</span>,<span class="hljs-params">max_boxes</span>,<span class="hljs-params">iou_threshold</span>)</span>
+    scores = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">K</span>.</span></span>gather(scores,nms_indices)
+    boxes = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">K</span>.</span></span>gather(boxes,nms_indices)
+    classes = <span class="hljs-module-access"><span class="hljs-module"><span class="hljs-identifier">K</span>.</span></span>gather(classes,nms_indices)
 
     return scores, boxes, classes</code></pre>
 <p>随机初始化下大小为（19,19,5,85）的输出向量：</p>
-<pre><code class="highlight apache"><span class="attribute">yolo_outputs</span> = (tf.random_normal([<span class="number">19</span>, <span class="number">19</span>, <span class="number">5</span>, <span class="number">1</span>], mean=<span class="number">1</span>, stddev=<span class="number">4</span>, seed = <span class="number">1</span>),
-                   <span class="attribute">tf</span>.random_normal([<span class="number">19</span>, <span class="number">19</span>, <span class="number">5</span>, <span class="number">2</span>], mean=<span class="number">1</span>, stddev=<span class="number">4</span>, seed = <span class="number">1</span>),
-                   <span class="attribute">tf</span>.random_normal([<span class="number">19</span>, <span class="number">19</span>, <span class="number">5</span>, <span class="number">2</span>], mean=<span class="number">1</span>, stddev=<span class="number">4</span>, seed = <span class="number">1</span>),
-                   <span class="attribute">tf</span>.random_normal([<span class="number">19</span>, <span class="number">19</span>, <span class="number">5</span>, <span class="number">80</span>], mean=<span class="number">1</span>, stddev=<span class="number">4</span>, seed = <span class="number">1</span>))</code></pre>
+<pre><code class="hljs apache"><span class="hljs-attribute">yolo_outputs</span> = (tf.random_normal([<span class="hljs-number">19</span>, <span class="hljs-number">19</span>, <span class="hljs-number">5</span>, <span class="hljs-number">1</span>], mean=<span class="hljs-number">1</span>, stddev=<span class="hljs-number">4</span>, seed = <span class="hljs-number">1</span>),
+                   <span class="hljs-attribute">tf</span>.random_normal([<span class="hljs-number">19</span>, <span class="hljs-number">19</span>, <span class="hljs-number">5</span>, <span class="hljs-number">2</span>], mean=<span class="hljs-number">1</span>, stddev=<span class="hljs-number">4</span>, seed = <span class="hljs-number">1</span>),
+                   <span class="hljs-attribute">tf</span>.random_normal([<span class="hljs-number">19</span>, <span class="hljs-number">19</span>, <span class="hljs-number">5</span>, <span class="hljs-number">2</span>], mean=<span class="hljs-number">1</span>, stddev=<span class="hljs-number">4</span>, seed = <span class="hljs-number">1</span>),
+                   <span class="hljs-attribute">tf</span>.random_normal([<span class="hljs-number">19</span>, <span class="hljs-number">19</span>, <span class="hljs-number">5</span>, <span class="hljs-number">80</span>], mean=<span class="hljs-number">1</span>, stddev=<span class="hljs-number">4</span>, seed = <span class="hljs-number">1</span>))</code></pre>
 <p>最后，实现一个将CNN的输出作为输入并返回被抑制的边界框的函数：</p>
-<pre><code class="highlight mipsasm">def yolo_eval(yolo_outputs, image_shape = (<span class="number">720</span>., <span class="number">1280</span>.), max_boxes=<span class="number">10</span>, <span class="keyword">score_threshold=.6, </span>iou_threshold=.<span class="number">5</span>):
-    <span class="keyword">box_confidence, </span><span class="keyword">box_xy, </span><span class="keyword">box_wh, </span><span class="keyword">box_class_probs </span>= yolo_outputs
-    <span class="keyword">boxes </span>= yolo_boxes_to_corners(<span class="keyword">box_xy, </span><span class="keyword">box_wh)</span>
-<span class="keyword"></span>    <span class="keyword">scores, </span><span class="keyword">boxes, </span>classes = yolo_filter_boxes(<span class="keyword">box_confidence, </span><span class="keyword">boxes, </span><span class="keyword">box_class_probs, </span>threshold = <span class="keyword">score_threshold)</span>
-<span class="keyword"></span>    <span class="keyword">boxes </span>= <span class="keyword">scale_boxes(boxes, </span>image_shape)
-    <span class="keyword">scores, </span><span class="keyword">boxes, </span>classes = yolo_non_max_suppression(<span class="keyword">scores, </span><span class="keyword">boxes, </span>classes, max_boxes, iou_threshold)
+<pre><code class="hljs mipsasm">def yolo_eval(yolo_outputs, image_shape = (<span class="hljs-number">720</span>., <span class="hljs-number">1280</span>.), max_boxes=<span class="hljs-number">10</span>, <span class="hljs-keyword">score_threshold=.6, </span>iou_threshold=.<span class="hljs-number">5</span>):
+    <span class="hljs-keyword">box_confidence, </span><span class="hljs-keyword">box_xy, </span><span class="hljs-keyword">box_wh, </span><span class="hljs-keyword">box_class_probs </span>= yolo_outputs
+    <span class="hljs-keyword">boxes </span>= yolo_boxes_to_corners(<span class="hljs-keyword">box_xy, </span><span class="hljs-keyword">box_wh)</span>
+<span class="hljs-keyword"></span>    <span class="hljs-keyword">scores, </span><span class="hljs-keyword">boxes, </span>classes = yolo_filter_boxes(<span class="hljs-keyword">box_confidence, </span><span class="hljs-keyword">boxes, </span><span class="hljs-keyword">box_class_probs, </span>threshold = <span class="hljs-keyword">score_threshold)</span>
+<span class="hljs-keyword"></span>    <span class="hljs-keyword">boxes </span>= <span class="hljs-keyword">scale_boxes(boxes, </span>image_shape)
+    <span class="hljs-keyword">scores, </span><span class="hljs-keyword">boxes, </span>classes = yolo_non_max_suppression(<span class="hljs-keyword">scores, </span><span class="hljs-keyword">boxes, </span>classes, max_boxes, iou_threshold)
 
-    return <span class="keyword">scores, </span><span class="keyword">boxes, </span>classes</code></pre>
+    return <span class="hljs-keyword">scores, </span><span class="hljs-keyword">boxes, </span>classes</code></pre>
 <p>使用yolo_eval函数对之前创建的随机输出向量进行预测：</p>
-<pre><code class="highlight stylus">scores, boxes, classes = <span class="built_in">yolo_eval</span>(yolo_outputs)
-with tf<span class="selector-class">.Session</span>() as test_b:
-    <span class="built_in">print</span>(<span class="string">&quot;scores[2] = &quot;</span> + <span class="built_in">str</span>(scores<span class="selector-attr">[2]</span><span class="selector-class">.eval</span>()))
-    <span class="built_in">print</span>(<span class="string">&quot;boxes[2] = &quot;</span> + <span class="built_in">str</span>(boxes<span class="selector-attr">[2]</span><span class="selector-class">.eval</span>()))
-    <span class="built_in">print</span>(<span class="string">&quot;classes[2] = &quot;</span> + <span class="built_in">str</span>(classes<span class="selector-attr">[2]</span><span class="selector-class">.eval</span>()))</code></pre>
+<pre><code class="hljs stylus">scores, boxes, classes = <span class="hljs-built_in">yolo_eval</span>(yolo_outputs)
+with tf<span class="hljs-selector-class">.Session</span>() as test_b:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;scores[2] = &quot;</span> + <span class="hljs-built_in">str</span>(scores<span class="hljs-selector-attr">[2]</span><span class="hljs-selector-class">.eval</span>()))
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;boxes[2] = &quot;</span> + <span class="hljs-built_in">str</span>(boxes<span class="hljs-selector-attr">[2]</span><span class="hljs-selector-class">.eval</span>()))
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;classes[2] = &quot;</span> + <span class="hljs-built_in">str</span>(classes<span class="hljs-selector-attr">[2]</span><span class="hljs-selector-class">.eval</span>()))</code></pre>
 <div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/20220819-YOLO算法python实现/032.png"/></div></div>
 <p>score表示对象在图像中的可能性，boxes返回检测到的对象的（x1，y1，x2，y2）坐标，classes表示识别对象所属的类。<br />
 现在，在新的图像上使用预训练的YOLO算法，看看其工作效果：</p>
-<pre><code class="highlight ini"><span class="attr">sess</span> = K.get_session()
-<span class="attr">class_names</span> = read_classes(<span class="string">&quot;model_data/coco_classes.txt&quot;</span>)
-<span class="attr">anchors</span> = read_anchors(<span class="string">&quot;model_data/yolo_anchors.txt&quot;</span>)
+<pre><code class="hljs ini"><span class="hljs-attr">sess</span> = K.get_session()
+<span class="hljs-attr">class_names</span> = read_classes(<span class="hljs-string">&quot;model_data/coco_classes.txt&quot;</span>)
+<span class="hljs-attr">anchors</span> = read_anchors(<span class="hljs-string">&quot;model_data/yolo_anchors.txt&quot;</span>)
 
-<span class="attr">yolo_model</span> = load_model(<span class="string">&quot;model_data/yolo.h5&quot;</span>)</code></pre>
+<span class="hljs-attr">yolo_model</span> = load_model(<span class="hljs-string">&quot;model_data/yolo.h5&quot;</span>)</code></pre>
 <p>在加载类别信息和预训练模型之后，使用上面定义的函数来获取 yolo_outputs</p>
-<pre><code class="highlight reasonml">yolo_outputs = yolo<span class="constructor">_head(<span class="params">yolo_model</span>.<span class="params">output</span>, <span class="params">anchors</span>, <span class="params">len</span>(<span class="params">class_names</span>)</span>)</code></pre>
+<pre><code class="hljs reasonml">yolo_outputs = yolo<span class="hljs-constructor">_head(<span class="hljs-params">yolo_model</span>.<span class="hljs-params">output</span>, <span class="hljs-params">anchors</span>, <span class="hljs-params">len</span>(<span class="hljs-params">class_names</span>)</span>)</code></pre>
 <p>之后，定义一个函数来预测边界框并在图像上标记边界框：</p>
-<pre><code class="highlight python"><span class="keyword">def</span> <span class="title function_">predict</span>(<span class="params">sess, image_file</span>):
-    image, image_data = preprocess_image(<span class="string">&quot;images/&quot;</span> + image_file, model_image_size = (<span class="number">608</span>, <span class="number">608</span>))
-    out_scores, out_boxes, out_classes = sess.run([scores, boxes, classes], feed_dict=&#123;yolo_model.<span class="built_in">input</span>: image_data, K.learning_phase(): <span class="number">0</span>&#125;)
+<pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">predict</span>(<span class="hljs-params">sess, image_file</span>):
+    image, image_data = preprocess_image(<span class="hljs-string">&quot;images/&quot;</span> + image_file, model_image_size = (<span class="hljs-number">608</span>, <span class="hljs-number">608</span>))
+    out_scores, out_boxes, out_classes = sess.run([scores, boxes, classes], feed_dict=&#123;yolo_model.<span class="hljs-built_in">input</span>: image_data, K.learning_phase(): <span class="hljs-number">0</span>&#125;)
 
-    <span class="built_in">print</span>(<span class="string">&#x27;Found &#123;&#125; boxes for &#123;&#125;&#x27;</span>.<span class="built_in">format</span>(<span class="built_in">len</span>(out_boxes), image_file))
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;Found &#123;&#125; boxes for &#123;&#125;&#x27;</span>.<span class="hljs-built_in">format</span>(<span class="hljs-built_in">len</span>(out_boxes), image_file))
 
-    <span class="comment"># Generate colors for drawing bounding boxes.</span>
+    <span class="hljs-comment"># Generate colors for drawing bounding boxes.</span>
     colors = generate_colors(class_names)
 
-    <span class="comment"># Draw bounding boxes on the image file</span>
+    <span class="hljs-comment"># Draw bounding boxes on the image file</span>
     draw_boxes(image, out_scores, out_boxes, out_classes, class_names, colors)
 
-    <span class="comment"># Save the predicted bounding box on the image</span>
-    image.save(os.path.join(<span class="string">&quot;out&quot;</span>, image_file), quality=<span class="number">90</span>)
+    <span class="hljs-comment"># Save the predicted bounding box on the image</span>
+    image.save(os.path.join(<span class="hljs-string">&quot;out&quot;</span>, image_file), quality=<span class="hljs-number">90</span>)
 
-    <span class="comment"># Display the results in the notebook</span>
-    output_image = scipy.misc.imread(os.path.join(<span class="string">&quot;out&quot;</span>, image_file))
+    <span class="hljs-comment"># Display the results in the notebook</span>
+    output_image = scipy.misc.imread(os.path.join(<span class="hljs-string">&quot;out&quot;</span>, image_file))
 
-    plt.figure(figsize=(<span class="number">12</span>,<span class="number">12</span>))
+    plt.figure(figsize=(<span class="hljs-number">12</span>,<span class="hljs-number">12</span>))
     imshow(output_image)
 
-    <span class="keyword">return</span> out_scores, out_boxes, out_classes</code></pre>
+    <span class="hljs-keyword">return</span> out_scores, out_boxes, out_classes</code></pre>
 <p>接下来，将使用预测函数读取图像并进行预测：</p>
-<pre><code class="highlight reasonml">img = plt.imread(&#x27;images/img.jpg&#x27;)
-image_shape = <span class="built_in">float</span>(img.shape<span class="literal">[<span class="number">0</span>]</span>), <span class="built_in">float</span>(img.shape<span class="literal">[<span class="number">1</span>]</span>)
-scores, boxes, classes = yolo<span class="constructor">_eval(<span class="params">yolo_outputs</span>, <span class="params">image_shape</span>)</span></code></pre>
+<pre><code class="hljs reasonml">img = plt.imread(&#x27;images/img.jpg&#x27;)
+image_shape = <span class="hljs-built_in">float</span>(img.shape<span class="hljs-literal">[<span class="hljs-number">0</span>]</span>), <span class="hljs-built_in">float</span>(img.shape<span class="hljs-literal">[<span class="hljs-number">1</span>]</span>)
+scores, boxes, classes = yolo<span class="hljs-constructor">_eval(<span class="hljs-params">yolo_outputs</span>, <span class="hljs-params">image_shape</span>)</span></code></pre>
 <p>最后，输出预测结果：</p>
-<pre><code class="highlight ceylon"><span class="keyword">out</span><span class="number">_</span>scores, <span class="keyword">out</span><span class="number">_</span>boxes, <span class="keyword">out</span><span class="number">_</span>classes = predict(sess, <span class="string">&quot;img.jpg&quot;</span>)</code></pre>
+<pre><code class="hljs ceylon"><span class="hljs-keyword">out</span><span class="hljs-number">_</span>scores, <span class="hljs-keyword">out</span><span class="hljs-number">_</span>boxes, <span class="hljs-keyword">out</span><span class="hljs-number">_</span>classes = predict(sess, <span class="hljs-string">&quot;img.jpg&quot;</span>)</code></pre>
 <div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/20220819-YOLO算法python实现/033.png"/></div></div>
 <h4 id="yolo算法darknet的官网"><a class="markdownIt-Anchor" href="#yolo算法darknet的官网"></a> YOLO算法darknet的官网</h4>
 <p><a target="_blank" rel="noopener" href="https://pjreddie.com/darknet/yolo/">https://pjreddie.com/darknet/yolo/</a></p>
