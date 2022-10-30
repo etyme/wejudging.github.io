@@ -43,12 +43,12 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: false
+  enable: true
   line_number: false
   auto_detect: true
   tab_replace: ''
-  wrap: true
-  hljs: true
+  wrap: false
+  hljs: false
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
