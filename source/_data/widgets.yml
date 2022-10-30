@@ -38,4 +38,4 @@ ghuser:
   api: https://api.github.com # 若有 api.github.com 镜像可填，否则保持默认
   username: wejudging # your github login username
   avatar: true # show avatar or not
-  menu: true # show menu or not
+  menu: false # show menu or not
