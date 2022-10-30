@@ -10,7 +10,7 @@ comments: true
 
 <img height="64px" alt="weijiajin" src="/images/weijiajin.png">
 
-{% quot 遇到温柔可爱的人，觉得世界也可爱温柔 %}
+<center>{% quot 遇到温柔可爱的人，觉得世界也可爱温柔 %}</center>
 
 {% navbar
 [友链](/friends/)  
