@@ -15,7 +15,7 @@ comment_id: '友链留言板'
 
 {% quot 如何自助添加友链 icon:hashtag %}
 
-{% timeline child:codeblock %}
+{% timeline %}
 
 <!-- node 第一步：新建 Issue -->
 
