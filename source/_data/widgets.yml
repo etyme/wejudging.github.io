@@ -1,8 +1,7 @@
 welcome:
   layout: markdown
-  title: '你好哇：'
+  title: '这是一个世界边缘的小站'
   content: |
-    这是一个世界边缘的小站
     长期维护并保持低频更新
 
 

@@ -18,8 +18,8 @@ sidebar:
     friends: '[友链](/friends/)'
     about: '[关于](/about/)'
   widgets:
-    index: [timeline, ghuser] # for home/wiki/categories/tags/archives/404 pages
-    page: [welcome, timeline] # for pages using 'layout:page'
+    index: [timeline] # for home/wiki/categories/tags/archives/404 pages
+    page: [timeline] # for pages using 'layout:page'
     post: [toc, ghrepo, ghissues, related] # for pages using 'layout:post'
     wiki: [toc, ghrepo, ghissues, related] # for pages using 'layout:wiki'
 
