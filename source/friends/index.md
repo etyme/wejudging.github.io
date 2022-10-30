@@ -25,7 +25,7 @@ comment_id: '友链留言板'
 
 请添加本站到您的友链中，如果您也使用 issue 作为友链源，只需要告知您的友链源仓库即可
 
-
+{% border child:codeblock color:green %}
 {% codeblock lang:yaml %}
 
 title: weijiajin
@@ -34,6 +34,7 @@ url: https://weijiajin.com
 screenshot: https://weijiajin.com/images/weijiajin-com-screenshot.png
 
 {% endcodeblock %}
+{% endborder %}
 
 待管理员审核通过，添加了 `active` 标签后，回来刷新即可生效
 
