@@ -1,41 +1,34 @@
 ---
-menu_id: more
-sidebar: [welcome, toc]
-toc_title: 关于
+header: false
+menu_id: about
+sidebar: [ghuser, timeline]
 comment_title: 来过，就留下您的脚印吧～
 comment_id: '留言板'
 comments: true
 ---
 
-{% about avatar:/images/logo.svg height:80px %}
+{% about %}
 
 <img height="64px" alt="weijiajin" src="/images/weijiajin.png">
 
-**遇到温柔可爱的人，觉得世界也可爱温柔。**
+<center>{% quot 遇到温柔可爱的人，觉得世界也可爱温柔 %}</center>
 
-{% navbar
-[订阅](/atom.xml) 
-[邮箱](mailto:wejudging@gmail.com)
-[GitHub](https://github.com/wejudging)
-[友链](/friends/)  
-[云盘](https://cloud.weijiajin.com) %}
 
 {% endabout %}
 
-
-## 兴趣爱好
+{% quot 兴趣爱好 icon:hashtag %}
 
 {% tabs align:center %}
 
 <!-- tab 爱情 -->
 
-王小波说“生为冰山，，就该淡淡地爱海流、爱风，并且在偶然接触时，全心全意地爱另一块冰山。”我想我遇见了自己的另一块冰山，她带来欢笑，我有幸得到。我悄悄的写下所有情话，想读给未来的你来听，那是我细腻想你的心思。
+王小波说“生为冰山，，就该淡淡地爱海流、爱风，并且在偶然接触时，全心全意地爱另一块冰山。”我想我遇见了自己的另一块冰山，她带来欢笑，我有幸得到。我悄悄的写下所有情话，想读给未来的你来听，那是我细腻想你的心思
 
 
 
 <!-- tab 音乐 -->
 
-非常热爱音乐，喜欢的品类很多，尤其喜爱许嵩和民谣音乐，夜深人静的时候喜欢听 民谣，能量不足的时候会听一些电音或摇滚来充电，心灰意冷的时候会听一些十年前常听许嵩的音乐怀旧。
+非常热爱音乐，喜欢的品类很多，尤其喜爱许嵩和民谣音乐，夜深人静的时候喜欢听 民谣，能量不足的时候会听一些电音或摇滚来充电，心灰意冷的时候会听一些十年前常听许嵩的音乐怀旧
 
 
 
@@ -57,10 +50,8 @@ comments: true
 {% endtabs %}
 
 
+{% quot 专业技术 icon:hashtag %}
 
-
-
-##  专业技术
 - 😄**后端** C,C++,Java,Python,go
 - 😃**前端** HTML,CSS,JavaScript, vue
 - 😆**数据库** MySQL
@@ -71,6 +62,6 @@ comments: true
 {% ghcard wejudging %}
 
 
-## 关于本站
+{% quot 专业关于本站 icon:hashtag %}
 
-本站是个人博客，不放置任何推广链接。内容以技术积累为主，也不排除会写一些生活方面或者其它主题的内容。季更博主，精力有限，为了保证文章质量，篇数不会很多，已经发布过的文章也会不定期审查和更新（以免过时的内容误导读者）。
+季更博主，精力有限，为了保证文章质量，篇数不会很多，已经发布过的文章也会不定期审查和更新

@@ -45,15 +45,10 @@ future: true
 highlight:
   enable: true
   line_number: false
-  auto_detect: true
+  auto_detect: false
   tab_replace: ''
   wrap: true
   hljs: false
-prismjs:
-  enable: false
-  preprocess: true
-  line_number: true
-  tab_replace: ''
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -131,16 +126,11 @@ feed:
 # npm i hexo-related-popular-posts
 
 # npm i hexo-neat
-neat_enable: false
+neat_enable: true
 
 # npm i hexo-all-minifier
 all_minifier: true
 
-# npm i hexo-autonofollow
-nofollow:
-  enable: true
-  exclude:
-    - weijiajin.com
 
 
 # https://github.com/ludoviclefevre/hexo-generator-seo-friendly-sitemap
