@@ -17,7 +17,7 @@ sidebar:
     wiki: [toc, ghrepo, ghissues, related] # for pages using 'layout:wiki'
 
 post-index:
-  '朋友文章': /friends/rss/
+  '朋友文章': /rss/
 
 comments:
   service: beaudar
