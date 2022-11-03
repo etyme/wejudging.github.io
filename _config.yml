@@ -134,7 +134,7 @@ all_minifier: true
 
 lazyload:
   enable: true
-  onlypost: false
+  onlypost: true
   loadingImg: /images/loading.svg
 
 
