@@ -16,7 +16,7 @@ sidebar: [ghuser, timeline]
 
 以下友链通过[GitHub Issue](https://github.com/wejudging/friends/issues/)提交：
 
-{% friends repo:wejudging/friends %}
+{% friends api:https://raw.githubusercontent.com/wejudging/friends/output/v2/data.json %}
 
 我的友链系统中，您随时可以对自己的信息进行修改而无需等待博主更新
 
