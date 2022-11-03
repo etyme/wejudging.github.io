@@ -30,15 +30,15 @@
 <meta property="og:site_name" content="weijiajin">
 <meta property="og:description" content="为什么使用YOLO算法 深度学习相关的目标检测方法大致可以分为两派： 1.基于区域提名的：如R-CNN，SPP-Net，Fast R-CNN，Faster R-CNN，R-FCN； 2.端到端（End-to-End）：无需区域提名的，如YOLO，SSD 目前来说，RCNN系列基于区域提名的算法面临一个问题，不是端到端的模型，几个构件拼凑在一起组成整个检测系统，操作起来比较复杂耗时较长，但端到端">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://weijiajin.com/images/loading.svg">
-<meta property="og:image" content="https://weijiajin.com/images/loading.svg">
-<meta property="og:image" content="https://weijiajin.com/images/loading.svg">
+<meta property="og:image" content="https://weijiajin.com/images/文章图片/20220818-YOLO算法简介/002.jpeg">
+<meta property="og:image" content="https://weijiajin.com/images/文章图片/20220818-YOLO算法简介/003.jpeg">
+<meta property="og:image" content="https://weijiajin.com/images/文章图片/20220818-YOLO算法简介/004.jpeg">
 <meta property="article:published_time" content="2022-08-18T00:00:00.000Z">
-<meta property="article:modified_time" content="2022-11-03T09:40:42.873Z">
+<meta property="article:modified_time" content="2022-11-03T10:07:48.149Z">
 <meta property="article:author" content="weijiajin">
 <meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://weijiajin.com/images/loading.svg">
+<meta name="twitter:image" content="https://weijiajin.com/images/文章图片/20220818-YOLO算法简介/002.jpeg">
   
   
 
@@ -145,9 +145,9 @@
 <p>先前的检测系统使用分类器对测试图像的不同切片进行评估。例如，Deformable Parts Model (DPM)涉及到在图像中均匀间隔的位置上滑动窗口并在这些部件上运行分类器。R-CNN(Region-based Convolutional Neural Networks)是另一种模型，它运行一种分割算法将一幅图像分割成一个个小块，然后在这些小块上运行一个分类器。但是，速度慢、优化困难一直困扰着这种YOLO之前的系统。</p>
 <h3 id="yolo算法简介"><a class="markdownIt-Anchor" href="#yolo算法简介"></a> YOLO算法简介</h3>
 <p>YOLO将对象检测重新定义为一个回归问题。它将单个卷积神经网络(CNN)应用于整个图像，将图像分成网格，并预测每个网格的类概率和边界框。例如，以一个100x100的图像为例。我们把它分成网格，比如7x7。</p>
-<div class="tag-plugin image"><div class="image-bg"><img src="/images/loading.svg" data-original="/images/文章图片/20220818-YOLO算法简介/002.jpeg"/></div></div>
+<div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/20220818-YOLO算法简介/002.jpeg"/></div></div>
 <p>然后，对于每个网格，网络都会预测一个边界框和与每个类别（汽车，行人，交通信号灯等）相对应的概率。</p>
-<div class="tag-plugin image"><div class="image-bg"><img src="/images/loading.svg" data-original="/images/文章图片/20220818-YOLO算法简介/003.jpeg"/></div></div>
+<div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/20220818-YOLO算法简介/003.jpeg"/></div></div>
 <p>每个边界框可以使用四个描述符进行描述：</p>
 <ol>
 <li>边界框的中心</li>
@@ -157,7 +157,7 @@
 </ol>
 <p>此外，该算法还可以预测边界框中存在对象的概率。如果一个对象的中心落在一个网格单元中，则该网格单元负责检测该对象。每个网格中将有多个边界框。在训练时，我们希望每个对象只有一个边界框。因此，我们根据哪个Box与ground truth box的重叠度最高，从而分配一个Box来负责预测对象。</p>
 <p>最后，我们对每个类的对象应用一个称为“非最大抑制（Non Max Suppression）”的方法来过滤出“置信度”小于阈值的边界框。这为我们提供了图像预测。</p>
-<div class="tag-plugin image"><div class="image-bg"><img src="/images/loading.svg" data-original="/images/文章图片/20220818-YOLO算法简介/004.jpeg"/></div></div>
+<div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/20220818-YOLO算法简介/004.jpeg"/></div></div>
 
 
 <div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a>许可协议，转载请注明出处。</p>
@@ -387,18 +387,5 @@
 
 
   </div>
-
-        <style>
-            [bg-lazy] {
-                background-image: none !important;
-                background-color: #eee !important;
-            }
-        </style>
-        <script>
-            window.imageLazyLoadSetting = {
-                isSPA: false,
-                preloadRatio: 1,
-                processImages: null,
-            };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
+</body>
 </html>
