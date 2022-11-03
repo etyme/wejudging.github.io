@@ -6,6 +6,7 @@ comment_title: 快来交换友链吧～
 comment_id: '友链留言板'
 sidebar: [ghuser, timeline]
 ---
+
 {% about %}
 <img height="64px" alt="weijiajin" src="/images/weijiajin.png">
 <center>{% quot 遇到温柔可爱的人，觉得世界也可爱温柔 %}</center>
@@ -16,7 +17,7 @@ sidebar: [ghuser, timeline]
 
 以下友链通过[GitHub Issue](https://github.com/wejudging/friends/issues/)提交：
 
-{% friends repo:xaoxuu/friends %}
+{% friends repo:wejudging/friends %}
 
 我的友链系统中，您随时可以对自己的信息进行修改而无需等待博主更新
 
