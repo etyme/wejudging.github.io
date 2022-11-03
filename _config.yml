@@ -132,6 +132,12 @@ neat_enable: true
 all_minifier: true
 
 
+lazyload:
+  enable: true
+  onlypost: false
+  loadingImg: /images/loading.png 
+
+
 
 # https://github.com/ludoviclefevre/hexo-generator-seo-friendly-sitemap
 sitemap:
