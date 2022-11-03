@@ -16,7 +16,8 @@ sidebar:
     post: [toc, ghrepo, ghissues, related] # for pages using 'layout:post'
     wiki: [toc, ghrepo, ghissues, related] # for pages using 'layout:wiki'
 
-
+post-index:
+  '朋友文章': /friends/rss/
 
 comments:
   service: beaudar
