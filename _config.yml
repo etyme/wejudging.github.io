@@ -134,8 +134,8 @@ all_minifier: true
 
 lazyload:
   enable: true
-  onlypost: true
-  loadingImg: /images/loading.jpg
+  onlypost: false
+  loadingImg: /images/loading.svg
 
 
 # https://github.com/ludoviclefevre/hexo-generator-seo-friendly-sitemap
