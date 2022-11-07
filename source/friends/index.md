@@ -34,14 +34,12 @@ sidebar: [ghuser, timeline]
 请添加本站到您的友链中，如果您也使用 issue 作为友链源，只需要告知您的友链源仓库即可
 
 
-{% codeblock lang:yaml %}
-
+```yaml
 title: weijiajin
 avatar: https://weijiajin.com/images/logo.svg
 url: https://weijiajin.com
 screenshot: https://weijiajin.com/images/weijiajin-com-screenshot.png
-
-{% endcodeblock %}
+```
 
 
 待管理员审核通过，添加了 `active` 标签后，回来刷新即可生效
