@@ -35,12 +35,13 @@ sidebar: [ghuser, timeline]
 
 
 ```yaml
+
 title: weijiajin
 avatar: https://weijiajin.com/images/logo.svg
 url: https://weijiajin.com
 screenshot: https://weijiajin.com/images/weijiajin-com-screenshot.png
-```
 
+```
 
 待管理员审核通过，添加了 `active` 标签后，回来刷新即可生效
 
