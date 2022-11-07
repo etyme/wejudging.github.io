@@ -4,7 +4,12 @@ wiki: Shell
 title: shell
 ---
 
-
+{% codeblock  lang:yaml %}
+title: weijiajin
+avatar: https://weijiajin.com/images/logo.svg
+url: https://weijiajin.com
+screenshot: https://weijiajin.com/images/weijiajin-com-screenshot.png
+{% endcodeblock %}
 
 
 #### tcp脚本
