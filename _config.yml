@@ -46,7 +46,7 @@ future: true
 
 
 highlight:
-  enable: true
+  enable:
   line_number: false
   auto_detect: false
   tab_replace: '    '
