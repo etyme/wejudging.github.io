@@ -60,7 +60,7 @@
 <meta property="og:image" content="https://weijiajin.com/images/文章图片/20220819-YOLO算法python实现/032.png">
 <meta property="og:image" content="https://weijiajin.com/images/文章图片/20220819-YOLO算法python实现/033.png">
 <meta property="article:published_time" content="2022-08-19T00:00:00.000Z">
-<meta property="article:modified_time" content="2022-11-07T19:24:55.267Z">
+<meta property="article:modified_time" content="2022-11-07T19:27:41.524Z">
 <meta property="article:author" content="weijiajin">
 <meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary_large_image">
@@ -287,114 +287,31 @@
 </ul>
 <h3 id="yolo算法实现"><a class="markdownIt-Anchor" href="#yolo算法实现"></a> YOLO算法实现</h3>
 <p>首先定义一些函数，这些函数将用来选择高于某个阈值的边界框，并对其应用非极大值抑制。首先，导入所需的库：</p>
-<pre><code class="highlight python"><span class="keyword">import</span> os
-<span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt
-<span class="keyword">from</span> matplotlib.pyplot <span class="keyword">import</span> imshow
-<span class="keyword">import</span> scipy.io
-<span class="keyword">import</span> scipy.misc
-<span class="keyword">import</span> numpy <span class="keyword">as</span> np
-<span class="keyword">import</span> pandas <span class="keyword">as</span> pd
-<span class="keyword">import</span> PIL
-<span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf
-<span class="keyword">from</span> skimage.transform <span class="keyword">import</span> resize
-<span class="keyword">from</span> keras <span class="keyword">import</span> backend <span class="keyword">as</span> K
-<span class="keyword">from</span> keras.layers <span class="keyword">import</span> Input, Lambda, Conv2D
-<span class="keyword">from</span> keras.models <span class="keyword">import</span> load_model, Model
-<span class="keyword">from</span> yolo_utils <span class="keyword">import</span> read_classes, read_anchors, generate_colors, preprocess_image, draw_boxes, scale_boxes
-<span class="keyword">from</span> yad2k.models.keras_yolo <span class="keyword">import</span> yolo_head, yolo_boxes_to_corners, preprocess_true_boxes, yolo_loss, yolo_body</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> matplotlib.pyplot <span class="keyword">import</span> imshow</span><br><span class="line"><span class="keyword">import</span> scipy.io</span><br><span class="line"><span class="keyword">import</span> scipy.misc</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> PIL</span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">from</span> skimage.transform <span class="keyword">import</span> resize</span><br><span class="line"><span class="keyword">from</span> keras <span class="keyword">import</span> backend <span class="keyword">as</span> K</span><br><span class="line"><span class="keyword">from</span> keras.layers <span class="keyword">import</span> Input, Lambda, Conv2D</span><br><span class="line"><span class="keyword">from</span> keras.models <span class="keyword">import</span> load_model, Model</span><br><span class="line"><span class="keyword">from</span> yolo_utils <span class="keyword">import</span> read_classes, read_anchors, generate_colors, preprocess_image, draw_boxes, scale_boxes</span><br><span class="line"><span class="keyword">from</span> yad2k.models.keras_yolo <span class="keyword">import</span> yolo_head, yolo_boxes_to_corners, preprocess_true_boxes, yolo_loss, yolo_body</span><br></pre></td></tr></table></figure>
 <p>然后，实现基于概率和阈值过滤边界框的函数：</p>
-<pre><code class="highlight python"><span class="keyword">def</span> <span class="title function_">yolo_filter_boxes</span>(<span class="params">box_confidence, boxes, box_class_probs, threshold = <span class="number">.6</span></span>):
-    box_scores = box_confidence*box_class_probs
-    box_classes = K.argmax(box_scores,-<span class="number">1</span>)
-    box_class_scores = K.<span class="built_in">max</span>(box_scores,-<span class="number">1</span>)
-    filtering_mask = box_class_scores&gt;threshold
-    scores = tf.boolean_mask(box_class_scores,filtering_mask)
-    boxes = tf.boolean_mask(boxes,filtering_mask)
-    classes = tf.boolean_mask(box_classes,filtering_mask)
-
-    <span class="keyword">return</span> scores, boxes, classes</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">yolo_filter_boxes</span>(<span class="params">box_confidence, boxes, box_class_probs, threshold = <span class="number">.6</span></span>):</span><br><span class="line">    box_scores = box_confidence*box_class_probs</span><br><span class="line">    box_classes = K.argmax(box_scores,-<span class="number">1</span>)</span><br><span class="line">    box_class_scores = K.<span class="built_in">max</span>(box_scores,-<span class="number">1</span>)</span><br><span class="line">    filtering_mask = box_class_scores&gt;threshold</span><br><span class="line">    scores = tf.boolean_mask(box_class_scores,filtering_mask)</span><br><span class="line">    boxes = tf.boolean_mask(boxes,filtering_mask)</span><br><span class="line">    classes = tf.boolean_mask(box_classes,filtering_mask)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> scores, boxes, classes</span><br></pre></td></tr></table></figure>
 <p>之后，实现计算IoU的函数：</p>
-<pre><code class="highlight python"><span class="keyword">def</span> <span class="title function_">iou</span>(<span class="params">box1, box2</span>):
-    xi1 = <span class="built_in">max</span>(box1[<span class="number">0</span>],box2[<span class="number">0</span>])
-    yi1 = <span class="built_in">max</span>(box1[<span class="number">1</span>],box2[<span class="number">1</span>])
-    xi2 = <span class="built_in">min</span>(box1[<span class="number">2</span>],box2[<span class="number">2</span>])
-    yi2 = <span class="built_in">min</span>(box1[<span class="number">3</span>],box2[<span class="number">3</span>])
-    inter_area = (yi2-yi1)*(xi2-xi1)
-    box1_area = (box1[<span class="number">3</span>]-box1[<span class="number">1</span>])*(box1[<span class="number">2</span>]-box1[<span class="number">0</span>])
-    box2_area = (box2[<span class="number">3</span>]-box2[<span class="number">1</span>])*(box2[<span class="number">2</span>]-box2[<span class="number">0</span>])
-    union_area = box1_area+box2_area-inter_area
-    iou = inter_area/union_area
-
-    <span class="keyword">return</span> iou</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">iou</span>(<span class="params">box1, box2</span>):</span><br><span class="line">    xi1 = <span class="built_in">max</span>(box1[<span class="number">0</span>],box2[<span class="number">0</span>])</span><br><span class="line">    yi1 = <span class="built_in">max</span>(box1[<span class="number">1</span>],box2[<span class="number">1</span>])</span><br><span class="line">    xi2 = <span class="built_in">min</span>(box1[<span class="number">2</span>],box2[<span class="number">2</span>])</span><br><span class="line">    yi2 = <span class="built_in">min</span>(box1[<span class="number">3</span>],box2[<span class="number">3</span>])</span><br><span class="line">    inter_area = (yi2-yi1)*(xi2-xi1)</span><br><span class="line">    box1_area = (box1[<span class="number">3</span>]-box1[<span class="number">1</span>])*(box1[<span class="number">2</span>]-box1[<span class="number">0</span>])</span><br><span class="line">    box2_area = (box2[<span class="number">3</span>]-box2[<span class="number">1</span>])*(box2[<span class="number">2</span>]-box2[<span class="number">0</span>])</span><br><span class="line">    union_area = box1_area+box2_area-inter_area</span><br><span class="line">    iou = inter_area/union_area</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> iou</span><br></pre></td></tr></table></figure>
 <p>然后，实现非极大值抑制的函数：</p>
-<pre><code class="highlight python"><span class="keyword">def</span> <span class="title function_">yolo_non_max_suppression</span>(<span class="params">scores, boxes, classes, max_boxes = <span class="number">10</span>, iou_threshold = <span class="number">0.5</span></span>):
-    max_boxes_tensor = K.variable(max_boxes, dtype=<span class="string">&#x27;int32&#x27;</span>)
-    K.get_session().run(tf.variables_initializer([max_boxes_tensor]))
-    nms_indices = tf.image.non_max_suppression(boxes,scores,max_boxes,iou_threshold)
-    scores = K.gather(scores,nms_indices)
-    boxes = K.gather(boxes,nms_indices)
-    classes = K.gather(classes,nms_indices)
-
-    <span class="keyword">return</span> scores, boxes, classes</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">yolo_non_max_suppression</span>(<span class="params">scores, boxes, classes, max_boxes = <span class="number">10</span>, iou_threshold = <span class="number">0.5</span></span>):</span><br><span class="line">    max_boxes_tensor = K.variable(max_boxes, dtype=<span class="string">&#x27;int32&#x27;</span>)</span><br><span class="line">    K.get_session().run(tf.variables_initializer([max_boxes_tensor]))</span><br><span class="line">    nms_indices = tf.image.non_max_suppression(boxes,scores,max_boxes,iou_threshold)</span><br><span class="line">    scores = K.gather(scores,nms_indices)</span><br><span class="line">    boxes = K.gather(boxes,nms_indices)</span><br><span class="line">    classes = K.gather(classes,nms_indices)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> scores, boxes, classes</span><br></pre></td></tr></table></figure>
 <p>随机初始化下大小为（19,19,5,85）的输出向量：</p>
-<pre><code class="highlight apache"><span class="attribute">yolo_outputs</span> = (tf.random_normal([<span class="number">19</span>, <span class="number">19</span>, <span class="number">5</span>, <span class="number">1</span>], mean=<span class="number">1</span>, stddev=<span class="number">4</span>, seed = <span class="number">1</span>),
-                   <span class="attribute">tf</span>.random_normal([<span class="number">19</span>, <span class="number">19</span>, <span class="number">5</span>, <span class="number">2</span>], mean=<span class="number">1</span>, stddev=<span class="number">4</span>, seed = <span class="number">1</span>),
-                   <span class="attribute">tf</span>.random_normal([<span class="number">19</span>, <span class="number">19</span>, <span class="number">5</span>, <span class="number">2</span>], mean=<span class="number">1</span>, stddev=<span class="number">4</span>, seed = <span class="number">1</span>),
-                   <span class="attribute">tf</span>.random_normal([<span class="number">19</span>, <span class="number">19</span>, <span class="number">5</span>, <span class="number">80</span>], mean=<span class="number">1</span>, stddev=<span class="number">4</span>, seed = <span class="number">1</span>))</code></pre>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">yolo_outputs</span> = (tf.random_normal([<span class="number">19</span>, <span class="number">19</span>, <span class="number">5</span>, <span class="number">1</span>], mean=<span class="number">1</span>, stddev=<span class="number">4</span>, seed = <span class="number">1</span>),</span><br><span class="line">                   <span class="attribute">tf</span>.random_normal([<span class="number">19</span>, <span class="number">19</span>, <span class="number">5</span>, <span class="number">2</span>], mean=<span class="number">1</span>, stddev=<span class="number">4</span>, seed = <span class="number">1</span>),</span><br><span class="line">                   <span class="attribute">tf</span>.random_normal([<span class="number">19</span>, <span class="number">19</span>, <span class="number">5</span>, <span class="number">2</span>], mean=<span class="number">1</span>, stddev=<span class="number">4</span>, seed = <span class="number">1</span>),</span><br><span class="line">                   <span class="attribute">tf</span>.random_normal([<span class="number">19</span>, <span class="number">19</span>, <span class="number">5</span>, <span class="number">80</span>], mean=<span class="number">1</span>, stddev=<span class="number">4</span>, seed = <span class="number">1</span>))</span><br></pre></td></tr></table></figure>
 <p>最后，实现一个将CNN的输出作为输入并返回被抑制的边界框的函数：</p>
-<pre><code class="highlight mipsasm">def yolo_eval(yolo_outputs, image_shape = (<span class="number">720</span>., <span class="number">1280</span>.), max_boxes=<span class="number">10</span>, <span class="keyword">score_threshold=.6, </span>iou_threshold=.<span class="number">5</span>):
-    <span class="keyword">box_confidence, </span><span class="keyword">box_xy, </span><span class="keyword">box_wh, </span><span class="keyword">box_class_probs </span>= yolo_outputs
-    <span class="keyword">boxes </span>= yolo_boxes_to_corners(<span class="keyword">box_xy, </span><span class="keyword">box_wh)</span>
-<span class="keyword"></span>    <span class="keyword">scores, </span><span class="keyword">boxes, </span>classes = yolo_filter_boxes(<span class="keyword">box_confidence, </span><span class="keyword">boxes, </span><span class="keyword">box_class_probs, </span>threshold = <span class="keyword">score_threshold)</span>
-<span class="keyword"></span>    <span class="keyword">boxes </span>= <span class="keyword">scale_boxes(boxes, </span>image_shape)
-    <span class="keyword">scores, </span><span class="keyword">boxes, </span>classes = yolo_non_max_suppression(<span class="keyword">scores, </span><span class="keyword">boxes, </span>classes, max_boxes, iou_threshold)
-
-    return <span class="keyword">scores, </span><span class="keyword">boxes, </span>classes</code></pre>
+<figure class="highlight mipsasm"><table><tr><td class="code"><pre><span class="line">def yolo_eval(yolo_outputs, image_shape = (<span class="number">720</span>., <span class="number">1280</span>.), max_boxes=<span class="number">10</span>, <span class="keyword">score_threshold=.6, </span>iou_threshold=.<span class="number">5</span>):</span><br><span class="line">    <span class="keyword">box_confidence, </span><span class="keyword">box_xy, </span><span class="keyword">box_wh, </span><span class="keyword">box_class_probs </span>= yolo_outputs</span><br><span class="line">    <span class="keyword">boxes </span>= yolo_boxes_to_corners(<span class="keyword">box_xy, </span><span class="keyword">box_wh)</span></span><br><span class="line"><span class="keyword"></span>    <span class="keyword">scores, </span><span class="keyword">boxes, </span>classes = yolo_filter_boxes(<span class="keyword">box_confidence, </span><span class="keyword">boxes, </span><span class="keyword">box_class_probs, </span>threshold = <span class="keyword">score_threshold)</span></span><br><span class="line"><span class="keyword"></span>    <span class="keyword">boxes </span>= <span class="keyword">scale_boxes(boxes, </span>image_shape)</span><br><span class="line">    <span class="keyword">scores, </span><span class="keyword">boxes, </span>classes = yolo_non_max_suppression(<span class="keyword">scores, </span><span class="keyword">boxes, </span>classes, max_boxes, iou_threshold)</span><br><span class="line"></span><br><span class="line">    return <span class="keyword">scores, </span><span class="keyword">boxes, </span>classes</span><br></pre></td></tr></table></figure>
 <p>使用yolo_eval函数对之前创建的随机输出向量进行预测：</p>
-<pre><code class="highlight stylus">scores, boxes, classes = <span class="built_in">yolo_eval</span>(yolo_outputs)
-with tf<span class="selector-class">.Session</span>() as test_b:
-    <span class="built_in">print</span>(<span class="string">&quot;scores[2] = &quot;</span> + <span class="built_in">str</span>(scores<span class="selector-attr">[2]</span><span class="selector-class">.eval</span>()))
-    <span class="built_in">print</span>(<span class="string">&quot;boxes[2] = &quot;</span> + <span class="built_in">str</span>(boxes<span class="selector-attr">[2]</span><span class="selector-class">.eval</span>()))
-    <span class="built_in">print</span>(<span class="string">&quot;classes[2] = &quot;</span> + <span class="built_in">str</span>(classes<span class="selector-attr">[2]</span><span class="selector-class">.eval</span>()))</code></pre>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">scores, boxes, classes = <span class="built_in">yolo_eval</span>(yolo_outputs)</span><br><span class="line">with tf<span class="selector-class">.Session</span>() as test_b:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;scores[2] = &quot;</span> + <span class="built_in">str</span>(scores<span class="selector-attr">[2]</span><span class="selector-class">.eval</span>()))</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;boxes[2] = &quot;</span> + <span class="built_in">str</span>(boxes<span class="selector-attr">[2]</span><span class="selector-class">.eval</span>()))</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;classes[2] = &quot;</span> + <span class="built_in">str</span>(classes<span class="selector-attr">[2]</span><span class="selector-class">.eval</span>()))</span><br></pre></td></tr></table></figure>
 <div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/20220819-YOLO算法python实现/032.png"/></div></div>
 <p>score表示对象在图像中的可能性，boxes返回检测到的对象的（x1，y1，x2，y2）坐标，classes表示识别对象所属的类。<br />
 现在，在新的图像上使用预训练的YOLO算法，看看其工作效果：</p>
-<pre><code class="highlight ini"><span class="attr">sess</span> = K.get_session()
-<span class="attr">class_names</span> = read_classes(<span class="string">&quot;model_data/coco_classes.txt&quot;</span>)
-<span class="attr">anchors</span> = read_anchors(<span class="string">&quot;model_data/yolo_anchors.txt&quot;</span>)
-
-<span class="attr">yolo_model</span> = load_model(<span class="string">&quot;model_data/yolo.h5&quot;</span>)</code></pre>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">sess</span> = K.get_session()</span><br><span class="line"><span class="attr">class_names</span> = read_classes(<span class="string">&quot;model_data/coco_classes.txt&quot;</span>)</span><br><span class="line"><span class="attr">anchors</span> = read_anchors(<span class="string">&quot;model_data/yolo_anchors.txt&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="attr">yolo_model</span> = load_model(<span class="string">&quot;model_data/yolo.h5&quot;</span>)</span><br></pre></td></tr></table></figure>
 <p>在加载类别信息和预训练模型之后，使用上面定义的函数来获取 yolo_outputs</p>
-<pre><code class="highlight reasonml">yolo_outputs = yolo<span class="constructor">_head(<span class="params">yolo_model</span>.<span class="params">output</span>, <span class="params">anchors</span>, <span class="params">len</span>(<span class="params">class_names</span>)</span>)</code></pre>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">yolo_outputs = yolo<span class="constructor">_head(<span class="params">yolo_model</span>.<span class="params">output</span>, <span class="params">anchors</span>, <span class="params">len</span>(<span class="params">class_names</span>)</span>)</span><br></pre></td></tr></table></figure>
 <p>之后，定义一个函数来预测边界框并在图像上标记边界框：</p>
-<pre><code class="highlight python"><span class="keyword">def</span> <span class="title function_">predict</span>(<span class="params">sess, image_file</span>):
-    image, image_data = preprocess_image(<span class="string">&quot;images/&quot;</span> + image_file, model_image_size = (<span class="number">608</span>, <span class="number">608</span>))
-    out_scores, out_boxes, out_classes = sess.run([scores, boxes, classes], feed_dict=&#123;yolo_model.<span class="built_in">input</span>: image_data, K.learning_phase(): <span class="number">0</span>&#125;)
-
-    <span class="built_in">print</span>(<span class="string">&#x27;Found &#123;&#125; boxes for &#123;&#125;&#x27;</span>.<span class="built_in">format</span>(<span class="built_in">len</span>(out_boxes), image_file))
-
-    <span class="comment"># Generate colors for drawing bounding boxes.</span>
-    colors = generate_colors(class_names)
-
-    <span class="comment"># Draw bounding boxes on the image file</span>
-    draw_boxes(image, out_scores, out_boxes, out_classes, class_names, colors)
-
-    <span class="comment"># Save the predicted bounding box on the image</span>
-    image.save(os.path.join(<span class="string">&quot;out&quot;</span>, image_file), quality=<span class="number">90</span>)
-
-    <span class="comment"># Display the results in the notebook</span>
-    output_image = scipy.misc.imread(os.path.join(<span class="string">&quot;out&quot;</span>, image_file))
-
-    plt.figure(figsize=(<span class="number">12</span>,<span class="number">12</span>))
-    imshow(output_image)
-
-    <span class="keyword">return</span> out_scores, out_boxes, out_classes</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">predict</span>(<span class="params">sess, image_file</span>):</span><br><span class="line">    image, image_data = preprocess_image(<span class="string">&quot;images/&quot;</span> + image_file, model_image_size = (<span class="number">608</span>, <span class="number">608</span>))</span><br><span class="line">    out_scores, out_boxes, out_classes = sess.run([scores, boxes, classes], feed_dict=&#123;yolo_model.<span class="built_in">input</span>: image_data, K.learning_phase(): <span class="number">0</span>&#125;)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;Found &#123;&#125; boxes for &#123;&#125;&#x27;</span>.<span class="built_in">format</span>(<span class="built_in">len</span>(out_boxes), image_file))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Generate colors for drawing bounding boxes.</span></span><br><span class="line">    colors = generate_colors(class_names)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Draw bounding boxes on the image file</span></span><br><span class="line">    draw_boxes(image, out_scores, out_boxes, out_classes, class_names, colors)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Save the predicted bounding box on the image</span></span><br><span class="line">    image.save(os.path.join(<span class="string">&quot;out&quot;</span>, image_file), quality=<span class="number">90</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Display the results in the notebook</span></span><br><span class="line">    output_image = scipy.misc.imread(os.path.join(<span class="string">&quot;out&quot;</span>, image_file))</span><br><span class="line"></span><br><span class="line">    plt.figure(figsize=(<span class="number">12</span>,<span class="number">12</span>))</span><br><span class="line">    imshow(output_image)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> out_scores, out_boxes, out_classes</span><br></pre></td></tr></table></figure>
 <p>接下来，将使用预测函数读取图像并进行预测：</p>
-<pre><code class="highlight reasonml">img = plt.imread(&#x27;images/img.jpg&#x27;)
-image_shape = <span class="built_in">float</span>(img.shape<span class="literal">[<span class="number">0</span>]</span>), <span class="built_in">float</span>(img.shape<span class="literal">[<span class="number">1</span>]</span>)
-scores, boxes, classes = yolo<span class="constructor">_eval(<span class="params">yolo_outputs</span>, <span class="params">image_shape</span>)</span></code></pre>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">img = plt.imread(&#x27;images/img.jpg&#x27;)</span><br><span class="line">image_shape = <span class="built_in">float</span>(img.shape<span class="literal">[<span class="number">0</span>]</span>), <span class="built_in">float</span>(img.shape<span class="literal">[<span class="number">1</span>]</span>)</span><br><span class="line">scores, boxes, classes = yolo<span class="constructor">_eval(<span class="params">yolo_outputs</span>, <span class="params">image_shape</span>)</span></span><br></pre></td></tr></table></figure>
 <p>最后，输出预测结果：</p>
-<pre><code class="highlight ceylon"><span class="keyword">out</span><span class="number">_</span>scores, <span class="keyword">out</span><span class="number">_</span>boxes, <span class="keyword">out</span><span class="number">_</span>classes = predict(sess, <span class="string">&quot;img.jpg&quot;</span>)</code></pre>
+<figure class="highlight ceylon"><table><tr><td class="code"><pre><span class="line"><span class="keyword">out</span><span class="number">_</span>scores, <span class="keyword">out</span><span class="number">_</span>boxes, <span class="keyword">out</span><span class="number">_</span>classes = predict(sess, <span class="string">&quot;img.jpg&quot;</span>)</span><br></pre></td></tr></table></figure>
 <div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/20220819-YOLO算法python实现/033.png"/></div></div>
 <h4 id="yolo算法darknet的官网"><a class="markdownIt-Anchor" href="#yolo算法darknet的官网"></a> YOLO算法darknet的官网</h4>
 <p><a target="_blank" rel="noopener" href="https://pjreddie.com/darknet/yolo/">https://pjreddie.com/darknet/yolo/</a></p>
