@@ -32,7 +32,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://weijiajin.com/images/文章图片/程序设计简答题/c08.png">
 <meta property="article:published_time" content="2022-03-06T00:00:00.000Z">
-<meta property="article:modified_time" content="2022-11-07T19:27:41.520Z">
+<meta property="article:modified_time" content="2022-11-07T19:31:56.030Z">
 <meta property="article:author" content="weijiajin">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary_large_image">
@@ -234,7 +234,7 @@
 <p>多态是指同样的消息被不同类型的对象接收时导致完全不同的⾏为，是对类的特定成员函数的再抽象。C++⽀持的多态有多种类型，重载（包括函数重载和运算符重载）和虚函数是其主要的⽅式</p>
 </blockquote>
 <h4 id="16-什么是else摇摆问题举例说明"><a class="markdownIt-Anchor" href="#16-什么是else摇摆问题举例说明"></a> 16、什么是“else摇摆问题”，举例说明</h4>
-<figure class="highlight isbl"><table><tr><td class="code"><pre><span class="line"><span class="variable"><span class="keyword">if</span></span> (<span class="variable">a</span>&gt;<span class="number">0</span>)</span><br><span class="line">    <span class="function"><span class="title">if</span>(<span class="variable">b</span>&gt;<span class="number">0</span>)</span></span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+<figure class="highlight isbl"><table><tr><td class="code"><pre><span class="line"><span class="variable"><span class="keyword">if</span></span> (<span class="variable">a</span>&gt;<span class="number">0</span>)</span><br><span class="line">	<span class="function"><span class="title">if</span>(<span class="variable">b</span>&gt;<span class="number">0</span>)</span></span><br><span class="line">	...</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	...</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>这⾥的else应该与第⼆个if匹配⽽⾮第⼀个</p>
 </blockquote>
