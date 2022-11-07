@@ -60,7 +60,7 @@
 <meta property="og:image" content="https://weijiajin.com/images/文章图片/20220819-YOLO算法python实现/032.png">
 <meta property="og:image" content="https://weijiajin.com/images/文章图片/20220819-YOLO算法python实现/033.png">
 <meta property="article:published_time" content="2022-08-19T00:00:00.000Z">
-<meta property="article:modified_time" content="2022-11-07T18:22:24.089Z">
+<meta property="article:modified_time" content="2022-11-07T18:27:41.567Z">
 <meta property="article:author" content="weijiajin">
 <meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary_large_image">
@@ -80,10 +80,6 @@
   
 
   
-
-  
-    
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/styles/atom-one-dark.min.css">
 
   
 
@@ -293,7 +289,7 @@
 </ul>
 <h3 id="yolo算法实现"><a class="markdownIt-Anchor" href="#yolo算法实现"></a> YOLO算法实现</h3>
 <p>首先定义一些函数，这些函数将用来选择高于某个阈值的边界框，并对其应用非极大值抑制。首先，导入所需的库：</p>
-<pre><code class="hljs plaintext">import os
+<pre class="highlight"><code class="">import os
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import imshow
 import scipy.io
@@ -309,9 +305,10 @@ from keras.models import load_model, Model
 from yolo_utils import read_classes, read_anchors, generate_colors, preprocess_image, draw_boxes, scale_boxes
 from yad2k.models.keras_yolo import yolo_head, yolo_boxes_to_corners, preprocess_true_boxes, yolo_loss, yolo_body
 
-%matplotlib inline</code></pre>
+%matplotlib inline
+</code></pre>
 <p>然后，实现基于概率和阈值过滤边界框的函数：</p>
-<pre><code class="hljs plaintext">def yolo_filter_boxes(box_confidence, boxes, box_class_probs, threshold = .6):
+<pre class="highlight"><code class="">def yolo_filter_boxes(box_confidence, boxes, box_class_probs, threshold = .6):
     box_scores = box_confidence*box_class_probs
     box_classes = K.argmax(box_scores,-1)
     box_class_scores = K.max(box_scores,-1)
@@ -320,9 +317,10 @@ from yad2k.models.keras_yolo import yolo_head, yolo_boxes_to_corners, preprocess
     boxes = tf.boolean_mask(boxes,filtering_mask)
     classes = tf.boolean_mask(box_classes,filtering_mask)
 
-    return scores, boxes, classes</code></pre>
+    return scores, boxes, classes
+</code></pre>
 <p>之后，实现计算IoU的函数：</p>
-<pre><code class="hljs plaintext">def iou(box1, box2):
+<pre class="highlight"><code class="">def iou(box1, box2):
     xi1 = max(box1[0],box2[0])
     yi1 = max(box1[1],box2[1])
     xi2 = min(box1[2],box2[2])
@@ -333,53 +331,60 @@ from yad2k.models.keras_yolo import yolo_head, yolo_boxes_to_corners, preprocess
     union_area = box1_area+box2_area-inter_area
     iou = inter_area/union_area
 
-    return iou</code></pre>
+    return iou
+</code></pre>
 <p>然后，实现非极大值抑制的函数：</p>
-<pre><code class="hljs plaintext">def yolo_non_max_suppression(scores, boxes, classes, max_boxes = 10, iou_threshold = 0.5):
-    max_boxes_tensor = K.variable(max_boxes, dtype=&#x27;int32&#x27;)
+<pre class="highlight"><code class="">def yolo_non_max_suppression(scores, boxes, classes, max_boxes = 10, iou_threshold = 0.5):
+    max_boxes_tensor = K.variable(max_boxes, dtype='int32')
     K.get_session().run(tf.variables_initializer([max_boxes_tensor]))
     nms_indices = tf.image.non_max_suppression(boxes,scores,max_boxes,iou_threshold)
     scores = K.gather(scores,nms_indices)
     boxes = K.gather(boxes,nms_indices)
     classes = K.gather(classes,nms_indices)
 
-    return scores, boxes, classes</code></pre>
+    return scores, boxes, classes
+</code></pre>
 <p>随机初始化下大小为（19,19,5,85）的输出向量：</p>
-<pre><code class="hljs plaintext">yolo_outputs = (tf.random_normal([19, 19, 5, 1], mean=1, stddev=4, seed = 1),
+<pre class="highlight"><code class="">yolo_outputs = (tf.random_normal([19, 19, 5, 1], mean=1, stddev=4, seed = 1),
                    tf.random_normal([19, 19, 5, 2], mean=1, stddev=4, seed = 1),
                    tf.random_normal([19, 19, 5, 2], mean=1, stddev=4, seed = 1),
-                   tf.random_normal([19, 19, 5, 80], mean=1, stddev=4, seed = 1))</code></pre>
+                   tf.random_normal([19, 19, 5, 80], mean=1, stddev=4, seed = 1))
+</code></pre>
 <p>最后，实现一个将CNN的输出作为输入并返回被抑制的边界框的函数：</p>
-<pre><code class="hljs plaintext">def yolo_eval(yolo_outputs, image_shape = (720., 1280.), max_boxes=10, score_threshold=.6, iou_threshold=.5):
+<pre class="highlight"><code class="">def yolo_eval(yolo_outputs, image_shape = (720., 1280.), max_boxes=10, score_threshold=.6, iou_threshold=.5):
     box_confidence, box_xy, box_wh, box_class_probs = yolo_outputs
     boxes = yolo_boxes_to_corners(box_xy, box_wh)
     scores, boxes, classes = yolo_filter_boxes(box_confidence, boxes, box_class_probs, threshold = score_threshold)
     boxes = scale_boxes(boxes, image_shape)
     scores, boxes, classes = yolo_non_max_suppression(scores, boxes, classes, max_boxes, iou_threshold)
 
-    return scores, boxes, classes</code></pre>
+    return scores, boxes, classes
+</code></pre>
 <p>使用yolo_eval函数对之前创建的随机输出向量进行预测：</p>
-<pre><code class="hljs plaintext">scores, boxes, classes = yolo_eval(yolo_outputs)
+<pre class="highlight"><code class="">scores, boxes, classes = yolo_eval(yolo_outputs)
 with tf.Session() as test_b:
     print(&quot;scores[2] = &quot; + str(scores[2].eval()))
     print(&quot;boxes[2] = &quot; + str(boxes[2].eval()))
-    print(&quot;classes[2] = &quot; + str(classes[2].eval()))</code></pre>
+    print(&quot;classes[2] = &quot; + str(classes[2].eval()))
+</code></pre>
 <div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/20220819-YOLO算法python实现/032.png"/></div></div>
 <p>score表示对象在图像中的可能性，boxes返回检测到的对象的（x1，y1，x2，y2）坐标，classes表示识别对象所属的类。<br />
 现在，在新的图像上使用预训练的YOLO算法，看看其工作效果：</p>
-<pre><code class="hljs plaintext">sess = K.get_session()
+<pre class="highlight"><code class="">sess = K.get_session()
 class_names = read_classes(&quot;model_data/coco_classes.txt&quot;)
 anchors = read_anchors(&quot;model_data/yolo_anchors.txt&quot;)
 
-yolo_model = load_model(&quot;model_data/yolo.h5&quot;)</code></pre>
+yolo_model = load_model(&quot;model_data/yolo.h5&quot;)
+</code></pre>
 <p>在加载类别信息和预训练模型之后，使用上面定义的函数来获取 yolo_outputs</p>
-<pre><code class="hljs plaintext">yolo_outputs = yolo_head(yolo_model.output, anchors, len(class_names))</code></pre>
+<pre class="highlight"><code class="">yolo_outputs = yolo_head(yolo_model.output, anchors, len(class_names))
+</code></pre>
 <p>之后，定义一个函数来预测边界框并在图像上标记边界框：</p>
-<pre><code class="hljs plaintext">def predict(sess, image_file):
+<pre class="highlight"><code class="">def predict(sess, image_file):
     image, image_data = preprocess_image(&quot;images/&quot; + image_file, model_image_size = (608, 608))
     out_scores, out_boxes, out_classes = sess.run([scores, boxes, classes], feed_dict=&#123;yolo_model.input: image_data, K.learning_phase(): 0&#125;)
 
-    print(&#x27;Found &#123;&#125; boxes for &#123;&#125;&#x27;.format(len(out_boxes), image_file))
+    print('Found &#123;&#125; boxes for &#123;&#125;'.format(len(out_boxes), image_file))
 
     # Generate colors for drawing bounding boxes.
     colors = generate_colors(class_names)
@@ -396,13 +401,16 @@ yolo_model = load_model(&quot;model_data/yolo.h5&quot;)</code></pre>
     plt.figure(figsize=(12,12))
     imshow(output_image)
 
-    return out_scores, out_boxes, out_classes</code></pre>
+    return out_scores, out_boxes, out_classes
+</code></pre>
 <p>接下来，将使用预测函数读取图像并进行预测：</p>
-<pre><code class="hljs plaintext">img = plt.imread(&#x27;images/img.jpg&#x27;)
+<pre class="highlight"><code class="">img = plt.imread('images/img.jpg')
 image_shape = float(img.shape[0]), float(img.shape[1])
-scores, boxes, classes = yolo_eval(yolo_outputs, image_shape)</code></pre>
+scores, boxes, classes = yolo_eval(yolo_outputs, image_shape)
+</code></pre>
 <p>最后，输出预测结果：</p>
-<pre><code class="hljs plaintext">out_scores, out_boxes, out_classes = predict(sess, &quot;img.jpg&quot;)</code></pre>
+<pre class="highlight"><code class="">out_scores, out_boxes, out_classes = predict(sess, &quot;img.jpg&quot;)
+</code></pre>
 <div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/20220819-YOLO算法python实现/033.png"/></div></div>
 <h4 id="yolo算法darknet的官网"><a class="markdownIt-Anchor" href="#yolo算法darknet的官网"></a> YOLO算法darknet的官网</h4>
 <p><a target="_blank" rel="noopener" href="https://pjreddie.com/darknet/yolo/">https://pjreddie.com/darknet/yolo/</a></p>
