@@ -5,9 +5,9 @@ tags: 深度学习
 categories: 深度学习
 cover: /images/文章图片/20220819-YOLO算法python实现/001.jpg
 poster: 
-  topic: 介绍其基本原理及实现细节
   headline: YOLO算法python实现
   caption: 介绍其基本原理及实现细节
+  color: white
 --- 
 
 ###  YOLO框架如何运作
