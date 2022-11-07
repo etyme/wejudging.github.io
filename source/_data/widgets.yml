@@ -50,7 +50,7 @@ related:
 
 timeline:
   layout: timeline
-  title: 说说
+  title: 燕雀的心事
   api: https://api.github.com/repos/wejudging/wejudging/issues
-  user: wejudging# 是否过滤只显示某个人发布的内容，如果要筛选多人，用英文逗号隔开
-  hide: footer # title,footer # 隐藏标题或底部
+  user: wejudging
+  hide: footer
