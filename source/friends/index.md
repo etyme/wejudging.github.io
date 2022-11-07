@@ -53,10 +53,6 @@ screenshot: https://weijiajin.com/images/weijiajin-com-screenshot.png
 {% endtimeline %}
 
 
-
-
-{% note 这&nbsp;是标题 这是正文 哈哈。 %}
-
 {% codeblock 建议的版本 lang:yaml %}
 Hexo: 5.4.0
 hexo-cli: 4.2.0
