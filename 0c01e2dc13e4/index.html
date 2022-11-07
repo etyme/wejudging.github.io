@@ -32,7 +32,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s2.ax1x.com/2020/01/31/18SxbR.png">
 <meta property="article:published_time" content="2020-11-24T19:02:37.000Z">
-<meta property="article:modified_time" content="2022-11-07T19:03:47.605Z">
+<meta property="article:modified_time" content="2022-11-07T19:12:59.310Z">
 <meta property="article:author" content="weijiajin">
 <meta property="article:tag" content="tensorflow">
 <meta property="article:tag" content="python">
@@ -53,6 +53,10 @@
   
 
   
+
+  
+    
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/styles/atom-one-dark.min.css">
 
   
 
@@ -151,18 +155,513 @@
 <li>配置简单只需填写 ，学号、密码、和接受通知的邮箱</li>
 </ul>
 <h4 id="项目所需库"><a class="markdownIt-Anchor" href="#项目所需库"></a> 项目所需库</h4>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"># 操作图片模块</span><br><span class="line">from PIL import Image</span><br><span class="line"># 第三方OCR调用（识别率不高）</span><br><span class="line">import pytesseract</span><br><span class="line"># 范围随机模块</span><br><span class="line">import random</span><br><span class="line"># 操作系统模块</span><br><span class="line">import os</span><br><span class="line"># 矩阵计算与tensorflow（深度学习框架）</span><br><span class="line">import numpy as np</span><br><span class="line">import tensorflow as tf</span><br><span class="line"># 爬虫模拟网页请求模块</span><br><span class="line">import requests</span><br><span class="line"># 调用系统浏览器</span><br><span class="line">import webbrowser</span><br><span class="line"># 爬取html指定内容</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line"># 正则模块</span><br><span class="line">import re</span><br><span class="line"># smtp邮箱</span><br><span class="line">import smtplib</span><br><span class="line">from email.mime.text import MIMEText</span><br><span class="line">from email.utils import formataddr</span><br><span class="line"># 时间模块，用于延迟</span><br><span class="line">import time</span><br><span class="line"># 下载图片模块</span><br><span class="line">from typing import Any</span><br><span class="line">from urllib.request import urlretrieve</span><br><span class="line"># TF_CPP_MIN_LOG_LEVEL默认值为 0 (显示所有logs)</span><br><span class="line"># 设置为 1 隐藏 INFO logs, 2 额外隐藏WARNING logs</span><br><span class="line"># 设置为3所有 ERROR logs也不显示</span><br><span class="line">os.environ[&#x27;TF_CPP_MIN_LOG_LEVEL&#x27;] = &#x27;2&#x27;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext"># 操作图片模块
+from PIL import Image
+# 第三方OCR调用（识别率不高）
+import pytesseract
+# 范围随机模块
+import random
+# 操作系统模块
+import os
+# 矩阵计算与tensorflow（深度学习框架）
+import numpy as np
+import tensorflow as tf
+# 爬虫模拟网页请求模块
+import requests
+# 调用系统浏览器
+import webbrowser
+# 爬取html指定内容
+from bs4 import BeautifulSoup
+# 正则模块
+import re
+# smtp邮箱
+import smtplib
+from email.mime.text import MIMEText
+from email.utils import formataddr
+# 时间模块，用于延迟
+import time
+# 下载图片模块
+from typing import Any
+from urllib.request import urlretrieve
+# TF_CPP_MIN_LOG_LEVEL默认值为 0 (显示所有logs)
+# 设置为 1 隐藏 INFO logs, 2 额外隐藏WARNING logs
+# 设置为3所有 ERROR logs也不显示
+os.environ[&#x27;TF_CPP_MIN_LOG_LEVEL&#x27;] = &#x27;2&#x27;</code></pre>
 <h4 id="项目难点"><a class="markdownIt-Anchor" href="#项目难点"></a> 项目难点</h4>
 <p>通过深度神经网络的验证码识别，目前我的验证码的识别率为97%，3万图片经过深度神经网络的训练，使用的是Google的神经网络框架tensorflow，如果还想提高识别率也是可以的，可以增加数据集，降低keep_prob的值（拟合度），达到99.9%是没有问题的。</p>
 <blockquote>
 <p>3万张的数据集并不是我手动码的，而是通过最开始我自己人工识别了1000张和我的好朋友刘雪峰200张作为最初数据集，开始训练的识别率只有20%左右，然后写了个函数将识别正确验证码储存，再进行训练，从而增大数据集和提高数据集（当识别率已经很高的时候，错误的图片再进行人工识别在训练可进一步提高识别率）。</p>
 </blockquote>
 <h4 id="多用户使用方法"><a class="markdownIt-Anchor" href="#多用户使用方法"></a> 多用户使用方法</h4>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">info = [&#123;</span><br><span class="line">        &#x27;account&#x27;: &#x27;******,</span><br><span class="line">        &#x27;password&#x27;: &#x27;******&#x27;,</span><br><span class="line">        &#x27;email&#x27;: &#x27;*****@qq.com&#x27;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">        &#x27;account&#x27;: &#x27;******</span><br><span class="line">        &#x27;password&#x27;: &#x27;***&#x27;,</span><br><span class="line">        &#x27;email&#x27;: &#x27;*****@qq.com&#x27;</span><br><span class="line">        &#125;]</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext">info = [&#123;
+        &#x27;account&#x27;: &#x27;******,
+        &#x27;password&#x27;: &#x27;******&#x27;,
+        &#x27;email&#x27;: &#x27;*****@qq.com&#x27;
+        &#125;,
+        &#123;
+        &#x27;account&#x27;: &#x27;******
+        &#x27;password&#x27;: &#x27;***&#x27;,
+        &#x27;email&#x27;: &#x27;*****@qq.com&#x27;
+        &#125;]</code></pre>
 <h4 id="运行结果"><a class="markdownIt-Anchor" href="#运行结果"></a> 运行结果</h4>
 <p><img src="https://s2.ax1x.com/2020/01/31/18SxbR.png" alt="运行结果" /></p>
 <h4 id="python源码"><a class="markdownIt-Anchor" href="#python源码"></a> python源码</h4>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br></pre></td><td class="code"><pre><span class="line"># coding=utf-8</span><br><span class="line"># 操作图片模块</span><br><span class="line">from PIL import Image</span><br><span class="line"># 第三方OCR调用（识别率不高）</span><br><span class="line">import pytesseract</span><br><span class="line"># 范围随机模块</span><br><span class="line">import random</span><br><span class="line"># 操作系统模块</span><br><span class="line">import os</span><br><span class="line"># 矩阵计算与tensorflow（深度学习框架）</span><br><span class="line">import numpy as np</span><br><span class="line">import tensorflow as tf</span><br><span class="line"># 爬虫模拟网页请求模块</span><br><span class="line">import requests</span><br><span class="line"># 调用系统浏览器</span><br><span class="line">import webbrowser</span><br><span class="line"># 爬取html指定内容</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line"># 正则模块</span><br><span class="line">import re</span><br><span class="line"># smtp邮箱</span><br><span class="line">import smtplib</span><br><span class="line">from email.mime.text import MIMEText</span><br><span class="line">from email.utils import formataddr</span><br><span class="line"># 时间模块，用于延迟</span><br><span class="line">import time</span><br><span class="line"># 下载图片模块</span><br><span class="line">from typing import Any</span><br><span class="line">from urllib.request import urlretrieve</span><br><span class="line"># TF_CPP_MIN_LOG_LEVEL默认值为 0 (显示所有logs)</span><br><span class="line"># 设置为 1 隐藏 INFO logs, 2 额外隐藏WARNING logs</span><br><span class="line"># 设置为3所有 ERROR logs也不显示</span><br><span class="line">os.environ[&#x27;TF_CPP_MIN_LOG_LEVEL&#x27;] = &#x27;2&#x27;</span><br><span class="line"></span><br><span class="line"># 全局变量</span><br><span class="line">IMAGE_HEIGHT = 22  # 验证码图片高度</span><br><span class="line">IMAGE_WIDTH = 68   # 验证码图片宽度</span><br><span class="line">MAX_CAPTCHA = 4    # 验证码的位数</span><br><span class="line">CHAR_SET_LEN = 36  # 验证码的字符有多少种</span><br><span class="line"># 验证码图片网址</span><br><span class="line">IMAGE_URL = &quot;http://jwfw1.sdjzu.edu.cn/ssfw/jwcaptcha.do&quot;</span><br><span class="line"># 下载验证码图片的数量</span><br><span class="line">VERIFICATION_CODE_NUMBER = 10</span><br><span class="line"># 验证码文件夹与文件绝对存储路径</span><br><span class="line">VERIFICATION_CODE_PATH1 = os.path.dirname(__file__) + &#x27;/verification_code_images/&#x27;</span><br><span class="line">VERIFICATION_CODE_PATH2 = os.path.dirname(__file__) + &#x27;/verification_code_images/&#123;name&#125;.png&#x27;</span><br><span class="line"># 训练数据集绝对存储路径</span><br><span class="line">VERIFICATION_CODE_TRAINING_PATH = os.path.dirname(__file__) + &#x27;/verification_code_training_images/&#x27;</span><br><span class="line"># placeholder 是 Tensorflow 中的占位符，暂时储存变量 X Y ,keep_prob是dropout层保留概率</span><br><span class="line">X = tf.placeholder(tf.float32, [None, IMAGE_HEIGHT*IMAGE_WIDTH])</span><br><span class="line">Y = tf.placeholder(tf.float32, [None, MAX_CAPTCHA*CHAR_SET_LEN])</span><br><span class="line">keep_prob = tf.placeholder(tf.float32)</span><br><span class="line"># 邮箱信息</span><br><span class="line">SENDER = &#x27;********&#x27;</span><br><span class="line">PASSWORD = &#x27;********&#x27;</span><br><span class="line"># 用户信息</span><br><span class="line">info = [&#123;</span><br><span class="line">        &#x27;account&#x27;: &#x27;********&#x27;,</span><br><span class="line">        &#x27;password&#x27;: &#x27;********&#x27;,</span><br><span class="line">        &#x27;email&#x27;: &#x27;********&#x27;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">        &#x27;account&#x27;: &#x27;********&#x27;,</span><br><span class="line">        &#x27;password&#x27;: &#x27;********&#x27;,</span><br><span class="line">        &#x27;email&#x27;: &#x27;********&#x27;</span><br><span class="line">        &#125;]</span><br><span class="line"># String1为原始成绩,String2为最新成绩。创建方式为这样append防止默认copy（以免浅拷贝）</span><br><span class="line">String1 = [[] for copy in range(len(info))]</span><br><span class="line">String2 = [[] for copy in range(len(info))]</span><br><span class="line"># 训练集所有图片list与</span><br><span class="line">all_images = os.listdir(VERIFICATION_CODE_TRAINING_PATH)</span><br><span class="line">all_images_size = len(all_images)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 下载验证码图片安装序号存储图片</span><br><span class="line">def download_verification_code():</span><br><span class="line">    # 创建文件夹如果没有</span><br><span class="line">    os.makedirs(VERIFICATION_CODE_PATH1, exist_ok=True)</span><br><span class="line">    for i in range(0, VERIFICATION_CODE_NUMBER):</span><br><span class="line">        urlretrieve(IMAGE_URL, VERIFICATION_CODE_PATH2.format(name=i))</span><br><span class="line">    print(&quot;成功下载%s张图片！&quot; % VERIFICATION_CODE_NUMBER)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 调用pytesseract整体识别验证码(识别率低)</span><br><span class="line">def pytesseract_verification_code():</span><br><span class="line">    for i in range(0, VERIFICATION_CODE_NUMBER):</span><br><span class="line">        img = Image.open(VERIFICATION_CODE_PATH2.format(name=i))</span><br><span class="line">        char = pytesseract.image_to_string(img, config=&#x27;--psm 8&#x27;)</span><br><span class="line">        # psm 各个值的说明</span><br><span class="line">        # 0：定向脚本监测（OSD）</span><br><span class="line">        # 1： 使用OSD自动分页</span><br><span class="line">        # 2 ：自动分页，但是不使用OSD或OCR（Optical Character Recognition，光学字符识别）</span><br><span class="line">        # 3 ：全自动分页，但是没有使用OSD（默认）</span><br><span class="line">        # 4 ：假设可变大小的一个文本列。</span><br><span class="line">        # 5 ：假设垂直对齐文本的单个统一块。</span><br><span class="line">        # 6 ：假设一个统一的文本块。</span><br><span class="line">        # 7 ：将图像视为单个文本行。</span><br><span class="line">        # 8 ：将图像视为单个词。</span><br><span class="line">        # 9 ：将图像视为圆中的单个词。</span><br><span class="line">        # 10 ：将图像视为单个字符</span><br><span class="line">        print(i, char)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 二值化分割验证码再调用pytesseract识别验证码(识别率有所提高)</span><br><span class="line">def pytesseract_devide_verification_code():</span><br><span class="line">    # 随机读取图片并灰度化</span><br><span class="line">    random_number = random.randint(0, VERIFICATION_CODE_NUMBER)</span><br><span class="line">    img = Image.open(VERIFICATION_CODE_PATH2.format(name=random_number)).convert(&#x27;L&#x27;)</span><br><span class="line">    # 二值化:173为我的验证图片有较好的效果的值，不同图片的值不一样，请根据自己验证码图片设置相应的值</span><br><span class="line">    img = img.point(lambda x: 255 if x &gt; 173 else 0)</span><br><span class="line">    # 分离:crop函数带的参数为(起始点的横坐标，起始点的纵坐标，宽度，高度）</span><br><span class="line">    img1 = img.crop((0 * IMAGE_WIDTH / MAX_CAPTCHA, 0, 1 * IMAGE_WIDTH / MAX_CAPTCHA, IMAGE_HEIGHT))</span><br><span class="line">    img2 = img.crop((1 * IMAGE_WIDTH / MAX_CAPTCHA, 0, 2 * IMAGE_WIDTH / MAX_CAPTCHA, IMAGE_HEIGHT))</span><br><span class="line">    img3 = img.crop((2 * IMAGE_WIDTH / MAX_CAPTCHA, 0, 3 * IMAGE_WIDTH / MAX_CAPTCHA, IMAGE_HEIGHT))</span><br><span class="line">    img4 = img.crop((3 * IMAGE_WIDTH / MAX_CAPTCHA, 0, 4 * IMAGE_WIDTH / MAX_CAPTCHA, IMAGE_HEIGHT))</span><br><span class="line">    # 调用pytesseract识别验证码</span><br><span class="line">    char = pytesseract.image_to_string(img, config=&#x27;--psm 8&#x27;)</span><br><span class="line">    char1 = pytesseract.image_to_string(img1, config=&#x27;--psm 10&#x27;)</span><br><span class="line">    char2 = pytesseract.image_to_string(img2, config=&#x27;--psm 10&#x27;)</span><br><span class="line">    char3 = pytesseract.image_to_string(img3, config=&#x27;--psm 10&#x27;)</span><br><span class="line">    char4 = pytesseract.image_to_string(img4, config=&#x27;--psm 10&#x27;)</span><br><span class="line">    print(char)</span><br><span class="line">    print(char1)</span><br><span class="line">    print(char2)</span><br><span class="line">    print(char3)</span><br><span class="line">    print(char4)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">################################################################</span><br><span class="line">### 通过tensorflow的CNN(卷积神经网络深度学习后识别验证码,识别率贼高####</span><br><span class="line">################################################################</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 获取验证码名字和图片（训练数据集）</span><br><span class="line">def get_name_and_image():</span><br><span class="line">    # 获取数据集下的所有图片的数组all_images</span><br><span class="line">    # all_images = os.listdir(VERIFICATION_CODE_TRAINING_PATH)</span><br><span class="line">    random_image = random.randint(0, all_images_size - 1)</span><br><span class="line">    # print (all_images_size)</span><br><span class="line">    base = os.path.basename(VERIFICATION_CODE_TRAINING_PATH + all_images[random_image])  # 有扩展名</span><br><span class="line">    name = os.path.splitext(base)[0]  # 无扩展名</span><br><span class="line">    image = Image.open(VERIFICATION_CODE_TRAINING_PATH + all_images[random_image])</span><br><span class="line">    image = np.array(image)</span><br><span class="line">    return name, image</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 验证码名字转变成向量: 不同位数的需要重写这个函数,函数里的数字为ASCII码</span><br><span class="line">def name2vec(name):</span><br><span class="line">    vector = np.zeros(MAX_CAPTCHA*CHAR_SET_LEN)</span><br><span class="line">    for i, c in enumerate(name):</span><br><span class="line">        if ord(c) &lt; 58:</span><br><span class="line">            idx = i * 36 + ord(c)-48</span><br><span class="line">            vector[idx] = 1</span><br><span class="line">        else:</span><br><span class="line">            idx = i * 36 + ord(c) - 87</span><br><span class="line">            vector[idx] = 1</span><br><span class="line">    return vector</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 向量转名字:注释部分是 最开始的向量 转 名字</span><br><span class="line"># def vec2name(vec):</span><br><span class="line">#     name = []</span><br><span class="line">#     for i, c in enumerate(vec):</span><br><span class="line">#         if c == 1.0:</span><br><span class="line">#             name.append(i)</span><br><span class="line">#     for i in range(0, 4):</span><br><span class="line">#         if name[i] % 36 &lt; 10:</span><br><span class="line">#             name[i] = chr(name[i] % 36 + 48)</span><br><span class="line">#         else:</span><br><span class="line">#             name[i] = chr(name[i] % 36 + 87)</span><br><span class="line">#     return &quot;&quot;.join(name)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 向量转名字: 训练是不用到这个函数，训练完成用这个函数得到最终结果</span><br><span class="line">def vec2name(vec):</span><br><span class="line">    name = []</span><br><span class="line">    for i in vec:</span><br><span class="line">        if i &lt; 10:</span><br><span class="line">            a = chr(i + 48)</span><br><span class="line">            name.append(a)</span><br><span class="line">        else:</span><br><span class="line">            a = chr(i + 87)</span><br><span class="line">            name.append(a)</span><br><span class="line">    return &quot;&quot;.join(name)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 采样函数:默认一次采集64张验证码作为一次训练</span><br><span class="line"># 需要注意通过get_name_and_image()函数获得的image是一个含布尔值的矩阵</span><br><span class="line"># 在这里通过1*(image.flatten())函数转变成只含0和1的1行114*450列的矩阵</span><br><span class="line">def get_next_batch(batch_size=64):</span><br><span class="line">    batch_x = np.zeros([batch_size, IMAGE_HEIGHT*IMAGE_WIDTH])</span><br><span class="line">    batch_y = np.zeros([batch_size, MAX_CAPTCHA*CHAR_SET_LEN])</span><br><span class="line"></span><br><span class="line">    for i in range(batch_size):</span><br><span class="line">        name, image = get_name_and_image()</span><br><span class="line">        batch_x[i, :] = 1*(image.flatten())</span><br><span class="line">        batch_y[i, :] = name2vec(name)</span><br><span class="line">    return batch_x, batch_y</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 定义CNN(卷积神经网络):三个卷积层卷积神经网络结构</span><br><span class="line"># 采用3个卷积层加1个全连接层的结构，在每个卷积层中都选用2*2的最大池化层和dropout层，卷积核尺寸选择5*5。，</span><br><span class="line"># 我们的图片已经经过了3层池化层，也就是长宽都压缩了8倍(各自取整为3X9)</span><br><span class="line">def crack_captcha_cnn(w_alpha=0.01, b_alpha=0.1):</span><br><span class="line">    x = tf.reshape(X, shape=[-1, IMAGE_HEIGHT, IMAGE_WIDTH, 1])</span><br><span class="line">    # 3个卷积层</span><br><span class="line">    w_c1 = tf.Variable(w_alpha * tf.random_normal([5, 5, 1, 32]))</span><br><span class="line">    b_c1 = tf.Variable(b_alpha * tf.random_normal([32]))</span><br><span class="line">    conv1 = tf.nn.relu(tf.nn.bias_add(tf.nn.conv2d(x, w_c1, strides=[1, 1, 1, 1], padding=&#x27;SAME&#x27;), b_c1))</span><br><span class="line">    conv1 = tf.nn.max_pool(conv1, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding=&#x27;SAME&#x27;)</span><br><span class="line">    conv1 = tf.nn.dropout(conv1, keep_prob)</span><br><span class="line"></span><br><span class="line">    w_c2 = tf.Variable(w_alpha * tf.random_normal([5, 5, 32, 64]))</span><br><span class="line">    b_c2 = tf.Variable(b_alpha * tf.random_normal([64]))</span><br><span class="line">    conv2 = tf.nn.relu(tf.nn.bias_add(tf.nn.conv2d(conv1, w_c2, strides=[1, 1, 1, 1], padding=&#x27;SAME&#x27;), b_c2))</span><br><span class="line">    conv2 = tf.nn.max_pool(conv2, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding=&#x27;SAME&#x27;)</span><br><span class="line">    conv2 = tf.nn.dropout(conv2, keep_prob)</span><br><span class="line"></span><br><span class="line">    w_c3 = tf.Variable(w_alpha * tf.random_normal([5, 5, 64, 64]))</span><br><span class="line">    b_c3 = tf.Variable(b_alpha * tf.random_normal([64]))</span><br><span class="line">    conv3 = tf.nn.relu(tf.nn.bias_add(tf.nn.conv2d(conv2, w_c3, strides=[1, 1, 1, 1], padding=&#x27;SAME&#x27;), b_c3))</span><br><span class="line">    conv3 = tf.nn.max_pool(conv3, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding=&#x27;SAME&#x27;)</span><br><span class="line">    conv3 = tf.nn.dropout(conv3, keep_prob)</span><br><span class="line"></span><br><span class="line">    # 1个全连接层</span><br><span class="line">    w_d = tf.Variable(w_alpha * tf.random_normal([3*9*64, 1024]))</span><br><span class="line">    b_d = tf.Variable(b_alpha * tf.random_normal([1024]))</span><br><span class="line">    dense = tf.reshape(conv3, [-1, w_d.get_shape().as_list()[0]])</span><br><span class="line">    dense = tf.nn.relu(tf.add(tf.matmul(dense, w_d), b_d))</span><br><span class="line">    dense = tf.nn.dropout(dense, keep_prob)</span><br><span class="line"></span><br><span class="line">    w_out = tf.Variable(w_alpha * tf.random_normal([1024, MAX_CAPTCHA * CHAR_SET_LEN]))</span><br><span class="line">    b_out = tf.Variable(b_alpha * tf.random_normal([MAX_CAPTCHA * CHAR_SET_LEN]))</span><br><span class="line">    out = tf.add(tf.matmul(dense, w_out), b_out)</span><br><span class="line">    return out</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 训练函数：选择sigmoid_cross_entropy_with_logits()交叉熵来比较loss</span><br><span class="line"># 用adam优化器来优化</span><br><span class="line"># keep_prob = 0.3，控制着过拟合</span><br><span class="line">def train_crack_captcha_cnn():</span><br><span class="line">    output = crack_captcha_cnn()</span><br><span class="line">    loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=output, labels=Y))</span><br><span class="line">    optimizer = tf.train.AdamOptimizer(learning_rate=0.0001).minimize(loss)</span><br><span class="line">    predict = tf.reshape(output, [-1, MAX_CAPTCHA, CHAR_SET_LEN])</span><br><span class="line">    max_idx_p = tf.argmax(predict, 2)</span><br><span class="line">    max_idx_l = tf.argmax(tf.reshape(Y, [-1, MAX_CAPTCHA, CHAR_SET_LEN]), 2)</span><br><span class="line">    correct_pred = tf.equal(max_idx_p, max_idx_l)</span><br><span class="line">    accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))</span><br><span class="line">    saver = tf.train.Saver()</span><br><span class="line">    with tf.Session() as sess:</span><br><span class="line">        sess.run(tf.global_variables_initializer())</span><br><span class="line">        step = 0</span><br><span class="line">        while True:</span><br><span class="line">            batch_x, batch_y = get_next_batch(256)</span><br><span class="line">            _, loss_ = sess.run([optimizer, loss], feed_dict=&#123;X: batch_x, Y: batch_y, keep_prob: 0.2&#125;)</span><br><span class="line">            print(step, loss_)</span><br><span class="line">            # 每100 step计算一次准确率</span><br><span class="line">            if step % 1000 == 0:</span><br><span class="line">                batch_x_test, batch_y_test = get_next_batch(1000)</span><br><span class="line">                acc = sess.run(accuracy, feed_dict=&#123;X: batch_x_test, Y: batch_y_test, keep_prob: 1.&#125;)</span><br><span class="line">                print(step, acc)</span><br><span class="line">                # 如果准确率大于99%,保存模型,完成训练</span><br><span class="line">                if acc &gt; 0.999:</span><br><span class="line">                    saver.save(sess, &quot;./crack_capcha.model&quot;, global_step=step)</span><br><span class="line">                    break</span><br><span class="line">            step += 1</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># train_crack_captcha_cnn()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 训练完成后,注释train_crack_captcha_cnn()，取消下面的注释，开始预测，注意更改预测集目录</span><br><span class="line"># def crack_captcha():</span><br><span class="line">#     output = crack_captcha_cnn()</span><br><span class="line">#</span><br><span class="line">#     saver = tf.train.Saver()</span><br><span class="line">#     with tf.Session() as sess:</span><br><span class="line">#         saver.restore(sess, tf.train.latest_checkpoint(&#x27;.&#x27;))</span><br><span class="line">#         n = 1</span><br><span class="line">#         while n &lt;= 10:</span><br><span class="line">#             text, verification_code_training_images = get_name_and_image()</span><br><span class="line">#             verification_code_training_images = 1 * (verification_code_training_images.flatten())</span><br><span class="line">#             predict = tf.argmax(tf.reshape(output, [-1, MAX_CAPTCHA, CHAR_SET_LEN]), 2)</span><br><span class="line">#             text_list = sess.run(predict, feed_dict=&#123;X: [verification_code_training_images], keep_prob: 1&#125;)</span><br><span class="line">#             vec = text_list[0].tolist()</span><br><span class="line">#             predict_text = vec2name(vec)</span><br><span class="line">#             print(&quot;正确: &#123;&#125;  预测: &#123;&#125;&quot;.format(text, predict_text))</span><br><span class="line">#             n += 1</span><br><span class="line">#</span><br><span class="line">#</span><br><span class="line"># crack_captcha()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def captcha():</span><br><span class="line">    output = crack_captcha_cnn()</span><br><span class="line">    saver = tf.train.Saver()</span><br><span class="line">    with tf.Session() as sess:</span><br><span class="line">        saver.restore(sess, tf.train.latest_checkpoint(&#x27;.&#x27;))</span><br><span class="line">        first_time = True</span><br><span class="line"></span><br><span class="line">        while True:</span><br><span class="line">            users_number = 0</span><br><span class="line">            for information in info:</span><br><span class="line">                while True:</span><br><span class="line">                    session = requests.Session()</span><br><span class="line">                    headers = &#123;&quot;User-Agent&quot;: &quot;Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0&quot;&#125;</span><br><span class="line">                    html = session.get(IMAGE_URL, headers=headers).content</span><br><span class="line">                    with open(&#x27;./test_captcha/test.png&#x27;, &#x27;wb&#x27;) as file:</span><br><span class="line">                        file.write(html)</span><br><span class="line">                    img = Image.open(&#x27;./test_captcha/test.png&#x27;).convert(&#x27;L&#x27;)</span><br><span class="line">                    # 二值化</span><br><span class="line">                    img = img.point(lambda x: 255 if x &gt; 173 else 0)</span><br><span class="line">                    img = np.array(img)</span><br><span class="line">                    img = 1 * (img.flatten())</span><br><span class="line">                    predict = tf.argmax(tf.reshape(output, [-1, MAX_CAPTCHA, CHAR_SET_LEN]), 2)</span><br><span class="line">                    text_list = sess.run(predict, feed_dict=&#123;X: [img], keep_prob: 1&#125;)</span><br><span class="line">                    vec = text_list[0].tolist()</span><br><span class="line">                    # print(&quot;预测:&quot;, vec2name(vec))</span><br><span class="line"></span><br><span class="line">                    session.get(&#x27;http://jwfw1.sdjzu.edu.cn/ssfw/login.jsp&#x27;)</span><br><span class="line">                    data = &#123;&#x27;j_username&#x27;: information[&#x27;account&#x27;], &#x27;j_password&#x27;: information[&#x27;password&#x27;],</span><br><span class="line">                            &#x27;validateCode&#x27;: vec2name(vec)&#125;</span><br><span class="line">                    r = session.post(&#x27;http://jwfw1.sdjzu.edu.cn/ssfw/j_spring_ids_security_check&#x27;, data=data, headers=headers)</span><br><span class="line">                    if (re.search(r&#x27;校验码错误&#x27;, r.text, re.I | re.M)) is None:</span><br><span class="line">                        print(&quot;验证码正确通过！&quot;)</span><br><span class="line">                        n = session.get(</span><br><span class="line">                            &#x27;http://jwfw1.sdjzu.edu.cn/ssfw/jwnavmenu.do?menuItemWid=1E057E24ABAB4CAFE0540010E0235690&#x27;,</span><br><span class="line">                            headers=headers)</span><br><span class="line">                        soup = BeautifulSoup(n.content, features=&#x27;html.parser&#x27;)</span><br><span class="line">                        s = soup.select(&#x27;div[title=&quot;有效成绩&quot;] .t_con td[align=&quot;center&quot;]&#x27;)</span><br><span class="line">                        subjects_number = int(len(s) / 11)</span><br><span class="line">                        # print(&quot;科目数:&quot;, subjects_number)</span><br><span class="line">                        for i in range(0, subjects_number):</span><br><span class="line">                            # print(&#x27;序号:&#x27;, s[i * 11].get_text(strip=True))</span><br><span class="line">                            # print(&#x27;学年学期:&#x27;, s[i * 11 + 1].get_text( strip=True))</span><br><span class="line">                            # print(&#x27;课程号:&#x27;, s[i * 11 + 2].get_text(strip=True))</span><br><span class="line">                            # print(&#x27;课程名称:&#x27;, s[i * 11 + 3].get_text( strip=True))</span><br><span class="line">                            # print(&#x27;课程类别:&#x27;, s[i * 11 + 4].get_text(strip=True))</span><br><span class="line">                            # print(&#x27;任选课类别:&#x27;, s[i * 11 + 5].get_text(strip=True))</span><br><span class="line">                            # print(&#x27;课程性质:&#x27;, s[i * 11 + 6].get_text(strip=True))</span><br><span class="line">                            # print(&#x27;学分:&#x27;, s[i * 11 + 7].get_text(strip=True))</span><br><span class="line">                            # print(&#x27;成绩:&#x27;, s[i * 11 + 8].get_text(strip=True))</span><br><span class="line">                            # print(&#x27;****************&#x27;)</span><br><span class="line">                            ss = &#x27;&#123;&#125; &#123;&#125; 成绩: &#123;&#125;&#x27;.format(s[i * 11].get_text(strip=True), s[i * 11 + 3].get_text(strip=True),</span><br><span class="line">                                                       s[i * 11 + 8].get_text(strip=True))</span><br><span class="line">                            if first_time:</span><br><span class="line">                                String1[users_number].append(ss)</span><br><span class="line">                            else:</span><br><span class="line">                                String2[users_number].append(ss)</span><br><span class="line">                        # 发送邮件</span><br><span class="line">                        my_user = &#x27;%s&#x27; % information[&#x27;email&#x27;]</span><br><span class="line">                        sss = &quot;&quot;.join(list(set(String2[users_number]).difference(set(String1[users_number]))))  # b中有而a中没有的</span><br><span class="line">                        ret = True</span><br><span class="line">                        if first_time:</span><br><span class="line">                            text = &#x27;\n&#x27;.join(String1[users_number])</span><br><span class="line"></span><br><span class="line">                            try:</span><br><span class="line">                                msg = MIMEText(text, &#x27;plain&#x27;, &#x27;utf-8&#x27;)</span><br><span class="line">                                msg[&#x27;From&#x27;] = formataddr([&quot;weijiajin&quot;, SENDER])  # 括号里的对应发件人邮箱昵称、发件人邮箱账号</span><br><span class="line">                                msg[&#x27;To&#x27;] = formataddr([&quot;亲～:&quot;, my_user])  # 括号里的对应收件人邮箱昵称、收件人邮箱账号</span><br><span class="line">                                msg[&#x27;Subject&#x27;] = &quot;全部成绩！好好学习！&quot;  # 邮件的主题，也可以说是标题</span><br><span class="line">                                server = smtplib.SMTP_SSL(&quot;smtp.qq.com&quot;, 465)  # 发件人邮箱中的SMTP服务器，端口是465</span><br><span class="line">                                server.login(SENDER, PASSWORD)  # 括号中对应的是发件人邮箱账号、邮箱密码</span><br><span class="line">                                server.sendmail(SENDER, [my_user, ], msg.as_string())  # 括号中对应的是发件人邮箱账号、收件人邮箱账号、发送邮件</span><br><span class="line">                                server.quit()  # 关闭连接</span><br><span class="line">                            except Exception:  # 如果 try 中的语句没有执行，则会执行下面的 ret=False</span><br><span class="line">                                ret = False</span><br><span class="line">                            if ret:</span><br><span class="line">                                print(&quot;发送邮件成功！&quot;)</span><br><span class="line">                            else:</span><br><span class="line">                                print(&quot;发送邮件失败！&quot;)</span><br><span class="line">                            String2[users_number].clear()</span><br><span class="line">                            users_number = + 1</span><br><span class="line">                            break</span><br><span class="line">                        elif sss == &quot;&quot;:</span><br><span class="line">                            print(&quot;没有最新成绩！不发送邮件！&quot;)</span><br><span class="line">                            String2[users_number].clear()</span><br><span class="line">                            users_number = + 1</span><br><span class="line">                            break</span><br><span class="line">                        elif sss != &quot;&quot;:</span><br><span class="line">                            text = &#x27;\n&#x27;.join(String2[users_number])</span><br><span class="line">                            title = &quot;&quot;.join(list(set(String2[users_number]).difference(set(String1[users_number]))))</span><br><span class="line">                            try:</span><br><span class="line">                                msg = MIMEText(text, &#x27;plain&#x27;, &#x27;utf-8&#x27;)</span><br><span class="line">                                msg[&#x27;From&#x27;] = formataddr([&quot;weijiajin&quot;, SENDER])  # 括号里的对应发件人邮箱昵称、发件人邮箱账号</span><br><span class="line">                                msg[&#x27;To&#x27;] = formataddr([&quot;亲～&quot;, my_user])  # 括号里的对应收件人邮箱昵称、收件人邮箱账号</span><br><span class="line">                                msg[&#x27;Subject&#x27;] = &quot;最新成绩出来啦～&quot; + title  # 邮件的主题，也可以说是标题</span><br><span class="line">                                server = smtplib.SMTP_SSL(&quot;smtp.qq.com&quot;, 465)  # 发件人邮箱中的SMTP服务器，端口是465</span><br><span class="line">                                server.login(SENDER, my_pass)  # 括号中对应的是发件人邮箱账号、邮箱密码</span><br><span class="line">                                server.sendmail(SENDER, [my_user, ], msg.as_string())  # 括号中对应的是发件人邮箱账号、收件人邮箱账号、发送邮件</span><br><span class="line">                                server.quit()  # 关闭连接</span><br><span class="line">                            except Exception:  # 如果 try 中的语句没有执行，则会执行下面的 ret=False</span><br><span class="line">                                ret = False</span><br><span class="line">                            if ret:</span><br><span class="line">                                print(&quot;发送邮件成功！&quot;)</span><br><span class="line"></span><br><span class="line">                            else:</span><br><span class="line">                                print(&quot;发送邮件失败！&quot;)</span><br><span class="line">                            String1[users_number].clear()</span><br><span class="line">                            String1[users_number] = String2[users_number]</span><br><span class="line">                            String2[users_number].clear()</span><br><span class="line">                            users_number = + 1</span><br><span class="line">                            break</span><br><span class="line">                        time.sleep(300)</span><br><span class="line">                    else:</span><br><span class="line">                        print(&quot;校验码错误！重新尝试中......&quot;)</span><br><span class="line"></span><br><span class="line">            first_time = False</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def auto_download_train_images():</span><br><span class="line">    output = crack_captcha_cnn()</span><br><span class="line">    saver = tf.train.Saver()</span><br><span class="line">    with tf.Session() as sess:</span><br><span class="line">        saver.restore(sess, tf.train.latest_checkpoint(&#x27;.&#x27;))</span><br><span class="line">        times1 = 0</span><br><span class="line">        times2 = 0</span><br><span class="line"></span><br><span class="line">        while True:</span><br><span class="line">            session = requests.Session()</span><br><span class="line">            headers = &#123;&quot;User-Agent&quot;: &quot;Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0&quot;&#125;</span><br><span class="line">            html = session.get(IMAGE_URL, headers=headers).content</span><br><span class="line">            with open(&#x27;./test_captcha/test.png&#x27;, &#x27;wb&#x27;) as file:</span><br><span class="line">                file.write(html)</span><br><span class="line">            img = Image.open(&#x27;./test_captcha/test.png&#x27;).convert(&#x27;L&#x27;)</span><br><span class="line">            # 二值化</span><br><span class="line">            img = img.point(lambda x: 255 if x &gt; 173 else 0)</span><br><span class="line">            img1 = np.array(img)</span><br><span class="line">            img1 = 1 * (img1.flatten())</span><br><span class="line">            predict = tf.argmax(tf.reshape(output, [-1, MAX_CAPTCHA, CHAR_SET_LEN]), 2)</span><br><span class="line">            text_list = sess.run(predict, feed_dict=&#123;X: [img1], keep_prob: 1&#125;)</span><br><span class="line">            vec = text_list[0].tolist()</span><br><span class="line">            # print(&quot;预测:&quot;, vec2name(vec))</span><br><span class="line">            session.get(&#x27;http://jwfw1.sdjzu.edu.cn/ssfw/login.jsp&#x27;)</span><br><span class="line">            data = &#123;&#x27;j_username&#x27;: &#x27;201611101122&#x27;, &#x27;j_password&#x27;: &#x27;174519&#x27;,</span><br><span class="line">                    &#x27;validateCode&#x27;: vec2name(vec)&#125;</span><br><span class="line">            r = session.post(&#x27;http://jwfw1.sdjzu.edu.cn/ssfw/j_spring_ids_security_check&#x27;, data=data, headers=headers)</span><br><span class="line">            if (re.search(r&#x27;校验码错误&#x27;, r.text, re.I | re.M)) is None:</span><br><span class="line">                # print(&quot;验证码正确通过！&quot;)</span><br><span class="line">                # print(times1)</span><br><span class="line">                image_name = &#x27;&#123;image_name&#125;.png&#x27;</span><br><span class="line">                img.save(os.path.join(&#x27;./verification_code_training_images/&#x27;, image_name.format(image_name=vec2name(vec))))</span><br><span class="line">                times1 = times1 + 1</span><br><span class="line">            else:</span><br><span class="line">                # print(&quot;校验码错误！&quot;)</span><br><span class="line">                # print(times2)</span><br><span class="line">                image_name = &#x27;&#123;image_name&#125;.png&#x27;</span><br><span class="line">                img.save(os.path.join(&#x27;./error_images/&#x27;, image_name.format(image_name=vec2name(vec))))</span><br><span class="line">                times2 = times2 + 1</span><br><span class="line">            rate = times1/(times2+times1)</span><br><span class="line">            print(&quot;总次数: % s&quot; % (times2+times1)+&quot;正确率：% s &quot; % rate)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">captcha()</span><br><span class="line"># auto_download_train_images()</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs plaintext"># coding=utf-8
+# 操作图片模块
+from PIL import Image
+# 第三方OCR调用（识别率不高）
+import pytesseract
+# 范围随机模块
+import random
+# 操作系统模块
+import os
+# 矩阵计算与tensorflow（深度学习框架）
+import numpy as np
+import tensorflow as tf
+# 爬虫模拟网页请求模块
+import requests
+# 调用系统浏览器
+import webbrowser
+# 爬取html指定内容
+from bs4 import BeautifulSoup
+# 正则模块
+import re
+# smtp邮箱
+import smtplib
+from email.mime.text import MIMEText
+from email.utils import formataddr
+# 时间模块，用于延迟
+import time
+# 下载图片模块
+from typing import Any
+from urllib.request import urlretrieve
+# TF_CPP_MIN_LOG_LEVEL默认值为 0 (显示所有logs)
+# 设置为 1 隐藏 INFO logs, 2 额外隐藏WARNING logs
+# 设置为3所有 ERROR logs也不显示
+os.environ[&#x27;TF_CPP_MIN_LOG_LEVEL&#x27;] = &#x27;2&#x27;
+
+# 全局变量
+IMAGE_HEIGHT = 22  # 验证码图片高度
+IMAGE_WIDTH = 68   # 验证码图片宽度
+MAX_CAPTCHA = 4    # 验证码的位数
+CHAR_SET_LEN = 36  # 验证码的字符有多少种
+# 验证码图片网址
+IMAGE_URL = &quot;http://jwfw1.sdjzu.edu.cn/ssfw/jwcaptcha.do&quot;
+# 下载验证码图片的数量
+VERIFICATION_CODE_NUMBER = 10
+# 验证码文件夹与文件绝对存储路径
+VERIFICATION_CODE_PATH1 = os.path.dirname(__file__) + &#x27;/verification_code_images/&#x27;
+VERIFICATION_CODE_PATH2 = os.path.dirname(__file__) + &#x27;/verification_code_images/&#123;name&#125;.png&#x27;
+# 训练数据集绝对存储路径
+VERIFICATION_CODE_TRAINING_PATH = os.path.dirname(__file__) + &#x27;/verification_code_training_images/&#x27;
+# placeholder 是 Tensorflow 中的占位符，暂时储存变量 X Y ,keep_prob是dropout层保留概率
+X = tf.placeholder(tf.float32, [None, IMAGE_HEIGHT*IMAGE_WIDTH])
+Y = tf.placeholder(tf.float32, [None, MAX_CAPTCHA*CHAR_SET_LEN])
+keep_prob = tf.placeholder(tf.float32)
+# 邮箱信息
+SENDER = &#x27;********&#x27;
+PASSWORD = &#x27;********&#x27;
+# 用户信息
+info = [&#123;
+        &#x27;account&#x27;: &#x27;********&#x27;,
+        &#x27;password&#x27;: &#x27;********&#x27;,
+        &#x27;email&#x27;: &#x27;********&#x27;
+        &#125;,
+        &#123;
+        &#x27;account&#x27;: &#x27;********&#x27;,
+        &#x27;password&#x27;: &#x27;********&#x27;,
+        &#x27;email&#x27;: &#x27;********&#x27;
+        &#125;]
+# String1为原始成绩,String2为最新成绩。创建方式为这样append防止默认copy（以免浅拷贝）
+String1 = [[] for copy in range(len(info))]
+String2 = [[] for copy in range(len(info))]
+# 训练集所有图片list与
+all_images = os.listdir(VERIFICATION_CODE_TRAINING_PATH)
+all_images_size = len(all_images)
+
+
+# 下载验证码图片安装序号存储图片
+def download_verification_code():
+    # 创建文件夹如果没有
+    os.makedirs(VERIFICATION_CODE_PATH1, exist_ok=True)
+    for i in range(0, VERIFICATION_CODE_NUMBER):
+        urlretrieve(IMAGE_URL, VERIFICATION_CODE_PATH2.format(name=i))
+    print(&quot;成功下载%s张图片！&quot; % VERIFICATION_CODE_NUMBER)
+
+
+# 调用pytesseract整体识别验证码(识别率低)
+def pytesseract_verification_code():
+    for i in range(0, VERIFICATION_CODE_NUMBER):
+        img = Image.open(VERIFICATION_CODE_PATH2.format(name=i))
+        char = pytesseract.image_to_string(img, config=&#x27;--psm 8&#x27;)
+        # psm 各个值的说明
+        # 0：定向脚本监测（OSD）
+        # 1： 使用OSD自动分页
+        # 2 ：自动分页，但是不使用OSD或OCR（Optical Character Recognition，光学字符识别）
+        # 3 ：全自动分页，但是没有使用OSD（默认）
+        # 4 ：假设可变大小的一个文本列。
+        # 5 ：假设垂直对齐文本的单个统一块。
+        # 6 ：假设一个统一的文本块。
+        # 7 ：将图像视为单个文本行。
+        # 8 ：将图像视为单个词。
+        # 9 ：将图像视为圆中的单个词。
+        # 10 ：将图像视为单个字符
+        print(i, char)
+
+
+# 二值化分割验证码再调用pytesseract识别验证码(识别率有所提高)
+def pytesseract_devide_verification_code():
+    # 随机读取图片并灰度化
+    random_number = random.randint(0, VERIFICATION_CODE_NUMBER)
+    img = Image.open(VERIFICATION_CODE_PATH2.format(name=random_number)).convert(&#x27;L&#x27;)
+    # 二值化:173为我的验证图片有较好的效果的值，不同图片的值不一样，请根据自己验证码图片设置相应的值
+    img = img.point(lambda x: 255 if x &gt; 173 else 0)
+    # 分离:crop函数带的参数为(起始点的横坐标，起始点的纵坐标，宽度，高度）
+    img1 = img.crop((0 * IMAGE_WIDTH / MAX_CAPTCHA, 0, 1 * IMAGE_WIDTH / MAX_CAPTCHA, IMAGE_HEIGHT))
+    img2 = img.crop((1 * IMAGE_WIDTH / MAX_CAPTCHA, 0, 2 * IMAGE_WIDTH / MAX_CAPTCHA, IMAGE_HEIGHT))
+    img3 = img.crop((2 * IMAGE_WIDTH / MAX_CAPTCHA, 0, 3 * IMAGE_WIDTH / MAX_CAPTCHA, IMAGE_HEIGHT))
+    img4 = img.crop((3 * IMAGE_WIDTH / MAX_CAPTCHA, 0, 4 * IMAGE_WIDTH / MAX_CAPTCHA, IMAGE_HEIGHT))
+    # 调用pytesseract识别验证码
+    char = pytesseract.image_to_string(img, config=&#x27;--psm 8&#x27;)
+    char1 = pytesseract.image_to_string(img1, config=&#x27;--psm 10&#x27;)
+    char2 = pytesseract.image_to_string(img2, config=&#x27;--psm 10&#x27;)
+    char3 = pytesseract.image_to_string(img3, config=&#x27;--psm 10&#x27;)
+    char4 = pytesseract.image_to_string(img4, config=&#x27;--psm 10&#x27;)
+    print(char)
+    print(char1)
+    print(char2)
+    print(char3)
+    print(char4)
+
+
+################################################################
+### 通过tensorflow的CNN(卷积神经网络深度学习后识别验证码,识别率贼高####
+################################################################
+
+
+# 获取验证码名字和图片（训练数据集）
+def get_name_and_image():
+    # 获取数据集下的所有图片的数组all_images
+    # all_images = os.listdir(VERIFICATION_CODE_TRAINING_PATH)
+    random_image = random.randint(0, all_images_size - 1)
+    # print (all_images_size)
+    base = os.path.basename(VERIFICATION_CODE_TRAINING_PATH + all_images[random_image])  # 有扩展名
+    name = os.path.splitext(base)[0]  # 无扩展名
+    image = Image.open(VERIFICATION_CODE_TRAINING_PATH + all_images[random_image])
+    image = np.array(image)
+    return name, image
+
+
+# 验证码名字转变成向量: 不同位数的需要重写这个函数,函数里的数字为ASCII码
+def name2vec(name):
+    vector = np.zeros(MAX_CAPTCHA*CHAR_SET_LEN)
+    for i, c in enumerate(name):
+        if ord(c) &lt; 58:
+            idx = i * 36 + ord(c)-48
+            vector[idx] = 1
+        else:
+            idx = i * 36 + ord(c) - 87
+            vector[idx] = 1
+    return vector
+
+
+# 向量转名字:注释部分是 最开始的向量 转 名字
+# def vec2name(vec):
+#     name = []
+#     for i, c in enumerate(vec):
+#         if c == 1.0:
+#             name.append(i)
+#     for i in range(0, 4):
+#         if name[i] % 36 &lt; 10:
+#             name[i] = chr(name[i] % 36 + 48)
+#         else:
+#             name[i] = chr(name[i] % 36 + 87)
+#     return &quot;&quot;.join(name)
+
+
+# 向量转名字: 训练是不用到这个函数，训练完成用这个函数得到最终结果
+def vec2name(vec):
+    name = []
+    for i in vec:
+        if i &lt; 10:
+            a = chr(i + 48)
+            name.append(a)
+        else:
+            a = chr(i + 87)
+            name.append(a)
+    return &quot;&quot;.join(name)
+
+
+# 采样函数:默认一次采集64张验证码作为一次训练
+# 需要注意通过get_name_and_image()函数获得的image是一个含布尔值的矩阵
+# 在这里通过1*(image.flatten())函数转变成只含0和1的1行114*450列的矩阵
+def get_next_batch(batch_size=64):
+    batch_x = np.zeros([batch_size, IMAGE_HEIGHT*IMAGE_WIDTH])
+    batch_y = np.zeros([batch_size, MAX_CAPTCHA*CHAR_SET_LEN])
+
+    for i in range(batch_size):
+        name, image = get_name_and_image()
+        batch_x[i, :] = 1*(image.flatten())
+        batch_y[i, :] = name2vec(name)
+    return batch_x, batch_y
+
+
+# 定义CNN(卷积神经网络):三个卷积层卷积神经网络结构
+# 采用3个卷积层加1个全连接层的结构，在每个卷积层中都选用2*2的最大池化层和dropout层，卷积核尺寸选择5*5。，
+# 我们的图片已经经过了3层池化层，也就是长宽都压缩了8倍(各自取整为3X9)
+def crack_captcha_cnn(w_alpha=0.01, b_alpha=0.1):
+    x = tf.reshape(X, shape=[-1, IMAGE_HEIGHT, IMAGE_WIDTH, 1])
+    # 3个卷积层
+    w_c1 = tf.Variable(w_alpha * tf.random_normal([5, 5, 1, 32]))
+    b_c1 = tf.Variable(b_alpha * tf.random_normal([32]))
+    conv1 = tf.nn.relu(tf.nn.bias_add(tf.nn.conv2d(x, w_c1, strides=[1, 1, 1, 1], padding=&#x27;SAME&#x27;), b_c1))
+    conv1 = tf.nn.max_pool(conv1, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding=&#x27;SAME&#x27;)
+    conv1 = tf.nn.dropout(conv1, keep_prob)
+
+    w_c2 = tf.Variable(w_alpha * tf.random_normal([5, 5, 32, 64]))
+    b_c2 = tf.Variable(b_alpha * tf.random_normal([64]))
+    conv2 = tf.nn.relu(tf.nn.bias_add(tf.nn.conv2d(conv1, w_c2, strides=[1, 1, 1, 1], padding=&#x27;SAME&#x27;), b_c2))
+    conv2 = tf.nn.max_pool(conv2, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding=&#x27;SAME&#x27;)
+    conv2 = tf.nn.dropout(conv2, keep_prob)
+
+    w_c3 = tf.Variable(w_alpha * tf.random_normal([5, 5, 64, 64]))
+    b_c3 = tf.Variable(b_alpha * tf.random_normal([64]))
+    conv3 = tf.nn.relu(tf.nn.bias_add(tf.nn.conv2d(conv2, w_c3, strides=[1, 1, 1, 1], padding=&#x27;SAME&#x27;), b_c3))
+    conv3 = tf.nn.max_pool(conv3, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding=&#x27;SAME&#x27;)
+    conv3 = tf.nn.dropout(conv3, keep_prob)
+
+    # 1个全连接层
+    w_d = tf.Variable(w_alpha * tf.random_normal([3*9*64, 1024]))
+    b_d = tf.Variable(b_alpha * tf.random_normal([1024]))
+    dense = tf.reshape(conv3, [-1, w_d.get_shape().as_list()[0]])
+    dense = tf.nn.relu(tf.add(tf.matmul(dense, w_d), b_d))
+    dense = tf.nn.dropout(dense, keep_prob)
+
+    w_out = tf.Variable(w_alpha * tf.random_normal([1024, MAX_CAPTCHA * CHAR_SET_LEN]))
+    b_out = tf.Variable(b_alpha * tf.random_normal([MAX_CAPTCHA * CHAR_SET_LEN]))
+    out = tf.add(tf.matmul(dense, w_out), b_out)
+    return out
+
+
+# 训练函数：选择sigmoid_cross_entropy_with_logits()交叉熵来比较loss
+# 用adam优化器来优化
+# keep_prob = 0.3，控制着过拟合
+def train_crack_captcha_cnn():
+    output = crack_captcha_cnn()
+    loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(logits=output, labels=Y))
+    optimizer = tf.train.AdamOptimizer(learning_rate=0.0001).minimize(loss)
+    predict = tf.reshape(output, [-1, MAX_CAPTCHA, CHAR_SET_LEN])
+    max_idx_p = tf.argmax(predict, 2)
+    max_idx_l = tf.argmax(tf.reshape(Y, [-1, MAX_CAPTCHA, CHAR_SET_LEN]), 2)
+    correct_pred = tf.equal(max_idx_p, max_idx_l)
+    accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
+    saver = tf.train.Saver()
+    with tf.Session() as sess:
+        sess.run(tf.global_variables_initializer())
+        step = 0
+        while True:
+            batch_x, batch_y = get_next_batch(256)
+            _, loss_ = sess.run([optimizer, loss], feed_dict=&#123;X: batch_x, Y: batch_y, keep_prob: 0.2&#125;)
+            print(step, loss_)
+            # 每100 step计算一次准确率
+            if step % 1000 == 0:
+                batch_x_test, batch_y_test = get_next_batch(1000)
+                acc = sess.run(accuracy, feed_dict=&#123;X: batch_x_test, Y: batch_y_test, keep_prob: 1.&#125;)
+                print(step, acc)
+                # 如果准确率大于99%,保存模型,完成训练
+                if acc &gt; 0.999:
+                    saver.save(sess, &quot;./crack_capcha.model&quot;, global_step=step)
+                    break
+            step += 1
+
+
+# train_crack_captcha_cnn()
+
+
+# 训练完成后,注释train_crack_captcha_cnn()，取消下面的注释，开始预测，注意更改预测集目录
+# def crack_captcha():
+#     output = crack_captcha_cnn()
+#
+#     saver = tf.train.Saver()
+#     with tf.Session() as sess:
+#         saver.restore(sess, tf.train.latest_checkpoint(&#x27;.&#x27;))
+#         n = 1
+#         while n &lt;= 10:
+#             text, verification_code_training_images = get_name_and_image()
+#             verification_code_training_images = 1 * (verification_code_training_images.flatten())
+#             predict = tf.argmax(tf.reshape(output, [-1, MAX_CAPTCHA, CHAR_SET_LEN]), 2)
+#             text_list = sess.run(predict, feed_dict=&#123;X: [verification_code_training_images], keep_prob: 1&#125;)
+#             vec = text_list[0].tolist()
+#             predict_text = vec2name(vec)
+#             print(&quot;正确: &#123;&#125;  预测: &#123;&#125;&quot;.format(text, predict_text))
+#             n += 1
+#
+#
+# crack_captcha()
+
+
+def captcha():
+    output = crack_captcha_cnn()
+    saver = tf.train.Saver()
+    with tf.Session() as sess:
+        saver.restore(sess, tf.train.latest_checkpoint(&#x27;.&#x27;))
+        first_time = True
+
+        while True:
+            users_number = 0
+            for information in info:
+                while True:
+                    session = requests.Session()
+                    headers = &#123;&quot;User-Agent&quot;: &quot;Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0&quot;&#125;
+                    html = session.get(IMAGE_URL, headers=headers).content
+                    with open(&#x27;./test_captcha/test.png&#x27;, &#x27;wb&#x27;) as file:
+                        file.write(html)
+                    img = Image.open(&#x27;./test_captcha/test.png&#x27;).convert(&#x27;L&#x27;)
+                    # 二值化
+                    img = img.point(lambda x: 255 if x &gt; 173 else 0)
+                    img = np.array(img)
+                    img = 1 * (img.flatten())
+                    predict = tf.argmax(tf.reshape(output, [-1, MAX_CAPTCHA, CHAR_SET_LEN]), 2)
+                    text_list = sess.run(predict, feed_dict=&#123;X: [img], keep_prob: 1&#125;)
+                    vec = text_list[0].tolist()
+                    # print(&quot;预测:&quot;, vec2name(vec))
+
+                    session.get(&#x27;http://jwfw1.sdjzu.edu.cn/ssfw/login.jsp&#x27;)
+                    data = &#123;&#x27;j_username&#x27;: information[&#x27;account&#x27;], &#x27;j_password&#x27;: information[&#x27;password&#x27;],
+                            &#x27;validateCode&#x27;: vec2name(vec)&#125;
+                    r = session.post(&#x27;http://jwfw1.sdjzu.edu.cn/ssfw/j_spring_ids_security_check&#x27;, data=data, headers=headers)
+                    if (re.search(r&#x27;校验码错误&#x27;, r.text, re.I | re.M)) is None:
+                        print(&quot;验证码正确通过！&quot;)
+                        n = session.get(
+                            &#x27;http://jwfw1.sdjzu.edu.cn/ssfw/jwnavmenu.do?menuItemWid=1E057E24ABAB4CAFE0540010E0235690&#x27;,
+                            headers=headers)
+                        soup = BeautifulSoup(n.content, features=&#x27;html.parser&#x27;)
+                        s = soup.select(&#x27;div[title=&quot;有效成绩&quot;] .t_con td[align=&quot;center&quot;]&#x27;)
+                        subjects_number = int(len(s) / 11)
+                        # print(&quot;科目数:&quot;, subjects_number)
+                        for i in range(0, subjects_number):
+                            # print(&#x27;序号:&#x27;, s[i * 11].get_text(strip=True))
+                            # print(&#x27;学年学期:&#x27;, s[i * 11 + 1].get_text( strip=True))
+                            # print(&#x27;课程号:&#x27;, s[i * 11 + 2].get_text(strip=True))
+                            # print(&#x27;课程名称:&#x27;, s[i * 11 + 3].get_text( strip=True))
+                            # print(&#x27;课程类别:&#x27;, s[i * 11 + 4].get_text(strip=True))
+                            # print(&#x27;任选课类别:&#x27;, s[i * 11 + 5].get_text(strip=True))
+                            # print(&#x27;课程性质:&#x27;, s[i * 11 + 6].get_text(strip=True))
+                            # print(&#x27;学分:&#x27;, s[i * 11 + 7].get_text(strip=True))
+                            # print(&#x27;成绩:&#x27;, s[i * 11 + 8].get_text(strip=True))
+                            # print(&#x27;****************&#x27;)
+                            ss = &#x27;&#123;&#125; &#123;&#125; 成绩: &#123;&#125;&#x27;.format(s[i * 11].get_text(strip=True), s[i * 11 + 3].get_text(strip=True),
+                                                       s[i * 11 + 8].get_text(strip=True))
+                            if first_time:
+                                String1[users_number].append(ss)
+                            else:
+                                String2[users_number].append(ss)
+                        # 发送邮件
+                        my_user = &#x27;%s&#x27; % information[&#x27;email&#x27;]
+                        sss = &quot;&quot;.join(list(set(String2[users_number]).difference(set(String1[users_number]))))  # b中有而a中没有的
+                        ret = True
+                        if first_time:
+                            text = &#x27;\n&#x27;.join(String1[users_number])
+
+                            try:
+                                msg = MIMEText(text, &#x27;plain&#x27;, &#x27;utf-8&#x27;)
+                                msg[&#x27;From&#x27;] = formataddr([&quot;weijiajin&quot;, SENDER])  # 括号里的对应发件人邮箱昵称、发件人邮箱账号
+                                msg[&#x27;To&#x27;] = formataddr([&quot;亲～:&quot;, my_user])  # 括号里的对应收件人邮箱昵称、收件人邮箱账号
+                                msg[&#x27;Subject&#x27;] = &quot;全部成绩！好好学习！&quot;  # 邮件的主题，也可以说是标题
+                                server = smtplib.SMTP_SSL(&quot;smtp.qq.com&quot;, 465)  # 发件人邮箱中的SMTP服务器，端口是465
+                                server.login(SENDER, PASSWORD)  # 括号中对应的是发件人邮箱账号、邮箱密码
+                                server.sendmail(SENDER, [my_user, ], msg.as_string())  # 括号中对应的是发件人邮箱账号、收件人邮箱账号、发送邮件
+                                server.quit()  # 关闭连接
+                            except Exception:  # 如果 try 中的语句没有执行，则会执行下面的 ret=False
+                                ret = False
+                            if ret:
+                                print(&quot;发送邮件成功！&quot;)
+                            else:
+                                print(&quot;发送邮件失败！&quot;)
+                            String2[users_number].clear()
+                            users_number = + 1
+                            break
+                        elif sss == &quot;&quot;:
+                            print(&quot;没有最新成绩！不发送邮件！&quot;)
+                            String2[users_number].clear()
+                            users_number = + 1
+                            break
+                        elif sss != &quot;&quot;:
+                            text = &#x27;\n&#x27;.join(String2[users_number])
+                            title = &quot;&quot;.join(list(set(String2[users_number]).difference(set(String1[users_number]))))
+                            try:
+                                msg = MIMEText(text, &#x27;plain&#x27;, &#x27;utf-8&#x27;)
+                                msg[&#x27;From&#x27;] = formataddr([&quot;weijiajin&quot;, SENDER])  # 括号里的对应发件人邮箱昵称、发件人邮箱账号
+                                msg[&#x27;To&#x27;] = formataddr([&quot;亲～&quot;, my_user])  # 括号里的对应收件人邮箱昵称、收件人邮箱账号
+                                msg[&#x27;Subject&#x27;] = &quot;最新成绩出来啦～&quot; + title  # 邮件的主题，也可以说是标题
+                                server = smtplib.SMTP_SSL(&quot;smtp.qq.com&quot;, 465)  # 发件人邮箱中的SMTP服务器，端口是465
+                                server.login(SENDER, my_pass)  # 括号中对应的是发件人邮箱账号、邮箱密码
+                                server.sendmail(SENDER, [my_user, ], msg.as_string())  # 括号中对应的是发件人邮箱账号、收件人邮箱账号、发送邮件
+                                server.quit()  # 关闭连接
+                            except Exception:  # 如果 try 中的语句没有执行，则会执行下面的 ret=False
+                                ret = False
+                            if ret:
+                                print(&quot;发送邮件成功！&quot;)
+
+                            else:
+                                print(&quot;发送邮件失败！&quot;)
+                            String1[users_number].clear()
+                            String1[users_number] = String2[users_number]
+                            String2[users_number].clear()
+                            users_number = + 1
+                            break
+                        time.sleep(300)
+                    else:
+                        print(&quot;校验码错误！重新尝试中......&quot;)
+
+            first_time = False
+
+
+def auto_download_train_images():
+    output = crack_captcha_cnn()
+    saver = tf.train.Saver()
+    with tf.Session() as sess:
+        saver.restore(sess, tf.train.latest_checkpoint(&#x27;.&#x27;))
+        times1 = 0
+        times2 = 0
+
+        while True:
+            session = requests.Session()
+            headers = &#123;&quot;User-Agent&quot;: &quot;Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0&quot;&#125;
+            html = session.get(IMAGE_URL, headers=headers).content
+            with open(&#x27;./test_captcha/test.png&#x27;, &#x27;wb&#x27;) as file:
+                file.write(html)
+            img = Image.open(&#x27;./test_captcha/test.png&#x27;).convert(&#x27;L&#x27;)
+            # 二值化
+            img = img.point(lambda x: 255 if x &gt; 173 else 0)
+            img1 = np.array(img)
+            img1 = 1 * (img1.flatten())
+            predict = tf.argmax(tf.reshape(output, [-1, MAX_CAPTCHA, CHAR_SET_LEN]), 2)
+            text_list = sess.run(predict, feed_dict=&#123;X: [img1], keep_prob: 1&#125;)
+            vec = text_list[0].tolist()
+            # print(&quot;预测:&quot;, vec2name(vec))
+            session.get(&#x27;http://jwfw1.sdjzu.edu.cn/ssfw/login.jsp&#x27;)
+            data = &#123;&#x27;j_username&#x27;: &#x27;201611101122&#x27;, &#x27;j_password&#x27;: &#x27;174519&#x27;,
+                    &#x27;validateCode&#x27;: vec2name(vec)&#125;
+            r = session.post(&#x27;http://jwfw1.sdjzu.edu.cn/ssfw/j_spring_ids_security_check&#x27;, data=data, headers=headers)
+            if (re.search(r&#x27;校验码错误&#x27;, r.text, re.I | re.M)) is None:
+                # print(&quot;验证码正确通过！&quot;)
+                # print(times1)
+                image_name = &#x27;&#123;image_name&#125;.png&#x27;
+                img.save(os.path.join(&#x27;./verification_code_training_images/&#x27;, image_name.format(image_name=vec2name(vec))))
+                times1 = times1 + 1
+            else:
+                # print(&quot;校验码错误！&quot;)
+                # print(times2)
+                image_name = &#x27;&#123;image_name&#125;.png&#x27;
+                img.save(os.path.join(&#x27;./error_images/&#x27;, image_name.format(image_name=vec2name(vec))))
+                times2 = times2 + 1
+            rate = times1/(times2+times1)
+            print(&quot;总次数: % s&quot; % (times2+times1)+&quot;正确率：% s &quot; % rate)
+
+
+captcha()
+# auto_download_train_images()</code></pre>
 <h4 id="todo"><a class="markdownIt-Anchor" href="#todo"></a> TODO：</h4>
 <ul>
 <li>增加绩点计算公式</li>
