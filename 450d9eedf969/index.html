@@ -32,7 +32,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://weijiajin.com/images/文章图片/程序设计简答题/c08.png">
 <meta property="article:published_time" content="2022-03-06T00:00:00.000Z">
-<meta property="article:modified_time" content="2022-11-07T17:39:05.819Z">
+<meta property="article:modified_time" content="2022-11-07T17:51:08.031Z">
 <meta property="article:author" content="weijiajin">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary_large_image">
@@ -232,13 +232,18 @@
 <blockquote>
 <p>答：乘法、指针的间接运算符</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">int *ptr; //声明⼀个指针<br>*ptr = 10; //表示指针操作数所指向的对象(内存块)<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs awk">int *ptr; <span class="hljs-regexp">//</span>声明⼀个指针
+*ptr = <span class="hljs-number">10</span>; <span class="hljs-regexp">//</span>表示指针操作数所指向的对象(内存块)</code></pre>
 <h4 id="15-多态性如何实现"><a class="markdownIt-Anchor" href="#15-多态性如何实现"></a> 15、多态性如何实现</h4>
 <blockquote>
 <p>多态是指同样的消息被不同类型的对象接收时导致完全不同的⾏为，是对类的特定成员函数的再抽象。C++⽀持的多态有多种类型，重载（包括函数重载和运算符重载）和虚函数是其主要的⽅式</p>
 </blockquote>
 <h4 id="16-什么是else摇摆问题举例说明"><a class="markdownIt-Anchor" href="#16-什么是else摇摆问题举例说明"></a> 16、什么是“else摇摆问题”，举例说明</h4>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">if (a&gt;0)<br>	if(b&gt;0)<br>	...<br>else<br>	...<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs isbl"><span class="hljs-variable"><span class="hljs-keyword">if</span></span> (<span class="hljs-variable">a</span>&gt;<span class="hljs-number">0</span>)
+    <span class="hljs-function"><span class="hljs-title">if</span>(<span class="hljs-variable">b</span>&gt;<span class="hljs-number">0</span>)</span>
+    ...
+<span class="hljs-keyword">else</span>
+    ...</code></pre>
 <blockquote>
 <p>这⾥的else应该与第⼆个if匹配⽽⾮第⼀个</p>
 </blockquote>
@@ -251,7 +256,8 @@
 </ul>
 </blockquote>
 <h4 id="18-怎样区别虚函数和纯虚函数两者都有什么作用"><a class="markdownIt-Anchor" href="#18-怎样区别虚函数和纯虚函数两者都有什么作用"></a> 18、怎样区别虚函数和纯虚函数？两者都有什么作⽤</h4>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs plaintext">virtual void fun(); //虚函数<br>virtual void fun() = 0; //纯虚函数<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs kotlin">virtual void <span class="hljs-function"><span class="hljs-title">fun</span><span class="hljs-params">()</span></span>; <span class="hljs-comment">//虚函数</span>
+virtual void <span class="hljs-function"><span class="hljs-title">fun</span><span class="hljs-params">()</span></span> = <span class="hljs-number">0</span>; <span class="hljs-comment">//纯虚函数</span></code></pre>
 <blockquote>
 <p>虚函数⽤于基类与派⽣类的同名操作使其具有多态性，纯虚函数是⽤来定义抽象类的。</p>
 </blockquote>
