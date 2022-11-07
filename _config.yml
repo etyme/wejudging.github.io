@@ -51,7 +51,6 @@ highlight:
   line_number: false
   line_threshold: 0
   tab_replace: '    '
-  wrap: false
   hljs: false
 prismjs:
   enable: false
