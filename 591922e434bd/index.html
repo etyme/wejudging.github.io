@@ -31,7 +31,7 @@
 <meta property="og:description" content="1. 比较值传递和引用传递的相同点和不同点。 值传递是指当发生函数调用时，给形参分配内存空间，并用实参来初始化形参（直接将 实参的值传递给形参）。这一过程是参数值的单向传递过程，一旦形参获得了值便与实参脱 离关系，此后无论形参发生了怎样的改变，都不会影响到实参。 引用传递将引用作为形参，在执行主调函数中的调用语句时，系统自动用实参来初始化 形参。这样形参就成为实参的一个别名，对形参的任何操作也就">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-16T00:00:00.000Z">
-<meta property="article:modified_time" content="2022-11-07T19:16:25.934Z">
+<meta property="article:modified_time" content="2022-11-07T19:16:47.990Z">
 <meta property="article:author" content="weijiajin">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary_large_image">
@@ -50,6 +50,10 @@
   
 
   
+
+  
+    
+<link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/styles/atom-one-dark.min.css">
 
   
 
@@ -333,7 +337,7 @@ STL 的主要组成部分为：容器、迭代器、算法、函数对象和适�
 <p>效率较低。递归是有时间和空间消耗的。另外，递归有可能很多计算都是重复的，从而给性能带来很大的负面影响。因为递归的本质是把一个问题分解成连个或者多个小问题。如果多个小问题存在相互重叠的部分，那么就存在重复的计算。</p>
 <p>可能导致调用栈溢出。每一次函数调用在内存栈中分配空间，而每个进程的栈的容量是有限的。当递归调用的层级太多时，就会超出栈的容量，从而导致栈溢出。</p>
 <h4 id="51-写出包含输入输出的标准库"><a class="markdownIt-Anchor" href="#51-写出包含输入输出的标准库"></a> 51 写出包含输入输出的标准库</h4>
-<pre class="highlight"><code class="">    &lt;fstream&gt;
+<pre><code class="hljs plaintext">    &lt;fstream&gt;
     &lt;iomanip&gt;
     &lt;ios&gt;
     &lt;iosfwd&gt;
@@ -341,8 +345,7 @@ STL 的主要组成部分为：容器、迭代器、算法、函数对象和适�
     &lt;ostream&gt;
     &lt;istream&gt;
     &lt;sstream&gt;
-    &lt;streambuf&gt;
-</code></pre>
+    &lt;streambuf&gt;</code></pre>
 <h4 id="52-怎样区别虚函数和纯虚函数两者都有什么作用"><a class="markdownIt-Anchor" href="#52-怎样区别虚函数和纯虚函数两者都有什么作用"></a> 52 怎样区别虚函数和纯虚函数？两者都有什么作用</h4>
 <p>虛函數介紹</p>
 <p>虚函数，在类成员方法的声明（不是定义）语句前加“virtual”, 如 virtual void func()<br />
