@@ -34,6 +34,7 @@ sidebar: [ghuser, timeline]
 请添加本站到您的友链中，如果您也使用 issue 作为友链源，只需要告知您的友链源仓库即可
 
 
+
 ```yaml
 
 title: weijiajin
@@ -54,6 +55,7 @@ screenshot: https://weijiajin.com/images/weijiajin-com-screenshot.png
 
 
 
+{% note 这&nbsp;是标题 这是正文 哈哈。 %}
 
 {% codeblock 建议的版本 lang:yaml %}
 Hexo: 5.4.0
