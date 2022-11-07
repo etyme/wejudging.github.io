@@ -116,17 +116,7 @@ plugins:
 
 
 
-style:
-  darkmode: auto # auto / always / false
-  theme:
-    light: '#f8f8f8'
-    dark: '#313438'
-  animated_avatar:
-    animate: auto # auto, always
-    background: /images/rainbow64.webp
-  codeblock:
-    scrollbar: 2px
-    highlightjs_theme: https://fastly.jsdelivr.net/gh/highlightjs/cdn-release@11.5.0/build/styles/atom-one-dark.min.css
+
 
 
 
