@@ -49,3 +49,14 @@ screenshot: https://weijiajin.com/images/weijiajin-com-screenshot.png
 如果您需要更新自己的友链，请直接修改 issue 内容，大约 3 分钟内生效，无需等待博客更新。如果无法修改，可以重新创建一个
 
 {% endtimeline %}
+
+
+
+
+
+{% codeblock 建议的版本 lang:yaml %}
+Hexo: 5.4.0
+hexo-cli: 4.2.0
+node.js: 14.15.4 LTS # 建议使用LTS版本
+npm: 6.14.10 LTS
+{% endcodeblock %}
