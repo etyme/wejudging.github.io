@@ -118,8 +118,6 @@ inject:
     - <meta name="msapplication-TileColor" content="#2d89ef">
     - <meta name="msapplication-config" content="#2d89ef">
     - <meta name="theme-color" content="#ffffff">
-  script:
-    - https://fastly.jsdelivr.net/npm/jquery@3.5/dist/jquery.min.js
 
 ########################### Plugins ###########################
 # npm i hexo-generator-feed
