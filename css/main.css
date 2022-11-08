@@ -72,7 +72,7 @@
   }
 }
 pre {
-  font-family: Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
+  font-family: "LXGW WenKai Screen", Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
   font-size: 0.8125rem;
   tab-size: 4;
   -moz-tab-size: 4;
@@ -256,7 +256,7 @@ a[onclick]:hover {
 code {
   -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: auto;
-  font-family: Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
+  font-family: "LXGW WenKai Screen", Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
 }
 p>code:not([class]),
 li>code:not([class]) {
@@ -274,7 +274,7 @@ pre:not([class]):has(>code) {
   background: var(--block);
   border: 1px solid var(--block-border);
   line-height: 1.5;
-  font-family: Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
+  font-family: "LXGW WenKai Screen", Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
   box-sizing: border-box;
 }
 @media screen and (min-width: 500px) {
@@ -652,7 +652,7 @@ input {
 }
 input.copy-area {
   display: block;
-  font-family: Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
+  font-family: "LXGW WenKai Screen", Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
   font-size: 0.75rem;
   font-weight: 700;
   color: var(--text-p3);
@@ -1182,7 +1182,7 @@ nav.cap a+a {
   border-right: 1px dashed var(--block-border);
 }
 .paginator-wrap .current {
-  font-family: Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
+  font-family: "LXGW WenKai Screen", Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
   color: var(--text-p3);
 }
 .paginator-wrap a.paginator {
@@ -2158,7 +2158,7 @@ details.folding[child=codeblock]>div.body .highlight .code:before {
   border-bottom-width: 2px;
   background: var(--card);
   padding: 2px 4px 1px 4px;
-  font-family: Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
+  font-family: "LXGW WenKai Screen", Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
   font-weight: 700;
 }
 .md psw {
@@ -2180,7 +2180,7 @@ details.folding[child=codeblock]>div.body .highlight .code:before {
   color: var(--theme);
   line-height: 1;
   font-weight: 700;
-  font-family: Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
+  font-family: "LXGW WenKai Screen", Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
 }
 .md h1 sup,
 .md h2 sup,
@@ -3898,7 +3898,7 @@ nav.menu a.nav-item:hover {
 }
 .post-list #archive .archive-header {
   display: inline-block;
-  font-family: Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
+  font-family: "LXGW WenKai Screen", Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 0.5em;
@@ -3927,7 +3927,7 @@ nav.menu a.nav-item:hover {
   color: #ff5722;
 }
 .post-list #archive a.post time {
-  font-family: Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
+  font-family: "LXGW WenKai Screen", Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
   margin-right: 1em;
   font-weight: 700;
   flex-shrink: 0;
@@ -3957,7 +3957,7 @@ nav.menu a.nav-item:hover {
 }
 .post-list #cats a.cat .badge {
   font-weight: 700;
-  font-family: Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
+  font-family: "LXGW WenKai Screen", Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
   opacity: 0.5;
   font-size: 0.75rem;
 }
