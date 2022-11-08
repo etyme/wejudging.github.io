@@ -31,7 +31,7 @@
 <meta property="og:description" content="1. 比较值传递和引用传递的相同点和不同点。 值传递是指当发生函数调用时，给形参分配内存空间，并用实参来初始化形参（直接将 实参的值传递给形参）。这一过程是参数值的单向传递过程，一旦形参获得了值便与实参脱 离关系，此后无论形参发生了怎样的改变，都不会影响到实参。 引用传递将引用作为形参，在执行主调函数中的调用语句时，系统自动用实参来初始化 形参。这样形参就成为实参的一个别名，对形参的任何操作也就">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-16T00:00:00.000Z">
-<meta property="article:modified_time" content="2022-11-08T03:23:03.179Z">
+<meta property="article:modified_time" content="2022-11-08T03:29:02.096Z">
 <meta property="article:author" content="weijiajin">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary_large_image">
@@ -111,6 +111,8 @@
 
 
 
+
+
 </div>
 <footer class="footer dis-select"><div class="social-wrap"><a class="social" href="/atom.xml" rel="noopener noreferrer"><img src="/images/rss.svg"/></a><a class="social" href="mailto:wejudging@gmail.com" rel="noopener noreferrer"><img src="/images/gmail.svg"/></a><a class="social" href="https://github.com/wejudging" target="_blank" rel="external nofollow noopener noreferrer"><img src="/images/github.svg"/></a><a class="social" href="https://volantis.weijiajin.com" target="_blank" rel="external nofollow noopener noreferrer"><img src="/images/volantis.svg"/></a><a class="social" href="https://cloud.weijiajin.com" target="_blank" rel="external nofollow noopener noreferrer"><img src="/images/OneDrive.svg"/></a></div></footer>
 
@@ -123,7 +125,7 @@
 
 <div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/C/">C++</a></div><div id="post-meta">发布于&nbsp;<time datetime="2022-03-16T00:00:00.000Z">2022-03-16</time></div></div>
 
-<article class='content md post'>
+<article class='content md post reveal'>
 <h1 class="article-title"><span>C++程序设计简答题（二）</span></h1>
 <h4 id="1-比较值传递和引用传递的相同点和不同点"><a class="markdownIt-Anchor" href="#1-比较值传递和引用传递的相同点和不同点"></a> 1. 比较值传递和引用传递的相同点和不同点。</h4>
 <p>值传递是指当发生函数调用时，给形参分配内存空间，并用实参来初始化形参（直接将 实参的值传递给形参）。这一过程是参数值的单向传递过程，一旦形参获得了值便与实参脱 离关系，此后无论形参发生了怎样的改变，都不会影响到实参。<br />
@@ -357,7 +359,12 @@ STL 的主要组成部分为：容器、迭代器、算法、函数对象和适�
 <div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/f3ebadf06a6a/">基于深度学习的目标检测</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/450d9eedf969/">C++程序设计简答题（一）</a></div></section></div>
 
 
-
+<div class="related-wrap reveal" id="related-posts">
+    <section class='header'>
+      <div class='title cap theme'>您可能感兴趣的文章</div>
+    </section>
+    <section class='body'>
+    <div class="related-posts"><a class="item" href="/450d9eedf969/" title="C++程序设计简答题（一）"><span class="title">C++程序设计简答题（一）</span></a><a class="item" href="/cfea251a3f8f/" title="CRC码计算及校验原理的最通俗诠释"><span class="title">CRC码计算及校验原理的最通俗诠释</span><span class="excerpt">CRC校验原理看起来比较复杂，好难懂，因为大多数书上基本上是以二进制的多项式形式来说明的。</span></a></div></section></div>
 
 
 
@@ -370,7 +377,7 @@ STL 的主要组成部分为：容器、迭代器、算法、函数对象和适�
 
 <svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
 
-<div id="beaudar" repo="wejudging/blog-comments" issue-term="pathname" theme="preferred-color-scheme" input-position="top" comment-order="desc" loading="false" branch="main"></div>
+<div id="beaudar" repo="wejudging/blog-comments" issue-term="pathname" theme="preferred-color-scheme" input-position="top" comment-order="desc" keep-theme="true" loading="true" branch="main"></div>
 
     </div>
   </div>
@@ -510,8 +517,8 @@ STL 的主要组成部分为：容器、迭代器、算法、函数对象和适�
   if ('true' == 'true') {
     stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@6/swiper-bundle.min.css","js":"https://unpkg.com/swiper@6/swiper-bundle.min.js"});
   }
-  if ('' == 'true') {
-    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://fastly.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  if ('true' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":true,"js":"https://fastly.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
   }
   if ('true' == 'true') {
     stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://fastly.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://fastly.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
