@@ -27,8 +27,8 @@ sidebar:
   widgets:
     index: [welcome, recent, timeline] # for home/wiki/categories/tags/archives/404 pages
     page: [welcome, toc, timeline] # for pages using 'layout:page'
-    post: [toc, ghrepo, ghissues] # for pages using 'layout:post'
-    wiki: [toc, ghrepo, ghissues] # for pages using 'layout:wiki'
+    post: [toc, ghrepo, ghissues, related] # for pages using 'layout:post'
+    wiki: [toc, ghrepo, ghissues, related] # for pages using 'layout:wiki'
 
 ######## Index ########
 post-index: # 近期发布 分类 标签 归档 and ...
@@ -58,7 +58,7 @@ article:
   # 相关文章，需要安装插件 (for layout: post)
   # npm i hexo-related-popular-posts
   related_posts:
-    enable: false
+    enable: true
     max_count: 5
 
 
@@ -75,8 +75,8 @@ comments:
     label:
     input-position: top # top/bottom 评论框位置
     comment-order: desc # desc 排序
-    keep-theme: # true/false
-    loading: false
+    keep-theme: true
+    loading: true
     branch: main
   # utterances
   # https://utteranc.es/
@@ -213,7 +213,7 @@ tag_plugins:
     blobcat: https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs/%s.png
   # {% image %}
   image:
-    fancybox: # true, false
+    fancybox: true
   # {% timeline %}
   timeline:
     max-height: 80vh
@@ -253,7 +253,7 @@ plugins:
 
   # https://scrollrevealjs.org/api/reveal.html
   scrollreveal:
-    enable: #true
+    enable: true
     js: https://fastly.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js
     distance: 8px
     duration: 500 # ms
