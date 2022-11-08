@@ -9,12 +9,7 @@ poster:
   caption: 介绍其基本原理及实现细节
   color: white
 --- 
-{% codeblock  lang:yaml %}
-title: weijiajin
-avatar: https://weijiajin.com/images/logo.svg
-url: https://weijiajin.com
-screenshot: https://weijiajin.com/images/weijiajin-com-screenshot.png
-{% endcodeblock %}
+
 ###  YOLO框架如何运作
 
 #### YOLO用于检测给定图像中的对象的处理步骤
