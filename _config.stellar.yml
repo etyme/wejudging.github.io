@@ -28,7 +28,7 @@ sidebar:
     index: [welcome, recent, timeline] # for home/wiki/categories/tags/archives/404 pages
     page: [welcome, toc, timeline] # for pages using 'layout:page'
     post: [toc, ghrepo, ghissues] # for pages using 'layout:post'
-    wiki: [toc, ghrepo, ghissues, related] # for pages using 'layout:wiki'
+    wiki: [toc, ghrepo, ghissues] # for pages using 'layout:wiki'
 
 ######## Index ########
 post-index: # 近期发布 分类 标签 归档 and ...
@@ -58,7 +58,7 @@ article:
   # 相关文章，需要安装插件 (for layout: post)
   # npm i hexo-related-popular-posts
   related_posts:
-    enable: true
+    enable: false
     max_count: 5
 
 
