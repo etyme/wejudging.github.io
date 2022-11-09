@@ -5,7 +5,7 @@ Shell:
   tags: 脚本
   cover: true
   logo:
-    src: /images/shell.png
+    src: /images/wiki图片/Shell/shell.png
     small: 120px
     large: 240px
   description: 实用脚本集合。
