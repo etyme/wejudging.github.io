@@ -13,7 +13,7 @@ sidebar: [ghuser, timeline]
 {% endabout %}
 
 
-{% quot 我的好朋友 icon:hashtag %}
+{% quot  {% emoji 爱你 %}我的好朋友 icon:hashtag %}
 
 以下友链通过[GitHub Issue](https://github.com/wejudging/friends/issues/)提交：
 
