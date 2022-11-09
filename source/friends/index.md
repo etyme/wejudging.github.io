@@ -9,7 +9,7 @@ sidebar: [ghuser, timeline]
 
 {% about %}
 <img height="64px" alt="weijiajin" src="/images/weijiajin.png">
-<center>{% quot 遇到温柔可爱的人，觉得世界也可爱温柔 %}</center>
+<center>{% quot 如此暗淡的我，一切繁华与我无关 %}</center>
 {% endabout %}
 
 
