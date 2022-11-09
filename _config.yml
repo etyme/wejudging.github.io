@@ -1,6 +1,6 @@
 # Site
 title: weijiajin
-avatar: /images/logo.svg
+avatar: /images/网站图片/logo.svg
 subtitle: '「Stay Hungry.Stay Foolish.」 | 求知若饥，虚心若愚'
 description: 'all of weijiajin'
 keywords: 魏家劲
@@ -126,7 +126,7 @@ feed:
   path: atom.xml
   limit: false
   content: true
-  icon: /images/logo.png
+  icon: /images/网站图片/logo.png
   autodiscovery: true
 
 
@@ -137,10 +137,6 @@ neat_enable: true
 all_minifier: true
 
 
-lazyload:
-  enable: false
-  onlypost: true
-  loadingImg: /images/loading.svg
 
 
 # https://github.com/ludoviclefevre/hexo-generator-seo-friendly-sitemap

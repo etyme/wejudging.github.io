@@ -42,7 +42,7 @@ breadcrumb:
 ######## Article ########
 article:
   # 如果没有指定封面，是否根据 tags 作为关键词搜索封面图片？
-  auto_cover: true # search from https://source.unsplash.com/
+  auto_cover: false # search from https://source.unsplash.com/
   # 如果没有指定横幅，是否根据 tags 作为关键词搜索横幅图片？
   auto_banner: false # search from https://source.unsplash.com/
   # 如果没有指定 excerpt 和 description，将自动取多长的内容作为文章摘要？
@@ -159,15 +159,15 @@ comments:
 ######## Footer ########
 footer:
   social:
-     - icon: '<img src="/images/rss.svg"/>'
+     - icon: '<img src="/images/网站图片/rss.svg"/>'
        url: /atom.xml
-     - icon: '<img src="/images/gmail.svg"/>'
+     - icon: '<img src="/images/网站图片/gmail.svg"/>'
        url: mailto:wejudging@gmail.com
-     - icon: '<img src="/images/github.svg"/>'
+     - icon: '<img src="/images/网站图片/github.svg"/>'
        url: https://github.com/wejudging
-     - icon: '<img src="/images/volantis.svg"/>'
+     - icon: '<img src="/images/网站图片/volantis.svg"/>'
        url: https://volantis.weijiajin.com
-     - icon: '<img src="/images/OneDrive.svg"/>'
+     - icon: '<img src="/images/网站图片/OneDrive.svg"/>'
        url: https://cloud.weijiajin.com
     
   sitemap:
@@ -186,7 +186,7 @@ footer:
       - '[关于本站](/about/)'
       - '[GitHub](https://github.com/wejudging)'
   content: |
-     <hr><p align="center"><a href="https://aws.amazon.com/cn/campaigns/cloudfront"><img src="/images/内容分发-CloudFront-orange.svg" width="143" height="20" /></a>&nbsp&nbsp<a href="https://github.com/wejudging"><img src="/images/网站部署-GitHub-5DADE2.svg" width="119" height="20"/></a>&nbsp&nbsp<a href="https://hexo.io"><img src="/images/强力驱动-Hexo-blue.svg" width="111" height="20"/></a>&nbsp&nbsp<a href="https://cloudflare.com"><img src="/images/域名解析-CloudFlare-f38020.svg"></a></p>
+     <hr><p align="center"><a href="https://aws.amazon.com/cn/campaigns/cloudfront"><img src="/images/网站图片/内容分发-CloudFront-orange.svg" width="143" height="20" /></a>&nbsp&nbsp<a href="https://github.com/wejudging"><img src="/images/网站图片/网站部署-GitHub-5DADE2.svg" width="119" height="20"/></a>&nbsp&nbsp<a href="https://hexo.io"><img src="/images/网站图片/强力驱动-Hexo-blue.svg" width="111" height="20"/></a>&nbsp&nbsp<a href="https://cloudflare.com"><img src="/images/网站图片/域名解析-CloudFlare-f38020.svg"></a></p>
     
 ######## Tag Plugins ########
 tag_plugins:
@@ -344,10 +344,10 @@ style:
     error: 加载失败，请稍后重试。
 
 default:
-  avatar: /images/3442075.svg
-  link: /images/8f277b4ee0ecd.svg
-  cover: /images/76b86c0226ffd.svg
-  image: /images/2659360.svg
+  avatar: /images/网站图片/default_avatar.svg
+  link: /images/网站图片/default_link.svg
+  cover: /images/网站图片/default_cover.svg
+  image: /images/网站图片/default_image.svg
 
 api_host:
   ghapi: https://api.github.com
