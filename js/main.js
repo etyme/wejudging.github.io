@@ -92,7 +92,7 @@ const init = {
     stellar.jQuery(() => {
       const scrollOffset = 32;
       var segs = [];
-      $("article.md :header").each(function (idx, node) {
+      $("article.md-text :header").each(function (idx, node) {
         segs.push(node)
       });
       // 滚动
@@ -111,12 +111,12 @@ const init = {
           }
         }
         if (topSeg) {
-          $("#toc a.toc-link").removeClass("active")
+          $(".toc#toc a.toc-link").removeClass("active")
           var link = "#" + topSeg.attr("id")
           if (link != '#undefined') {
-            $('#toc a.toc-link[href="' + encodeURI(link) + '"]').addClass("active")
+            $('.toc#toc a.toc-link[href="' + encodeURI(link) + '"]').addClass("active")
           } else {
-            $('#toc a.toc-link:first').addClass("active")
+            $('.toc#toc a.toc-link:first').addClass("active")
           }
         }
       })
@@ -124,7 +124,7 @@ const init = {
   },
   sidebar: () => {
     stellar.jQuery(() => {
-      $("#toc a.toc-link").click(function (e) {
+      $(".toc#toc a.toc-link").click(function (e) {
         l_body.classList.remove("sidebar");
       });
     })
