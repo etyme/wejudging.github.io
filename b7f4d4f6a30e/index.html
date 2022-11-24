@@ -23,7 +23,24 @@
   <title>YOLO算法简介 - weijiajin</title>
 
   
-  <meta name="description" content="计算机视觉">
+    <meta name="description" content="计算机视觉">
+<meta property="og:type" content="article">
+<meta property="og:title" content="YOLO算法简介">
+<meta property="og:url" content="https://weijiajin.com/b7f4d4f6a30e/">
+<meta property="og:site_name" content="weijiajin">
+<meta property="og:description" content="计算机视觉">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://weijiajin.com/images/文章图片/20220818-YOLO算法简介/002.jpeg">
+<meta property="og:image" content="https://weijiajin.com/images/文章图片/20220818-YOLO算法简介/003.jpeg">
+<meta property="og:image" content="https://weijiajin.com/images/文章图片/20220818-YOLO算法简介/004.jpeg">
+<meta property="article:published_time" content="2022-08-18T00:00:00.000Z">
+<meta property="article:modified_time" content="2022-11-24T06:52:23.350Z">
+<meta property="article:author" content="weijiajin">
+<meta property="article:tag" content="深度学习">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://weijiajin.com/images/文章图片/20220818-YOLO算法简介/002.jpeg">
+  
+  
 
   <!-- feed -->
   
@@ -40,10 +57,6 @@
 
   
 
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"onload="renderMathInElement(document.body);"></script>
   
 
 
@@ -98,7 +111,7 @@
 
 
 </div>
-<footer class="footer dis-select"><div class="social-wrap"><a class="social" href="/atom.xml" rel="noopener noreferrer"><img src="/images/网站图片/rss.svg"/></a><a class="social" href="mailto:wejudging@gmail.com" rel="noopener noreferrer"><img src="/images/网站图片/gmail.svg"/></a><a class="social" href="https://github.com/wejudging" target="_blank" rel="external nofollow noopener noreferrer"><img src="/images/网站图片/github.svg"/></a><a class="social" href="https://volantis.weijiajin.com" target="_blank" rel="external nofollow noopener noreferrer"><img src="/images/网站图片/volantis.svg"/></a><a class="social" href="https://cloud.weijiajin.com" target="_blank" rel="external nofollow noopener noreferrer"><img src="/images/网站图片/OneDrive.svg"/></a></div></footer>
+<footer class="footer dis-select"><div class="social-wrap"><a class="social" href="/atom.xml" rel="noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/images/网站图片/rss.svg"/></a><a class="social" href="mailto:wejudging@gmail.com" rel="noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/images/网站图片/gmail.svg"/></a><a class="social" href="https://github.com/wejudging" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/images/网站图片/github.svg"/></a><a class="social" href="https://volantis.weijiajin.com" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/images/网站图片/volantis.svg"/></a><a class="social" href="https://cloud.weijiajin.com" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/images/网站图片/OneDrive.svg"/></a></div></footer>
 
     </aside>
     <div class='l_main'>
@@ -125,9 +138,9 @@
 <p>先前的检测系统使用分类器对测试图像的不同切片进行评估。例如，Deformable Parts Model (DPM)涉及到在图像中均匀间隔的位置上滑动窗口并在这些部件上运行分类器。R-CNN(Region-based Convolutional Neural Networks)是另一种模型，它运行一种分割算法将一幅图像分割成一个个小块，然后在这些小块上运行一个分类器。但是，速度慢、优化困难一直困扰着这种YOLO之前的系统。</p>
 <h3 id="yolo算法简介"><a class="markdownIt-Anchor" href="#yolo算法简介"></a> YOLO算法简介</h3>
 <p>YOLO将对象检测重新定义为一个回归问题。它将单个卷积神经网络(CNN)应用于整个图像，将图像分成网格，并预测每个网格的类概率和边界框。例如，以一个100x100的图像为例。我们把它分成网格，比如7x7。</p>
-<div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/20220818-YOLO算法简介/002.jpeg" fancybox="true"/></div></div>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/images/文章图片/20220818-YOLO算法简介/002.jpeg"/></div></div>
 <p>然后，对于每个网格，网络都会预测一个边界框和与每个类别（汽车，行人，交通信号灯等）相对应的概率。</p>
-<div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/20220818-YOLO算法简介/003.jpeg" fancybox="true"/></div></div>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/images/文章图片/20220818-YOLO算法简介/003.jpeg"/></div></div>
 <p>每个边界框可以使用四个描述符进行描述：</p>
 <ol>
 <li>边界框的中心</li>
@@ -137,23 +150,18 @@
 </ol>
 <p>此外，该算法还可以预测边界框中存在对象的概率。如果一个对象的中心落在一个网格单元中，则该网格单元负责检测该对象。每个网格中将有多个边界框。在训练时，我们希望每个对象只有一个边界框。因此，我们根据哪个Box与ground truth box的重叠度最高，从而分配一个Box来负责预测对象。</p>
 <p>最后，我们对每个类的对象应用一个称为“非最大抑制（Non Max Suppression）”的方法来过滤出“置信度”小于阈值的边界框。这为我们提供了图像预测。</p>
-<div class="tag-plugin image"><div class="image-bg"><img src="/images/文章图片/20220818-YOLO算法简介/004.jpeg" fancybox="true"/></div></div>
+<div class="tag-plugin image"><div class="image-bg"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/images/文章图片/20220818-YOLO算法简介/004.jpeg"/></div></div>
 
 
 <div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a>许可协议，转载请注明出处。</p>
-</div></section><section id="share"><div class="header"><span>分享文章</span></div><div class="body"><div class="link"><input class="copy-area" readonly="true" id="copy-link" value="https://weijiajin.com/b7f4d4f6a30e/" /></div><div class="social-wrap dis-select"><a class="social share-item wechat" onclick="util.toggle(&quot;qrcode-wechat&quot)"><img src="https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/social/b32ef3da1162a.svg"/></a><a class="social share-item weibo" target="_blank" rel="external nofollow noopener noreferrer" href="https://service.weibo.com/share/share.php?url=https://weijiajin.com/b7f4d4f6a30e/&title=YOLO算法简介 - weijiajin&summary=计算机视觉"><img src="https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/social/80c07e4dbb303.svg"/></a><a class="social share-item email" href="mailto:?subject=YOLO算法简介 - weijiajin&amp;body=https://weijiajin.com/b7f4d4f6a30e/"><img src="https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/social/a1b00e20f425d.svg"/></a><a class="social share-item link" onclick="util.copy(&quot;copy-link&quot;, &quot;复制成功&quot;)"><img src="https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/social/8411ed322ced6.svg"/></a></div><div class="qrcode" id="qrcode-wechat" style="visibility:hidden;height:0"><img src="https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=https://weijiajin.com/b7f4d4f6a30e/index.html"/></div></div></section></div>
+</div></section></div>
 
 </article>
 
 <div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/d60cc43f8619/">YOLO算法python实现</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/f3ebadf06a6a/">基于深度学习的目标检测</a></div></section></div>
 
 
-<div class="related-wrap reveal" id="related-posts">
-    <section class='header'>
-      <div class='title cap theme'>您可能感兴趣的文章</div>
-    </section>
-    <section class='body'>
-    <div class="related-posts"><a class="item" href="/f3ebadf06a6a/" title="基于深度学习的目标检测"><span class="title">基于深度学习的目标检测</span><span class="excerpt">计算机视觉</span></a><a class="item" href="/d60cc43f8619/" title="YOLO算法python实现"><span class="title">YOLO算法python实现</span><span class="excerpt">介绍其基本原理及实现细节</span></a></div></section></div>
+
 
 
 
@@ -174,7 +182,7 @@
 
 
       
-<footer class="page-footer reveal fs12"><hr><div class="sitemap"><div class="sitemap-group"><span class="fs14">博客</span><a href="/">近期</a><a href="/categories/">分类</a><a href="/tags/">标签</a><a href="/archives/">归档</a></div><div class="sitemap-group"><span class="fs14">项目</span><a href="/wiki/tags/%E8%84%9A%E6%9C%AC/">脚本</a><a href="/wiki/tags/%E6%95%99%E8%82%B2%E4%BC%98%E6%83%A0/">教育优惠</a></div><div class="sitemap-group"><span class="fs14">友链</span><a href="/friends/">友链</a><a href="/about/#comments">留言板</a></div><div class="sitemap-group"><span class="fs14">关于</span><a href="/about/">关于本站</a><a target="_blank" rel="noopener" href="https://github.com/wejudging">GitHub</a></div></div><div class="text"><hr><p align="center"><a target="_blank" rel="noopener" href="https://aws.amazon.com/cn/campaigns/cloudfront"><img src="/images/网站图片/内容分发-CloudFront-orange.svg" width="143" height="20" /></a>&nbsp&nbsp<a target="_blank" rel="noopener" href="https://github.com/wejudging"><img src="/images/网站图片/网站部署-GitHub-5DADE2.svg" width="119" height="20"/></a>&nbsp&nbsp<a target="_blank" rel="noopener" href="https://hexo.io"><img src="/images/网站图片/强力驱动-Hexo-blue.svg" width="111" height="20"/></a>&nbsp&nbsp<a target="_blank" rel="noopener" href="https://cloudflare.com"><img src="/images/网站图片/域名解析-CloudFlare-f38020.svg"></a></p>
+<footer class="page-footer reveal fs12"><hr><div class="sitemap"><div class="sitemap-group"><span class="fs14">博客</span><a href="/">近期</a><a href="/categories/">分类</a><a href="/tags/">标签</a><a href="/archives/">归档</a></div><div class="sitemap-group"><span class="fs14">项目</span><a href="/wiki/tags/%E8%84%9A%E6%9C%AC/">脚本</a><a href="/wiki/tags/%E6%95%99%E8%82%B2%E4%BC%98%E6%83%A0/">教育优惠</a></div><div class="sitemap-group"><span class="fs14">友链</span><a href="/friends/">友链</a><a href="/about/#comments">留言板</a></div><div class="sitemap-group"><span class="fs14">关于</span><a href="/about/">关于本站</a><a target="_blank" rel="noopener" href="https://github.com/wejudging">GitHub</a></div></div><div class="text"><hr><p align="center"><a target="_blank" rel="noopener" href="https://aws.amazon.com/cn/campaigns/cloudfront"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/images/网站图片/内容分发-CloudFront-orange.svg" width="143" height="20" /></a>&nbsp&nbsp<a target="_blank" rel="noopener" href="https://github.com/wejudging"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/images/网站图片/网站部署-GitHub-5DADE2.svg" width="119" height="20"/></a>&nbsp&nbsp<a target="_blank" rel="noopener" href="https://hexo.io"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/images/网站图片/强力驱动-Hexo-blue.svg" width="111" height="20"/></a>&nbsp&nbsp<a target="_blank" rel="noopener" href="https://cloudflare.com"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="/images/网站图片/域名解析-CloudFlare-f38020.svg"></a></p>
 </div></footer>
 
       <div class='float-panel mobile-only blur' style='display:none'>
@@ -300,17 +308,17 @@
 
   stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
   // optional plugins
-  if ('false' == 'true') {
-    stellar.plugins.lazyload = Object.assign({"enable":false,"js":"https://fastly.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js","transition":"blur"});
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://fastly.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js","transition":"blur"});
   }
-  if ('false' == 'true') {
-    stellar.plugins.swiper = Object.assign({"enable":false,"css":"https://unpkg.com/swiper@6/swiper-bundle.min.css","js":"https://unpkg.com/swiper@6/swiper-bundle.min.js"});
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@6/swiper-bundle.min.css","js":"https://unpkg.com/swiper@6/swiper-bundle.min.js"});
   }
   if ('false' == 'true') {
     stellar.plugins.scrollreveal = Object.assign({"enable":false,"js":"https://fastly.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
   }
-  if ('false' == 'true') {
-    stellar.plugins.preload = Object.assign({"enable":false,"service":"flying_pages","instant_page":"https://fastly.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://fastly.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://fastly.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://fastly.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
   }
   if ('true' == 'true') {
     stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://fastly.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://fastly.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
