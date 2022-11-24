@@ -44,25 +44,23 @@
   --theme-bg: #e8fafe;
   --theme-link: #2196f3;
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    --site-bg: #313438;
-    --card: #464d57;
-    --block: #2b2f33;
-    --block-border: #393e44;
-    --block-hover: #222528;
-    --text-p0: #fff;
-    --text-p1: #d1d2d2;
-    --text-p2: #b5b6b7;
-    --text-p3: #868789;
-    --text-p4: #737577;
-    --text-meta: #696b6e;
-    --text-code: #ff7043;
-    --theme-highlight: #1bcdfc;
-    --theme-bg: #415967;
-  }
+:root {
+  --site-bg: #313438;
+  --card: #464d57;
+  --block: #2b2f33;
+  --block-border: #393e44;
+  --block-hover: #222528;
+  --text-p0: #fff;
+  --text-p1: #d1d2d2;
+  --text-p2: #b5b6b7;
+  --text-p3: #868789;
+  --text-p4: #737577;
+  --text-meta: #696b6e;
+  --text-code: #ff7043;
+  --theme-highlight: #1bcdfc;
+  --theme-bg: #415967;
 }
-@media screen and (prefers-color-scheme: dark) and (max-width: 667px) {
+@media screen and (max-width: 667px) {
   :root {
     --site-bg: #000;
     --card: #383e46;
@@ -145,10 +143,8 @@ blockquote {
   --blur-px: 12px;
   --blur-bg: rgba(255,255,255,0.5);
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    --blur-bg: rgba(0,0,0,0.5);
-  }
+:root {
+  --blur-bg: rgba(0,0,0,0.5);
 }
 .blur {
   background: var(--blur-bg);
@@ -244,11 +240,7 @@ a[onclick]:hover {
   -moz-transition: all 0.2s ease-out;
   -webkit-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
-}
-@media (prefers-color-scheme: dark) {
-  .float-panel {
-    --blur-bg: rgba(0,0,0,0.4);
-  }
+  --blur-bg: rgba(0,0,0,0.4);
 }
 .sidebar-toggle.mobile {
   cursor: pointer;
@@ -1672,64 +1664,62 @@ nav.cap a+a {
   --block-border: #393e44;
   --block-hover: #222528;
 }
-@media (prefers-color-scheme: dark) {
-  .tag-plugin[color='red'] {
-    --theme-border: #aa2e25;
-    --theme-bg: #551712;
-  }
-  .tag-plugin[color='orange'] {
-    --theme-border: #af4600;
-    --theme-bg: #572300;
-  }
-  .tag-plugin[color='yellow'] {
-    --theme-border: #b2841e;
-    --theme-bg: #4c380c;
-  }
-  .tag-plugin[color='green'] {
-    --theme-border: #2a8938;
-    --theme-bg: #123b18;
-  }
-  .tag-plugin[color='cyan'] {
-    --theme-border: #128fb0;
-    --theme-bg: #083d4b;
-  }
-  .tag-plugin[color='blue'] {
-    --theme-border: #1769aa;
-    --theme-bg: #0b3455;
-  }
-  .tag-plugin[color='purple'] {
-    --theme-border: #6d1b7b;
-    --theme-bg: #3e0f46;
-  }
-  .tag-plugin[color='light'] {
-    --theme-border: #fff;
-    --theme-bg: #fff;
-  }
-  .tag-plugin[color='dark'] {
-    --theme-border: #000;
-    --theme-bg: #111;
-    --text-p0: #fff;
-    --text-p1: #fff;
-    --text-p2: #eee;
-    --text-p3: #ddd;
-    --text-code: #fff;
-    --card: #464d57;
-    --block: #2b2f33;
-    --block-border: #393e44;
-    --block-hover: #222528;
-  }
-  .tag-plugin[color='warning'],
-  .tag-plugin[color='light'] {
-    --text-p0: #000;
-    --text-p1: #111;
-    --text-p2: #333;
-    --text-p3: #555;
-    --text-code: #fff;
-    --card: #fff;
-    --block: #f2f2f2;
-    --block-border: #e5e5e5;
-    --block-hover: #ededed;
-  }
+.tag-plugin[color='red'] {
+  --theme-border: #aa2e25;
+  --theme-bg: #551712;
+}
+.tag-plugin[color='orange'] {
+  --theme-border: #af4600;
+  --theme-bg: #572300;
+}
+.tag-plugin[color='yellow'] {
+  --theme-border: #b2841e;
+  --theme-bg: #4c380c;
+}
+.tag-plugin[color='green'] {
+  --theme-border: #2a8938;
+  --theme-bg: #123b18;
+}
+.tag-plugin[color='cyan'] {
+  --theme-border: #128fb0;
+  --theme-bg: #083d4b;
+}
+.tag-plugin[color='blue'] {
+  --theme-border: #1769aa;
+  --theme-bg: #0b3455;
+}
+.tag-plugin[color='purple'] {
+  --theme-border: #6d1b7b;
+  --theme-bg: #3e0f46;
+}
+.tag-plugin[color='light'] {
+  --theme-border: #fff;
+  --theme-bg: #fff;
+}
+.tag-plugin[color='dark'] {
+  --theme-border: #000;
+  --theme-bg: #111;
+  --text-p0: #fff;
+  --text-p1: #fff;
+  --text-p2: #eee;
+  --text-p3: #ddd;
+  --text-code: #fff;
+  --card: #464d57;
+  --block: #2b2f33;
+  --block-border: #393e44;
+  --block-hover: #222528;
+}
+.tag-plugin[color='warning'],
+.tag-plugin[color='light'] {
+  --text-p0: #000;
+  --text-p1: #111;
+  --text-p2: #333;
+  --text-p3: #555;
+  --text-code: #fff;
+  --card: #fff;
+  --block: #f2f2f2;
+  --block-border: #e5e5e5;
+  --block-hover: #ededed;
 }
 .md-text .tag-plugin.copy {
   display: flex;
@@ -3233,11 +3223,7 @@ details.toc[open] >div.body section .header+.doc_tree {
   transform: translateY(-1px);
   background: linear-gradient(145deg, #ddd, #fff);
   box-shadow: 2px 4px 8px #ddd, -2px -4px 8px #fff;
-}
-@media (prefers-color-scheme: dark) {
-  .social-wrap a.social:hover {
-    box-shadow: none;
-  }
+  box-shadow: none;
 }
 .proj-wrap {
   display: grid;
