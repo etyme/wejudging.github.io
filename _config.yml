@@ -117,7 +117,7 @@ inject:
     - <link rel="shortcut icon" href="/images/favicon/favicon.ico">
     - <meta name="msapplication-TileColor" content="#2d89ef">
     - <meta name="msapplication-config" content="#2d89ef">
-    - <meta name="theme-color" content="#ffffff">
+ 
 
 ########################### Plugins ###########################
 # npm i hexo-generator-feed
