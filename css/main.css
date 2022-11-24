@@ -72,7 +72,7 @@
   }
 }
 pre {
-  font-family: "LXGW WenKai Screen", Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
+  font-family: system-ui, "LXGW WenKai Screen", Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
   font-size: 0.8125rem;
   tab-size: 4;
   -moz-tab-size: 4;
@@ -129,7 +129,7 @@ table:not([class]) tr:hover {
   background: var(--block);
 }
 *[ff=title] {
-  font-family: "LXGW WenKai Screen", system-ui, "Microsoft Yahei", "Segoe UI", -apple-system, Roboto, Ubuntu, "Helvetica Neue", Arial, "WenQuanYi Micro Hei", sans-serif;
+  font-family: system-ui, "LXGW WenKai Screen", "Microsoft Yahei", "Segoe UI", -apple-system, Roboto, Ubuntu, "Helvetica Neue", Arial, "WenQuanYi Micro Hei", sans-serif;
 }
 blockquote {
   display: block;
@@ -271,7 +271,7 @@ a[onclick]:hover {
 code {
   -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: auto;
-  font-family: "LXGW WenKai Screen", Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
+  font-family: system-ui, "LXGW WenKai Screen", Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
 }
 p>code:not([class]),
 li>code:not([class]) {
@@ -289,7 +289,7 @@ pre:not([class]):has(>code) {
   background: var(--block);
   border: 1px solid var(--block-border);
   line-height: 1.5;
-  font-family: "LXGW WenKai Screen", Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
+  font-family: system-ui, "LXGW WenKai Screen", Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
   box-sizing: border-box;
 }
 @media screen and (min-width: 500px) {
@@ -641,7 +641,7 @@ table:not([class]) {
   outline: none;
 }
 html {
-  font-family: "LXGW WenKai Screen", system-ui, "Microsoft Yahei", "Segoe UI", -apple-system, Roboto, Ubuntu, "Helvetica Neue", Arial, "WenQuanYi Micro Hei", sans-serif;
+  font-family: system-ui, "LXGW WenKai Screen", "Microsoft Yahei", "Segoe UI", -apple-system, Roboto, Ubuntu, "Helvetica Neue", Arial, "WenQuanYi Micro Hei", sans-serif;
   font-size: 18px;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -667,7 +667,7 @@ input {
 }
 input.copy-area {
   display: block;
-  font-family: "LXGW WenKai Screen", Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
+  font-family: system-ui, "LXGW WenKai Screen", Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
   font-size: 0.75rem;
   font-weight: 700;
   color: var(--text-p3);
@@ -1215,7 +1215,7 @@ nav.cap a+a {
   background-image: url("https://fastly.jsdelivr.net/gh/cdn-x/placeholder@1.0.1/arrow/f049bbd4e88ec.svg");
 }
 .paginator-wrap .current {
-  font-family: "LXGW WenKai Screen", Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
+  font-family: system-ui, "LXGW WenKai Screen", Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
   color: var(--text-p3);
 }
 .paginator-wrap .extend {
@@ -2179,7 +2179,7 @@ details.folding[child=codeblock]>div.body .highlight .code:before {
   border-bottom-width: 2px;
   background: var(--card);
   padding: 2px 4px 1px 4px;
-  font-family: "LXGW WenKai Screen", Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
+  font-family: system-ui, "LXGW WenKai Screen", Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
   font-weight: 700;
 }
 .md-text psw {
@@ -2201,7 +2201,7 @@ details.folding[child=codeblock]>div.body .highlight .code:before {
   color: var(--theme);
   line-height: 1;
   font-weight: 700;
-  font-family: "LXGW WenKai Screen", Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
+  font-family: system-ui, "LXGW WenKai Screen", Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
 }
 .md-text h1 sup,
 .md-text h2 sup,
@@ -3926,7 +3926,7 @@ nav.menu a.nav-item:hover {
 }
 .post-list #archive .archive-header {
   display: inline-block;
-  font-family: "LXGW WenKai Screen", Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
+  font-family: system-ui, "LXGW WenKai Screen", Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 0.5em;
@@ -3955,7 +3955,7 @@ nav.menu a.nav-item:hover {
   color: #ff5722;
 }
 .post-list #archive a.post time {
-  font-family: "LXGW WenKai Screen", Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
+  font-family: system-ui, "LXGW WenKai Screen", Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
   margin-right: 1em;
   font-weight: 700;
   flex-shrink: 0;
@@ -3985,7 +3985,7 @@ nav.menu a.nav-item:hover {
 }
 .post-list #cats a.cat .badge {
   font-weight: 700;
-  font-family: "LXGW WenKai Screen", Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
+  font-family: system-ui, "LXGW WenKai Screen", Menlo, Monaco, Consolas, system-ui, "Courier New", monospace, sans-serif;
   opacity: 0.5;
   font-size: 0.75rem;
 }
