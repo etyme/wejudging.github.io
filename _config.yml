@@ -131,10 +131,10 @@ feed:
 
 
 # npm i hexo-neat
-neat_enable: true
+neat_enable: false
 
 # npm i hexo-all-minifier
-all_minifier: true
+all_minifier: false
 
 
 
