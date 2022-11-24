@@ -71,7 +71,7 @@ comments:
     repo: wejudging/blog-comments
     issue-term: pathname
     issue-number:
-    theme: preferred-color-scheme
+    theme: github-dark
     label:
     input-position: top # top/bottom 评论框位置
     comment-order: desc # desc 排序
