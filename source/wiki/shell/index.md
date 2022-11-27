@@ -6,6 +6,23 @@ title: shell
 
 
 
+#### 宝塔纯净版Centos全新安装命令
+
+```bash
+yum install -y wget && wget -O install.sh http://v7.hostcli.com/install/install_6.0.sh && sh install.sh
+```
+
+#### 宝塔纯净版Debian全新安装命令
+
+```bash
+wget -O install.sh http://v7.hostcli.com/install/install-ubuntu_6.0.sh && bash install.sh
+```
+
+
+
+
+
+
 
 #### tcp脚本
 
