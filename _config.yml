@@ -1,6 +1,6 @@
 # Site
 title: weijiajin
-avatar: /images/logo.svg
+avatar: /images/网站图片/logo.svg
 subtitle: '「Stay Hungry.Stay Foolish.」 | 求知若饥，虚心若愚'
 description: 'all of weijiajin'
 keywords: 魏家劲
@@ -23,7 +23,7 @@ public_dir: public
 tag_dir: tags/
 archive_dir: archives/
 category_dir: categories/
-wiki_dir: wiki
+wiki_dir: wiki/
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
@@ -42,13 +42,18 @@ render_drafts: false
 post_asset_folder: false
 relative_link: false
 future: true
+
+
+
 highlight:
   enable: true
-  line_number: false
   auto_detect: false
+  line_number: false
+  line_threshold: 0
   tab_replace: ''
-  wrap: false
+  wrap: true
   hljs: false
+
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -103,6 +108,7 @@ deploy:
 
 inject:
   head:
+    - <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css" />
     - <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
     - <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
     - <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
@@ -111,7 +117,7 @@ inject:
     - <link rel="shortcut icon" href="/images/favicon/favicon.ico">
     - <meta name="msapplication-TileColor" content="#2d89ef">
     - <meta name="msapplication-config" content="#2d89ef">
-    - <meta name="theme-color" content="#ffffff">
+ 
 
 ########################### Plugins ###########################
 # npm i hexo-generator-feed
@@ -120,10 +126,9 @@ feed:
   path: atom.xml
   limit: false
   content: true
-  icon: /images/logo.png
+  icon: /images/网站图片/logo.png
   autodiscovery: true
 
-# npm i hexo-related-popular-posts
 
 # npm i hexo-neat
 neat_enable: true
@@ -132,10 +137,6 @@ neat_enable: true
 all_minifier: true
 
 
-lazyload:
-  enable: false
-  onlypost: true
-  loadingImg: /images/loading.svg
 
 
 # https://github.com/ludoviclefevre/hexo-generator-seo-friendly-sitemap

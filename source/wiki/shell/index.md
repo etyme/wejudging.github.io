@@ -4,7 +4,11 @@ wiki: Shell
 title: shell
 ---
 
+#### 检测Netflix
 
+```bash
+wget -O nf https://github.com/sjlleo/netflix-verify/releases/download/2.61/nf_2.61_linux_amd64 && chmod +x nf && clear && ./nf
+```
 
 #### 宝塔纯净版Centos全新安装命令
 

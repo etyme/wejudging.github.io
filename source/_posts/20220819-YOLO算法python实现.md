@@ -4,8 +4,7 @@ date: 2022-08-19
 tags: 深度学习
 categories: 深度学习
 cover: /images/文章图片/20220819-YOLO算法python实现/001.jpg
-cover-title: YOLO算法python实现
-cover-subtitle: 介绍其基本原理及实现细节
+excerpt: 介绍其基本原理及实现细节
 --- 
 
 ###  YOLO框架如何运作
@@ -193,8 +192,7 @@ bh是边界框的高度与相应单元网格的高度之比，在例子中约为
 ### YOLO算法实现
 
 首先定义一些函数，这些函数将用来选择高于某个阈值的边界框，并对其应用非极大值抑制。首先，导入所需的库：
-
-```
+{% codeblock  lang:python %}
 import os
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import imshow
@@ -210,13 +208,11 @@ from keras.layers import Input, Lambda, Conv2D
 from keras.models import load_model, Model
 from yolo_utils import read_classes, read_anchors, generate_colors, preprocess_image, draw_boxes, scale_boxes
 from yad2k.models.keras_yolo import yolo_head, yolo_boxes_to_corners, preprocess_true_boxes, yolo_loss, yolo_body
-
-%matplotlib inline
-```
+{% endcodeblock %}
 
 然后，实现基于概率和阈值过滤边界框的函数：
 
-```
+{% codeblock  lang:python %}
 def yolo_filter_boxes(box_confidence, boxes, box_class_probs, threshold = .6):
     box_scores = box_confidence*box_class_probs
     box_classes = K.argmax(box_scores,-1)
@@ -227,11 +223,12 @@ def yolo_filter_boxes(box_confidence, boxes, box_class_probs, threshold = .6):
     classes = tf.boolean_mask(box_classes,filtering_mask)
 
     return scores, boxes, classes
-```
+{% endcodeblock %}
+
 
 之后，实现计算IoU的函数：
 
-```
+{% codeblock  lang:python %}
 def iou(box1, box2):
     xi1 = max(box1[0],box2[0])
     yi1 = max(box1[1],box2[1])
@@ -244,11 +241,11 @@ def iou(box1, box2):
     iou = inter_area/union_area
 
     return iou
-```
+{% endcodeblock %}
 
 然后，实现非极大值抑制的函数：
 
-```
+```python
 def yolo_non_max_suppression(scores, boxes, classes, max_boxes = 10, iou_threshold = 0.5):
     max_boxes_tensor = K.variable(max_boxes, dtype='int32')
     K.get_session().run(tf.variables_initializer([max_boxes_tensor]))

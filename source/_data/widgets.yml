@@ -1,8 +1,8 @@
 welcome:
   layout: markdown
-  title: '我或许是个燕雀'
+  title: '如此暗淡的我'
   content: |
-    这个世界应该没人会喜欢，如此暗淡的我
+    一切繁华与我无关
 
 
 recent:
@@ -50,7 +50,7 @@ related:
 
 timeline:
   layout: timeline
-  title: 说说
+  title: 燕雀的心事
   api: https://api.github.com/repos/wejudging/wejudging/issues
-  user: # 是否过滤只显示某个人发布的内容，如果要筛选多人，用英文逗号隔开
-  hide: # title,footer # 隐藏标题或底部
+  user: wejudging
+  hide: footer

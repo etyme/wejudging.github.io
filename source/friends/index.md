@@ -8,12 +8,12 @@ sidebar: [ghuser, timeline]
 ---
 
 {% about %}
-<img height="64px" alt="weijiajin" src="/images/weijiajin.png">
-<center>{% quot 遇到温柔可爱的人，觉得世界也可爱温柔 %}</center>
+<img height="64px" alt="weijiajin" src="/images/网站图片/weijiajin.png">
+<center>{% quot 如此暗淡的我，一切繁华与我无关 %}</center>
 {% endabout %}
 
 
-{% quot 我的好朋友 icon:hashtag %}
+{% quot  我的好朋友 icon:hashtag %}
 
 以下友链通过[GitHub Issue](https://github.com/wejudging/friends/issues/)提交：
 
@@ -34,15 +34,13 @@ sidebar: [ghuser, timeline]
 请添加本站到您的友链中，如果您也使用 issue 作为友链源，只需要告知您的友链源仓库即可
 
 
-{% codeblock lang:yaml %}
 
+{% codeblock  lang:yaml %}
 title: weijiajin
 avatar: https://weijiajin.com/images/logo.svg
 url: https://weijiajin.com
 screenshot: https://weijiajin.com/images/weijiajin-com-screenshot.png
-
 {% endcodeblock %}
-
 
 待管理员审核通过，添加了 `active` 标签后，回来刷新即可生效
 
