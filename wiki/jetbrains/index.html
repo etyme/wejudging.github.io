@@ -3,7 +3,7 @@
 
 <head>
   <meta name="generator" content="Hexo 6.3.0">
-  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.16.2">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.17.0">
   <meta charset="utf-8">
   
 
@@ -38,8 +38,8 @@
 <meta property="og:image" content="https://weijiajin.com/images/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Jetbrains/06.png">
 <meta property="og:image" content="https://weijiajin.com/images/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Jetbrains/07.png">
 <meta property="og:image" content="https://weijiajin.com/images/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Jetbrains/08.png">
-<meta property="article:published_time" content="2022-11-27T04:53:04.991Z">
-<meta property="article:modified_time" content="2022-11-27T04:53:04.991Z">
+<meta property="article:published_time" content="2022-11-28T01:28:25.888Z">
+<meta property="article:modified_time" content="2022-11-28T01:28:25.888Z">
 <meta property="article:author" content="weijiajin">
 <meta property="article:tag" content="魏家劲">
 <meta name="twitter:card" content="summary">
@@ -111,6 +111,8 @@
 
 <widget class="widget-wrapper toc single" id="toc"><div class="widget-header cap dis-select"><span class="name">JetBrains全家桶</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#jetbrains%E6%AD%A3%E7%89%88%E6%BF%80%E6%B4%BB%E8%87%AA%E5%B7%B1%E8%B4%A6%E5%8F%B7"><span class="toc-text"> JetBrains正版–激活自己账号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jetbrains%E6%AD%A3%E7%89%88%E6%BF%80%E6%B4%BB%E6%88%90%E5%93%81%E8%B4%A6%E5%8F%B7"><span class="toc-text"> JetBrains正版–激活成品账号</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="toc-text"> 常见问题</span></a></li></ol></li></ol></div></div></widget>
 
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/wiki/jetbrains/" placeholder="在 /wiki/jetbrains/ 中搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
 
 
 
@@ -127,7 +129,7 @@
 
   
   
-<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" id="home" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">项目</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/wiki/jetbrains/">JetBrains</a></div><div id="post-meta">更新于&nbsp;<time datetime="2022-11-27T04:53:04.991Z">2022-11-27</time></div></div>
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" id="home" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">项目</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/wiki/jetbrains/">JetBrains</a></div><div id="post-meta">更新于&nbsp;<time datetime="2022-11-28T01:28:25.888Z">2022-11-28</time></div></div>
 
   <article class='md-text content wiki'>
   <h1 class="article-title"><span>JetBrains全家桶</span></h1>
@@ -301,6 +303,15 @@
   stellar.plugins = {
     jQuery: 'https://fastly.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js'
   };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, );
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
 
   // stellar js
   stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js"});

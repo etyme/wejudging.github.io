@@ -3,7 +3,7 @@
 
 <head>
   <meta name="generator" content="Hexo 6.3.0">
-  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.16.2">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.17.0">
   <meta charset="utf-8">
   
 
@@ -36,8 +36,8 @@
 <meta property="og:image" content="https://weijiajin.com/images/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Sharp3D/3.png">
 <meta property="og:image" content="https://weijiajin.com/images/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Sharp3D/4.png">
 <meta property="og:image" content="https://weijiajin.com/images/%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87/Sharp3D/5.png">
-<meta property="article:published_time" content="2022-11-27T04:53:04.991Z">
-<meta property="article:modified_time" content="2022-11-27T04:53:04.991Z">
+<meta property="article:published_time" content="2022-11-28T01:28:25.888Z">
+<meta property="article:modified_time" content="2022-11-28T01:28:25.888Z">
 <meta property="article:author" content="weijiajin">
 <meta property="article:tag" content="魏家劲">
 <meta name="twitter:card" content="summary">
@@ -109,6 +109,8 @@
 
 <widget class="widget-wrapper toc single" id="toc"><div class="widget-header cap dis-select"><span class="name">Sharp3D</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E5%AE%98%E7%BD%91%E7%99%BB%E5%BD%95%E5%9C%B0%E5%9D%80"><span class="toc-text"> 1.官网登录地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E5%AE%98%E7%BD%91%E4%BF%AE%E6%94%B9%E9%82%AE%E7%AE%B1"><span class="toc-text"> 2.官网修改邮箱</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E5%AE%98%E7%BD%91%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81"><span class="toc-text"> 3.官网修改密码</span></a></li></ol></div></div></widget>
 
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/wiki/shapr3d/" placeholder="在 /wiki/shapr3d/ 中搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
 
 
 
@@ -125,7 +127,7 @@
 
   
   
-<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" id="home" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">项目</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/wiki/shapr3d/">Sharp3D</a></div><div id="post-meta">更新于&nbsp;<time datetime="2022-11-27T04:53:04.991Z">2022-11-27</time></div></div>
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" id="home" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">项目</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/wiki/shapr3d/">Sharp3D</a></div><div id="post-meta">更新于&nbsp;<time datetime="2022-11-28T01:28:25.888Z">2022-11-28</time></div></div>
 
   <article class='md-text content wiki'>
   <h1 class="article-title"><span>Sharp3D</span></h1>
@@ -290,6 +292,15 @@
   stellar.plugins = {
     jQuery: 'https://fastly.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js'
   };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, );
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
 
   // stellar js
   stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js"});
