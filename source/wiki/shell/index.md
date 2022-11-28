@@ -4,6 +4,19 @@ wiki: Shell
 title: shell
 ---
 
+#### 开启密码登录
+
+```bash
+vim /etc/ssh/sshd_config
+# 将 PasswordAuthentication no 配置的 no 改为 yes，支持其他用户密码登录
+# 如果需要 root 用户密码登录
+# 将 PermitRootLogin 配置改为yes
+# 重启 sshd 可以用下面命令。也可以用 systemctl restart sshd.service ；
+sudo /sbin/service sshd restart
+```
+
+
+
 #### 检测Netflix
 
 ```bash
