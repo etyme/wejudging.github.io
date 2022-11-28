@@ -25,10 +25,10 @@ sidebar:
     about: '[关于](/about/)'
   # Sidebar widgets
   widgets:
-    index: [welcome, recent, timeline] # for home/wiki/categories/tags/archives/404 pages
-    page: [welcome, toc, timeline] # for pages using 'layout:page'
-    post: [toc, ghrepo, ghissues, related] # for pages using 'layout:post'
-    wiki: [toc, ghrepo, ghissues, related] # for pages using 'layout:wiki'
+    index: [welcome, search, recent, timeline] # for home/wiki/categories/tags/archives/404 pages
+    page: [welcome, search, toc, timeline] # for pages using 'layout:page'
+    post: [toc, search, ghrepo, ghissues, related] # for pages using 'layout:post'
+    wiki: [toc, search, ghrepo, ghissues, related] # for pages using 'layout:wiki'
 
 ######## Index ########
 post-index: # 近期发布 分类 标签 归档 and ...
@@ -60,6 +60,12 @@ article:
   related_posts:
     enable: false
     max_count: 5
+
+
+
+search:
+  service: local_search # hexo, todo...
+  local_search: # npm i hexo-generator-search
 
 
 ######## Comments ########
