@@ -28,7 +28,7 @@ sidebar:
     index: [welcome, search, recent, timeline] # for home/wiki/categories/tags/archives/404 pages
     page: [welcome, search, toc, timeline] # for pages using 'layout:page'
     post: [search, toc, ghrepo, ghissues, related] # for pages using 'layout:post'
-    wiki: [search, toc, ghrepo, ghissues, related] # for pages using 'layout:wiki'
+    wiki: [ toc, ghrepo, ghissues, related] # for pages using 'layout:wiki'
 
 ######## Index ########
 post-index: # 近期发布 分类 标签 归档 and ...
