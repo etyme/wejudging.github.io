@@ -266,7 +266,7 @@
     stellar.search = {};
     stellar.search.service = 'local_search';
     if (stellar.search.service == 'local_search') {
-      let service_obj = Object.assign({}, );
+      let service_obj = Object.assign({}, {"path":"search.xml","field":"post"});
       stellar.search[stellar.search.service] = service_obj;
     }
   }
