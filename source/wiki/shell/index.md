@@ -10,6 +10,23 @@ title: shell
 wget -O nf https://github.com/sjlleo/netflix-verify/releases/download/2.61/nf_2.61_linux_amd64 && chmod +x nf && clear && ./nf
 ```
 
+#### 宝塔纯净版Centos全新安装命令
+
+```bash
+yum install -y wget && wget -O install.sh http://v7.hostcli.com/install/install_6.0.sh && sh install.sh
+```
+
+#### 宝塔纯净版Debian全新安装命令
+
+```bash
+wget -O install.sh http://v7.hostcli.com/install/install-ubuntu_6.0.sh && bash install.sh
+```
+
+
+
+
+
+
 
 #### tcp脚本
 
