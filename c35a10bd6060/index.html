@@ -31,7 +31,7 @@
 <meta property="og:description" content="一个支持多种存储的文件列表程序，使用 Gin 和 Solidjs">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-11-29T00:00:00.000Z">
-<meta property="article:modified_time" content="2022-11-29T09:12:20.617Z">
+<meta property="article:modified_time" content="2022-11-29T09:20:18.184Z">
 <meta property="article:author" content="weijiajin">
 <meta property="article:tag" content="AList">
 <meta name="twitter:card" content="summary">
@@ -145,7 +145,7 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- location ~ ^/(\.user.ini|\.htaccess|\.git|\.svn|\.project|LICENSE|README.md</span><br><span class="line">- location ~ .\*\.(gif|jpg|jpeg|png|bmp|swf)$</span><br><span class="line">- location ~ .\*\.(js|css)?$</span><br></pre></td></tr></table></figure>
 <h4 id="安装aria2"><a class="markdownIt-Anchor" href="#安装aria2"></a> 安装Aria2</h4>
 <blockquote>
-<p>其中<token>与AList里的设置一样,其 <code>-v /etc/alist:/opt/alist/data</code> Aria2 与 AList 映射目录一直</p>
+<p>其中 <mark class="tag-plugin mark" color="dark"><token></mark> 与AList里的设置一样,其<mark class="tag-plugin mark" color="light">-v /etc/alist:/opt/alist/data</mark> Aria2 与 AList 映射目录一直</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">--name aria2-pro \</span><br><span class="line">--restart unless-stopped \</span><br><span class="line"> --log-opt max-size=1m \</span><br><span class="line">--network host \</span><br><span class="line">-e IPV6_MODE=<span class="literal">true</span> \</span><br><span class="line">-e PUID=<span class="variable">$UID</span> \</span><br><span class="line">-e PGID=<span class="variable">$GID</span> \</span><br><span class="line">-e RPC_SECRET=&lt;token&gt; \</span><br><span class="line">-e RPC_PORT=6800 \</span><br><span class="line">-e LISTEN_PORT=6888 \</span><br><span class="line">-v /home/aria2/:/config \</span><br><span class="line">-v  /home/aria2/downloads:/downloads \</span><br><span class="line">-v /etc/alist:/opt/alist/data \</span><br><span class="line">p3terx/aria2-pro</span><br></pre></td></tr></table></figure>
 
