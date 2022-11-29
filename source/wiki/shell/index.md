@@ -3,6 +3,17 @@ layout: wiki
 wiki: Shell
 title: shell
 ---
+#### 使用官方安装脚本自动安装docker
+```bash
+curl -fsSL https://get.docker.com | bash -s docker
+```
+
+#### 启动docker并设置开机启动
+```bash
+systemctl start docker
+systemctl enable docker
+```
+
 
 #### 开启密码登录
 ```bash
