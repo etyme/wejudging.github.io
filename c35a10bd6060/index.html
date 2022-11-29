@@ -30,14 +30,11 @@
 <meta property="og:site_name" content="weijiajin">
 <meta property="og:description" content="一个支持多种存储的文件列表程序，使用 Gin 和 Solidjs">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://bu.dusays.com/2022/10/24/63567d3e07da3.png">
-<meta property="og:image" content="https://bu.dusays.com/2022/10/24/63567d3e07da3.png">
 <meta property="article:published_time" content="2022-11-29T00:00:00.000Z">
-<meta property="article:modified_time" content="2022-11-29T09:08:14.125Z">
+<meta property="article:modified_time" content="2022-11-29T09:12:20.617Z">
 <meta property="article:author" content="weijiajin">
 <meta property="article:tag" content="AList">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://bu.dusays.com/2022/10/24/63567d3e07da3.png">
   
   
 
@@ -108,9 +105,7 @@
 <widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
 
 
-
-<widget class="widget-wrapper recent"><div class="widget-header cap theme dis-select"><span class="name">最近更新</span><a class="cap-action" id="rss" title="Subscribe" href="/atom.xml"><svg class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8938"><path d="M800.966 947.251c0-404.522-320.872-732.448-716.69-732.448V62.785c477.972 0 865.44 395.987 865.44 884.466h-148.75z m-162.273 0h-148.74c0-228.98-181.628-414.598-405.678-414.598v-152.01c306.205 0 554.418 253.68 554.418 566.608z m-446.24-221.12c59.748 0 108.189 49.503 108.189 110.557 0 61.063-48.44 110.563-108.188 110.563-59.747 0-108.18-49.5-108.18-110.563 0-61.054 48.433-110.556 108.18-110.556z" p-id="8939"></path></svg></a></div><div class="widget-body related-posts fs14"><a class="item title" href="/89902ce827ea/"><span class="title">CRC码计算及校验原理的最通俗诠释</span></a><a class="item title" href="/b687ea2a5bab/"><span class="title">海明校验码是怎么实现的</span></a><a class="item title" href="/559dd9ff1212/"><span class="title">GitHub Actions 实现 Hexo 自动部署</span></a><a class="item title" href="/c645e2a124ff/"><span class="title">Microsoft 365 E5 开发者</span></a><a class="item title" href="/3caacfc90d07/"><span class="title">Linux 磁盘扩容</span></a></div></widget>
-
+<widget class="widget-wrapper toc single" id="toc"><div class="widget-header cap dis-select"><span class="name">AList安装与使用</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#alist%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3"><span class="toc-text"> AList官方文档</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#docker%E5%AE%89%E8%A3%85"><span class="toc-text"> Docker安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%AE%98%E6%96%B9%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC%E8%87%AA%E5%8A%A8%E5%AE%89%E8%A3%85"><span class="toc-text"> 使用官方安装脚本自动安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8docker%E5%B9%B6%E8%AE%BE%E7%BD%AE%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8"><span class="toc-text"> 启动docker并设置开机启动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85alist"><span class="toc-text"> 安装AList</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E7%AE%A1%E7%90%86%E5%91%98%E4%BF%A1%E6%81%AF"><span class="toc-text"> 查看管理员信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nginx%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86"><span class="toc-text"> nginx反向代理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9C%A8%E7%BD%91%E7%AB%99%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84-server-%E5%AD%97%E6%AE%B5%E4%B8%AD%E6%B7%BB%E5%8A%A0"><span class="toc-text"> 在网站配置文件的 server 字段中添加</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A6%82%E6%9E%9C%E4%BD%BF%E7%94%A8%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF%E8%AF%B7%E5%8A%A1%E5%BF%85%E5%88%A0%E9%99%A4%E4%BB%A5%E4%B8%8B%E9%BB%98%E8%AE%A4%E9%85%8D%E7%BD%AE"><span class="toc-text"> 如果使用宝塔面板，请务必删除以下默认配置</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85aria2"><span class="toc-text"> 安装Aria2</span></a></li></ol></div></div></widget>
 
 
 
@@ -131,25 +126,28 @@
 
 <article class='md-text content post'>
 <h1 class="article-title"><span>AList安装与使用</span></h1>
-<p class="tag-plugin quot" type="text">AList官方文档</p>
-<p><a target="_blank" rel="noopener" href="https://alist.nn.ci/zh">https://alist.nn.ci/zh</a></p>
-<p class="tag-plugin quot" type="icon"><img class="icon prefix lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://bu.dusays.com/2022/10/24/63567d3e07da3.png" />Docker安装</p>
-<p>使用官方安装脚本自动安装</p>
+<h4 id="alist官方文档"><a class="markdownIt-Anchor" href="#alist官方文档"></a> AList官方文档</h4>
+<p>有问题优先参考官方文档<br />
+<a target="_blank" rel="noopener" href="https://alist.nn.ci/zh">https://alist.nn.ci/zh</a></p>
+<h3 id="docker安装"><a class="markdownIt-Anchor" href="#docker安装"></a> Docker安装</h3>
+<h4 id="使用官方安装脚本自动安装"><a class="markdownIt-Anchor" href="#使用官方安装脚本自动安装"></a> 使用官方安装脚本自动安装</h4>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com | bash -s docker</span><br></pre></td></tr></table></figure>
-<p>启动docker并设置开机启动</p>
+<h4 id="启动docker并设置开机启动"><a class="markdownIt-Anchor" href="#启动docker并设置开机启动"></a> 启动docker并设置开机启动</h4>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start docker</span><br><span class="line">systemctl <span class="built_in">enable</span> docker</span><br></pre></td></tr></table></figure>
-<p>安装AList</p>
+<h4 id="安装alist"><a class="markdownIt-Anchor" href="#安装alist"></a> 安装AList</h4>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -d --restart=always -v /etc/alist:/opt/alist/data -p 5244:5244 --name=<span class="string">&quot;alist&quot;</span> xhofe/alist:latest</span><br></pre></td></tr></table></figure>
-<p class="tag-plugin quot" type="icon"><img class="icon prefix lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://bu.dusays.com/2022/10/24/63567d3e07da3.png" />查看管理员信息</p>
+<h4 id="查看管理员信息"><a class="markdownIt-Anchor" href="#查看管理员信息"></a> 查看管理员信息</h4>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it alist ./alist admin</span><br></pre></td></tr></table></figure>
-<p>安装Aria2<br />
-其中<token>与AList保持一直即可</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">--name aria2-pro \</span><br><span class="line">--restart unless-stopped \</span><br><span class="line"> --log-opt max-size=1m \</span><br><span class="line">--network host \</span><br><span class="line">-e IPV6_MODE=<span class="literal">true</span> \</span><br><span class="line">-e PUID=<span class="variable">$UID</span> \</span><br><span class="line">-e PGID=<span class="variable">$GID</span> \</span><br><span class="line">-e RPC_SECRET=&lt;token&gt; \</span><br><span class="line">-e RPC_PORT=6800 \</span><br><span class="line">-e LISTEN_PORT=6888 \</span><br><span class="line">-v /home/aria2/:/config \</span><br><span class="line">-v  /home/aria2/downloads:/downloads \</span><br><span class="line">-v /etc/alist:/opt/alist/data \</span><br><span class="line">p3terx/aria2-pro</span><br></pre></td></tr></table></figure>
-<p>nginx反向代理<br />
-在网站配置文件的 server 字段中添加</p>
+<h4 id="nginx反向代理"><a class="markdownIt-Anchor" href="#nginx反向代理"></a> nginx反向代理</h4>
+<h5 id="在网站配置文件的-server-字段中添加"><a class="markdownIt-Anchor" href="#在网站配置文件的-server-字段中添加"></a> 在网站配置文件的 server 字段中添加</h5>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">  proxy_set_header Host $http_host;</span><br><span class="line">  proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">  proxy_set_header Range $http_range;</span><br><span class="line">	proxy_set_header If-Range $http_if_range;</span><br><span class="line">  proxy_redirect off;</span><br><span class="line">  proxy_pass http://127.0.0.1:5244;</span><br><span class="line">  # the max size of file to upload</span><br><span class="line">  client_max_body_size 20000m;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如果使用宝塔面板，请务必删除以下默认配置</p>
+<h5 id="如果使用宝塔面板请务必删除以下默认配置"><a class="markdownIt-Anchor" href="#如果使用宝塔面板请务必删除以下默认配置"></a> 如果使用宝塔面板，请务必删除以下默认配置</h5>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">- location ~ ^/(\.user.ini|\.htaccess|\.git|\.svn|\.project|LICENSE|README.md</span><br><span class="line">- location ~ .\*\.(gif|jpg|jpeg|png|bmp|swf)$</span><br><span class="line">- location ~ .\*\.(js|css)?$</span><br></pre></td></tr></table></figure>
+<h4 id="安装aria2"><a class="markdownIt-Anchor" href="#安装aria2"></a> 安装Aria2</h4>
+<blockquote>
+<p>其中<token>与AList里的设置一样,其 <code>-v /etc/alist:/opt/alist/data</code> Aria2 与 AList 映射目录一直</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">--name aria2-pro \</span><br><span class="line">--restart unless-stopped \</span><br><span class="line"> --log-opt max-size=1m \</span><br><span class="line">--network host \</span><br><span class="line">-e IPV6_MODE=<span class="literal">true</span> \</span><br><span class="line">-e PUID=<span class="variable">$UID</span> \</span><br><span class="line">-e PGID=<span class="variable">$GID</span> \</span><br><span class="line">-e RPC_SECRET=&lt;token&gt; \</span><br><span class="line">-e RPC_PORT=6800 \</span><br><span class="line">-e LISTEN_PORT=6888 \</span><br><span class="line">-v /home/aria2/:/config \</span><br><span class="line">-v  /home/aria2/downloads:/downloads \</span><br><span class="line">-v /etc/alist:/opt/alist/data \</span><br><span class="line">p3terx/aria2-pro</span><br></pre></td></tr></table></figure>
 
 
 <div class="article-footer reveal fs14"><section id="license"><div class="header"><span>许可协议</span></div><div class="body"><p>本文采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a>许可协议，转载请注明出处。</p>
