@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>设置AWS允许使用root远程登录</title>
+      <link href="/e5a80504dd8d/"/>
+      <url>/e5a80504dd8d/</url>
+      
+        <content type="html"><![CDATA[<p>切换root用户<br />修改root密码<br />将 PasswordAuthentication 修改为 yes<br />将 PermitRootLogin 修改为 yes （找不到可自行添加）</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo -i</span><br><span class="line">passwd root</span><br><span class="line">vi /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure><figure class="highlight bash"><figcaption><span>重启 ssh 服务</span></figcaption><table><tr><td class="code"><pre><span class="line">systemctl restart sshd</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> AWS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> AWS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>AList安装与使用</title>
       <link href="/7f539ff6641b/"/>
       <url>/7f539ff6641b/</url>
