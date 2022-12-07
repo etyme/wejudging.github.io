@@ -119,7 +119,14 @@ wget --no-check-certificate -O gost.sh https://raw.githubusercontent.com/KANIKIG
 
 ```bash
 wget --no-check-certificate https://raw.github.com/Lozy/danted/master/install.sh -O install.sh
+
 bash install.sh  --port=18888 --user=weijiajin --passwd=weijiajin
+
+/etc/init.d/sockd adduser USERNAME PASSWORD
+
+sudo sed -i 's/del_uer/del_user/g' /etc/init.d/sockd
+
+/etc/init.d/sockd deluser USERNAME
 
 bash install.sh --uninstall
 
