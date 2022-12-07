@@ -134,6 +134,9 @@ systemctl enable sockd.service
 
 service sockd state
 
+/etc/init.d/sockd state
+
+
 ```
 #### 增加网卡
 
